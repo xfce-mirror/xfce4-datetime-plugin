@@ -1,3 +1,7 @@
+2005-03-27  Choe Hwanjin <choe.hwanjin@gmail.com>
+    * add brazilian portuguese translation.
+    Thanks to Rogerio Pereira <rogerio.araujo@gmail.com>
+
 2005-01-24  Choe Hwanjin <choe.hwanjin@gmail.com>
     * datetime/datetime.c: new Xfcalendar routine implemented
 
