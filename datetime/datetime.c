@@ -66,13 +66,10 @@ datetime_update(gpointer data)
 
     datetime = (DatetimePlugin*)data;
 
-    if (!GTK_IS_LABEL(datetime->date_label) &&
-	!GTK_IS_LABEL(datetime->time_label))
-	return FALSE;
-
     g_get_current_time(&timeval);
     current = localtime((time_t *)&timeval.tv_sec);
-    if (GTK_IS_LABEL(datetime->date_label)) {
+    if (datetime->date_format != NULL &&
+	GTK_IS_LABEL(datetime->date_label)) {
 	len = strftime(buf, sizeof(buf) - 1, datetime->date_format, current);
 	if (len != 0) {
 	    buf[len] = '\0';  /* make sure nul terminated string */
@@ -85,7 +82,8 @@ datetime_update(gpointer data)
 	    gtk_label_set_text(GTK_LABEL(datetime->date_label), _("Error"));
     }
 
-    if (GTK_IS_LABEL(datetime->time_label)) {
+    if (datetime->time_format != NULL &&
+	GTK_IS_LABEL(datetime->time_label)) {
 	len = strftime(buf, sizeof(buf) - 1, datetime->time_format, current);
 	if (len != 0) {
 	    buf[len] = '\0';  /* make sure nul terminated string */
@@ -101,43 +99,51 @@ datetime_update(gpointer data)
     return TRUE;
 }
 
-static GtkWidget *
-pop_calendar_window(GtkWidget *parent, int orientation,
-		    gboolean week_start_monday)
+static void
+on_calendar_entry_activated(GtkWidget *widget, GtkWidget *calendar)
 {
-    GtkWidget *window;
-    GtkWidget *cal;
+    GDate *date;
+    const gchar *text;
+
+    date = g_date_new();
+
+    text = gtk_entry_get_text(GTK_ENTRY(widget));
+    g_date_set_parse(date, text);
+
+    if (g_date_valid(date)) {
+	gtk_calendar_freeze(GTK_CALENDAR(calendar));
+	gtk_calendar_select_month(GTK_CALENDAR(calendar),
+				  g_date_get_month(date) - 1,
+				  g_date_get_year(date));
+	gtk_calendar_select_day(GTK_CALENDAR(calendar),
+				g_date_get_day(date));
+	gtk_calendar_thaw(GTK_CALENDAR(calendar));
+    }
+    g_date_free(date);
+}
+
+static void
+on_calendar_realized(GtkWidget *widget, gpointer data)
+{
     gint parent_x, parent_y, parent_w, parent_h;
     gint root_w, root_h;
     gint width, height, x, y;
-    GtkCalendarDisplayOptions display_options;
+    gint orientation;
+    GdkScreen *screen;
+    GtkWidget *parent;
     GtkRequisition requisition;
-    GtkAllocation allocation;
 
-    window = gtk_window_new(GTK_WINDOW_POPUP);
-
-    cal = gtk_calendar_new();
-    display_options = GTK_CALENDAR_SHOW_HEADING | GTK_CALENDAR_SHOW_DAY_NAMES;
-    if (week_start_monday)
-	display_options |= GTK_CALENDAR_WEEK_START_MONDAY;
-    gtk_calendar_display_options(GTK_CALENDAR (cal), display_options);
-    gtk_container_add(GTK_CONTAINER(window), cal);
+    orientation = GPOINTER_TO_INT(data);
+    parent = g_object_get_data(G_OBJECT(widget), "calendar-parent");
 
     gdk_window_get_origin(GDK_WINDOW(parent->window), &parent_x, &parent_y);
     gdk_drawable_get_size(GDK_DRAWABLE(parent->window), &parent_w, &parent_h);
 
-    root_w = gdk_screen_width();
-    root_h = gdk_screen_height();
+    screen = gdk_drawable_get_screen(GDK_DRAWABLE(widget->window));
+    root_w = gdk_screen_get_width(GDK_SCREEN(screen));
+    root_h = gdk_screen_get_height(GDK_SCREEN(screen));
 
-    gtk_widget_realize(GTK_WIDGET(window));
-
-    gtk_widget_size_request(GTK_WIDGET(cal), &requisition);
-
-    allocation.x = requisition.width;
-    allocation.y = requisition.height;
-    gtk_widget_size_allocate(GTK_WIDGET(cal), &allocation);
-
-    gtk_widget_size_request(GTK_WIDGET(cal), &requisition);
+    gtk_widget_size_request(GTK_WIDGET(widget), &requisition);
     width = requisition.width;
     height = requisition.height;
 
@@ -193,9 +199,62 @@ pop_calendar_window(GtkWidget *parent, int orientation,
         }
     }
 
-    gtk_window_move(GTK_WINDOW(window), x, y);
-    gtk_widget_show(cal);
-    gtk_widget_show(window);
+    gtk_window_move(GTK_WINDOW(widget), x, y);
+}
+
+static GtkWidget *
+pop_calendar_window(GtkWidget *parent,
+		    int orientation,
+		    gboolean week_start_monday,
+		    const char *date_string)
+{
+    GtkWidget *window;
+    GtkWidget *frame;
+    GtkWidget *vbox;
+    GtkWidget *hbox;
+    GtkWidget *cal;
+    GtkWidget *entry;
+    GtkWidget *label;
+    GtkCalendarDisplayOptions display_options;
+
+    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_decorated(GTK_WINDOW(window), FALSE);
+    gtk_window_set_skip_taskbar_hint(GTK_WINDOW(window), TRUE);
+    gtk_window_set_skip_pager_hint(GTK_WINDOW(window), TRUE);
+    g_object_set_data(G_OBJECT(window), "calendar-parent", parent);
+
+    frame = gtk_frame_new(NULL);
+    gtk_frame_set_shadow_type (GTK_FRAME(frame), GTK_SHADOW_OUT);
+    gtk_container_add (GTK_CONTAINER(window), frame);
+
+    vbox = gtk_vbox_new(FALSE, 0);
+    gtk_container_add (GTK_CONTAINER(frame), vbox);
+
+    cal = gtk_calendar_new();
+    display_options = GTK_CALENDAR_SHOW_HEADING |
+		      GTK_CALENDAR_SHOW_WEEK_NUMBERS |
+		      GTK_CALENDAR_SHOW_DAY_NAMES;
+    if (week_start_monday)
+	display_options |= GTK_CALENDAR_WEEK_START_MONDAY;
+    gtk_calendar_display_options(GTK_CALENDAR (cal), display_options);
+    gtk_box_pack_start(GTK_BOX(vbox), cal, TRUE, TRUE, 0);
+
+    hbox = gtk_hbox_new(FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+
+    label = gtk_label_new(_("Date:"));
+    gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+
+    entry = gtk_entry_new();
+    gtk_entry_set_text(GTK_ENTRY(entry), date_string);
+    gtk_box_pack_start(GTK_BOX(hbox), entry, TRUE, TRUE, 0);
+    g_signal_connect(G_OBJECT(entry), "activate",
+		     G_CALLBACK(on_calendar_entry_activated), cal);
+
+    g_signal_connect_after(G_OBJECT(window), "realize",
+			   G_CALLBACK(on_calendar_realized),
+			   GINT_TO_POINTER(orientation));
+    gtk_widget_show_all(window);
 
     return window;
 }
@@ -217,7 +276,8 @@ on_button_press_event_cb(GtkWidget *widget,
 	} else {
 	    datetime->cal = pop_calendar_window(datetime->eventbox,
 						datetime->orientation,
-						datetime->week_start_monday);
+						datetime->week_start_monday,
+		       gtk_label_get_text(GTK_LABEL(datetime->date_label)));
 	}
 	return TRUE;
     }
@@ -237,6 +297,28 @@ on_key_press_event_cb(GtkWidget *widget, GdkEventKey *event, gpointer data)
 	return TRUE;
     }   
     return FALSE;
+}
+
+static void
+datetime_apply_font(DatetimePlugin *datetime,
+		    const gchar *date_font_name,
+		    const gchar *time_font_name)
+{
+    PangoFontDescription *font;
+
+    if (date_font_name != NULL) {
+	g_free(datetime->date_font);
+	datetime->date_font = g_strdup(date_font_name);
+	font = pango_font_description_from_string(datetime->date_font);
+	gtk_widget_modify_font(datetime->date_label, font);
+    }
+
+    if (time_font_name != NULL) {
+	g_free(datetime->time_font);
+	datetime->time_font = g_strdup(time_font_name);
+	font = pango_font_description_from_string(datetime->time_font);
+	gtk_widget_modify_font(datetime->time_label, font);
+    }
 }
 
 static void
@@ -297,29 +379,33 @@ datetime_new (void)
     /* time */
     datetime->time_label = gtk_label_new("");
     gtk_label_set_justify(GTK_LABEL(datetime->time_label), GTK_JUSTIFY_CENTER);
-    datetime->time_font = g_strdup("Bitstream Vera Sans 11");
-    /* This is default time format, (See strftime(3))
-       translaters may change this to familiar format for their language */
-    datetime->time_format = g_strdup(_("%H:%M"));
+    datetime->time_font = NULL;
+    datetime->time_format = NULL;
     gtk_box_pack_start(GTK_BOX(vbox), datetime->time_label, FALSE, FALSE, 0);
 
     /* date */
     datetime->date_label = gtk_label_new("");
     gtk_label_set_justify(GTK_LABEL(datetime->date_label), GTK_JUSTIFY_CENTER);
-    datetime->date_font = g_strdup("Bitstream Vera Sans 11");
-    /* This is default date format, (See strftime(3))
-       translaters may change this to familiar format for their language */
-    datetime->date_format = g_strdup(_("%Y-%m-%d"));
+    datetime->date_font = NULL;
+    datetime->date_format = NULL;
     gtk_box_pack_start(GTK_BOX(vbox), datetime->date_label, FALSE, FALSE, 0);
 
-    datetime_update(datetime);
-    gtk_widget_show_all(datetime->eventbox);
-
+    /* calendar */
     datetime->cal = NULL;
-    datetime->orientation = GTK_ORIENTATION_HORIZONTAL;
     datetime->week_start_monday = FALSE;
 
-    datetime_apply_format(datetime, NULL, NULL);
+    datetime->orientation = GTK_ORIENTATION_HORIZONTAL;
+
+    datetime_apply_font(datetime,
+			"Bitstream Vera Sans 9",
+			"Bitstream Vera Sans 12");
+    /* This is default date/time format, (See strftime(3))
+       translaters may change this to familiar format for their language */
+    datetime_apply_format(datetime, _("%Y-%m-%d"), _("%H:%M"));
+
+    datetime_update(datetime);
+
+    gtk_widget_show_all(datetime->eventbox);
 
     return datetime;
 }
@@ -338,28 +424,6 @@ datetime_free(Control *control)
 	g_source_remove(datetime->timeout_id);
 
     g_free(datetime);
-}
-
-static void
-datetime_apply_font(DatetimePlugin *datetime,
-		    const gchar *date_font_name,
-		    const gchar *time_font_name)
-{
-    PangoFontDescription *font;
-
-    if (date_font_name != NULL) {
-	g_free(datetime->date_font);
-	datetime->date_font = g_strdup(date_font_name);
-	font = pango_font_description_from_string(date_font_name);
-	gtk_widget_modify_font(datetime->date_label, font);
-    }
-
-    if (time_font_name != NULL) {
-	g_free(datetime->time_font);
-	datetime->time_font = g_strdup(time_font_name);
-	font = pango_font_description_from_string(time_font_name);
-	gtk_widget_modify_font(datetime->time_label, font);
-    }
 }
 
 extern xmlDocPtr xmlconfig;
@@ -556,7 +620,21 @@ week_day_button_toggle_cb (GtkWidget *widget, gpointer data)
 }
 
 static void
-datetime_create_options(Control *control, GtkContainer *container, GtkWidget *done)
+apply_options_done_cb(GtkWidget *widget, DatetimePlugin *datetime)
+{
+    if (datetime == NULL)
+	return;
+
+    datetime_apply_format(datetime,
+		  gtk_entry_get_text(GTK_ENTRY(datetime->date_format_entry)),
+		  gtk_entry_get_text(GTK_ENTRY(datetime->time_format_entry)));
+    datetime_update(datetime);
+}
+
+static void
+datetime_create_options(Control *control,
+			GtkContainer *container,
+			GtkWidget *done)
 {
     DatetimePlugin *datetime;
     GtkWidget *main_vbox;
@@ -619,7 +697,7 @@ datetime_create_options(Control *control, GtkContainer *container, GtkWidget *do
     g_free(format);
     g_signal_connect (G_OBJECT(entry), "activate",
 		      G_CALLBACK (time_entry_activate_cb), datetime);
-    datetime->date_format_entry = entry;
+    datetime->time_format_entry = entry;
 
     /* date */
     frame = xfce_framebox_new(_("Date"), TRUE);
@@ -670,6 +748,8 @@ datetime_create_options(Control *control, GtkContainer *container, GtkWidget *do
     g_signal_connect(G_OBJECT(button), "toggled",
 	    	     G_CALLBACK(week_day_button_toggle_cb), datetime);
 
+    g_signal_connect(G_OBJECT(done), "clicked",
+		     G_CALLBACK(apply_options_done_cb), datetime);
     gtk_widget_show_all(main_vbox);
 }
 
