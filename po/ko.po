@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce4 panel datetime plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-04 02:06+0900\n"
+"POT-Creation-Date: 2004-01-04 14:56+0900\n"
 "PO-Revision-Date: 2003-12-29 19:52+0900\n"
 "Last-Translator: Choe Hwanjin <krisna@kldp.org>\n"
 "Language-Team: Choe Hwanjin <krisna@kldp.org>\n"
@@ -26,33 +26,33 @@ msgstr "날짜:"
 
 #. This is default date/time format, (See strftime(3))
 #. translaters may change this to familiar format for their language
-#: datetime/datetime.c:428
+#: datetime/datetime.c:436
 msgid "%Y-%m-%d"
 msgstr ""
 
-#: datetime/datetime.c:428
+#: datetime/datetime.c:436
 msgid "%H:%M"
 msgstr ""
 
-#: datetime/datetime.c:579 datetime/datetime.c:608
+#: datetime/datetime.c:584 datetime/datetime.c:613
 msgid "Select font"
 msgstr "글꼴을 선택하십시오"
 
 #. time
-#: datetime/datetime.c:711
+#: datetime/datetime.c:715
 msgid "Time"
 msgstr "시간"
 
-#: datetime/datetime.c:720 datetime/datetime.c:758
+#: datetime/datetime.c:724 datetime/datetime.c:760
 msgid "Font:"
 msgstr "글꼴:"
 
-#: datetime/datetime.c:734 datetime/datetime.c:772
+#: datetime/datetime.c:738 datetime/datetime.c:774
 msgid "Format:"
 msgstr "형식:"
 
 #. date
-#: datetime/datetime.c:749
+#: datetime/datetime.c:751
 msgid "Date"
 msgstr "날짜"
 
