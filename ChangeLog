@@ -1,3 +1,6 @@
+2005-01-24  Choe Hwanjin <choe.hwanjin@gmail.com>
+    * datetime/datetime.c: new Xfcalendar routine implemented
+
 2004-09-11  Choe Hwanjin <krisna@kldp.org>
     * release 0.3.1
 

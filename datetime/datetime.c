@@ -275,15 +275,64 @@ on_button_press_event_cb(GtkWidget *widget,
 			 GdkEventButton *event,
 			 DatetimePlugin *datetime)
 {
-    if (event->button != 1)
+    GdkAtom atom;
+    Window xwindow;
+
+    /* on double click event, GDK_2BUTTON_PRESS will be received,
+     * so we ignore it */
+    if (event->type == GDK_BUTTON_RELEASE || event->type == GDK_2BUTTON_PRESS)
+	return FALSE;
+
+    /* this button uses for context menu, so we ignore */
+    if (event->button == 3)
 	return FALSE;
 
     if (datetime == NULL)
 	return FALSE;
 
-    if (datetime->use_xfcalendar) {
-	/* popup XFCalendar */
+    /* stolen from xfce4-panel-clock routine, slightly modified */
+    /* send message to xfcalendar if it is running */
+    atom = gdk_atom_intern("_XFCE_CALENDAR_RUNNING", FALSE);
+    xwindow = XGetSelectionOwner(GDK_DISPLAY (), gdk_x11_atom_to_xatom (atom));
+    if (xwindow != None) {
+	char msg[20];
+	const char *direction = "up";
+	Window xid = GDK_WINDOW_XID (widget->window);
+	GdkEventClient gev;
+
+	/* popup in the same direction as menus */
+	switch (groups_get_arrow_direction ()) {
+	case GTK_ARROW_UP:
+	    direction = "up";
+	    break;
+	case GTK_ARROW_DOWN:
+	    direction = "down";
+	    break;
+	case GTK_ARROW_LEFT:
+	    direction = "left";
+	    break;
+	case GTK_ARROW_RIGHT:
+	    direction = "right";
+	    break;
+	default:
+	    return FALSE;
+	}
+	sprintf(msg, "%lx:%s", xid, direction);
+
+	gev.type = GDK_CLIENT_EVENT;
+	gev.window = widget->window;
+	gev.send_event = TRUE;
+	gev.message_type =
+	    gdk_atom_intern ("_XFCE_CALENDAR_TOGGLE_HERE", FALSE);
+	gev.data_format = 8;
+	strcpy (gev.data.b, msg);
+
+	gdk_event_send_client_message ((GdkEvent *) & gev,
+				       (GdkNativeWindow) xwindow);
+	gdk_flush ();
     } else {
+	/* there is no xfcalendar running, so we use gtk default calendar
+	 * widget instead of running new xfcalendar client */
 	if (datetime->cal != NULL) {
 	    gtk_widget_destroy(datetime->cal);
 	    datetime->cal = NULL;
