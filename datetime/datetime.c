@@ -254,7 +254,7 @@ pop_calendar_window(GtkWidget *parent,
     gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
     label = gtk_label_new(_("Date:"));
-    gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 5);
 
     entry = gtk_entry_new();
     gtk_entry_set_text(GTK_ENTRY(entry), date_string);
@@ -342,12 +342,20 @@ datetime_apply_format(DatetimePlugin *datetime,
 
     if (date_format != NULL) {
 	g_free(datetime->date_format);
-	datetime->date_format = g_strcompress(date_format);
+	datetime->date_format = g_strdup(date_format);
+	if (strlen(date_format) == 0)
+	    gtk_widget_hide(GTK_WIDGET(datetime->date_label));
+	else
+	    gtk_widget_show(GTK_WIDGET(datetime->date_label));
     }
 
     if (time_format != NULL) {
 	g_free(datetime->time_format);
-	datetime->time_format = g_strcompress(time_format);
+	datetime->time_format = g_strdup(time_format);
+	if (strlen(time_format) == 0)
+	    gtk_widget_hide(GTK_WIDGET(datetime->time_label));
+	else
+	    gtk_widget_show(GTK_WIDGET(datetime->time_label));
     }
 
     if (datetime->timeout_id)
@@ -527,7 +535,6 @@ static void
 datetime_write_config(Control *control, xmlNodePtr parent)
 {
     DatetimePlugin *datetime;
-    gchar *format;
     xmlNodePtr node;
 
     g_return_if_fail (control != NULL);
@@ -538,15 +545,13 @@ datetime_write_config(Control *control, xmlNodePtr parent)
 
     node = xmlNewTextChild(parent, NULL, (const xmlChar *)"Date", NULL);
     xmlNewTextChild(node, NULL, (const xmlChar *)"Font", datetime->date_font);
-    format = g_strescape(datetime->date_format, NULL);
-    xmlNewTextChild(node, NULL, (const xmlChar *)"Format", format);
-    g_free(format);
+    xmlNewTextChild(node, NULL, (const xmlChar *)"Format",
+				datetime->date_format);
 
     node = xmlNewTextChild(parent, NULL, (const xmlChar *)"Time", NULL);
     xmlNewTextChild(node, NULL, (const xmlChar *)"Font", datetime->time_font);
-    format = g_strescape(datetime->time_format, NULL);
-    xmlNewTextChild(node, NULL, (const xmlChar *)"Format", format);
-    g_free(format);
+    xmlNewTextChild(node, NULL, (const xmlChar *)"Format",
+				datetime->time_format);
 
     node = xmlNewTextChild(parent, NULL, (const xmlChar *)"Calendar", NULL);
     if (datetime->use_xfcalendar)
@@ -691,7 +696,6 @@ datetime_create_options(Control *control,
     GtkWidget *vbox;
     GtkWidget *hbox;
     GtkSizeGroup *sg;
-    gchar *format;
 
     g_return_if_fail (control != NULL);
     g_return_if_fail (container != NULL);
@@ -737,10 +741,8 @@ datetime_create_options(Control *control,
     gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
 
     entry = gtk_entry_new();
-    format = g_strescape(datetime->time_format, NULL);
-    gtk_entry_set_text(GTK_ENTRY(entry), format);
+    gtk_entry_set_text(GTK_ENTRY(entry), datetime->time_format);
     gtk_box_pack_start(GTK_BOX(hbox), entry, FALSE, FALSE, 0);
-    g_free(format);
     g_signal_connect (G_OBJECT(entry), "activate",
 		      G_CALLBACK (time_entry_activate_cb), datetime);
     datetime->time_format_entry = entry;
@@ -775,10 +777,8 @@ datetime_create_options(Control *control,
     gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
 
     entry = gtk_entry_new();
-    format = g_strescape(datetime->date_format, NULL);
-    gtk_entry_set_text(GTK_ENTRY(entry), format);
+    gtk_entry_set_text(GTK_ENTRY(entry), datetime->date_format);
     gtk_box_pack_start(GTK_BOX(hbox), entry, FALSE, FALSE, 0);
-    g_free(format);
     g_signal_connect (G_OBJECT(entry), "activate",
 		      G_CALLBACK (date_entry_activate_cb), datetime);
     datetime->date_format_entry = entry;
