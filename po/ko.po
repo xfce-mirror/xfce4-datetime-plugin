@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce4 panel datetime plugin 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-12-29 23:00+0900\n"
+"PO-Revision-Date: 2003-12-29 19:52+0900\n"
+"Last-Translator: Choe Hwanjin <krisna@kldp.org>\n"
+"Language-Team: Choe Hwanjin <krisna@kldp.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: datetime/datetime.c:85 datetime/datetime.c:98
+msgid "Error"
+msgstr "오류"
+
+#. This is default time format, (See strftime(3))
+#. translaters may change this to familiar format for their language
+#: datetime/datetime.c:303
+msgid "%H:%M"
+msgstr ""
+
+#. This is default date format, (See strftime(3))
+#. translaters may change this to familiar format for their language
+#: datetime/datetime.c:312
+msgid "%Y-%m-%d"
+msgstr ""
+
+#: datetime/datetime.c:482 datetime/datetime.c:511
+msgid "Select font"
+msgstr "글꼴을 선택하십시오"
+
+#. time
+#: datetime/datetime.c:587
+msgid "Time"
+msgstr "시간"
+
+#: datetime/datetime.c:596 datetime/datetime.c:634
+msgid "Font:"
+msgstr "글꼴:"
+
+#: datetime/datetime.c:610 datetime/datetime.c:648
+msgid "Format:"
+msgstr "형식:"
+
+#. date
+#: datetime/datetime.c:625
+msgid "Date"
+msgstr "날짜"
+
+#. first day of week
+#: datetime/datetime.c:663
+msgid "Calendar"
+msgstr "달력"
+
+#: datetime/datetime.c:666
+msgid "Week day starts Monday"
+msgstr "월요일을 일주일의 시작으로 합니다"
+
+#: datetime/datetime.c:716
+msgid "Date and Time"
+msgstr "날짜와 시간"
