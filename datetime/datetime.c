@@ -42,12 +42,17 @@ typedef struct {
     gchar *time_format;
     guint timeout_id;
     gint orientation;
+    gboolean use_xfcalendar;
     gboolean week_start_monday;
 
+    /* option widgets */
     GtkWidget *date_font_selector;
     GtkWidget *date_format_entry;
     GtkWidget *time_font_selector;
     GtkWidget *time_format_entry;
+    GtkWidget *week_start_button;
+
+    /* popup calendar */
     GtkWidget *cal;
 } DatetimePlugin;
 
@@ -261,15 +266,18 @@ pop_calendar_window(GtkWidget *parent,
 
 static gboolean
 on_button_press_event_cb(GtkWidget *widget,
-			 GdkEventButton *event, gpointer data)
+			 GdkEventButton *event,
+			 DatetimePlugin *datetime)
 {
-    if (event->button == 1) {
-    	DatetimePlugin *datetime;
+    if (event->button != 1)
+	return FALSE;
 
-	if (data == NULL)
-	    return FALSE;
+    if (datetime == NULL)
+	return FALSE;
 
-	datetime = (DatetimePlugin*)data;
+    if (datetime->use_xfcalendar) {
+	/* popup XFCalendar */
+    } else {
 	if (datetime->cal != NULL) {
 	    gtk_widget_destroy(datetime->cal);
 	    datetime->cal = NULL;
@@ -279,9 +287,9 @@ on_button_press_event_cb(GtkWidget *widget,
 						datetime->week_start_monday,
 		       gtk_label_get_text(GTK_LABEL(datetime->date_label)));
 	}
-	return TRUE;
     }
-    return FALSE;
+
+    return TRUE;
 }
 
 static gboolean
@@ -360,7 +368,16 @@ datetime_new (void)
 {
     GtkWidget *vbox;
     GtkWidget *align;
-    DatetimePlugin *datetime = g_new (DatetimePlugin, 1);
+    DatetimePlugin *datetime;
+
+    datetime = g_new (DatetimePlugin, 1);
+    datetime->orientation = GTK_ORIENTATION_HORIZONTAL;
+    datetime->date_font = NULL;
+    datetime->date_format = NULL;
+    datetime->time_font = NULL;
+    datetime->time_format = NULL;
+    datetime->use_xfcalendar = FALSE;
+    datetime->week_start_monday = FALSE;
 
     datetime->eventbox = gtk_event_box_new();
     gtk_widget_add_events(datetime->eventbox, GDK_KEY_PRESS_MASK);
@@ -379,22 +396,15 @@ datetime_new (void)
     /* time */
     datetime->time_label = gtk_label_new("");
     gtk_label_set_justify(GTK_LABEL(datetime->time_label), GTK_JUSTIFY_CENTER);
-    datetime->time_font = NULL;
-    datetime->time_format = NULL;
     gtk_box_pack_start(GTK_BOX(vbox), datetime->time_label, FALSE, FALSE, 0);
 
     /* date */
     datetime->date_label = gtk_label_new("");
     gtk_label_set_justify(GTK_LABEL(datetime->date_label), GTK_JUSTIFY_CENTER);
-    datetime->date_font = NULL;
-    datetime->date_format = NULL;
     gtk_box_pack_start(GTK_BOX(vbox), datetime->date_label, FALSE, FALSE, 0);
 
     /* calendar */
     datetime->cal = NULL;
-    datetime->week_start_monday = FALSE;
-
-    datetime->orientation = GTK_ORIENTATION_HORIZONTAL;
 
     datetime_apply_font(datetime,
 			"Bitstream Vera Sans 9",
@@ -482,6 +492,11 @@ datetime_read_config(Control *control, xmlNodePtr node)
 		tmp = tmp->next;
 	    }
 	} else if (xmlStrEqual(node->name, (const xmlChar *)"Calendar")) {
+	    value = xmlGetProp(node, (const xmlChar *)"UseXFCalendar");
+	    if (g_ascii_strcasecmp("true", value) == 0)
+		datetime->use_xfcalendar = TRUE;
+	    else
+		datetime->use_xfcalendar = FALSE;
 	    value = xmlGetProp(node, (const xmlChar *)"WeekStartsMonday");
 	    if (g_ascii_strcasecmp("true", value) == 0)
 		datetime->week_start_monday = TRUE;
@@ -520,6 +535,10 @@ datetime_write_config(Control *control, xmlNodePtr parent)
     g_free(format);
 
     node = xmlNewTextChild(parent, NULL, (const xmlChar *)"Calendar", NULL);
+    if (datetime->use_xfcalendar)
+	xmlSetProp(node, "UseXFCalendar", "true");
+    else
+	xmlSetProp(node, "UseXFCalendar", "false");
     if (datetime->week_start_monday)
 	xmlSetProp(node, "WeekStartsMonday", "true");
     else
@@ -611,9 +630,22 @@ time_entry_activate_cb (GtkWidget *widget, DatetimePlugin *datetime)
 }
 
 static void
-week_day_button_toggle_cb (GtkWidget *widget, gpointer data)
+xfcalendar_button_toggle_cb (GtkWidget *widget, DatetimePlugin *datetime)
 {
-    DatetimePlugin *datetime = (DatetimePlugin*)data;
+    if (datetime == NULL)
+	return;
+
+    datetime->use_xfcalendar = 
+	gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(widget));
+    gtk_widget_set_sensitive(datetime->week_start_button,
+			     !datetime->use_xfcalendar);
+}
+
+static void
+week_day_button_toggle_cb (GtkWidget *widget, DatetimePlugin *datetime)
+{
+    if (datetime == NULL)
+	return;
 
     datetime->week_start_monday = 
 	gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(widget));
@@ -737,16 +769,29 @@ datetime_create_options(Control *control,
 		      G_CALLBACK (date_entry_activate_cb), datetime);
     datetime->date_format_entry = entry;
 
-    /* first day of week */
+    /* Calendar options */
     frame = xfce_framebox_new(_("Calendar"), TRUE);
     gtk_box_pack_start(GTK_BOX(main_vbox), frame, TRUE, TRUE, 0);
 
+    vbox = gtk_vbox_new(FALSE, 0);
+    xfce_framebox_add(XFCE_FRAMEBOX(frame), vbox);
+
+    button = gtk_check_button_new_with_label(_("use XFCalendar for popup calendar"));
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button),
+				 datetime->use_xfcalendar);
+    gtk_box_pack_start(GTK_BOX(vbox), button, FALSE, FALSE, 0);
+    g_signal_connect(G_OBJECT(button), "toggled",
+	    	     G_CALLBACK(xfcalendar_button_toggle_cb), datetime);
+
     button = gtk_check_button_new_with_label(_("Week day starts Monday"));
-    xfce_framebox_add(XFCE_FRAMEBOX(frame), button);
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button),
 				 datetime->week_start_monday);
+    if (datetime->use_xfcalendar)
+	gtk_widget_set_sensitive(button, FALSE);
+    gtk_box_pack_start(GTK_BOX(vbox), button, FALSE, FALSE, 0);
     g_signal_connect(G_OBJECT(button), "toggled",
 	    	     G_CALLBACK(week_day_button_toggle_cb), datetime);
+    datetime->week_start_button = button;
 
     g_signal_connect(G_OBJECT(done), "clicked",
 		     G_CALLBACK(apply_options_done_cb), datetime);
