@@ -8,6 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datatime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-01-18 00:46+0900\n"
 "PO-Revision-Date: 2004-05-30 19:01+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
@@ -16,8 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: datetime/datetime.c:93
-#: datetime/datetime.c:107
+#: datetime/datetime.c:93 datetime/datetime.c:107
 msgid "Error"
 msgstr "Error"
 
@@ -35,8 +35,7 @@ msgstr "%d/%m/%D"
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: datetime/datetime.c:584
-#: datetime/datetime.c:613
+#: datetime/datetime.c:584 datetime/datetime.c:613
 msgid "Select font"
 msgstr "Seleccioneu el tipus de lletra"
 
@@ -45,13 +44,11 @@ msgstr "Seleccioneu el tipus de lletra"
 msgid "Time"
 msgstr "Hora"
 
-#: datetime/datetime.c:724
-#: datetime/datetime.c:760
+#: datetime/datetime.c:724 datetime/datetime.c:760
 msgid "Font:"
 msgstr "Tipus de lletra:"
 
-#: datetime/datetime.c:738
-#: datetime/datetime.c:774
+#: datetime/datetime.c:738 datetime/datetime.c:774
 msgid "Format:"
 msgstr "Format:"
 
@@ -76,4 +73,3 @@ msgstr "La setmana comença en diumenge"
 #: datetime/datetime.c:882
 msgid "Date and Time"
 msgstr "Data i hora"
-
