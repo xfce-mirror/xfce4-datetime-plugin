@@ -7,3 +7,4 @@ libtool
 stamp-h1
 configure.scan
 autoscan.log
+*.tar.gz
