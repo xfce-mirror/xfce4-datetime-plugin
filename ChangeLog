@@ -1,3 +1,6 @@
+2004-01-18  Choe Hwanjin <krisna@kldp.org>
+    * release 0.3.0
+
 2004-01-04  Choe Hwanjin <krisna@kldp.org>
     * datetime/datetime.c: automatically change layout when the panel size is
       small
