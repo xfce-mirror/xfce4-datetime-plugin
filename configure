@@ -19153,7 +19153,7 @@ cat >>confdefs.h <<\_ACEOF
 _ACEOF
 
 
-  ALL_LINGUAS="ca ko"
+  ALL_LINGUAS="ca fr ko"
 
 
 
