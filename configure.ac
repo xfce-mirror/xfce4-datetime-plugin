@@ -7,13 +7,14 @@ AM_INIT_AUTOMAKE([xfce4-datetime-plugin], [0.3.0])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADER([config.h])
 
+AM_MAINTAINER_MODE
+
 AC_DISABLE_STATIC
 
 # Checks for programs.
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_LIBTOOL
-AC_PROG_RANLIB
 
 # Checks for libraries.
 
