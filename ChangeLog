@@ -1,3 +1,7 @@
+2004-01-04  Choe Hwanjin <krisna@kldp.org>
+    * datetime/datetime.c: automatically change layout when the panel size is
+      small
+
 2004-01-01  Choe Hwanjin <krisna@kldp.org>
     * datetime/datetime.c: append entry to select date. format change is
       applied on closing option window

@@ -32,6 +32,11 @@
 #include <panel/icons.h>
 #include <panel/plugins.h>
 
+enum {
+    LAYOUT_HORIZONTAL,
+    LAYOUT_VERTICAL
+};
+
 typedef struct {
     GtkWidget *eventbox;
     GtkWidget *date_label;
@@ -42,6 +47,7 @@ typedef struct {
     gchar *time_format;
     guint timeout_id;
     gint orientation;
+    gint layout;
     gboolean use_xfcalendar;
     gboolean week_start_monday;
 
@@ -292,19 +298,20 @@ on_button_press_event_cb(GtkWidget *widget,
     return TRUE;
 }
 
-static gboolean
-on_key_press_event_cb(GtkWidget *widget, GdkEventKey *event, gpointer data)
+static void
+datetime_update_date_font(DatetimePlugin *datetime)
 {
-    if (event->keyval == GDK_Escape) {
-    	DatetimePlugin *datetime = (DatetimePlugin*)data;
+    PangoFontDescription *font;
+    font = pango_font_description_from_string(datetime->date_font);
+    gtk_widget_modify_font(datetime->date_label, font);
+}
 
-	if (datetime != NULL && datetime->cal) {
-	    gtk_widget_destroy (GTK_WIDGET(datetime->cal));
-	    datetime->cal = NULL;
-	}
-	return TRUE;
-    }   
-    return FALSE;
+static void
+datetime_update_time_font(DatetimePlugin *datetime)
+{
+    PangoFontDescription *font;
+    font = pango_font_description_from_string(datetime->time_font);
+    gtk_widget_modify_font(datetime->time_label, font);
 }
 
 static void
@@ -312,20 +319,16 @@ datetime_apply_font(DatetimePlugin *datetime,
 		    const gchar *date_font_name,
 		    const gchar *time_font_name)
 {
-    PangoFontDescription *font;
-
     if (date_font_name != NULL) {
 	g_free(datetime->date_font);
 	datetime->date_font = g_strdup(date_font_name);
-	font = pango_font_description_from_string(datetime->date_font);
-	gtk_widget_modify_font(datetime->date_label, font);
+	datetime_update_date_font(datetime);
     }
 
     if (time_font_name != NULL) {
 	g_free(datetime->time_font);
 	datetime->time_font = g_strdup(time_font_name);
-	font = pango_font_description_from_string(datetime->time_font);
-	gtk_widget_modify_font(datetime->time_label, font);
+	datetime_update_time_font(datetime);
     }
 }
 
@@ -363,15 +366,48 @@ datetime_apply_format(DatetimePlugin *datetime,
 	datetime->timeout_id = g_timeout_add(10000, datetime_update, datetime);
 }
 
+static void
+create_main_widget (DatetimePlugin *datetime)
+{
+    GtkWidget *box;
+    GtkWidget *align;
+
+    datetime->eventbox = gtk_event_box_new();
+    g_signal_connect(G_OBJECT(datetime->eventbox), "button-press-event",
+	    	     G_CALLBACK(on_button_press_event_cb), datetime);
+
+    align = gtk_alignment_new(0.5, 0.5, 0, 0);
+    gtk_container_add(GTK_CONTAINER(datetime->eventbox), align);
+
+    if (datetime->layout == LAYOUT_VERTICAL)
+	box = gtk_vbox_new(FALSE, 0);
+    else
+	box = gtk_hbox_new(FALSE, 0);
+    gtk_container_set_border_width(GTK_CONTAINER(box), border_width);
+    gtk_container_add(GTK_CONTAINER(align), box);
+
+    datetime->time_label = gtk_label_new("");
+    gtk_label_set_justify(GTK_LABEL(datetime->time_label), GTK_JUSTIFY_CENTER);
+    datetime->date_label = gtk_label_new("");
+    gtk_label_set_justify(GTK_LABEL(datetime->date_label), GTK_JUSTIFY_CENTER);
+
+    if (datetime->layout == LAYOUT_VERTICAL) {
+	gtk_box_pack_start(GTK_BOX(box), datetime->time_label, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(box), datetime->date_label, FALSE, FALSE, 0);
+    } else {
+	gtk_box_pack_start(GTK_BOX(box), datetime->date_label, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(box), datetime->time_label, FALSE, FALSE, 5);
+    }
+}
+
 static DatetimePlugin *
 datetime_new (void)
 {
-    GtkWidget *vbox;
-    GtkWidget *align;
     DatetimePlugin *datetime;
 
     datetime = g_new (DatetimePlugin, 1);
     datetime->orientation = GTK_ORIENTATION_HORIZONTAL;
+    datetime->layout = LAYOUT_VERTICAL;
     datetime->date_font = NULL;
     datetime->date_format = NULL;
     datetime->time_font = NULL;
@@ -379,29 +415,7 @@ datetime_new (void)
     datetime->use_xfcalendar = FALSE;
     datetime->week_start_monday = FALSE;
 
-    datetime->eventbox = gtk_event_box_new();
-    gtk_widget_add_events(datetime->eventbox, GDK_KEY_PRESS_MASK);
-    g_signal_connect(G_OBJECT(datetime->eventbox), "button-press-event",
-	    	     G_CALLBACK(on_button_press_event_cb), datetime);
-    g_signal_connect(G_OBJECT(datetime->eventbox), "key-press-event",
-	    	     G_CALLBACK(on_key_press_event_cb), datetime);
-
-    align = gtk_alignment_new(0.5, 0.5, 0, 0);
-    gtk_container_add(GTK_CONTAINER(datetime->eventbox), align);
-
-    vbox = gtk_vbox_new(FALSE, 0);
-    gtk_container_set_border_width(GTK_CONTAINER(vbox), border_width);
-    gtk_container_add(GTK_CONTAINER(align), vbox);
-
-    /* time */
-    datetime->time_label = gtk_label_new("");
-    gtk_label_set_justify(GTK_LABEL(datetime->time_label), GTK_JUSTIFY_CENTER);
-    gtk_box_pack_start(GTK_BOX(vbox), datetime->time_label, FALSE, FALSE, 0);
-
-    /* date */
-    datetime->date_label = gtk_label_new("");
-    gtk_label_set_justify(GTK_LABEL(datetime->date_label), GTK_JUSTIFY_CENTER);
-    gtk_box_pack_start(GTK_BOX(vbox), datetime->date_label, FALSE, FALSE, 0);
+    create_main_widget(datetime);
 
     /* calendar */
     datetime->cal = NULL;
@@ -779,7 +793,8 @@ datetime_create_options(Control *control,
     button = gtk_check_button_new_with_label(_("use XFCalendar for popup calendar"));
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button),
 				 datetime->use_xfcalendar);
-    gtk_box_pack_start(GTK_BOX(vbox), button, FALSE, FALSE, 0);
+    /* On current version, we do not use xfcalendar option
+    gtk_box_pack_start(GTK_BOX(vbox), button, FALSE, FALSE, 0); */
     g_signal_connect(G_OBJECT(button), "toggled",
 	    	     G_CALLBACK(xfcalendar_button_toggle_cb), datetime);
 
@@ -801,9 +816,35 @@ datetime_create_options(Control *control,
 static void
 datetime_set_size(Control *control, int size)
 {
-    g_return_if_fail (control != NULL);
+    int threshold;
+    int new_layout;
+    DatetimePlugin *datetime;
 
-    gtk_widget_set_size_request (control->base, -1, -1);
+    g_return_if_fail (control != NULL && control->data != NULL);
+
+    datetime = control->data;
+
+    if (size < MEDIUM)
+	new_layout = LAYOUT_HORIZONTAL;
+    else
+	new_layout = LAYOUT_VERTICAL;
+
+    if (new_layout != datetime->layout) {
+	gtk_widget_destroy(GTK_WIDGET(datetime->eventbox));
+	datetime->layout = new_layout;
+	create_main_widget(datetime);
+	datetime_update_date_font(datetime);
+	datetime_update_time_font(datetime);
+	datetime_update(datetime);
+	gtk_widget_show_all(datetime->eventbox);
+	gtk_container_add (GTK_CONTAINER (control->base), datetime->eventbox);
+    }
+
+    threshold = icon_size[size];
+    if (datetime->orientation == GTK_ORIENTATION_VERTICAL)
+	gtk_widget_set_size_request (control->base, threshold, -1);
+    else
+	gtk_widget_set_size_request (control->base, -1, threshold);
 }
 
 static void
