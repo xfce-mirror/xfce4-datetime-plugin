@@ -109,9 +109,11 @@ pop_calendar_window(GtkWidget *parent, int orientation)
     width = requisition.width;
     height = requisition.height;
 
+    /*
     g_print("parent: %dx%d +%d+%d\n", parent_w, parent_h, parent_x, parent_y);
     g_print("root: %dx%d\n", root_w, root_h);
     g_print("calendar: %dx%d\n", width, height);
+    */
 
     if (orientation == GTK_ORIENTATION_VERTICAL) {
         if (parent_x < root_w / 2) {
@@ -204,6 +206,29 @@ on_key_press_event_cb(GtkWidget *widget, GdkEventKey *event, gpointer data)
     return FALSE;
 }
 
+static void
+datetime_apply_format(DatetimePlugin *datetime, const char *format)
+{
+    if (datetime == NULL)
+	return;
+
+    if (format != NULL) {
+	g_free(datetime->format);
+	datetime->format = g_strcompress(format);
+    }
+
+    if (datetime->timeout_id)
+	g_source_remove(datetime->timeout_id);
+
+    if (strstr(datetime->format, "%S") != NULL ||
+	strstr(datetime->format, "%s") != NULL ||
+	strstr(datetime->format, "%r") != NULL ||
+	strstr(datetime->format, "%T") != NULL)
+	datetime->timeout_id = g_timeout_add(1000, datetime_update, datetime);
+    else
+	datetime->timeout_id = g_timeout_add(10000, datetime_update, datetime);
+}
+
 static DatetimePlugin *
 datetime_new (void)
 {
@@ -225,7 +250,7 @@ datetime_new (void)
     gtk_widget_show_all(datetime->eventbox);
 
     datetime->cal = NULL;
-    datetime->timeout_id = g_timeout_add(15000, datetime_update, datetime);
+    datetime_apply_format(datetime, NULL);
     datetime->orientation = GTK_ORIENTATION_HORIZONTAL;
 
     return datetime;
@@ -280,8 +305,7 @@ datetime_read_config(Control *control, xmlNodePtr node)
 	} else if (xmlStrEqual(node->name, (const xmlChar *)"Format")) {
 	    value = xmlNodeListGetString(xmlconfig, node->children, 1);
 	    if (value != NULL) {
-		g_free(datetime->format);
-		datetime->format = g_strcompress(value);
+		datetime_apply_format(datetime, value);
 		xmlFree(value);
 	    }
 	}
@@ -337,11 +361,9 @@ datetime_apply_options_cb(GtkWidget *widget, gpointer data)
 	gtk_widget_modify_font(datetime->label, font);
     }
 
-    format = (gchar *)gtk_entry_get_text(GTK_ENTRY(datetime->format_entry));
-    if (format != NULL) {
-	g_free(datetime->format);
-	datetime->format = g_strcompress(format);
-    }
+    format = gtk_entry_get_text(GTK_ENTRY(datetime->format_entry));
+    if (format != NULL)
+	datetime_apply_format(datetime, format);
     datetime_update(datetime);
 }
 
