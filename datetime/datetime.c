@@ -82,7 +82,7 @@ datetime_update(gpointer data)
 		g_free(utf8str);
 	    }
 	} else 
-	    gtk_label_set_text(GTK_LABEL(datetime->date_label), "Error");
+	    gtk_label_set_text(GTK_LABEL(datetime->date_label), _("Error"));
     }
 
     if (GTK_IS_LABEL(datetime->time_label)) {
@@ -95,7 +95,7 @@ datetime_update(gpointer data)
 		g_free(utf8str);
 	    }
 	} else 
-	    gtk_label_set_text(GTK_LABEL(datetime->time_label), "Error");
+	    gtk_label_set_text(GTK_LABEL(datetime->time_label), _("Error"));
     }
 
     return TRUE;
@@ -298,6 +298,8 @@ datetime_new (void)
     datetime->time_label = gtk_label_new("");
     gtk_label_set_justify(GTK_LABEL(datetime->time_label), GTK_JUSTIFY_CENTER);
     datetime->time_font = g_strdup("Bitstream Vera Sans 11");
+    /* This is default time format, (See strftime(3))
+       translaters may change this to familiar format for their language */
     datetime->time_format = g_strdup(_("%H:%M"));
     gtk_box_pack_start(GTK_BOX(vbox), datetime->time_label, FALSE, FALSE, 0);
 
@@ -305,6 +307,8 @@ datetime_new (void)
     datetime->date_label = gtk_label_new("");
     gtk_label_set_justify(GTK_LABEL(datetime->date_label), GTK_JUSTIFY_CENTER);
     datetime->date_font = g_strdup("Bitstream Vera Sans 11");
+    /* This is default date format, (See strftime(3))
+       translaters may change this to familiar format for their language */
     datetime->date_format = g_strdup(_("%Y-%m-%d"));
     gtk_box_pack_start(GTK_BOX(vbox), datetime->date_label, FALSE, FALSE, 0);
 
@@ -706,8 +710,10 @@ create_datetime_control (Control * control)
 G_MODULE_EXPORT void
 xfce_control_class_init (ControlClass * cc)
 {
+    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+
     cc->name = "datetime";
-    cc->caption = "Date and Time";
+    cc->caption = _("Date and Time");
 
     cc->create_control = (CreateControlFunc) create_datetime_control;
 
@@ -725,5 +731,3 @@ xfce_control_class_init (ControlClass * cc)
 
 /* macro defined in plugins.h */
 XFCE_PLUGIN_CHECK_INIT
-
-// vim: set ts=8 sw=4 :

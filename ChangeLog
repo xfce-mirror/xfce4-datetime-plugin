@@ -1,6 +1,9 @@
 2003-12-29  Choe Hwanjin <krisna@kldp.org>
+    * internationalization
+
+2003-12-29  Choe Hwanjin <krisna@kldp.org>
     * datetime/datetime.c: split main label into two, date label and time label
-      add Week starts monday option for calendar
+      add Week starts monday option for calendar (#1181)
       Thanks to Jeroen Peters (xfce-goodies@jpeters.coldmail.nl)
 
 2003-12-13  Choe Hwanjin <krisna@kldp.org>
