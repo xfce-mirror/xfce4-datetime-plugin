@@ -1,0 +1,5 @@
+2003-10-13  Choe Hwanjin <krisna@kldp.org>
+    * src/datetime.c: Calendar window is toggled by clicking datetime widget
+
+2003-10-05  Choe Hwanjin <krisna@kldp.org>
+    * src/datetime.c: i18n update (#981)
