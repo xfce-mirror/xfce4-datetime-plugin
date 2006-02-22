@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-01-04 19:10+0900\n"
 "PO-Revision-Date: 2006-02-11 17:30+0100\n"
 "Last-Translator: SZERVÑC Attila <sas@321.hu>\n"
 "Language-Team: hu\n"
@@ -11,8 +12,7 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
-#: datetime/datetime.c:93
-#: datetime/datetime.c:107
+#: datetime/datetime.c:93 datetime/datetime.c:107
 msgid "Error"
 msgstr "HIba"
 
@@ -30,8 +30,7 @@ msgstr "%Y-%m-%d"
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: datetime/datetime.c:633
-#: datetime/datetime.c:662
+#: datetime/datetime.c:633 datetime/datetime.c:662
 msgid "Select font"
 msgstr "Betű"
 
@@ -40,13 +39,11 @@ msgstr "Betű"
 msgid "Time"
 msgstr "Idő"
 
-#: datetime/datetime.c:773
-#: datetime/datetime.c:809
+#: datetime/datetime.c:773 datetime/datetime.c:809
 msgid "Font:"
 msgstr "Betű:"
 
-#: datetime/datetime.c:787
-#: datetime/datetime.c:823
+#: datetime/datetime.c:787 datetime/datetime.c:823
 msgid "Format:"
 msgstr "Formátum:"
 
@@ -71,4 +68,3 @@ msgstr "Az 1. nap hétfő"
 #: datetime/datetime.c:931
 msgid "Date and Time"
 msgstr "Dátum és Idő"
-
