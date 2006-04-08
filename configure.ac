@@ -34,7 +34,7 @@ AC_CHECK_FUNCS([strstr])
 XFCE_PANEL_PLUGIN([XFCE4_PANEL], [4.0.0])
 
 # Check for i18n support
-BM_I18N([xfce4-datetime], [ca eu fr hu ja ko lt pt_BR vi])
+BM_I18N([xfce4-datetime], [ca eu fr hu ja ko lt pl pt_BR vi])
 
 # Check for debugging support
 BM_DEBUG_SUPPORT
