@@ -1,33 +1,35 @@
-# Leandro Regueiro <leandro.regueiro@gmail.com>, 2006
-#
-# Proxecto Trasno http://trasno.net
+# Czech translations for xfce4-panel-datetime-plugin package.
+# Copyright (C) 2006 THE xfce4-panel-datetime-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-panel-datetime-plugin package.
+# Michal Várady  <miko.vaji@gmail.com>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.01\n"
+"Project-Id-Version: xfce4-panel-datetime-plugin 0.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-01-04 19:10+0900\n"
-"PO-Revision-Date: 2006-08-21 16:43+0100\n"
-"Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
-"Language-Team: Galician <trasno@trasno.net>\n"
+"PO-Revision-Date: 2006-08-26 22:04+0100\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
+"Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: datetime/datetime.c:93
 #: datetime/datetime.c:107
 msgid "Error"
-msgstr "Erro"
+msgstr "Chyba"
 
 #: datetime/datetime.c:256
 msgid "Date:"
-msgstr "Data:"
+msgstr "Datum:"
 
 #. This is default date/time format, (See strftime(3))
 #. translaters may change this to familiar format for their language
 #: datetime/datetime.c:485
 msgid "%Y-%m-%d"
-msgstr "%d-%m-%Y"
+msgstr "%d. %m %Y"
 
 #: datetime/datetime.c:485
 msgid "%H:%M"
@@ -36,42 +38,42 @@ msgstr "%H:%M"
 #: datetime/datetime.c:633
 #: datetime/datetime.c:662
 msgid "Select font"
-msgstr "Seleccione fonte"
+msgstr "Vyberte font"
 
 #. time
 #: datetime/datetime.c:764
 msgid "Time"
-msgstr "Hora"
+msgstr "Čas"
 
 #: datetime/datetime.c:773
 #: datetime/datetime.c:809
 msgid "Font:"
-msgstr "Fonte:"
+msgstr "Písmo:"
 
 #: datetime/datetime.c:787
 #: datetime/datetime.c:823
 msgid "Format:"
-msgstr "Formato:"
+msgstr "Formát:"
 
 #. date
 #: datetime/datetime.c:800
 msgid "Date"
-msgstr "Data"
+msgstr "Datum"
 
 #. Calendar options
 #: datetime/datetime.c:836
 msgid "Calendar"
-msgstr "Calendario"
+msgstr "Kalendář"
 
 #: datetime/datetime.c:842
 msgid "use XFCalendar for popup calendar"
-msgstr "Usar XFCalendar para o calendario emerxente"
+msgstr "pro vyskakovací kalendář použijte XFCalendar"
 
 #: datetime/datetime.c:850
 msgid "Week day starts Monday"
-msgstr "A semana comeza o Luns"
+msgstr "Týden začíná v pondělí"
 
 #: datetime/datetime.c:931
 msgid "Date and Time"
-msgstr "Data e Hora"
+msgstr "Datum a čas"
 
