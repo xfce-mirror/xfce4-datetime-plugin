@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-panel-datetime-plugin 0.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 19:10+0900\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2003-12-29 19:52+0900\n"
 "Last-Translator: Choe Hwanjin <krisna@kldp.org>\n"
 "Language-Team: Choe Hwanjin <krisna@kldp.org>\n"
@@ -16,59 +16,59 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: datetime/datetime.c:93 datetime/datetime.c:107
+#: ../datetime/datetime.c:93 ../datetime/datetime.c:107
 msgid "Error"
 msgstr "오류"
 
-#: datetime/datetime.c:256
+#: ../datetime/datetime.c:256
 msgid "Date:"
 msgstr "날짜:"
 
 #. This is default date/time format, (See strftime(3))
 #. translaters may change this to familiar format for their language
-#: datetime/datetime.c:485
+#: ../datetime/datetime.c:485
 msgid "%Y-%m-%d"
 msgstr ""
 
-#: datetime/datetime.c:485
+#: ../datetime/datetime.c:485
 msgid "%H:%M"
 msgstr ""
 
-#: datetime/datetime.c:633 datetime/datetime.c:662
+#: ../datetime/datetime.c:633 ../datetime/datetime.c:662
 msgid "Select font"
 msgstr "글꼴을 선택하십시오"
 
 #. time
-#: datetime/datetime.c:764
+#: ../datetime/datetime.c:764
 msgid "Time"
 msgstr "시간"
 
-#: datetime/datetime.c:773 datetime/datetime.c:809
+#: ../datetime/datetime.c:773 ../datetime/datetime.c:809
 msgid "Font:"
 msgstr "글꼴:"
 
-#: datetime/datetime.c:787 datetime/datetime.c:823
+#: ../datetime/datetime.c:787 ../datetime/datetime.c:823
 msgid "Format:"
 msgstr "형식:"
 
 #. date
-#: datetime/datetime.c:800
+#: ../datetime/datetime.c:800
 msgid "Date"
 msgstr "날짜"
 
 #. Calendar options
-#: datetime/datetime.c:836
+#: ../datetime/datetime.c:836
 msgid "Calendar"
 msgstr "달력"
 
-#: datetime/datetime.c:842
+#: ../datetime/datetime.c:842
 msgid "use XFCalendar for popup calendar"
 msgstr ""
 
-#: datetime/datetime.c:850
+#: ../datetime/datetime.c:850
 msgid "Week day starts Monday"
 msgstr "월요일을 일주일의 시작으로 합니다"
 
-#: datetime/datetime.c:931
+#: ../datetime/datetime.c:931
 msgid "Date and Time"
 msgstr "날짜와 시간"
