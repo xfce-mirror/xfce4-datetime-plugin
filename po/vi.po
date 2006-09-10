@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 19:10+0900\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2006-02-19 22:51+0300\n"
 "Last-Translator: Phan Vĩnh Thịnh <teppi@vnlinux.org>\n"
 "Language-Team: Vietnamese <none@li.org>\n"
@@ -15,59 +15,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 
-#: datetime/datetime.c:93 datetime/datetime.c:107
+#: ../datetime/datetime.c:93 ../datetime/datetime.c:107
 msgid "Error"
 msgstr "Lỗi"
 
-#: datetime/datetime.c:256
+#: ../datetime/datetime.c:256
 msgid "Date:"
 msgstr "Ngày:"
 
 #. This is default date/time format, (See strftime(3))
 #. translaters may change this to familiar format for their language
-#: datetime/datetime.c:485
+#: ../datetime/datetime.c:485
 msgid "%Y-%m-%d"
 msgstr "%Y-%m-%d"
 
-#: datetime/datetime.c:485
+#: ../datetime/datetime.c:485
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: datetime/datetime.c:633 datetime/datetime.c:662
+#: ../datetime/datetime.c:633 ../datetime/datetime.c:662
 msgid "Select font"
 msgstr "Chọn phông"
 
 #. time
-#: datetime/datetime.c:764
+#: ../datetime/datetime.c:764
 msgid "Time"
 msgstr "Thời gian"
 
-#: datetime/datetime.c:773 datetime/datetime.c:809
+#: ../datetime/datetime.c:773 ../datetime/datetime.c:809
 msgid "Font:"
 msgstr "Phông:"
 
-#: datetime/datetime.c:787 datetime/datetime.c:823
+#: ../datetime/datetime.c:787 ../datetime/datetime.c:823
 msgid "Format:"
 msgstr "Dạng:"
 
 #. date
-#: datetime/datetime.c:800
+#: ../datetime/datetime.c:800
 msgid "Date"
 msgstr "Ngày"
 
 #. Calendar options
-#: datetime/datetime.c:836
+#: ../datetime/datetime.c:836
 msgid "Calendar"
 msgstr "Lịch"
 
-#: datetime/datetime.c:842
+#: ../datetime/datetime.c:842
 msgid "use XFCalendar for popup calendar"
 msgstr "dùng XFCalendar làm lịch tự mở ra"
 
-#: datetime/datetime.c:850
+#: ../datetime/datetime.c:850
 msgid "Week day starts Monday"
 msgstr "Thứ hai là ngày đầu tuần"
 
-#: datetime/datetime.c:931
+#: ../datetime/datetime.c:931
 msgid "Date and Time"
 msgstr "Ngày và giờ"
