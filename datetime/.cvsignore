@@ -1,6 +1,0 @@
-Makefile
-.libs
-.deps
-*.la
-*.lo
-tags
