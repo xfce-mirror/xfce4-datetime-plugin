@@ -1,0 +1,47 @@
+2006-10-06  Remco den Breeje <remco@sx.mine.nu>
+    * release 0.4.0
+    compatible with xfce 4.4
+
+2004-09-11  Choe Hwanjin <krisna@kldp.org>
+    * release 0.3.1
+
+2004-09-09  Choe Hwanjin <krisna@kldp.org>
+    * Add French translation.
+    Thanks to Stephane Roy <sroy@j2n.net>
+
+2004-05-31  Choe Hwanjin <krisna@kldp.org>
+    * Add Catalan translation.
+    Thanks to Carles Muñoz Gorriz <carlesmu@internautas.org>
+
+2004-01-18  Choe Hwanjin <krisna@kldp.org>
+    * release 0.3.0
+
+2004-01-04  Choe Hwanjin <krisna@kldp.org>
+    * datetime/datetime.c: automatically change layout when the panel size is
+      small
+
+2004-01-01  Choe Hwanjin <krisna@kldp.org>
+    * datetime/datetime.c: append entry to select date. format change is
+      applied on closing option window
+
+2003-12-29  Choe Hwanjin <krisna@kldp.org>
+    * internationalization
+
+2003-12-29  Choe Hwanjin <krisna@kldp.org>
+    * datetime/datetime.c: split main label into two, date label and time label
+      add Week starts monday option for calendar (#1181)
+      Thanks to Jeroen Peters (xfce-goodies@jpeters.coldmail.nl)
+
+2003-12-13  Choe Hwanjin <krisna@kldp.org>
+    * add autogen.sh
+    * update libtool to 1.5.0a
+
+2003-11-02  Choe Hwanjin <krisna@kldp.org>
+    * datetime/datetime.c:
+      change timeout interval with format string(aware of second field)
+
+2003-10-13  Choe Hwanjin <krisna@kldp.org>
+    * src/datetime.c: Calendar window is toggled by clicking datetime widget
+
+2003-10-05  Choe Hwanjin <krisna@kldp.org>
+    * src/datetime.c: i18n update (#981)

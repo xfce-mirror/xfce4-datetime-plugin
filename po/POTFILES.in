@@ -1,0 +1,3 @@
+panel-plugin/datetime.c
+panel-plugin/datetime-dialog.c
+panel-plugin/datetime.desktop.in.in

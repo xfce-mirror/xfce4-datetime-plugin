@@ -1,0 +1,6 @@
+* changed to new xfce plugin interface
+* changed 'static' plugin with to a dynamic verion
+  (i.e. plugin with automaticly increases when a user wants to display dayname)
+* changed alignment of labels in eventbox
+* changed codestyle to 'general' xfce style. 
+  (i.e. bracket on newline after if statement)
