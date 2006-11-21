@@ -1,0 +1,87 @@
+# Dutch translation for the datetime plugin.
+# Copyright (C) 2006 Remco den Breeje
+# This file is distributed under the same license as the datetime package.
+# Remco den Breeje <remco@sx.mine.nu>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: datetime 0.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-06 11:16+0200\n"
+"PO-Revision-Date: 2006-10-06 11:16+0200\n"
+"Last-Translator: Remco den Breeje <remco@sx.mine.nu>\n"
+"Language-Team: Dutch <foo@bar>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/datetime.c:73 ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "Fout"
+
+#: ../panel-plugin/datetime.c:258
+msgid "Date:"
+msgstr "Datum"
+
+#: ../panel-plugin/datetime.c:427
+msgid "%Y-%m-%d"
+msgstr "%d-%m-%Y"
+
+#: ../panel-plugin/datetime.c:428
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../panel-plugin/datetime-dialog.c:58
+msgid "Select font"
+msgstr "Kies lettertype"
+
+#: ../panel-plugin/datetime-dialog.c:135
+msgid "Datetime properties"
+msgstr "Datetime eigenschappen"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:150
+msgid "Time"
+msgstr "Tijd"
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:164 ../panel-plugin/datetime-dialog.c:211
+msgid "Font:"
+msgstr "Lettertype"
+
+#. format label
+#: ../panel-plugin/datetime-dialog.c:180 ../panel-plugin/datetime-dialog.c:227
+msgid "Format:"
+msgstr "Opmaak"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:197
+msgid "Date"
+msgstr "Datum"
+
+#.
+#. * Calendar options frame
+#.
+#: ../panel-plugin/datetime-dialog.c:244
+msgid "Calendar"
+msgstr "Kalender"
+
+#: ../panel-plugin/datetime-dialog.c:262
+msgid ""
+"The information on which day the calendar week starts is derived from the "
+"locale."
+msgstr ""
+"De instelling op welke dag de week begint is afgeleid van de locale "
+"instelling."
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Datum en Tijd plugin met een simpele kalender"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "DateTime"
