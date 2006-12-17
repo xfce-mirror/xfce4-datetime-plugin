@@ -4,7 +4,7 @@
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
  *
  *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU Library General Public License as published 
+ *  it under the terms of the GNU Library General Public License as published
  *  by the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
  *
@@ -31,43 +31,50 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 
+#include "datetime.h"
 #include "datetime-dialog.h"
 
 /*
- * show and read fonts and inform datetime about it 
+ * show and read fonts and inform datetime about it
  */
 static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt)
 {
   GtkWidget *dialog;
-  gchar *fontname, *previewtext;
+  gchar *fontname;
+  const gchar *previewtext;
   gint target, result;
+  gchar *font_name;
 
   if(widget == dt->date_font_selector)
   {
     target = DATE;
     fontname = dt->date_font;
-    previewtext = (gchar *)gtk_label_get_text(GTK_LABEL(dt->date_label));
+    previewtext = gtk_label_get_text(GTK_LABEL(dt->date_label));
   }
-  else if(widget == dt->time_font_selector)
+  else /*time_font_selector */
   {
     target = TIME;
     fontname = dt->time_font;
-    previewtext = (gchar *)gtk_label_get_text(GTK_LABEL(dt->time_label));
+    previewtext = gtk_label_get_text(GTK_LABEL(dt->time_label));
   }
 
   dialog = gtk_font_selection_dialog_new(_("Select font"));
   gtk_font_selection_dialog_set_font_name(GTK_FONT_SELECTION_DIALOG(dialog),
 					  fontname);
-  gtk_font_selection_dialog_set_preview_text(GTK_FONT_SELECTION_DIALOG(dialog),
-					     previewtext);
-  
-  result = gtk_dialog_run(GTK_DIALOG(dialog));
-  if (result == GTK_RESPONSE_OK || result == GTK_RESPONSE_ACCEPT) 
+
+  if (G_LIKELY (previewtext != NULL))
   {
-    gchar *font_name;
-    font_name = gtk_font_selection_dialog_get_font_name(
-					    GTK_FONT_SELECTION_DIALOG(dialog));
-    if (font_name != NULL) 
+    gtk_font_selection_dialog_set_preview_text(GTK_FONT_SELECTION_DIALOG(dialog),
+					       previewtext);
+  }
+
+  result = gtk_dialog_run(GTK_DIALOG(dialog));
+  if (result == GTK_RESPONSE_OK || result == GTK_RESPONSE_ACCEPT)
+  {
+    font_name =
+      gtk_font_selection_dialog_get_font_name(GTK_FONT_SELECTION_DIALOG(dialog));
+
+    if (font_name != NULL)
     {
       gtk_button_set_label(GTK_BUTTON(widget), font_name);
 
@@ -75,13 +82,15 @@ static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt)
 	datetime_apply_font(dt, font_name, NULL);
       else
 	datetime_apply_font(dt, NULL, font_name);
+
+      g_free (font_name);
     }
   }
   gtk_widget_destroy(dialog);
 }
 
 /*
- * read values from date and time entry and inform datetime about it 
+ * read values from date and time entry and inform datetime about it
  */
 static gboolean datetime_entry_change_cb(GtkWidget *widget, GdkEventFocus *ev,
 								t_datetime *dt)
@@ -120,9 +129,9 @@ static void datetime_dialog_response(GtkWidget *dlg, int foo, t_datetime *dt)
 void datetime_properties_dialog(XfcePanelPlugin *plugin,
     t_datetime * datetime)
 {
-  GtkWidget *dlg, 
-	    *frame, 
-	    *vbox, 
+  GtkWidget *dlg,
+	    *frame,
+	    *vbox,
 	    *hbox,
 	    *label,
 	    *image,
@@ -147,7 +156,7 @@ void datetime_properties_dialog(XfcePanelPlugin *plugin,
 
   gtk_container_set_border_width(GTK_CONTAINER(dlg), 2);
 
-  /* 
+  /*
    * time frame
    */
   frame = xfce_create_framebox(_("Time"), &bin);
@@ -194,8 +203,8 @@ void datetime_properties_dialog(XfcePanelPlugin *plugin,
 
   gtk_widget_show_all(frame);
 
-  /* 
-   * Date frame 
+  /*
+   * Date frame
    */
   frame = xfce_create_framebox(_("Date"), &bin);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
@@ -241,7 +250,7 @@ void datetime_properties_dialog(XfcePanelPlugin *plugin,
 
   gtk_widget_show_all(frame);
 
-  /* 
+  /*
    * Calendar options frame
    */
   frame = xfce_create_framebox(_("Calendar"), &bin);

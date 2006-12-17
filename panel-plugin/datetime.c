@@ -4,7 +4,7 @@
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
  *
  *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU Library General Public License as published 
+ *  it under the terms of the GNU Library General Public License as published
  *  by the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
  *
@@ -55,38 +55,38 @@ gboolean datetime_update(gpointer data)
 
   g_get_current_time(&timeval);
   current = localtime((time_t *)&timeval.tv_sec);
-  if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label)) 
+  if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
   {
     len = strftime(buf, sizeof(buf) - 1, datetime->date_format, current);
-    if (len != 0) 
+    if (len != 0)
     {
       buf[len] = '\0';  /* make sure nul terminated string */
       utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL) 
+      if (utf8str != NULL)
       {
 	gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
 	g_free(utf8str);
       }
-    } 
-    else 
+    }
+    else
     {
       gtk_label_set_text(GTK_LABEL(datetime->date_label), _("Error"));
     }
   }
 
-  if (datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label)) 
+  if (datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label))
   {
     len = strftime(buf, sizeof(buf) - 1, datetime->time_format, current);
-    if (len != 0) 
+    if (len != 0)
     {
       buf[len] = '\0';  /* make sure nul terminated string */
       utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL) 
+      if (utf8str != NULL)
       {
 	gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
 	g_free(utf8str);
       }
-    } 
+    }
     else
     {
       gtk_label_set_text(GTK_LABEL(datetime->time_label), _("Error"));
@@ -148,7 +148,7 @@ static void on_calendar_realized(GtkWidget *widget, gpointer data)
   DBG("root: %dx%d", root_w, root_h);
   DBG("calendar: %dx%d", width, height);
 
-  if (orientation == GTK_ORIENTATION_VERTICAL) 
+  if (orientation == GTK_ORIENTATION_VERTICAL)
   {
     if (parent_x < root_w / 2) {
       if (parent_y < root_h / 2) {
@@ -171,33 +171,33 @@ static void on_calendar_realized(GtkWidget *widget, gpointer data)
 	y = parent_y + parent_h - height;
       }
     }
-  } 
-  else 
+  }
+  else
   {
-    if (parent_x < root_w / 2) 
+    if (parent_x < root_w / 2)
     {
-      if (parent_y < root_h / 2) 
+      if (parent_y < root_h / 2)
       {
 	/* upper left */
 	x = parent_x;
 	y = parent_y + parent_h;
-      } 
-      else 
+      }
+      else
       {
 	/* lower left */
 	x = parent_x;
 	y = parent_y - height;
       }
-    } 
-    else 
+    }
+    else
     {
-      if (parent_y < root_h / 2) 
+      if (parent_y < root_h / 2)
       {
 	/* upper right */
 	x = parent_x + parent_w - width;
 	y = parent_y + parent_h;
-      } 
-      else 
+      }
+      else
       {
 	/* lower right */
 	x = parent_x + parent_w - width;
@@ -279,44 +279,54 @@ static gboolean datetime_clicked(GtkWidget *widget,
     GdkEventButton *event,
     t_datetime *datetime)
 {
+  gint orientation;
+
   if (event->button != 1)
     return FALSE;
 
   if (datetime == NULL)
     return FALSE;
 
-  if (datetime->cal != NULL) 
+  if (datetime->cal != NULL)
   {
     gtk_widget_destroy(datetime->cal);
     datetime->cal = NULL;
-  } 
-  else 
+  }
+  else
   {
     /* get orientation before drawing the calendar */
-    int orientation = xfce_panel_plugin_get_orientation(datetime->plugin);
+    orientation = xfce_panel_plugin_get_orientation(datetime->plugin);
 
     /* draw calendar */
     datetime->cal = pop_calendar_window(datetime->eventbox,
-	orientation,
-	gtk_label_get_text(
-	  GTK_LABEL(datetime->date_label))
-	);
+	                                orientation,
+	                                gtk_label_get_text(GTK_LABEL(datetime->date_label)));
   }
   return TRUE;
-}         
+}
 
 static void datetime_update_date_font(t_datetime *datetime)
-{   
+{
   PangoFontDescription *font;
   font = pango_font_description_from_string(datetime->date_font);
-  gtk_widget_modify_font(datetime->date_label, font);
+
+  if (G_LIKELY (font))
+  {
+    gtk_widget_modify_font(datetime->date_label, font);
+    pango_font_description_free (font);
+  }
 }
 
 static void datetime_update_time_font(t_datetime *datetime)
 {
   PangoFontDescription *font;
   font = pango_font_description_from_string(datetime->time_font);
-  gtk_widget_modify_font(datetime->time_label, font);
+
+  if (G_LIKELY (font))
+  {
+    gtk_widget_modify_font(datetime->time_label, font);
+    pango_font_description_free (font);
+  }
 }
 
 /*
@@ -326,14 +336,14 @@ void datetime_apply_font(t_datetime *datetime,
     const gchar *date_font_name,
     const gchar *time_font_name)
 {
-  if (date_font_name != NULL) 
+  if (date_font_name != NULL)
   {
     g_free(datetime->date_font);
     datetime->date_font = g_strdup(date_font_name);
     datetime_update_date_font(datetime);
   }
 
-  if (time_font_name != NULL) 
+  if (time_font_name != NULL)
   {
     g_free(datetime->time_font);
     datetime->time_font = g_strdup(time_font_name);
@@ -345,13 +355,13 @@ void datetime_apply_font(t_datetime *datetime,
  * set the date and time format
  */
 void datetime_apply_format(t_datetime *datetime,
-    const char *date_format,
-    const char *time_format)
+    const gchar *date_format,
+    const gchar *time_format)
 {
   if (datetime == NULL)
     return;
 
-  if (date_format != NULL) 
+  if (date_format != NULL)
   {
     g_free(datetime->date_format);
     datetime->date_format = g_strdup(date_format);
@@ -361,7 +371,7 @@ void datetime_apply_format(t_datetime *datetime,
       gtk_widget_show(GTK_WIDGET(datetime->date_label));
   }
 
-  if (time_format != NULL) 
+  if (time_format != NULL)
   {
     g_free(datetime->time_format);
     datetime->time_format = g_strdup(time_format);
@@ -391,14 +401,14 @@ void datetime_apply_format(t_datetime *datetime,
   {
     datetime->timeout_id = g_timeout_add(10000, datetime_update, datetime);
   }
-} 
+}
 
 /*
  * Set a border - Function only called by the signal handler.
  * A border is only set, if there is enough space for it (size > 26)
  */
 static int datetime_set_size(XfcePanelPlugin *plugin,
-    int size,
+    gint size,
     t_datetime *datetime)
 {
   DBG("set_size called! with new size of %d", size);
@@ -417,16 +427,16 @@ static int datetime_set_size(XfcePanelPlugin *plugin,
  */
 static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 {
-  char *file;
+  gchar *file;
   XfceRc *rc;
-  gchar *date_font, *time_font, *date_format, *time_format;
+  const gchar *date_font, *time_font, *date_format, *time_format;
 
   /* load defaults */
   date_font = "Bitstream Vera Sans 8";
   time_font = "Bitstream Vera Sans 10";
   date_format = _("%Y-%m-%d");
   time_format = _("%H:%M");
-  
+
   /* open file */
   if((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
   {
@@ -435,13 +445,14 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 
     if(rc != NULL)
     {
-      date_font	  = (gchar *)xfce_rc_read_entry(rc, "date_font", date_font);
-      time_font	  = (gchar *)xfce_rc_read_entry(rc, "time_font", time_font);
-      date_format = (gchar *)xfce_rc_read_entry(rc, "date_format", date_format);
-      time_format = (gchar *)xfce_rc_read_entry(rc, "time_format", time_format);
+      date_font	  = xfce_rc_read_entry(rc, "date_font", date_font);
+      time_font	  = xfce_rc_read_entry(rc, "time_font", time_font);
+      date_format = xfce_rc_read_entry(rc, "date_format", date_format);
+      time_format = xfce_rc_read_entry(rc, "time_format", time_format);
+
       xfce_rc_close(rc);
     }
-  } 
+  }
 
   /* set values in dt struct */
   datetime_apply_font(dt, date_font, time_font);
@@ -458,7 +469,7 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 
   if(!(file = xfce_panel_plugin_save_location(plugin, TRUE)))
     return;
-  
+
   rc = xfce_rc_simple_open(file, FALSE);
   g_free(file);
 
@@ -475,9 +486,6 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
  */
 static void datetime_create_widget(t_datetime * datetime)
 {
-  GtkWidget *box;
-  GtkWidget *align;
-
   /* create event box */
   datetime->eventbox = gtk_event_box_new();
 
@@ -497,9 +505,9 @@ static void datetime_create_widget(t_datetime * datetime)
   gtk_label_set_justify(GTK_LABEL(datetime->date_label), GTK_JUSTIFY_CENTER);
 
   /* add time and date lines to the vbox */
-  gtk_box_pack_start(GTK_BOX(datetime->vbox), 
+  gtk_box_pack_start(GTK_BOX(datetime->vbox),
       datetime->time_label, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(datetime->vbox), 
+  gtk_box_pack_start(GTK_BOX(datetime->vbox),
       datetime->date_label, FALSE, FALSE, 0);
   gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
   gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
@@ -516,13 +524,10 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 {
   t_datetime * datetime;
 
-  DBG("");
-  DBG("");
-  DBG("******************************************");
   DBG("Starting datetime panel plugin");
 
-  /* allocate 1 (arg2) element(s) of type t_datetime (arg1) */
-  datetime = g_new(t_datetime, 1);
+  /* alloc mem */
+  datetime = panel_slice_new0 (t_datetime);
 
   /* set variables */
   datetime->plugin = plugin;
@@ -539,7 +544,7 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 
   /* load settings (default values if non-av) */
   datetime_read_rc_file(plugin, datetime);
-  
+
   /* set date and time labels */
   datetime_update(datetime);
 
@@ -552,12 +557,21 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 /*
  * frees the datetime struct
  */
-static void datetime_free(XfcePanelPlugin *plugin, gpointer data)
+static void datetime_free(XfcePanelPlugin *plugin, t_datetime *datetime)
 {
-  t_datetime *datetime;
-  g_return_if_fail(data != NULL);
-  datetime = (t_datetime *) data;
-  g_free(datetime);
+  /* stop timeout */
+  g_source_remove(datetime->timeout_id);
+
+  /* destroy widget */
+  gtk_widget_destroy(datetime->eventbox);
+
+  /* cleanup */
+  g_free(datetime->date_font);
+  g_free(datetime->time_font);
+  g_free(datetime->date_format);
+  g_free(datetime->time_format);
+
+  panel_slice_free(t_datetime, datetime);
 }
 
 /*
@@ -573,11 +587,11 @@ static void datetime_construct(XfcePanelPlugin *plugin)
   xfce_panel_plugin_add_action_widget(plugin, datetime->eventbox);
 
   /* connect plugin signals to functions */
-  g_signal_connect(plugin, "save", 
+  g_signal_connect(plugin, "save",
       G_CALLBACK(datetime_write_rc_file), datetime);
-  g_signal_connect(plugin, "free-data", 
+  g_signal_connect(plugin, "free-data",
       G_CALLBACK(datetime_free), datetime);
-  g_signal_connect(plugin, "size-changed", 
+  g_signal_connect(plugin, "size-changed",
       G_CALLBACK (datetime_set_size), datetime);
   g_signal_connect(plugin, "configure-plugin",
       G_CALLBACK (datetime_properties_dialog), datetime);

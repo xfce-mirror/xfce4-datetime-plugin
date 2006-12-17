@@ -4,4 +4,5 @@ Encoding=UTF-8
 _Name=DateTime
 _Comment=Date and Time plugin with a simple calendar
 Icon=xfce-schedule
-X-XFCE-Module=@INTERNAL_PLUGIN_PATH@/libdatetime.so
+X-XFCE-Module=datetime
+X-XFCE-Module-Path=@libdir@/xfce4/panel-plugins

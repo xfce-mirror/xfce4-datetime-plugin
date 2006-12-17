@@ -4,7 +4,7 @@
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
  *
  *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU Library General Public License as published 
+ *  it under the terms of the GNU Library General Public License as published
  *  by the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
  *
@@ -21,13 +21,8 @@
 #ifndef _DATETIME_DIALOG_H
 #define _DATETIME_DIALOG_H	1
 
-#include "datetime.h"
-
-static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt);
-static gboolean datetime_entry_change_cb(GtkWidget *widget, GdkEventFocus *ev,
-								t_datetime *dt);
-static void datetime_dialog_response(GtkWidget *dlg, int foo, t_datetime *dt);
-void datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime);
+void
+datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime);
 
 #endif /* datetime-dialog.h */
 

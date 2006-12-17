@@ -1,4 +1,4 @@
-SUBDIRS = panel-plugin \
+SUBDIRS = panel-plugin							\
 	  po
 
 AUTOMAKE_OPTIONS =							\

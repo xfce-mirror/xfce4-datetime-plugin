@@ -4,7 +4,7 @@
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
  *
  *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU Library General Public License as published 
+ *  it under the terms of the GNU Library General Public License as published
  *  by the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
  *
@@ -51,6 +51,23 @@ typedef struct {
   /* popup calendar */
   GtkWidget *cal;
 } t_datetime;
+
+gboolean
+datetime_update(gpointer data);
+
+void
+datetime_apply_font(t_datetime *datetime,
+    const gchar *date_font_name,
+    const gchar *time_font_name);
+
+void
+datetime_apply_format(t_datetime *datetime,
+    const gchar *date_format,
+    const gchar *time_format);
+
+void
+datetime_write_rc_file(XfcePanelPlugin *plugin,
+    t_datetime *dt);
 
 #endif /* datetime.h */
 
