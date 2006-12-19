@@ -1,3 +1,6 @@
+2006-12-19  Nick Schermer <nick@xfce.org>
+    * configure.in.in: Bump version to 0.4.1 for release
+
 2006-12-17  Nick Schermer <nick@xfce.org>
     * Move the file into trunk.
     * Fix compiler warnings.
