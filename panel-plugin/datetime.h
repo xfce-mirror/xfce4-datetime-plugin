@@ -68,6 +68,11 @@ typedef struct {
 gboolean
 datetime_update(gpointer data);
 
+gchar * 
+datetime_do_utf8strftime(
+    const char *format, 
+    const struct tm *tm);
+
 void
 datetime_apply_font(t_datetime *datetime,
     const gchar *date_font_name,

@@ -62,6 +62,9 @@ const char *date_format[] = {
   N_("Custom...")
 };
 
+/* example timestamp to show in the dialog */
+const time_t example_time_t = 946684799;
+
 /*
  * show and read fonts and inform datetime about it
  */
@@ -279,6 +282,8 @@ void
 datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 {
   gint i;
+  gchar *utf8str;
+  struct tm *exampletm;
   GtkWidget *dlg,
 	    *frame,
 	    *vbox,
@@ -381,11 +386,16 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /* format combobox */
   time_combobox = gtk_combo_box_new_text();
   gtk_box_pack_start(GTK_BOX(hbox), time_combobox, TRUE, TRUE, 0);
+  exampletm = gmtime(&example_time_t);
   for(i=0; i < TIME_FORMAT_COUNT; i++)
   {
-    gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), time_format[i]);
+    utf8str = datetime_do_utf8strftime(time_format[i], exampletm);
+    gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), utf8str);
+    g_free(utf8str);
 
-    /* set active - strcmp isn't fast, but it is done once opening the dialog */
+    /* set active 
+     * strcmp isn't fast, but it is done only once while opening the dialog 
+     */
     if(strcmp(datetime->time_format,time_format[i]) == 0)
       gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i);
   }
@@ -453,11 +463,16 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /* format combobox */
   date_combobox = gtk_combo_box_new_text();
   gtk_box_pack_start(GTK_BOX(hbox), date_combobox, TRUE, TRUE, 0);
+  exampletm = gmtime(&example_time_t);
   for(i=0; i < DATE_FORMAT_COUNT; i++)
-  {
-    gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), date_format[i]);
+  {  
+    utf8str = datetime_do_utf8strftime(date_format[i], exampletm);
+    gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), utf8str);
+    g_free(utf8str);
 
-    /* set active - strcmp isn't fast, but it is done once opening the dialog */
+    /* set active 
+     * strcmp isn't fast, but it is done only once while opening the dialog 
+     */
     if(strcmp(datetime->date_format,date_format[i]) == 0)
       gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), i);
   }

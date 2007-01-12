@@ -35,14 +35,34 @@
 #include "datetime-dialog.h"
 
 /*
+ * Get date/time string
+ */
+gchar * datetime_do_utf8strftime(const char *format, const struct tm *tm)
+{
+  int len;
+  gchar buf[256];
+  gchar *utf8str = NULL;
+
+  /* get formatted date/time */
+  len = strftime(buf, sizeof(buf)-1, format, tm);
+  if (len == 0)
+    return g_strdup(_("Invalid format"));
+
+  buf[len] = '\0';  /* make sure nul terminated string */
+  utf8str = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+  if(utf8str == NULL)
+    return g_strdup(_("Error"));
+
+  return utf8str;
+}
+
+/*
  * set date and time labels
  */
 gboolean datetime_update(gpointer data)
 {
   GTimeVal timeval;
-  gchar buf[256];
   gchar *utf8str;
-  int len;
   struct tm *current;
   t_datetime *datetime;
 
@@ -57,40 +77,16 @@ gboolean datetime_update(gpointer data)
   current = localtime((time_t *)&timeval.tv_sec);
   if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
   {
-    len = strftime(buf, sizeof(buf) - 1, datetime->date_format, current);
-    if (len != 0)
-    {
-      buf[len] = '\0';  /* make sure nul terminated string */
-      utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL)
-      {
-	gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
-	g_free(utf8str);
-      }
-    }
-    else
-    {
-      gtk_label_set_text(GTK_LABEL(datetime->date_label), _("Error"));
-    }
+    utf8str = datetime_do_utf8strftime(datetime->date_format, current);
+    gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
+    g_free(utf8str);
   }
 
   if (datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label))
   {
-    len = strftime(buf, sizeof(buf) - 1, datetime->time_format, current);
-    if (len != 0)
-    {
-      buf[len] = '\0';  /* make sure nul terminated string */
-      utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL)
-      {
-	gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
-	g_free(utf8str);
-      }
-    }
-    else
-    {
-      gtk_label_set_text(GTK_LABEL(datetime->time_label), _("Error"));
-    }
+    utf8str = datetime_do_utf8strftime(datetime->time_format, current);
+    gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
+    g_free(utf8str);
   }
 
   /* hide labels based on layout-selection */
