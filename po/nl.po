@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: datetime 0.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-13 21:14+0100\n"
+"POT-Creation-Date: 2007-01-13 22:59+0100\n"
 "PO-Revision-Date: 2006-10-06 11:16+0200\n"
 "Last-Translator: Remco den Breeje <remco@sx.mine.nu>\n"
 "Language-Team: Dutch <foo@bar>\n"
@@ -70,11 +70,11 @@ msgid "Format:"
 msgstr "Opmaak:"
 
 #.
-#. * time frame
+#. * Date frame
 #.
 #: ../panel-plugin/datetime-dialog.c:357
-msgid "Time"
-msgstr "Tijd"
+msgid "Date"
+msgstr "Datum"
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
@@ -82,11 +82,11 @@ msgid "Font:"
 msgstr "Lettertype:"
 
 #.
-#. * Date frame
+#. * time frame
 #.
 #: ../panel-plugin/datetime-dialog.c:436
-msgid "Date"
-msgstr "Datum"
+msgid "Time"
+msgstr "Tijd"
 
 #.
 #. * Calendar options frame
