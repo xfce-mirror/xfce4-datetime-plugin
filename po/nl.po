@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: datetime 0.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-26 15:07+0100\n"
+"POT-Creation-Date: 2007-01-13 21:14+0100\n"
 "PO-Revision-Date: 2006-10-06 11:16+0200\n"
 "Last-Translator: Remco den Breeje <remco@sx.mine.nu>\n"
 "Language-Team: Dutch <foo@bar>\n"
@@ -15,11 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/datetime.c:73 ../panel-plugin/datetime.c:92
+#: ../panel-plugin/datetime.c:49
+msgid "Invalid format"
+msgstr "Ongeldige opmaak"
+
+#: ../panel-plugin/datetime.c:54
 msgid "Error"
 msgstr "Fout"
 
-#: ../panel-plugin/datetime.c:284
+#: ../panel-plugin/datetime.c:282
 msgid "Date:"
 msgstr "Datum"
 
@@ -43,55 +47,55 @@ msgstr "Tijd, gevolgd door datum"
 msgid "Custom..."
 msgstr "Handmatig..."
 
-#: ../panel-plugin/datetime-dialog.c:89
+#: ../panel-plugin/datetime-dialog.c:92
 msgid "Select font"
 msgstr "Kies lettertype"
 
-#: ../panel-plugin/datetime-dialog.c:299
+#: ../panel-plugin/datetime-dialog.c:305
 msgid "Datetime properties"
 msgstr "Datetime eigenschappen"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:314
+#: ../panel-plugin/datetime-dialog.c:323
 msgid "Layout"
 msgstr "Layout"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:328 ../panel-plugin/datetime-dialog.c:377
-#: ../panel-plugin/datetime-dialog.c:449
+#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
+#: ../panel-plugin/datetime-dialog.c:467
 msgid "Format:"
 msgstr "Opmaak:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:347
+#: ../panel-plugin/datetime-dialog.c:357
 msgid "Time"
 msgstr "Tijd"
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:361 ../panel-plugin/datetime-dialog.c:433
+#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
 msgid "Font:"
 msgstr "Lettertype:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:419
+#: ../panel-plugin/datetime-dialog.c:436
 msgid "Date"
 msgstr "Datum"
 
 #.
 #. * Calendar options frame
 #.
-#: ../panel-plugin/datetime-dialog.c:491
+#: ../panel-plugin/datetime-dialog.c:515
 msgid "Calendar"
 msgstr "Kalender"
 
-#: ../panel-plugin/datetime-dialog.c:509
+#: ../panel-plugin/datetime-dialog.c:533
 msgid ""
 "The information on which day the calendar week starts is derived from the "
 "locale."

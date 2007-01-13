@@ -296,6 +296,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 	    *button,
 	    *entry,
 	    *bin;
+  GtkSizeGroup *sg;
 
   xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
 
@@ -312,6 +313,9 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "xfce4-settings");
 
   gtk_container_set_border_width(GTK_CONTAINER(dlg), 2);
+  
+  /* size group */
+  sg = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
   /*
    * layout frame
@@ -333,6 +337,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Format:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
 
   /* Layout combobox */
   layout_combobox = gtk_combo_box_new_text();
@@ -366,6 +371,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Font:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
 
   /* font button */
   button = gtk_button_new_with_label(datetime->time_font);
@@ -382,6 +388,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Format:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
   
   /* format combobox */
   time_combobox = gtk_combo_box_new_text();
@@ -443,6 +450,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Font:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
 
   /* font button */
   button = gtk_button_new_with_label(datetime->date_font);
@@ -459,6 +467,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Format:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
 
   /* format combobox */
   date_combobox = gtk_combo_box_new_text();
