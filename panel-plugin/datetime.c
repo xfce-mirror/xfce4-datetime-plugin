@@ -100,6 +100,8 @@ gboolean datetime_update(gpointer data)
     case LAYOUT_TIME:
       gtk_widget_hide(GTK_WIDGET(datetime->date_label));
       break;
+    default:
+      break;
   }
 
   /* set order based on layout-selection */

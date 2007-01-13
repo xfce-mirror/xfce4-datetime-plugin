@@ -83,6 +83,10 @@ datetime_apply_format(t_datetime *datetime,
     const gchar *date_format,
     const gchar *time_format);
 
+void 
+datetime_apply_layout(t_datetime *datetime, 
+    t_layout layout);
+
 void
 datetime_write_rc_file(XfcePanelPlugin *plugin,
     t_datetime *dt);
