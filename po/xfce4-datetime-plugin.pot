@@ -1,17 +1,20 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-13 22:59+0100\n"
-"PO-Revision-Date: 2006-12-17 15:02+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
-"Language-Team: Hungarian\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
 
 #: ../panel-plugin/datetime.c:49
 msgid "Invalid format"
@@ -19,26 +22,23 @@ msgstr ""
 
 #: ../panel-plugin/datetime.c:54
 msgid "Error"
-msgstr "Hiba"
+msgstr ""
 
 #: ../panel-plugin/datetime.c:282
 msgid "Date:"
-msgstr "Dátum:"
+msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:39
-#, fuzzy
 msgid "Date only"
-msgstr "Dátum"
+msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:40
-#, fuzzy
 msgid "Time only"
-msgstr "Idő"
+msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:41
-#, fuzzy
 msgid "Date, then time"
-msgstr "Dátum és idő"
+msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Time, then date"
@@ -50,11 +50,11 @@ msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:92
 msgid "Select font"
-msgstr "Válassz betűt"
+msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:305
 msgid "Datetime properties"
-msgstr "A Dátum és idő tulajdonságai"
+msgstr ""
 
 #.
 #. * layout frame
@@ -68,51 +68,44 @@ msgstr ""
 #: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
 #: ../panel-plugin/datetime-dialog.c:467
 msgid "Format:"
-msgstr "Formátum:"
+msgstr ""
 
 #.
 #. * Date frame
 #.
 #: ../panel-plugin/datetime-dialog.c:357
 msgid "Date"
-msgstr "Dátum"
+msgstr ""
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
 msgid "Font:"
-msgstr "Betű"
+msgstr ""
 
 #.
 #. * time frame
 #.
 #: ../panel-plugin/datetime-dialog.c:436
 msgid "Time"
-msgstr "Idő"
+msgstr ""
 
 #.
 #. * Calendar options frame
 #.
 #: ../panel-plugin/datetime-dialog.c:515
 msgid "Calendar"
-msgstr "Naptár"
+msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:533
 msgid ""
 "The information on which day the calendar week starts is derived from the "
 "locale."
-msgstr "A hét első napja a helyi beállítástól függ."
+msgstr ""
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Dátum és Idő beillesztés egyszerű naptárral"
+msgstr ""
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
-msgstr "Dátum és idő"
-
-#, fuzzy
-#~ msgid "%Y/%m/%d"
-#~ msgstr "%Y-%m-%d"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
+msgstr ""

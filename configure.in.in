@@ -1,7 +1,7 @@
 dnl Version information
 m4_define([datetime_version_major], [0])
-m4_define([datetime_version_minor], [4])
-m4_define([datetime_version_micro], [1])
+m4_define([datetime_version_minor], [5])
+m4_define([datetime_version_micro], [0])
 m4_define([datetime_version], [datetime_version_major().datetime_version_minor().datetime_version_micro()])
 
 dnl Initialize autoconf
@@ -37,6 +37,8 @@ XDT_CHECK_PACKAGE([LIBXFCE4PANEL],[libxfce4panel-1.0],[4.3.99.2])
 
 dnl Check for optional packages
 XDT_CHECK_OPTIONAL_PACKAGE([DBUS], [dbus-1], [0.22], [dbus], [D-BUS support])
+
+#CFLAGS="$CFLAGS -Wall -Werror"
 
 dnl Check for debugging support
 BM_DEBUG_SUPPORT()

@@ -21,12 +21,22 @@
 #ifndef DATETIME_H
 #define DATETIME_H
 
+/* enums */
 enum {
   DATE = 0,
-  TIME = 1
+  TIME
 };
 
-/* types */
+/* typedefs */
+typedef enum
+{
+  LAYOUT_DATE = 0,
+  LAYOUT_TIME,
+  LAYOUT_DATE_TIME,
+  LAYOUT_TIME_DATE,
+  LAYOUT_COUNT
+} t_layout;
+
 typedef struct {
   XfcePanelPlugin * plugin;
   GtkWidget *eventbox;
@@ -41,11 +51,14 @@ typedef struct {
   gchar *time_font;
   gchar *date_format;
   gchar *time_format;
+  t_layout layout;
 
   /* option widgets */
   GtkWidget *date_font_selector;
+  GtkWidget *date_format_combobox;
   GtkWidget *date_format_entry;
   GtkWidget *time_font_selector;
+  GtkWidget *time_format_combobox;
   GtkWidget *time_format_entry;
 
   /* popup calendar */
@@ -54,6 +67,11 @@ typedef struct {
 
 gboolean
 datetime_update(gpointer data);
+
+gchar * 
+datetime_do_utf8strftime(
+    const char *format, 
+    const struct tm *tm);
 
 void
 datetime_apply_font(t_datetime *datetime,
@@ -64,6 +82,10 @@ void
 datetime_apply_format(t_datetime *datetime,
     const gchar *date_format,
     const gchar *time_format);
+
+void 
+datetime_apply_layout(t_datetime *datetime, 
+    t_layout layout);
 
 void
 datetime_write_rc_file(XfcePanelPlugin *plugin,

@@ -35,14 +35,34 @@
 #include "datetime-dialog.h"
 
 /*
+ * Get date/time string
+ */
+gchar * datetime_do_utf8strftime(const char *format, const struct tm *tm)
+{
+  int len;
+  gchar buf[256];
+  gchar *utf8str = NULL;
+
+  /* get formatted date/time */
+  len = strftime(buf, sizeof(buf)-1, format, tm);
+  if (len == 0)
+    return g_strdup(_("Invalid format"));
+
+  buf[len] = '\0';  /* make sure nul terminated string */
+  utf8str = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+  if(utf8str == NULL)
+    return g_strdup(_("Error"));
+
+  return utf8str;
+}
+
+/*
  * set date and time labels
  */
 gboolean datetime_update(gpointer data)
 {
   GTimeVal timeval;
-  gchar buf[256];
   gchar *utf8str;
-  int len;
   struct tm *current;
   t_datetime *datetime;
 
@@ -57,40 +77,44 @@ gboolean datetime_update(gpointer data)
   current = localtime((time_t *)&timeval.tv_sec);
   if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
   {
-    len = strftime(buf, sizeof(buf) - 1, datetime->date_format, current);
-    if (len != 0)
-    {
-      buf[len] = '\0';  /* make sure nul terminated string */
-      utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL)
-      {
-	gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
-	g_free(utf8str);
-      }
-    }
-    else
-    {
-      gtk_label_set_text(GTK_LABEL(datetime->date_label), _("Error"));
-    }
+    utf8str = datetime_do_utf8strftime(datetime->date_format, current);
+    gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
+    g_free(utf8str);
   }
 
   if (datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label))
   {
-    len = strftime(buf, sizeof(buf) - 1, datetime->time_format, current);
-    if (len != 0)
-    {
-      buf[len] = '\0';  /* make sure nul terminated string */
-      utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL)
-      {
-	gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
-	g_free(utf8str);
-      }
-    }
-    else
-    {
-      gtk_label_set_text(GTK_LABEL(datetime->time_label), _("Error"));
-    }
+    utf8str = datetime_do_utf8strftime(datetime->time_format, current);
+    gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
+    g_free(utf8str);
+  }
+
+  /* hide labels based on layout-selection */
+  gtk_widget_show(GTK_WIDGET(datetime->time_label));
+  gtk_widget_show(GTK_WIDGET(datetime->date_label));
+  switch(datetime->layout)
+  {
+    case LAYOUT_DATE:
+      gtk_widget_hide(GTK_WIDGET(datetime->time_label));
+      break;
+    case LAYOUT_TIME:
+      gtk_widget_hide(GTK_WIDGET(datetime->date_label));
+      break;
+    default:
+      break;
+  }
+
+  /* set order based on layout-selection */
+  switch(datetime->layout)
+  {
+    case LAYOUT_DATE_TIME:
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 1);
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 0);
+      break;
+
+    default:
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
   }
   return TRUE;
 }
@@ -330,6 +354,17 @@ static void datetime_update_time_font(t_datetime *datetime)
 }
 
 /*
+ * set layout after doing some checks
+ */
+void datetime_apply_layout(t_datetime *datetime, t_layout layout)
+{
+  if(0 <= layout && layout < LAYOUT_COUNT)
+  {
+    datetime->layout = layout;
+  }
+}
+
+/*
  * set the date and time font type
  */
 void datetime_apply_font(t_datetime *datetime,
@@ -429,13 +464,15 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 {
   gchar *file;
   XfceRc *rc;
+  t_layout layout;
   const gchar *date_font, *time_font, *date_format, *time_format;
 
   /* load defaults */
+  layout = LAYOUT_DATE_TIME;
   date_font = "Bitstream Vera Sans 8";
   time_font = "Bitstream Vera Sans 10";
-  date_format = _("%Y-%m-%d");
-  time_format = _("%H:%M");
+  date_format = "%Y/%m/%d";
+  time_format = "%H:%M";
 
   /* open file */
   if((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
@@ -445,6 +482,7 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 
     if(rc != NULL)
     {
+      layout	  = xfce_rc_read_int_entry(rc, "layout", layout);
       date_font	  = xfce_rc_read_entry(rc, "date_font", date_font);
       time_font	  = xfce_rc_read_entry(rc, "time_font", time_font);
       date_format = xfce_rc_read_entry(rc, "date_format", date_format);
@@ -455,6 +493,7 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   }
 
   /* set values in dt struct */
+  datetime_apply_layout(dt, layout);
   datetime_apply_font(dt, date_font, time_font);
   datetime_apply_format(dt, date_format, time_format);
 }
@@ -473,6 +512,7 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   rc = xfce_rc_simple_open(file, FALSE);
   g_free(file);
 
+  xfce_rc_write_int_entry(rc, "layout", dt->layout);
   xfce_rc_write_entry(rc, "date_font", dt->date_font);
   xfce_rc_write_entry(rc, "time_font", dt->time_font);
   xfce_rc_write_entry(rc, "date_format", dt->date_format);

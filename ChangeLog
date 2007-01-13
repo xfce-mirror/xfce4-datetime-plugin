@@ -1,3 +1,15 @@
+2007-01-13  Remco den Breeje <remco@sx.mine.nu>
+    * release 0.5.0 
+      User can choose a layout, added built-in formats of date
+      and time. Based on the patch for the clock-plugin by Nick Schermer and 
+      Brian Tarricone. 
+      See http://foo-projects.org/~nick/patches/xfce4-panel-clock.patch
+    * Show actual date and times instead of the format codes in the
+    config-dialog. 
+    * Created general strftime function for the datetime plugin
+    * Fixed some warnings that show when -Wall enabled
+    * Grouped the labels in the config-dialog
+
 2006-12-19  Nick Schermer <nick@xfce.org>
     * configure.in.in: Bump version to 0.4.1 for release
 
