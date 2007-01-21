@@ -446,8 +446,6 @@ static int datetime_set_size(XfcePanelPlugin *plugin,
     gint size,
     t_datetime *datetime)
 {
-  DBG("set_size called! with new size of %d", size);
-
   if(size > 26)
     gtk_container_set_border_width(GTK_CONTAINER(datetime->frame), 2);
   else
@@ -466,13 +464,14 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   XfceRc *rc;
   t_layout layout;
   const gchar *date_font, *time_font, *date_format, *time_format;
+  const gchar *val;
 
   /* load defaults */
   layout = LAYOUT_DATE_TIME;
-  date_font = "Bitstream Vera Sans 8";
-  time_font = "Bitstream Vera Sans 10";
-  date_format = "%Y/%m/%d";
-  time_format = "%H:%M";
+  date_font = g_strdup("Bitstream Vera Sans 8");
+  time_font = g_strdup("Bitstream Vera Sans 10");
+  date_format = g_strdup("%Y/%m/%d");
+  time_format = g_strdup("%H:%M");
 
   /* open file */
   if((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
@@ -483,10 +482,14 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
     if(rc != NULL)
     {
       layout	  = xfce_rc_read_int_entry(rc, "layout", layout);
-      date_font	  = xfce_rc_read_entry(rc, "date_font", date_font);
-      time_font	  = xfce_rc_read_entry(rc, "time_font", time_font);
-      date_format = xfce_rc_read_entry(rc, "date_format", date_format);
-      time_format = xfce_rc_read_entry(rc, "time_format", time_format);
+      val = xfce_rc_read_entry(rc, "date_font", date_font);
+      date_font	  = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "time_font", time_font);
+      time_font	  = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "date_format", date_format);
+      date_format = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "time_format", time_format);
+      time_format = g_strdup(val);
 
       xfce_rc_close(rc);
     }
