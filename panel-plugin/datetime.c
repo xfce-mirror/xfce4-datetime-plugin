@@ -430,6 +430,7 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   gchar *file;
   XfceRc *rc;
   const gchar *date_font, *time_font, *date_format, *time_format;
+  const gchar *val;
 
   /* load defaults */
   date_font = "Bitstream Vera Sans 8";
@@ -445,10 +446,14 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 
     if(rc != NULL)
     {
-      date_font	  = xfce_rc_read_entry(rc, "date_font", date_font);
-      time_font	  = xfce_rc_read_entry(rc, "time_font", time_font);
-      date_format = xfce_rc_read_entry(rc, "date_format", date_format);
-      time_format = xfce_rc_read_entry(rc, "time_format", time_format);
+      val = xfce_rc_read_entry(rc, "date_font", date_font);
+      date_font          = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "time_font", time_font);
+      time_font          = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "date_format", date_format);
+      date_format = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "time_format", time_format);
+      time_format = g_strdup(val);
 
       xfce_rc_close(rc);
     }
