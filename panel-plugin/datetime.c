@@ -55,7 +55,9 @@ gboolean datetime_update(gpointer data)
 
   g_get_current_time(&timeval);
   current = localtime((time_t *)&timeval.tv_sec);
-  if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
+  if (datetime->date_format != NULL && 
+      GTK_IS_LABEL(datetime->date_label) &&
+      strlen(datetime->date_format) > 0)
   {
     len = strftime(buf, sizeof(buf) - 1, datetime->date_format, current);
     if (len != 0)
@@ -74,7 +76,9 @@ gboolean datetime_update(gpointer data)
     }
   }
 
-  if (datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label))
+  if (datetime->time_format != NULL && 
+      GTK_IS_LABEL(datetime->time_label) &&
+      strlen(datetime->time_format) > 0)
   {
     len = strftime(buf, sizeof(buf) - 1, datetime->time_format, current);
     if (len != 0)
@@ -543,6 +547,9 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 
   /* call widget-create function */
   datetime_create_widget(datetime);
+  
+  /* display plugin */
+  gtk_widget_show_all(datetime->eventbox);
 
   /* set calendar variables */
   datetime->cal = NULL;
@@ -552,9 +559,6 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 
   /* set date and time labels */
   datetime_update(datetime);
-
-  /* display plugin */
-  gtk_widget_show_all(datetime->eventbox);
 
   return datetime;
 }

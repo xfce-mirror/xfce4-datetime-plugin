@@ -1,5 +1,10 @@
+2007-02-08  Remco den Breeje <remco@vioco.nl>
+    * release 0.4.3
+    Fix bug where an error is shown after restarting the plugin while a date
+    or time format is empty (#2867). Thanks Scott H for reporting.
+
 2007-01-21  Remco den Breeje <remco@vioco.nl>
-    * release 0.4.1
+    * release 0.4.2
     Fixed bug where datetime formats read from the config-file are lost
 
 2006-12-19  Nick Schermer <nick@xfce.org>
