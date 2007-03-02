@@ -1,0 +1,35 @@
+What's this file about?
+-----------------------
+This file lists all external people that have contributed to this project and
+thereby helped the development of this project.
+
+
+Testers (sorted by name):
+--------------------------
+These people have contributed to xfce4-datetime-plugin by testing the software,
+reporting problems and making useful suggestions.
+
+  Nick Schermer <nickschermer@gmail.com>
+  * Some cleanups after the initial version for the 4.2 panel
+
+  Scott H <stonecrest@gmail.com>
+  * Bug# 2867
+
+
+Translators (sorted by language):
+----------------------------------
+These people have translated xfce4-datetime-plugin to foreign languages.
+
+  Remco den Breeje <remco@vioco.nl>
+  * nl (Dutch) translations
+
+  LuckAs <luckas_fb@yahoo.com>
+  * uk (Ukrainian) translations
+
+  SZERVÁC Attila <sas@321.hu>
+  * hu (Hungarian) translations
+
+Other contributors (sorted by name):
+------------------------------------
+
+

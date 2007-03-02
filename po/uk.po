@@ -1,0 +1,117 @@
+# translation of uk_1.po to Ukrainian
+# Ukrainian translation for the datetime plugin.
+# Copyright (C) 2006 Remco den Breeje
+# This file is distributed under the same license as the datetime package.
+#
+# Remco den Breeje <remco@sx.mine.nu>, 2006.
+# LuckAs <luckas_fb@yahoo.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: uk_1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-13 22:59+0100\n"
+"PO-Revision-Date: 2007-02-26 11:20+0200\n"
+"Last-Translator: LuckAs <luckas_fb@yahoo.com>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../panel-plugin/datetime.c:49
+msgid "Invalid format"
+msgstr "Неправильний формат"
+
+#: ../panel-plugin/datetime.c:54
+msgid "Error"
+msgstr "Помилка"
+
+#: ../panel-plugin/datetime.c:282
+msgid "Date:"
+msgstr "Дата"
+
+#: ../panel-plugin/datetime-dialog.c:39
+msgid "Date only"
+msgstr "Тільки дата"
+
+#: ../panel-plugin/datetime-dialog.c:40
+msgid "Time only"
+msgstr "Тільки час"
+
+#: ../panel-plugin/datetime-dialog.c:41
+msgid "Date, then time"
+msgstr "Дата, потім час"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Time, then date"
+msgstr "Час, потім дата"
+
+#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
+msgid "Custom..."
+msgstr "Довільний..."
+
+#: ../panel-plugin/datetime-dialog.c:92
+msgid "Select font"
+msgstr "Вибрати шрифт"
+
+#: ../panel-plugin/datetime-dialog.c:305
+msgid "Datetime properties"
+msgstr "Властивості дати/часу"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:323
+msgid "Layout"
+msgstr "Вигляд"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
+#: ../panel-plugin/datetime-dialog.c:467
+msgid "Format:"
+msgstr "Формат:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:357
+msgid "Date"
+msgstr "Дата"
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
+msgid "Font:"
+msgstr "Шрифт:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:436
+msgid "Time"
+msgstr "Час"
+
+#.
+#. * Calendar options frame
+#.
+#: ../panel-plugin/datetime-dialog.c:515
+msgid "Calendar"
+msgstr "Календар"
+
+#: ../panel-plugin/datetime-dialog.c:533
+msgid ""
+"The information on which day the calendar week starts is derived from the "
+"locale."
+msgstr ""
+"Інформація про день початку календарного тижня береться з даних поточної "
+"локалі."
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Плагін Дати і Часу з простим календарем"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "Дата-Час"
