@@ -1,0 +1,113 @@
+# French translation of the xfce4-datetime-plugin package.
+# Copyright (C) 2007 THE xfce4-datetime-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+# Maximilian Schleiss <maxschleiss@bluewin.ch>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce 4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-13 22:59+0100\n"
+"PO-Revision-Date: 2007-03-02 17:06+0100\n"
+"Last-Translator: Maximilian Schleiss <maxschleiss@bluewin.ch>\n"
+"Language-Team: French <xfce-i18n@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../panel-plugin/datetime.c:49
+msgid "Invalid format"
+msgstr "Format incorrect"
+
+#: ../panel-plugin/datetime.c:54
+msgid "Error"
+msgstr "Erreur"
+
+#: ../panel-plugin/datetime.c:282
+msgid "Date:"
+msgstr "Date :"
+
+#: ../panel-plugin/datetime-dialog.c:39
+msgid "Date only"
+msgstr "Date seulement"
+
+#: ../panel-plugin/datetime-dialog.c:40
+msgid "Time only"
+msgstr "Temps seulement"
+
+#: ../panel-plugin/datetime-dialog.c:41
+msgid "Date, then time"
+msgstr "Date et temps après"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Time, then date"
+msgstr "Temps et date après"
+
+#: ../panel-plugin/datetime-dialog.c:51
+#: ../panel-plugin/datetime-dialog.c:62
+msgid "Custom..."
+msgstr "Personnalisé..."
+
+#: ../panel-plugin/datetime-dialog.c:92
+msgid "Select font"
+msgstr "Choisir une police"
+
+#: ../panel-plugin/datetime-dialog.c:305
+msgid "Datetime properties"
+msgstr "Propriétés de Datetime"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:323
+msgid "Layout"
+msgstr "Disposition"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:337
+#: ../panel-plugin/datetime-dialog.c:388
+#: ../panel-plugin/datetime-dialog.c:467
+msgid "Format:"
+msgstr "Format :"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:357
+msgid "Date"
+msgstr "Date"
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:371
+#: ../panel-plugin/datetime-dialog.c:450
+msgid "Font:"
+msgstr "Police :"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:436
+msgid "Time"
+msgstr "Temps"
+
+#.
+#. * Calendar options frame
+#.
+#: ../panel-plugin/datetime-dialog.c:515
+msgid "Calendar"
+msgstr "Calendrier"
+
+#: ../panel-plugin/datetime-dialog.c:533
+msgid "The information on which day the calendar week starts is derived from the locale."
+msgstr "Le choix de jour de début de semaine est défini par la locale du système."
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Greffon heure et date avec calendrier simple"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "DateTime"
+

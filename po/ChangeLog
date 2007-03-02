@@ -1,12 +1,19 @@
+2007-03-02  Maximilian Schleiss <maxschleiss@bluewin.ch>
+
+	* fr.po: Added the French translation.
+
 2007-01-13  Remco den Breeje <remco@vioco.nl>
-  * Updated name of pot-file
+
+	* Updated name of pot-file
 
 2006-12-17  sas <sas@321>
-  * hu.po: Added Hungarian translation
+
+	* hu.po: Added Hungarian translation
 
 2006-12-17  Nick Schermer <nick@xfce.org>
-  * Created pot file for translators
+
+	* Created pot file for translators
 
 2006-10-06  Remco den Breeje <remco@sx.mine.nu>
 
-  * nl.po: Created Dutch translation
+	* nl.po: Created Dutch translation
