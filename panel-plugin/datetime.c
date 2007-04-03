@@ -588,11 +588,11 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
   /* load settings (default values if non-av) */
   datetime_read_rc_file(plugin, datetime);
 
-  /* set date and time labels */
-  datetime_update(datetime);
-
   /* display plugin */
   gtk_widget_show_all(datetime->eventbox);
+
+  /* set date and time labels */
+  datetime_update(datetime);
 
   return datetime;
 }

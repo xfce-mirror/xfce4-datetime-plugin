@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-13 22:59+0100\n"
+"POT-Creation-Date: 2007-04-03 10:12+0200\n"
 "PO-Revision-Date: 2007-01-16 05:30+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -41,8 +41,7 @@ msgstr "Dátum majd idő"
 msgid "Time, then date"
 msgstr "Idő majd dátum"
 
-#: ../panel-plugin/datetime-dialog.c:51
-#: ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
 msgid "Custom..."
 msgstr "Egyéni..."
 
@@ -63,8 +62,7 @@ msgstr "Elrendezés"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337
-#: ../panel-plugin/datetime-dialog.c:388
+#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
 #: ../panel-plugin/datetime-dialog.c:467
 msgid "Format:"
 msgstr "Formátum:"
@@ -77,8 +75,7 @@ msgid "Date"
 msgstr "Dátum"
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371
-#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
 msgid "Font:"
 msgstr "Betű"
 
@@ -97,7 +94,9 @@ msgid "Calendar"
 msgstr "Naptár"
 
 #: ../panel-plugin/datetime-dialog.c:533
-msgid "The information on which day the calendar week starts is derived from the locale."
+msgid ""
+"The information on which day the calendar week starts is derived from the "
+"locale."
 msgstr "A hét első napja a helyi beállítástól függ."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
@@ -111,6 +110,6 @@ msgstr "Dátum és idő"
 #, fuzzy
 #~ msgid "%Y/%m/%d"
 #~ msgstr "%Y-%m-%d"
+
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
-

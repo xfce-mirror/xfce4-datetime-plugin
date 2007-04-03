@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-13 22:59+0100\n"
+"POT-Creation-Date: 2007-04-03 10:12+0200\n"
 "PO-Revision-Date: 2007-03-02 17:06+0100\n"
 "Last-Translator: Maximilian Schleiss <maxschleiss@bluewin.ch>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -44,8 +44,7 @@ msgstr "Date et temps après"
 msgid "Time, then date"
 msgstr "Temps et date après"
 
-#: ../panel-plugin/datetime-dialog.c:51
-#: ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
 msgid "Custom..."
 msgstr "Personnalisé..."
 
@@ -66,8 +65,7 @@ msgstr "Disposition"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337
-#: ../panel-plugin/datetime-dialog.c:388
+#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
 #: ../panel-plugin/datetime-dialog.c:467
 msgid "Format:"
 msgstr "Format :"
@@ -80,8 +78,7 @@ msgid "Date"
 msgstr "Date"
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371
-#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
 msgid "Font:"
 msgstr "Police :"
 
@@ -100,8 +97,11 @@ msgid "Calendar"
 msgstr "Calendrier"
 
 #: ../panel-plugin/datetime-dialog.c:533
-msgid "The information on which day the calendar week starts is derived from the locale."
-msgstr "Le choix de jour de début de semaine est défini par la locale du système."
+msgid ""
+"The information on which day the calendar week starts is derived from the "
+"locale."
+msgstr ""
+"Le choix de jour de début de semaine est défini par la locale du système."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -110,4 +110,3 @@ msgstr "Greffon heure et date avec calendrier simple"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DateTime"
-

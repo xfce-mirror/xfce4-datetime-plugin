@@ -1,3 +1,11 @@
+2007-04-02  Remco den Breeje <remco@sx.mine.nu>
+    * THANKS: added contributors
+    * panel-plugin/datetime.c: Fix incorrect display when panel starts (#3062)
+
+2007-03-02  Remco den Breeje <remco@sx.mine.nu>
+    * THANKS: added contributors
+    * LINGUAS,uk.po: Add Ukrainian translations by LuckAs <luckas_fb@mail.ru>
+
 2007-01-13  Remco den Breeje <remco@sx.mine.nu>
     * release 0.5.0 
       User can choose a layout, added built-in formats of date
