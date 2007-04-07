@@ -37,7 +37,9 @@
 /* Layouts */
 const char *layout_strs[] = {
   N_("Date only"),
+  N_("Date only, time in tooltip"),
   N_("Time only"),
+  N_("Time only, date in tooltip"),
   N_("Date, then time"),
   N_("Time, then date")
 };

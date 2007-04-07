@@ -1,3 +1,8 @@
+2007-04-07  Remco den Breeje <remco@sx.mine.nu>
+    * panel-plugin/datetime.{c,h}, 
+    * panel-plugin/datetime-dialog.c: Enable tooltips. Based 
+    on a patch by Laurent Meunier <meunier.laurent@laposte.net> (#3073)
+
 2007-04-02  Remco den Breeje <remco@sx.mine.nu>
     * THANKS: added contributors
     * panel-plugin/datetime.c: Fix incorrect display when panel starts (#3062)

@@ -31,7 +31,9 @@ enum {
 typedef enum
 {
   LAYOUT_DATE = 0,
+  LAYOUT_DATE_TIMETT,
   LAYOUT_TIME,
+  LAYOUT_TIME_DATETT,
   LAYOUT_DATE_TIME,
   LAYOUT_TIME_DATE,
   LAYOUT_COUNT
@@ -44,6 +46,7 @@ typedef struct {
   GtkWidget *vbox;
   GtkWidget *date_label;
   GtkWidget *time_label;
+  GtkWidget *tips;
   guint timeout_id;
 
   /* settings */
