@@ -1,112 +1,113 @@
-# Dutch translation of the xfce4-datetime-plugin package.
+# Brazilian Portuguese translation of the xfce4-datetime-plugin package.
 # Copyright (C) 2006-2007 Remco den Breeje
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
-# Remco den Breeje <remco@sx.mine.nu>, 2006.
+# Pablo Lerina <pabloalr@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-03 10:12+0200\n"
-"PO-Revision-Date: 2006-10-06 11:16+0200\n"
-"Last-Translator: Remco den Breeje <remco@sx.mine.nu>\n"
-"Language-Team: Dutch <xfce-i18n@xfce.org>\n"
+"PO-Revision-Date: 2007-06-11 22:34+0100\n"
+"Last-Translator: Maximilian Schleiss <maximilian@xfce.org>\n"
+"Language-Team: Brazilian Portuguese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/datetime.c:49
 msgid "Invalid format"
-msgstr "Ongeldige opmaak"
+msgstr "Formato inválido"
 
 #: ../panel-plugin/datetime.c:54
 msgid "Error"
-msgstr "Fout"
+msgstr "Erro"
 
 #: ../panel-plugin/datetime.c:282
 msgid "Date:"
-msgstr "Datum"
+msgstr "Data:"
 
 #: ../panel-plugin/datetime-dialog.c:39
 msgid "Date only"
-msgstr "Alleen datum"
+msgstr "Somente data"
 
 #: ../panel-plugin/datetime-dialog.c:40
 msgid "Time only"
-msgstr "Alleen tijd"
+msgstr "Somente hora"
 
 #: ../panel-plugin/datetime-dialog.c:41
 msgid "Date, then time"
-msgstr "Datum, gevolgd door tijd"
+msgstr "Data e então hora"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Time, then date"
-msgstr "Tijd, gevolgd door datum"
+msgstr "Hora e então data"
 
-#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:51
+#: ../panel-plugin/datetime-dialog.c:62
 msgid "Custom..."
-msgstr "Handmatig..."
+msgstr "Personalizado..."
 
 #: ../panel-plugin/datetime-dialog.c:92
 msgid "Select font"
-msgstr "Kies lettertype"
+msgstr "Selecione a fonte"
 
 #: ../panel-plugin/datetime-dialog.c:305
 msgid "Datetime properties"
-msgstr "Datetime eigenschappen"
+msgstr "Propriedades de data e hora"
 
 #.
 #. * layout frame
 #.
 #: ../panel-plugin/datetime-dialog.c:323
 msgid "Layout"
-msgstr "Layout"
+msgstr "Exibição"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
+#: ../panel-plugin/datetime-dialog.c:337
+#: ../panel-plugin/datetime-dialog.c:388
 #: ../panel-plugin/datetime-dialog.c:467
 msgid "Format:"
-msgstr "Opmaak:"
+msgstr "Formato:"
 
 #.
 #. * Date frame
 #.
 #: ../panel-plugin/datetime-dialog.c:357
 msgid "Date"
-msgstr "Datum"
+msgstr "Dia"
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:371
+#: ../panel-plugin/datetime-dialog.c:450
 msgid "Font:"
-msgstr "Lettertype:"
+msgstr "Fonte:"
 
 #.
 #. * time frame
 #.
 #: ../panel-plugin/datetime-dialog.c:436
 msgid "Time"
-msgstr "Tijd"
+msgstr "Horário"
 
 #.
 #. * Calendar options frame
 #.
 #: ../panel-plugin/datetime-dialog.c:515
 msgid "Calendar"
-msgstr "Kalender"
+msgstr "Calendário"
 
 #: ../panel-plugin/datetime-dialog.c:533
-msgid ""
-"The information on which day the calendar week starts is derived from the "
-"locale."
-msgstr ""
-"De instelling op welke dag de week begint is afgeleid van de locale "
-"instelling."
+msgid "The information on which day the calendar week starts is derived from the locale."
+msgstr "A informação de que dia começa a semana é definida nas configurações de localização."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Datum en Tijd plugin met een simpele kalender"
+msgstr "plugin de Data e Hora com um calendário simples"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DateTime"
+

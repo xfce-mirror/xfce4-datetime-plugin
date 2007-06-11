@@ -1,11 +1,11 @@
 # French translation of the xfce4-datetime-plugin package.
-# Copyright (C) 2007 THE xfce4-datetime-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce package.
+# Copyright (C) 2006-2007 Remco den Breeje
+# This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Maximilian Schleiss <maximilian@xfce.org>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce 4-datetime-plugin\n"
+"Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-03 10:12+0200\n"
 "PO-Revision-Date: 2007-03-02 17:06+0100\n"
