@@ -7,7 +7,7 @@ m4_define([datetime_version], [datetime_version_major().datetime_version_minor()
 dnl Initialize autoconf
 AC_COPYRIGHT([Copyright (c) 2006
         Remco den Breeje <remco@sx.mine.nu>])
-AC_INIT([xfce4-datetime-plugin], [datetime_version()], [remco@sx.mine.nu])
+AC_INIT([xfce4-datetime-plugin], [datetime_version], [remco@sx.mine.nu])
 
 dnl Initialize automake
 AM_INIT_AUTOMAKE([AC_PACKAGE_TARNAME()], [AC_PACKAGE_VERSION()])
