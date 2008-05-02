@@ -1,5 +1,7 @@
 2008-05-02  Diego Ongaro <ongardie@gmail.com>
-    * panel-plugin/datetime.c: handle NULL from xfce_rc_simple_open
+    * panel-plugin/datetime.c:
+      - fix memory leak with double-g_strdup of setting strings
+      - handle NULL from xfce_rc_simple_open,
     * panel-plugin/datetime.h: Use GtkTooltips type (fixes build)
 
 2007-04-07  Remco den Breeje <remco@sx.mine.nu>
