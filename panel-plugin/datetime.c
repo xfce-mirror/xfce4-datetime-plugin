@@ -535,13 +535,17 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   rc = xfce_rc_simple_open(file, FALSE);
   g_free(file);
 
-  xfce_rc_write_int_entry(rc, "layout", dt->layout);
-  xfce_rc_write_entry(rc, "date_font", dt->date_font);
-  xfce_rc_write_entry(rc, "time_font", dt->time_font);
-  xfce_rc_write_entry(rc, "date_format", dt->date_format);
-  xfce_rc_write_entry(rc, "time_format", dt->time_format);
+  if(rc != NULL)
+  {
+    xfce_rc_write_int_entry(rc, "layout", dt->layout);
+    xfce_rc_write_entry(rc, "date_font", dt->date_font);
+    xfce_rc_write_entry(rc, "time_font", dt->time_font);
+    xfce_rc_write_entry(rc, "date_format", dt->date_format);
+    xfce_rc_write_entry(rc, "time_format", dt->time_format);
 
-  xfce_rc_close(rc);
+    xfce_rc_close(rc);
+  }
+
 }
 
 /*
