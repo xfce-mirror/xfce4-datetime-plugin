@@ -1,3 +1,6 @@
+2008-05-02  Diego Ongaro <ongardie@gmail.com>
+    * panel-plugin/datetime.h: Use GtkTooltips type (fixes build)
+
 2007-04-07  Remco den Breeje <remco@sx.mine.nu>
     * panel-plugin/datetime.{c,h}, 
     * panel-plugin/datetime-dialog.c: Enable tooltips. Based 
