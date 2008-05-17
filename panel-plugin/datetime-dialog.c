@@ -345,7 +345,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   layout_combobox = gtk_combo_box_new_text();
   gtk_box_pack_start(GTK_BOX(hbox), layout_combobox, TRUE, TRUE, 0);
   for(i=0; i < LAYOUT_COUNT; i++)
-    gtk_combo_box_append_text(GTK_COMBO_BOX(layout_combobox), layout_strs[i]);
+    gtk_combo_box_append_text(GTK_COMBO_BOX(layout_combobox), _(layout_strs[i]));
   gtk_combo_box_set_active(GTK_COMBO_BOX(layout_combobox), datetime->layout);
   g_signal_connect(G_OBJECT(layout_combobox), "changed",
       G_CALLBACK(datetime_layout_changed), datetime);
@@ -397,10 +397,17 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_box_pack_start(GTK_BOX(hbox), date_combobox, TRUE, TRUE, 0);
   exampletm = gmtime(&example_time_t);
   for(i=0; i < DATE_FORMAT_COUNT; i++)
-  {  
-    utf8str = datetime_do_utf8strftime(date_format[i], exampletm);
-    gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), utf8str);
-    g_free(utf8str);
+  {
+    if(i < DATE_FORMAT_COUNT - 1)
+    {
+      utf8str = datetime_do_utf8strftime(date_format[i], exampletm);
+      gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), utf8str);
+      g_free(utf8str);
+    }
+    else
+    {
+      gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), _(date_format[i]));
+    }
 
     /* set active 
      * strcmp isn't fast, but it is done only once while opening the dialog 
@@ -477,9 +484,16 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   exampletm = gmtime(&example_time_t);
   for(i=0; i < TIME_FORMAT_COUNT; i++)
   {
-    utf8str = datetime_do_utf8strftime(time_format[i], exampletm);
-    gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), utf8str);
-    g_free(utf8str);
+    if(i < TIME_FORMAT_COUNT - 1)
+    {
+      utf8str = datetime_do_utf8strftime(time_format[i], exampletm);
+      gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), utf8str);
+      g_free(utf8str);
+    }
+    else
+    {
+      gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), _(time_format[i]));
+    }
 
     /* set active 
      * strcmp isn't fast, but it is done only once while opening the dialog 
