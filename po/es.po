@@ -1,0 +1,75 @@
+# xfce4-datetime-plugin translation to spanish.
+# Copyright (C) 2004 Free Software Foundation
+# This file is distributed under the same license as the 
+# xfce4-datetime-plugin package.
+# Rudy Godoy <rudy@kernel-panik.org>, 2004.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-datetime-plugin 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-01-18 00:46+0900\n"
+"PO-Revision-Date: 2004-07-14 13:13-0500\n"
+"Last-Translator: Rudy Godoy <rudy@kernel-panik.org>\n"
+"Language-Team: Debian l10n Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: datetime/datetime.c:93 datetime/datetime.c:107
+msgid "Error"
+msgstr "Error"
+
+#: datetime/datetime.c:256
+msgid "Date:"
+msgstr "Fecha:"
+
+#. This is default date/time format, (See strftime(3))
+#. translaters may change this to familiar format for their language
+#: datetime/datetime.c:436
+msgid "%Y-%m-%d"
+msgstr "%d-%m-%Y"
+
+#: datetime/datetime.c:436
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: datetime/datetime.c:584 datetime/datetime.c:613
+msgid "Select font"
+msgstr "Elija tipo de letra"
+
+#. time
+#: datetime/datetime.c:715
+msgid "Time"
+msgstr "Hora"
+
+#: datetime/datetime.c:724 datetime/datetime.c:760
+msgid "Font:"
+msgstr "Tipo de letra:"
+
+#: datetime/datetime.c:738 datetime/datetime.c:774
+msgid "Format:"
+msgstr "Formato:"
+
+#. date
+#: datetime/datetime.c:751
+msgid "Date"
+msgstr "Fecha"
+
+#. Calendar options
+#: datetime/datetime.c:787
+msgid "Calendar"
+msgstr "Calendario"
+
+#: datetime/datetime.c:793
+msgid "use XFCalendar for popup calendar"
+msgstr "use XFCalendar para desplegar el calendario"
+
+#: datetime/datetime.c:801
+msgid "Week day starts Monday"
+msgstr "La semana se inicia el día lunes"
+
+#: datetime/datetime.c:882
+msgid "Date and Time"
+msgstr "Fecha y hora"
