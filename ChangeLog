@@ -2,6 +2,7 @@
     * panel-plugin/datetime-dialog.c:
       - translate strings in combo boxes
     * panel-plugin/datetime.c:
+      - Use GtkToggleButton in panel (Bug #3456)
       - handle delete event on popup calendar (patch from Mike Massonet)
       - show popup calendar on all workspaces (patch from Mike Massonet)
       - allow ctrl-click on plugin (patch from Mike Massonet)

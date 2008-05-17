@@ -41,8 +41,7 @@ typedef enum
 
 typedef struct {
   XfcePanelPlugin * plugin;
-  GtkWidget *eventbox;
-  GtkWidget *frame;
+  GtkWidget *button;
   GtkWidget *vbox;
   GtkWidget *date_label;
   GtkWidget *time_label;

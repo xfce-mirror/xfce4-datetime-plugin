@@ -30,6 +30,7 @@
 #include <libxfcegui4/libxfcegui4.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
+#include <libxfce4panel/xfce-panel-convenience.h>
 
 #include "datetime.h"
 #include "datetime-dialog.h"
@@ -123,15 +124,15 @@ gboolean datetime_update(gpointer data)
   switch(datetime->layout)
   {
     case LAYOUT_DATE_TIMETT:
-      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->eventbox,
+      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
           gtk_label_get_text(GTK_LABEL(datetime->time_label)), NULL);
       break;
     case LAYOUT_TIME_DATETT:
-      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->eventbox,
+      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
           gtk_label_get_text(GTK_LABEL(datetime->date_label)), NULL);
       break;
     default:
-      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->eventbox,
+      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
           NULL, NULL);
       break;
   }
@@ -252,10 +253,13 @@ static void on_calendar_realized(GtkWidget *widget, gpointer data)
   gtk_window_move(GTK_WINDOW(widget), x, y);
 }
 
-static gboolean on_calendar_delete(GtkWidget *widget, GdkEvent *event, t_datetime *datetime)
+static gboolean close_calendar_window(t_datetime *datetime)
 {
   gtk_widget_destroy(datetime->cal);
   datetime->cal = NULL;
+
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(datetime->button), FALSE);
+
   return TRUE;
 }
 
@@ -273,7 +277,7 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime,
   GtkWidget *cal;
   GtkWidget *entry;
   GtkWidget *label;
-  GtkWidget *parent = datetime->eventbox;
+  GtkWidget *parent = datetime->button;
   GdkScreen *screen;
   GtkCalendarDisplayOptions display_options;
   int num;
@@ -319,10 +323,12 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime,
   g_signal_connect_after(G_OBJECT(window), "realize",
       G_CALLBACK(on_calendar_realized),
       GINT_TO_POINTER(orientation));
-  g_signal_connect(G_OBJECT(window), "delete-event",
-      G_CALLBACK(on_calendar_delete),
+  g_signal_connect_swapped(G_OBJECT(window), "delete-event",
+      G_CALLBACK(close_calendar_window),
       datetime);
   gtk_widget_show_all(window);
+
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(datetime->button), TRUE);
 
   return window;
 }
@@ -344,8 +350,7 @@ static gboolean datetime_clicked(GtkWidget *widget,
 
   if (datetime->cal != NULL)
   {
-    gtk_widget_destroy(datetime->cal);
-    datetime->cal = NULL;
+    close_calendar_window(datetime);
   }
   else
   {
@@ -478,9 +483,9 @@ static int datetime_set_size(XfcePanelPlugin *plugin,
     t_datetime *datetime)
 {
   if(size > 26)
-    gtk_container_set_border_width(GTK_CONTAINER(datetime->frame), 2);
+    gtk_container_set_border_width(GTK_CONTAINER(datetime->button), 2);
   else
-    gtk_container_set_border_width(GTK_CONTAINER(datetime->frame), 0);
+    gtk_container_set_border_width(GTK_CONTAINER(datetime->button), 0);
 
   /* return true to please the signal handler ;) */
   return TRUE;
@@ -564,17 +569,12 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
  */
 static void datetime_create_widget(t_datetime * datetime)
 {
-  /* create event box */
-  datetime->eventbox = gtk_event_box_new();
-
-  /* create frame */
-  datetime->frame = gtk_frame_new(NULL);
-  gtk_frame_set_shadow_type(GTK_FRAME(datetime->frame), GTK_SHADOW_NONE);
-  gtk_container_add(GTK_CONTAINER(datetime->eventbox), datetime->frame);
+  /* create button */
+  datetime->button = xfce_create_panel_toggle_button();
 
   /* create vertical box */
   datetime->vbox = gtk_vbox_new(TRUE, 0);
-  gtk_container_add(GTK_CONTAINER(datetime->frame), datetime->vbox);
+  gtk_container_add(GTK_CONTAINER(datetime->button), datetime->vbox);
 
   /* create time and date lines */
   datetime->time_label = gtk_label_new("");
@@ -594,7 +594,7 @@ static void datetime_create_widget(t_datetime * datetime)
   datetime->tips = gtk_tooltips_new ();
 
   /* connect widget signals to functions */
-  g_signal_connect(datetime->eventbox, "button-press-event",
+  g_signal_connect(datetime->button, "button-press-event",
       G_CALLBACK(datetime_clicked), datetime);
 }
 
@@ -627,7 +627,7 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
   datetime_read_rc_file(plugin, datetime);
 
   /* display plugin */
-  gtk_widget_show_all(datetime->eventbox);
+  gtk_widget_show_all(datetime->button);
 
   /* set date and time labels */
   datetime_update(datetime);
@@ -644,7 +644,7 @@ static void datetime_free(XfcePanelPlugin *plugin, t_datetime *datetime)
   g_source_remove(datetime->timeout_id);
 
   /* destroy widget */
-  gtk_widget_destroy(datetime->eventbox);
+  gtk_widget_destroy(datetime->button);
 
   /* cleanup */
   g_free(datetime->date_font);
@@ -664,8 +664,8 @@ static void datetime_construct(XfcePanelPlugin *plugin)
   t_datetime * datetime = datetime_new(plugin);
 
   /* add plugin to panel */
-  gtk_container_add(GTK_CONTAINER(plugin), datetime->eventbox);
-  xfce_panel_plugin_add_action_widget(plugin, datetime->eventbox);
+  gtk_container_add(GTK_CONTAINER(plugin), datetime->button);
+  xfce_panel_plugin_add_action_widget(plugin, datetime->button);
 
   /* connect plugin signals to functions */
   g_signal_connect(plugin, "save",
