@@ -325,7 +325,7 @@ static gboolean datetime_clicked(GtkWidget *widget,
 {
   gint orientation;
 
-  if (event->button != 1)
+  if (event->button != 1 || event->state & GDK_CONTROL_MASK)
     return FALSE;
 
   if (datetime == NULL)

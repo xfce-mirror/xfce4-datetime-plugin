@@ -1,3 +1,7 @@
+2008-05-17  Diego Ongaro <ongardie@gmail.com>
+    * panel-plugin/datetime.c:
+      - allow ctrl-click on plugin (patch from Mike Massonet)
+
 2008-05-02  Diego Ongaro <ongardie@gmail.com>
     * panel-plugin/datetime.c:
       - fix memory leak with double-g_strdup of setting strings
