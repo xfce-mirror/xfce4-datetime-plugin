@@ -275,6 +275,7 @@ static GtkWidget * pop_calendar_window(GtkWidget *parent,
   gtk_window_set_decorated(GTK_WINDOW(window), FALSE);
   gtk_window_set_skip_taskbar_hint(GTK_WINDOW(window), TRUE);
   gtk_window_set_skip_pager_hint(GTK_WINDOW(window), TRUE);
+  gtk_window_stick(GTK_WINDOW(window));
   g_object_set_data(G_OBJECT(window), "calendar-parent", parent);
 
   /* set screen number */

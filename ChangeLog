@@ -1,5 +1,6 @@
 2008-05-17  Diego Ongaro <ongardie@gmail.com>
     * panel-plugin/datetime.c:
+      - show popup calendar on all workspaces (patch from Mike Massonet)
       - allow ctrl-click on plugin (patch from Mike Massonet)
 
 2008-05-02  Diego Ongaro <ongardie@gmail.com>
