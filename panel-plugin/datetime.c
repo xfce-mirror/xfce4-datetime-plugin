@@ -475,18 +475,12 @@ void datetime_apply_format(t_datetime *datetime,
 }
 
 /*
- * Set a border - Function only called by the signal handler.
- * A border is only set, if there is enough space for it (size > 26)
+ * Function only called by the signal handler.
  */
 static int datetime_set_size(XfcePanelPlugin *plugin,
     gint size,
     t_datetime *datetime)
 {
-  if(size > 26)
-    gtk_container_set_border_width(GTK_CONTAINER(datetime->button), 2);
-  else
-    gtk_container_set_border_width(GTK_CONTAINER(datetime->button), 0);
-
   /* return true to please the signal handler ;) */
   return TRUE;
 }
