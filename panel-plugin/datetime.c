@@ -252,11 +252,17 @@ static void on_calendar_realized(GtkWidget *widget, gpointer data)
   gtk_window_move(GTK_WINDOW(widget), x, y);
 }
 
+static gboolean on_calendar_delete(GtkWidget *widget, GdkEvent *event, t_datetime *datetime)
+{
+  gtk_widget_destroy(datetime->cal);
+  datetime->cal = NULL;
+  return TRUE;
+}
 
 /*
  * call the gtk calendar
  */
-static GtkWidget * pop_calendar_window(GtkWidget *parent,
+static GtkWidget * pop_calendar_window(t_datetime *datetime,
     int orientation,
     const char *date_string)
 {
@@ -267,6 +273,7 @@ static GtkWidget * pop_calendar_window(GtkWidget *parent,
   GtkWidget *cal;
   GtkWidget *entry;
   GtkWidget *label;
+  GtkWidget *parent = datetime->eventbox;
   GdkScreen *screen;
   GtkCalendarDisplayOptions display_options;
   int num;
@@ -312,6 +319,9 @@ static GtkWidget * pop_calendar_window(GtkWidget *parent,
   g_signal_connect_after(G_OBJECT(window), "realize",
       G_CALLBACK(on_calendar_realized),
       GINT_TO_POINTER(orientation));
+  g_signal_connect(G_OBJECT(window), "delete-event",
+      G_CALLBACK(on_calendar_delete),
+      datetime);
   gtk_widget_show_all(window);
 
   return window;
@@ -343,9 +353,9 @@ static gboolean datetime_clicked(GtkWidget *widget,
     orientation = xfce_panel_plugin_get_orientation(datetime->plugin);
 
     /* draw calendar */
-    datetime->cal = pop_calendar_window(datetime->eventbox,
-	                                orientation,
-	                                gtk_label_get_text(GTK_LABEL(datetime->date_label)));
+    datetime->cal = pop_calendar_window(datetime,
+                                        orientation,
+                                        gtk_label_get_text(GTK_LABEL(datetime->date_label)));
   }
   return TRUE;
 }

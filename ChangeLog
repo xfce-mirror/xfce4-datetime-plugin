@@ -1,5 +1,6 @@
 2008-05-17  Diego Ongaro <ongardie@gmail.com>
     * panel-plugin/datetime.c:
+      - handle delete event on popup calendar (patch from Mike Massonet)
       - show popup calendar on all workspaces (patch from Mike Massonet)
       - allow ctrl-click on plugin (patch from Mike Massonet)
 
