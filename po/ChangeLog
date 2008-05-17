@@ -1,5 +1,6 @@
 2008-05-17	Diego Ongaro <ongardie@gmail.com>
 
+	* xfce4-datetime-plugin.pot: Updated pot
 	* es.po: Added Spanish translation based on debian patch
 
 2008-05-13	Mike Massonnet <mmassonnet@xfce.org>
