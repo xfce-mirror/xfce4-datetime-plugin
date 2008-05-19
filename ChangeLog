@@ -1,3 +1,6 @@
+2008-05-18  Diego Ongaro <ongardie@gmail.com>
+    * panel-plugin/datetime-dialog.c: Missing static keywords
+
 2008-05-17  Diego Ongaro <ongardie@gmail.com>
     * panel-plugin/datetime-dialog.c:
       - translate strings in combo boxes

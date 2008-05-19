@@ -35,7 +35,7 @@
 #include "datetime-dialog.h"
 
 /* Layouts */
-const char *layout_strs[] = {
+static const char *layout_strs[] = {
   N_("Date only"),
   N_("Date only, time in tooltip"),
   N_("Time only"),
@@ -46,7 +46,7 @@ const char *layout_strs[] = {
 
 /* builtin formats - derived from xfce4-panel-clock.patch by Nick Schermer */
 #define TIME_FORMAT_COUNT 6
-const char *time_format[] = {
+static const char *time_format[] = {
   "%H:%M",		"%H:%M:%S",
   "%l:%M %P",		"%l:%M:%S %P",
   "---",
@@ -54,7 +54,7 @@ const char *time_format[] = {
 };
 
 #define DATE_FORMAT_COUNT 13
-const char *date_format[] = {
+static const char *date_format[] = {
   "%Y/%m/%d",		"%m/%d/%Y",
   "%B %d, %Y",		"%b %d, %Y",
   "%A, %B %d, %Y",	"%a, %b %d, %Y",
@@ -65,7 +65,7 @@ const char *date_format[] = {
 };
 
 /* example timestamp to show in the dialog */
-const time_t example_time_t = 946684799;
+static const time_t example_time_t = 946684799;
 
 /*
  * show and read fonts and inform datetime about it
