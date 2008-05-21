@@ -134,6 +134,7 @@ gboolean datetime_update(gpointer data)
     default:
       gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
           NULL, NULL);
+      gtk_widget_set_has_tooltip(datetime->button, FALSE);
       break;
   }
 
