@@ -1,5 +1,7 @@
 2008-05-21  Diego Ongaro <ongardie@gmail.com>
-    * panel-plugin/datetime.c: Fix tooltip hiding
+    * panel-plugin/datetime.c:
+      - Remove date input (Bug #4023)
+      - Fix tooltip hiding
 
 2008-05-18  Diego Ongaro <ongardie@gmail.com>
     * panel-plugin/datetime-dialog.c: Missing static keywords

@@ -142,29 +142,6 @@ gboolean datetime_update(gpointer data)
 }
 
 
-static void on_calendar_entry_activated(GtkWidget *widget, GtkWidget *calendar)
-{
-  GDate *date;
-  const gchar *text;
-
-  date = g_date_new();
-
-  text = gtk_entry_get_text(GTK_ENTRY(widget));
-  g_date_set_parse(date, text);
-
-  if (g_date_valid(date)) {
-    gtk_calendar_freeze(GTK_CALENDAR(calendar));
-    gtk_calendar_select_month(GTK_CALENDAR(calendar),
-	g_date_get_month(date) - 1,
-	g_date_get_year(date));
-    gtk_calendar_select_day(GTK_CALENDAR(calendar),
-	g_date_get_day(date));
-    gtk_calendar_thaw(GTK_CALENDAR(calendar));
-  }
-  g_date_free(date);
-}
-
-
 static void on_calendar_realized(GtkWidget *widget, gpointer data)
 {
   gint parent_x, parent_y, parent_w, parent_h;
@@ -267,17 +244,11 @@ static gboolean close_calendar_window(t_datetime *datetime)
 /*
  * call the gtk calendar
  */
-static GtkWidget * pop_calendar_window(t_datetime *datetime,
-    int orientation,
-    const char *date_string)
+static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
 {
   GtkWidget *window;
   GtkWidget *frame;
-  GtkWidget *vbox;
-  GtkWidget *hbox;
   GtkWidget *cal;
-  GtkWidget *entry;
-  GtkWidget *label;
   GtkWidget *parent = datetime->button;
   GdkScreen *screen;
   GtkCalendarDisplayOptions display_options;
@@ -299,27 +270,12 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime,
   gtk_frame_set_shadow_type (GTK_FRAME(frame), GTK_SHADOW_OUT);
   gtk_container_add (GTK_CONTAINER(window), frame);
 
-  vbox = gtk_vbox_new(FALSE, 0);
-  gtk_container_add (GTK_CONTAINER(frame), vbox);
-
   cal = gtk_calendar_new();
   display_options = GTK_CALENDAR_SHOW_HEADING |
     GTK_CALENDAR_SHOW_WEEK_NUMBERS |
     GTK_CALENDAR_SHOW_DAY_NAMES;
   gtk_calendar_display_options(GTK_CALENDAR (cal), display_options);
-  gtk_box_pack_start(GTK_BOX(vbox), cal, TRUE, TRUE, 0);
-
-  hbox = gtk_hbox_new(FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
-
-  label = gtk_label_new(_("Date:"));
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 5);
-
-  entry = gtk_entry_new();
-  gtk_entry_set_text(GTK_ENTRY(entry), date_string);
-  gtk_box_pack_start(GTK_BOX(hbox), entry, TRUE, TRUE, 0);
-  g_signal_connect(G_OBJECT(entry), "activate",
-      G_CALLBACK(on_calendar_entry_activated), cal);
+  gtk_container_add (GTK_CONTAINER(frame), cal);
 
   g_signal_connect_after(G_OBJECT(window), "realize",
       G_CALLBACK(on_calendar_realized),
@@ -360,8 +316,7 @@ static gboolean datetime_clicked(GtkWidget *widget,
 
     /* draw calendar */
     datetime->cal = pop_calendar_window(datetime,
-                                        orientation,
-                                        gtk_label_get_text(GTK_LABEL(datetime->date_label)));
+                                        orientation);
   }
   return TRUE;
 }
