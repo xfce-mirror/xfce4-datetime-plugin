@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../panel-plugin/datetime.c:49
 msgid "Invalid format"
-msgstr "Fomato invalido"
+msgstr "Formato invalido"
 
 #: ../panel-plugin/datetime.c:54
 msgid "Error"
