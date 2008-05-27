@@ -70,9 +70,9 @@ typedef struct {
 gboolean
 datetime_update(gpointer data);
 
-gchar * 
+gchar *
 datetime_do_utf8strftime(
-    const char *format, 
+    const char *format,
     const struct tm *tm);
 
 void
@@ -85,8 +85,8 @@ datetime_apply_format(t_datetime *datetime,
     const gchar *date_format,
     const gchar *time_format);
 
-void 
-datetime_apply_layout(t_datetime *datetime, 
+void
+datetime_apply_layout(t_datetime *datetime,
     t_layout layout);
 
 void

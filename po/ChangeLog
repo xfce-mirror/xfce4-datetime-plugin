@@ -2,7 +2,7 @@
 
 	* es.po: Added missing letter (Bug #4114)
 
-2008-05-27  Mike Massonnet <mmassonnet@xfce.org>
+2008-05-27	Mike Massonnet <mmassonnet@xfce.org>
 
 	* da.po, LINGUAS: Add Danish translation (Jens Hyllegaard)
 
@@ -34,7 +34,7 @@
 	* ur.po: Update translation by Muhammad Ali Makki <makki.ma@gmail.com>
 	* pk.po, ur.po: Rename pk.po to ur.po.
 
-2007-11-06  Og Maciel <ogmaciel@gnome.org>
+2007-11-06	Og Maciel <ogmaciel@gnome.org>
 
 	* pt_BR.po: Updated the Brazilian Portuguese translation
 	by Fábio Nogueira <deb-user-ba@ubuntu.com>
@@ -43,35 +43,35 @@
 
 	* pk.po: Add new translation by محمد علي المكي <makki.ma@gmail.com>
 
-2007-06-11  Maximilian Schleiss <maximilian@xfce.org>
+2007-06-11	Maximilian Schleiss <maximilian@xfce.org>
 
 	* pt_BR.po: Updated the Brazilian Portuguese translation
 	by Pablo Lerina <pabloalr@gmail.com>
 
-2007-03-14  Piarres Beobide <pi@beobide.net>
+2007-03-14	Piarres Beobide <pi@beobide.net>
 
 	* eu.po: Added basque translation
 
-2007-03-02  Maximilian Schleiss <maximilian@xfce.org>
+2007-03-02	Maximilian Schleiss <maximilian@xfce.org>
 
 	* fr.po: Added the French translation.
 
-2007-03-02  Remco den Breeje <remco@vioco.nl>
+2007-03-02	Remco den Breeje <remco@vioco.nl>
 
 	* uk.po: Added Ukrainian translations
 
-2007-01-13  Remco den Breeje <remco@vioco.nl>
+2007-01-13	Remco den Breeje <remco@vioco.nl>
 
 	* Updated name of pot-file
 
-2006-12-17  sas <sas@321>
+2006-12-17	sas <sas@321>
 
 	* hu.po: Added Hungarian translation
 
-2006-12-17  Nick Schermer <nick@xfce.org>
+2006-12-17	Nick Schermer <nick@xfce.org>
 
 	* Created pot file for translators
 
-2006-10-06  Remco den Breeje <remco@sx.mine.nu>
+2006-10-06	Remco den Breeje <remco@sx.mine.nu>
 
 	* nl.po: Created Dutch translation

@@ -175,23 +175,23 @@ static void on_calendar_realized(GtkWidget *widget, gpointer data)
   {
     if (parent_x < root_w / 2) {
       if (parent_y < root_h / 2) {
-	/* upper left */
-	x = parent_x + parent_w;
-	y = parent_y;
+        /* upper left */
+        x = parent_x + parent_w;
+        y = parent_y;
       } else {
-	/* lower left */
-	x = parent_x + parent_w;
-	y = parent_y + parent_h - height;
+        /* lower left */
+        x = parent_x + parent_w;
+        y = parent_y + parent_h - height;
       }
     } else {
       if (parent_y < root_h / 2) {
-	/* upper right */
-	x = parent_x - width;
-	y = parent_y;
+        /* upper right */
+        x = parent_x - width;
+        y = parent_y;
       } else {
-	/* lower right */
-	x = parent_x - width;
-	y = parent_y + parent_h - height;
+        /* lower right */
+        x = parent_x - width;
+        y = parent_y + parent_h - height;
       }
     }
   }
@@ -201,30 +201,30 @@ static void on_calendar_realized(GtkWidget *widget, gpointer data)
     {
       if (parent_y < root_h / 2)
       {
-	/* upper left */
-	x = parent_x;
-	y = parent_y + parent_h;
+        /* upper left */
+        x = parent_x;
+        y = parent_y + parent_h;
       }
       else
       {
-	/* lower left */
-	x = parent_x;
-	y = parent_y - height;
+        /* lower left */
+        x = parent_x;
+        y = parent_y - height;
       }
     }
     else
     {
       if (parent_y < root_h / 2)
       {
-	/* upper right */
-	x = parent_x + parent_w - width;
-	y = parent_y + parent_h;
+        /* upper right */
+        x = parent_x + parent_w - width;
+        y = parent_y + parent_h;
       }
       else
       {
-	/* lower right */
-	x = parent_x + parent_w - width;
-	y = parent_y - height;
+        /* lower right */
+        x = parent_x + parent_w - width;
+        y = parent_y - height;
       }
     }
   }
@@ -466,7 +466,7 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 
     if(rc != NULL)
     {
-      layout	  = xfce_rc_read_int_entry(rc, "layout", layout);
+      layout      = xfce_rc_read_int_entry(rc, "layout", layout);
       date_font   = xfce_rc_read_entry(rc, "date_font", date_font);
       time_font   = xfce_rc_read_entry(rc, "time_font", time_font);
       date_format = xfce_rc_read_entry(rc, "date_format", date_format);

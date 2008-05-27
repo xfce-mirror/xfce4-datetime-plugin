@@ -47,20 +47,20 @@ static const char *layout_strs[] = {
 /* builtin formats - derived from xfce4-panel-clock.patch by Nick Schermer */
 #define TIME_FORMAT_COUNT 6
 static const char *time_format[] = {
-  "%H:%M",		"%H:%M:%S",
-  "%l:%M %P",		"%l:%M:%S %P",
+  "%H:%M",              "%H:%M:%S",
+  "%l:%M %P",           "%l:%M:%S %P",
   "---",
   N_("Custom...")
 };
 
 #define DATE_FORMAT_COUNT 13
 static const char *date_format[] = {
-  "%Y/%m/%d",		"%m/%d/%Y",
-  "%B %d, %Y",		"%b %d, %Y",
-  "%A, %B %d, %Y",	"%a, %b %d, %Y",
-  "%d/%m/%Y",		"%d %B %Y",
-  "%d %b %Y",		"%A, %d %B %Y",
-  "%a, %d %b %Y",	"---",
+  "%Y/%m/%d",           "%m/%d/%Y",
+  "%B %d, %Y",          "%b %d, %Y",
+  "%A, %B %d, %Y",      "%a, %b %d, %Y",
+  "%d/%m/%Y",           "%d %B %Y",
+  "%d %b %Y",           "%A, %d %B %Y",
+  "%a, %d %b %Y",       "---",
   N_("Custom...")
 };
 
@@ -93,12 +93,12 @@ static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt)
 
   dialog = gtk_font_selection_dialog_new(_("Select font"));
   gtk_font_selection_dialog_set_font_name(GTK_FONT_SELECTION_DIALOG(dialog),
-					  fontname);
+                                          fontname);
 
   if (G_LIKELY (previewtext != NULL))
   {
     gtk_font_selection_dialog_set_preview_text(GTK_FONT_SELECTION_DIALOG(dialog),
-					       previewtext);
+                                               previewtext);
   }
 
   result = gtk_dialog_run(GTK_DIALOG(dialog));
@@ -112,9 +112,9 @@ static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt)
       gtk_button_set_label(GTK_BUTTON(widget), font_name);
 
       if(target == DATE)
-	datetime_apply_font(dt, font_name, NULL);
+        datetime_apply_font(dt, font_name, NULL);
       else
-	datetime_apply_font(dt, NULL, font_name);
+        datetime_apply_font(dt, NULL, font_name);
 
       g_free (font_name);
     }
@@ -125,7 +125,7 @@ static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt)
 /*
  * Read layout from combobox and set sensitivity
  */
-static void 
+static void
 datetime_layout_changed(GtkComboBox *cbox, t_datetime *dt)
 {
   t_layout layout;
@@ -136,47 +136,47 @@ datetime_layout_changed(GtkComboBox *cbox, t_datetime *dt)
   switch(layout)
   {
     case LAYOUT_DATE:
-      gtk_widget_set_sensitive(dt->date_font_selector,	  TRUE);
+      gtk_widget_set_sensitive(dt->date_font_selector,    TRUE);
       gtk_widget_set_sensitive(dt->date_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->date_format_entry,	  TRUE);
-      gtk_widget_set_sensitive(dt->time_font_selector,	  FALSE);
+      gtk_widget_set_sensitive(dt->date_format_entry,     TRUE);
+      gtk_widget_set_sensitive(dt->time_font_selector,    FALSE);
       gtk_widget_set_sensitive(dt->time_format_combobox,  FALSE);
-      gtk_widget_set_sensitive(dt->time_format_entry,	  FALSE);
+      gtk_widget_set_sensitive(dt->time_format_entry,     FALSE);
       break;
 
     case LAYOUT_TIME:
-      gtk_widget_set_sensitive(dt->date_font_selector,	  FALSE);
+      gtk_widget_set_sensitive(dt->date_font_selector,    FALSE);
       gtk_widget_set_sensitive(dt->date_format_combobox,  FALSE);
-      gtk_widget_set_sensitive(dt->date_format_entry,	  FALSE);
-      gtk_widget_set_sensitive(dt->time_font_selector,	  TRUE);
+      gtk_widget_set_sensitive(dt->date_format_entry,     FALSE);
+      gtk_widget_set_sensitive(dt->time_font_selector,    TRUE);
       gtk_widget_set_sensitive(dt->time_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->time_format_entry,	  TRUE);
+      gtk_widget_set_sensitive(dt->time_format_entry,     TRUE);
       break;
 
     default:
-      gtk_widget_set_sensitive(dt->date_font_selector,	  TRUE);
+      gtk_widget_set_sensitive(dt->date_font_selector,    TRUE);
       gtk_widget_set_sensitive(dt->date_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->date_format_entry,	  TRUE);
-      gtk_widget_set_sensitive(dt->time_font_selector,	  TRUE);
+      gtk_widget_set_sensitive(dt->date_format_entry,     TRUE);
+      gtk_widget_set_sensitive(dt->time_font_selector,    TRUE);
       gtk_widget_set_sensitive(dt->time_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->time_format_entry,	  TRUE);
+      gtk_widget_set_sensitive(dt->time_format_entry,     TRUE);
   }
 
   datetime_apply_layout(dt, layout);
   datetime_update(dt);
 }
 
-/* 
- * Row seperator for format-comboboxes of date and time 
- * derived from xfce4-panel-clock.patch by Nick Schermer 
+/*
+ * Row seperator for format-comboboxes of date and time
+ * derived from xfce4-panel-clock.patch by Nick Schermer
  */
 static gboolean
 combo_box_row_separator (GtkTreeModel *model,
-			 GtkTreeIter  *iter,
-			 gpointer data)
+                         GtkTreeIter  *iter,
+                         gpointer data)
 {
   /* Hack: the 2nd item from the end will be a separator */
- 
+
   gint total, current;
   GtkTreePath *path;
 
@@ -192,7 +192,7 @@ combo_box_row_separator (GtkTreeModel *model,
     return FALSE;
 }
 
-/* 
+/*
  * Read date format from combobox and set sensitivity
  */
 static void
@@ -213,11 +213,11 @@ date_format_changed(GtkComboBox *cbox, t_datetime *dt)
     gtk_widget_hide(dt->date_format_entry);
     datetime_apply_format(dt, date_format[active], NULL);
   }
-  
+
   datetime_update(dt);
 }
 
-/* 
+/*
  * Read time format from combobox and set sensitivity
  */
 static void
@@ -238,23 +238,23 @@ time_format_changed(GtkComboBox *cbox, t_datetime *dt)
     gtk_widget_hide(dt->time_format_entry);
     datetime_apply_format(dt, NULL, time_format[active]);
   }
-  
+
   datetime_update(dt);
 }
 
 /*
  * read values from date and time entry and inform datetime about it
  */
-static gboolean 
+static gboolean
 datetime_entry_change_cb(GtkWidget *widget, GdkEventFocus *ev, t_datetime *dt)
 {
   const gchar *format;
   format = gtk_entry_get_text(GTK_ENTRY(widget));
   if (format != NULL)
   {
-    if(widget == dt->date_format_entry)		/* date */
+    if(widget == dt->date_format_entry)         /* date */
       datetime_apply_format(dt, format, NULL);
-    else if(widget == dt->time_format_entry)	/* or time */
+    else if(widget == dt->time_format_entry)    /* or time */
       datetime_apply_format(dt, NULL, format);
   }
   datetime_update(dt);
@@ -264,7 +264,7 @@ datetime_entry_change_cb(GtkWidget *widget, GdkEventFocus *ev, t_datetime *dt)
 /*
  * user closed the properties dialog
  */
-static void 
+static void
 datetime_dialog_response(GtkWidget *dlg, int foo, t_datetime *dt)
 {
   if(dt == NULL)
@@ -280,24 +280,24 @@ datetime_dialog_response(GtkWidget *dlg, int foo, t_datetime *dt)
 /*
  * show datetime properties dialog
  */
-void 
+void
 datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 {
   gint i;
   gchar *utf8str;
   struct tm *exampletm;
   GtkWidget *dlg,
-	    *frame,
-	    *vbox,
-	    *hbox,
-	    *layout_combobox,
-	    *time_combobox,
-	    *date_combobox,
-	    *label,
-	    *image,
-	    *button,
-	    *entry,
-	    *bin;
+            *frame,
+            *vbox,
+            *hbox,
+            *layout_combobox,
+            *time_combobox,
+            *date_combobox,
+            *label,
+            *image,
+            *button,
+            *entry,
+            *bin;
   GtkSizeGroup *sg;
 
   xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
@@ -315,7 +315,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "xfce4-settings");
 
   gtk_container_set_border_width(GTK_CONTAINER(dlg), 2);
-  
+
   /* size group */
   sg = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
@@ -409,18 +409,18 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
       gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), _(date_format[i]));
     }
 
-    /* set active 
-     * strcmp isn't fast, but it is done only once while opening the dialog 
+    /* set active
+     * strcmp isn't fast, but it is done only once while opening the dialog
      */
     if(strcmp(datetime->date_format,date_format[i]) == 0)
       gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), i);
   }
   /* if no field selected -> select custom field */
-  if(gtk_combo_box_get_active(GTK_COMBO_BOX(date_combobox)) < 0) 
+  if(gtk_combo_box_get_active(GTK_COMBO_BOX(date_combobox)) < 0)
     gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), DATE_FORMAT_COUNT-1);
   gtk_combo_box_set_row_separator_func(GTK_COMBO_BOX(date_combobox),
-				       combo_box_row_separator,
-				       NULL, NULL);
+                                       combo_box_row_separator,
+                                       NULL, NULL);
   g_signal_connect(G_OBJECT(date_combobox), "changed",
       G_CALLBACK(date_format_changed), datetime);
   datetime->date_format_combobox = date_combobox;
@@ -477,7 +477,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
-  
+
   /* format combobox */
   time_combobox = gtk_combo_box_new_text();
   gtk_box_pack_start(GTK_BOX(hbox), time_combobox, TRUE, TRUE, 0);
@@ -495,18 +495,18 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
       gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), _(time_format[i]));
     }
 
-    /* set active 
-     * strcmp isn't fast, but it is done only once while opening the dialog 
+    /* set active
+     * strcmp isn't fast, but it is done only once while opening the dialog
      */
     if(strcmp(datetime->time_format,time_format[i]) == 0)
       gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i);
   }
   /* if no field selected -> select custom field */
-  if(gtk_combo_box_get_active(GTK_COMBO_BOX(time_combobox)) < 0) 
+  if(gtk_combo_box_get_active(GTK_COMBO_BOX(time_combobox)) < 0)
     gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), TIME_FORMAT_COUNT-1);
   gtk_combo_box_set_row_separator_func(GTK_COMBO_BOX(time_combobox),
-				       combo_box_row_separator,
-				       NULL, NULL);
+                                       combo_box_row_separator,
+                                       NULL, NULL);
   g_signal_connect(G_OBJECT(time_combobox), "changed",
       G_CALLBACK(time_format_changed), datetime);
   datetime->time_format_combobox = time_combobox;
@@ -547,7 +547,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(NULL);
   gtk_label_set_markup(GTK_LABEL(label),
       _("The information on which day the calendar week "
-	"starts is derived from the locale."));
+        "starts is derived from the locale."));
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
   gtk_label_set_line_wrap(GTK_LABEL(label), TRUE);
 
@@ -556,7 +556,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /* We're done! */
   g_signal_connect(dlg, "response",
       G_CALLBACK(datetime_dialog_response), datetime);
-  
+
   /* set sensitivity for all widgets */
   datetime_layout_changed(GTK_COMBO_BOX(layout_combobox), datetime);
   date_format_changed(GTK_COMBO_BOX(date_combobox), datetime);

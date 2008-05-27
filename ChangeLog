@@ -1,109 +1,133 @@
-2008-05-21  Diego Ongaro <ongardie@gmail.com>
-    * panel-plugin/datetime.c:
-      - Remove date input (Bug #4023)
-      - Fix tooltip hiding
+2008-05-21	Diego Ongaro <ongardie@gmail.com>
 
-2008-05-18  Diego Ongaro <ongardie@gmail.com>
-    * panel-plugin/datetime-dialog.c: Missing static keywords
+	* {,po/}ChangeLog, panel-plugin/*.{c,h}: formatting
+	* panel-plugin/datetime.c:
+	  - Remove date input (Bug #4023)
+	  - Fix tooltip hiding
 
-2008-05-17  Diego Ongaro <ongardie@gmail.com>
-    * panel-plugin/datetime-dialog.c:
-      - translate strings in combo boxes
-    * panel-plugin/datetime.c:
-      - Use GtkToggleButton in panel (Bug #3456)
-      - handle delete event on popup calendar (patch from Mike Massonet)
-      - show popup calendar on all workspaces (patch from Mike Massonet)
-      - allow ctrl-click on plugin (patch from Mike Massonet)
+2008-05-18	Diego Ongaro <ongardie@gmail.com>
 
-2008-05-02  Diego Ongaro <ongardie@gmail.com>
-    * panel-plugin/datetime.c:
-      - fix memory leak with double-g_strdup of setting strings
-      - handle NULL from xfce_rc_simple_open,
-    * panel-plugin/datetime.h: Use GtkTooltips type (fixes build)
+	* panel-plugin/datetime-dialog.c: Missing static keywords
 
-2007-04-07  Remco den Breeje <remco@sx.mine.nu>
-    * panel-plugin/datetime.{c,h}, 
-    * panel-plugin/datetime-dialog.c: Enable tooltips. Based 
-    on a patch by Laurent Meunier <meunier.laurent@laposte.net> (#3073)
+2008-05-17	Diego Ongaro <ongardie@gmail.com>
 
-2007-04-02  Remco den Breeje <remco@sx.mine.nu>
-    * THANKS: added contributors
-    * panel-plugin/datetime.c: Fix incorrect display when panel starts (#3062)
+	* panel-plugin/datetime-dialog.c:
+	  - translate strings in combo boxes
+	* panel-plugin/datetime.c:
+	  - Use GtkToggleButton in panel (Bug #3456)
+	  - handle delete event on popup calendar (patch from Mike Massonet)
+	  - show popup calendar on all workspaces (patch from Mike Massonet)
+	  - allow ctrl-click on plugin (patch from Mike Massonet)
 
-2007-03-02  Remco den Breeje <remco@sx.mine.nu>
-    * THANKS: added contributors
-    * LINGUAS,uk.po: Add Ukrainian translations by LuckAs <luckas_fb@mail.ru>
+2008-05-02	Diego Ongaro <ongardie@gmail.com>
 
-2007-01-13  Remco den Breeje <remco@sx.mine.nu>
-    * release 0.5.0 
-      User can choose a layout, added built-in formats of date
-      and time. Based on the patch for the clock-plugin by Nick Schermer and 
-      Brian Tarricone. 
-      See http://foo-projects.org/~nick/patches/xfce4-panel-clock.patch
-    * Show actual date and times instead of the format codes in the
-    config-dialog. 
-    * Created general strftime function for the datetime plugin
-    * Fixed some warnings that show when -Wall enabled
-    * Grouped the labels in the config-dialog
+	* panel-plugin/datetime.c:
+	  - fix memory leak with double-g_strdup of setting strings
+	  - handle NULL from xfce_rc_simple_open,
+	* panel-plugin/datetime.h: Use GtkTooltips type (fixes build)
 
-2006-12-19  Nick Schermer <nick@xfce.org>
-    * configure.in.in: Bump version to 0.4.1 for release
+2007-04-07	Remco den Breeje <remco@sx.mine.nu>
 
-2006-12-17  Nick Schermer <nick@xfce.org>
-    * Move the file into trunk.
-    * Fix compiler warnings.
-    * Add LINGUAS support.
-    * Cygwin Fix.
-    * Fix compiler warnings and header includes.
-    * Use new module detection for the panel.
-    * Fix multiple memory leaks.
-    * Fix crash when the plugin was removed from the panel.
-    * Use panel slice macros for creating structures.
+	* panel-plugin/datetime.{c,h}, 
+	* panel-plugin/datetime-dialog.c: Enable tooltips. Based 
+	on a patch by Laurent Meunier <meunier.laurent@laposte.net> (#3073)
 
-2006-10-06  Remco den Breeje <remco@sx.mine.nu>
-    * release 0.4.0
-    compatible with xfce 4.4
+2007-04-02	Remco den Breeje <remco@sx.mine.nu>
 
-2004-09-11  Choe Hwanjin <krisna@kldp.org>
-    * release 0.3.1
+	* THANKS: added contributors
+	* panel-plugin/datetime.c: Fix incorrect display when panel starts (#3062)
 
-2004-09-09  Choe Hwanjin <krisna@kldp.org>
-    * Add French translation.
-    Thanks to Stephane Roy <sroy@j2n.net>
+2007-03-02	Remco den Breeje <remco@sx.mine.nu>
 
-2004-05-31  Choe Hwanjin <krisna@kldp.org>
-    * Add Catalan translation.
-    Thanks to Carles Muñoz Gorriz <carlesmu@internautas.org>
+	* THANKS: added contributors
+	* LINGUAS,uk.po: Add Ukrainian translations by LuckAs <luckas_fb@mail.ru>
 
-2004-01-18  Choe Hwanjin <krisna@kldp.org>
-    * release 0.3.0
+2007-01-13	Remco den Breeje <remco@sx.mine.nu>
 
-2004-01-04  Choe Hwanjin <krisna@kldp.org>
-    * datetime/datetime.c: automatically change layout when the panel size is
-      small
+	* release 0.5.0
+	  User can choose a layout, added built-in formats of date
+	  and time. Based on the patch for the clock-plugin by Nick Schermer and 
+	  Brian Tarricone. 
+	  See http://foo-projects.org/~nick/patches/xfce4-panel-clock.patch
+	* Show actual date and times instead of the format codes in the
+	config-dialog. 
+	* Created general strftime function for the datetime plugin
+	* Fixed some warnings that show when -Wall enabled
+	* Grouped the labels in the config-dialog
 
-2004-01-01  Choe Hwanjin <krisna@kldp.org>
-    * datetime/datetime.c: append entry to select date. format change is
-      applied on closing option window
+2006-12-19	Nick Schermer <nick@xfce.org>
 
-2003-12-29  Choe Hwanjin <krisna@kldp.org>
-    * internationalization
+	* configure.in.in: Bump version to 0.4.1 for release
 
-2003-12-29  Choe Hwanjin <krisna@kldp.org>
-    * datetime/datetime.c: split main label into two, date label and time label
-      add Week starts monday option for calendar (#1181)
-      Thanks to Jeroen Peters (xfce-goodies@jpeters.coldmail.nl)
+2006-12-17	Nick Schermer <nick@xfce.org>
 
-2003-12-13  Choe Hwanjin <krisna@kldp.org>
-    * add autogen.sh
-    * update libtool to 1.5.0a
+	* Move the file into trunk.
+	* Fix compiler warnings.
+	* Add LINGUAS support.
+	* Cygwin Fix.
+	* Fix compiler warnings and header includes.
+	* Use new module detection for the panel.
+	* Fix multiple memory leaks.
+	* Fix crash when the plugin was removed from the panel.
+	* Use panel slice macros for creating structures.
 
-2003-11-02  Choe Hwanjin <krisna@kldp.org>
-    * datetime/datetime.c:
-      change timeout interval with format string(aware of second field)
+2006-10-06	Remco den Breeje <remco@sx.mine.nu>
 
-2003-10-13  Choe Hwanjin <krisna@kldp.org>
-    * src/datetime.c: Calendar window is toggled by clicking datetime widget
+	* release 0.4.0
+	compatible with xfce 4.4
 
-2003-10-05  Choe Hwanjin <krisna@kldp.org>
-    * src/datetime.c: i18n update (#981)
+2004-09-11	Choe Hwanjin <krisna@kldp.org>
+
+	* release 0.3.1
+
+2004-09-09	Choe Hwanjin <krisna@kldp.org>
+
+	* Add French translation.
+	Thanks to Stephane Roy <sroy@j2n.net>
+
+2004-05-31	Choe Hwanjin <krisna@kldp.org>
+
+	* Add Catalan translation.
+	Thanks to Carles Muñoz Gorriz <carlesmu@internautas.org>
+
+2004-01-18	Choe Hwanjin <krisna@kldp.org>
+
+	* release 0.3.0
+
+2004-01-04	Choe Hwanjin <krisna@kldp.org>
+
+	* datetime/datetime.c: automatically change layout when the panel size is
+	  small
+
+2004-01-01	Choe Hwanjin <krisna@kldp.org>
+
+	* datetime/datetime.c: append entry to select date. format change is
+	  applied on closing option window
+
+2003-12-29	Choe Hwanjin <krisna@kldp.org>
+
+	* internationalization
+
+2003-12-29	Choe Hwanjin <krisna@kldp.org>
+
+	* datetime/datetime.c: split main label into two, date label and time label
+	  add Week starts monday option for calendar (#1181)
+	  Thanks to Jeroen Peters (xfce-goodies@jpeters.coldmail.nl)
+
+2003-12-13	Choe Hwanjin <krisna@kldp.org>
+
+	* add autogen.sh
+	* update libtool to 1.5.0a
+
+2003-11-02	Choe Hwanjin <krisna@kldp.org>
+
+	* datetime/datetime.c:
+	  change timeout interval with format string(aware of second field)
+
+2003-10-13	Choe Hwanjin <krisna@kldp.org>
+
+	* src/datetime.c: Calendar window is toggled by clicking datetime widget
+
+2003-10-05	Choe Hwanjin <krisna@kldp.org>
+
+	* src/datetime.c: i18n update (#981)
