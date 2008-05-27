@@ -1,5 +1,7 @@
 2008-05-27	Diego Ongaro <ongardie@gmail.com>
 
+	* panel-plugin/datetime.c: "Fix tooltip hiding" uses gtk2.12 function,
+	  put preprocessor #if around it
 	* {,po/}ChangeLog, panel-plugin/*.{c,h}: formatting
 
 2008-05-21	Diego Ongaro <ongardie@gmail.com>

@@ -35,6 +35,8 @@
 #include "datetime.h"
 #include "datetime-dialog.h"
 
+#define USE_GTK_TOOLTIP_API     GTK_CHECK_VERSION(2,12,0)
+
 /*
  * Get date/time string
  */
@@ -134,7 +136,9 @@ gboolean datetime_update(gpointer data)
     default:
       gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
           NULL, NULL);
+#if USE_GTK_TOOLTIP_API
       gtk_widget_set_has_tooltip(datetime->button, FALSE);
+#endif
       break;
   }
 
