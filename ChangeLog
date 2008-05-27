@@ -1,6 +1,9 @@
-2008-05-21	Diego Ongaro <ongardie@gmail.com>
+2008-05-27	Diego Ongaro <ongardie@gmail.com>
 
 	* {,po/}ChangeLog, panel-plugin/*.{c,h}: formatting
+
+2008-05-21	Diego Ongaro <ongardie@gmail.com>
+
 	* panel-plugin/datetime.c:
 	  - Remove date input (Bug #4023)
 	  - Fix tooltip hiding
