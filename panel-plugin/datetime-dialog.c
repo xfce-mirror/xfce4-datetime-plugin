@@ -62,6 +62,9 @@ const char *date_format[] = {
   N_("Custom...")
 };
 
+/* example timestamp to show in the dialog */
+const time_t example_time_t = 946684799;
+
 /*
  * show and read fonts and inform datetime about it
  */
@@ -279,6 +282,8 @@ void
 datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 {
   gint i;
+  gchar *utf8str;
+  struct tm *exampletm;
   GtkWidget *dlg,
 	    *frame,
 	    *vbox,
@@ -291,6 +296,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 	    *button,
 	    *entry,
 	    *bin;
+  GtkSizeGroup *sg;
 
   xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
 
@@ -307,6 +313,9 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "xfce4-settings");
 
   gtk_container_set_border_width(GTK_CONTAINER(dlg), 2);
+  
+  /* size group */
+  sg = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
   /*
    * layout frame
@@ -328,6 +337,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Format:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
 
   /* Layout combobox */
   layout_combobox = gtk_combo_box_new_text();
@@ -339,78 +349,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
       G_CALLBACK(datetime_layout_changed), datetime);
 
   /* show frame */
-  gtk_widget_show_all(frame);
-
-  /*
-   * time frame
-   */
-  frame = xfce_create_framebox(_("Time"), &bin);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
-      FALSE, FALSE, 0);
-  gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
-
-  /* vbox */
-  vbox = gtk_vbox_new(FALSE, 8);
-  gtk_container_add(GTK_CONTAINER(bin),vbox);
-
-  /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
-
-  /* font label */
-  label = gtk_label_new(_("Font:"));
-  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
-
-  /* font button */
-  button = gtk_button_new_with_label(datetime->time_font);
-  gtk_box_pack_start(GTK_BOX(hbox), button, TRUE, TRUE, 0);
-  g_signal_connect(G_OBJECT(button), "clicked",
-      G_CALLBACK(datetime_font_selection_cb), datetime);
-  datetime->time_font_selector = button;
-
-  /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
-
-  /* format label */
-  label = gtk_label_new(_("Format:"));
-  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
-  
-  /* format combobox */
-  time_combobox = gtk_combo_box_new_text();
-  gtk_box_pack_start(GTK_BOX(hbox), time_combobox, TRUE, TRUE, 0);
-  for(i=0; i < TIME_FORMAT_COUNT; i++)
-  {
-    gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), time_format[i]);
-
-    /* set active - strcmp isn't fast, but it is done once opening the dialog */
-    if(strcmp(datetime->time_format,time_format[i]) == 0)
-      gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i);
-  }
-  /* if no field selected -> select custom field */
-  if(gtk_combo_box_get_active(GTK_COMBO_BOX(time_combobox)) < 0) 
-    gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), TIME_FORMAT_COUNT-1);
-  gtk_combo_box_set_row_separator_func(GTK_COMBO_BOX(time_combobox),
-				       combo_box_row_separator,
-				       NULL, NULL);
-  g_signal_connect(G_OBJECT(time_combobox), "changed",
-      G_CALLBACK(time_format_changed), datetime);
-  datetime->time_format_combobox = time_combobox;
-
-  /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
-
-  /* format entry */
-  entry = gtk_entry_new();
-  gtk_entry_set_text(GTK_ENTRY(entry), datetime->time_format);
-  gtk_box_pack_end(GTK_BOX(hbox), entry, FALSE, FALSE, 0);
-  g_signal_connect (G_OBJECT(entry), "focus-out-event",
-                    G_CALLBACK (datetime_entry_change_cb), datetime);
-  datetime->time_format_entry = entry;
-
   gtk_widget_show_all(frame);
 
   /*
@@ -433,6 +371,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Font:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
 
   /* font button */
   button = gtk_button_new_with_label(datetime->date_font);
@@ -449,15 +388,21 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   label = gtk_label_new(_("Format:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
 
   /* format combobox */
   date_combobox = gtk_combo_box_new_text();
   gtk_box_pack_start(GTK_BOX(hbox), date_combobox, TRUE, TRUE, 0);
+  exampletm = gmtime(&example_time_t);
   for(i=0; i < DATE_FORMAT_COUNT; i++)
-  {
-    gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), date_format[i]);
+  {  
+    utf8str = datetime_do_utf8strftime(date_format[i], exampletm);
+    gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), utf8str);
+    g_free(utf8str);
 
-    /* set active - strcmp isn't fast, but it is done once opening the dialog */
+    /* set active 
+     * strcmp isn't fast, but it is done only once while opening the dialog 
+     */
     if(strcmp(datetime->date_format,date_format[i]) == 0)
       gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), i);
   }
@@ -482,6 +427,85 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   g_signal_connect (G_OBJECT(entry), "focus-out-event",
                     G_CALLBACK (datetime_entry_change_cb), datetime);
   datetime->date_format_entry = entry;
+
+  gtk_widget_show_all(frame);
+
+  /*
+   * time frame
+   */
+  frame = xfce_create_framebox(_("Time"), &bin);
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
+      FALSE, FALSE, 0);
+  gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
+
+  /* vbox */
+  vbox = gtk_vbox_new(FALSE, 8);
+  gtk_container_add(GTK_CONTAINER(bin),vbox);
+
+  /* hbox */
+  hbox = gtk_hbox_new(FALSE, 2);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+
+  /* font label */
+  label = gtk_label_new(_("Font:"));
+  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
+  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
+
+  /* font button */
+  button = gtk_button_new_with_label(datetime->time_font);
+  gtk_box_pack_start(GTK_BOX(hbox), button, TRUE, TRUE, 0);
+  g_signal_connect(G_OBJECT(button), "clicked",
+      G_CALLBACK(datetime_font_selection_cb), datetime);
+  datetime->time_font_selector = button;
+
+  /* hbox */
+  hbox = gtk_hbox_new(FALSE, 2);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+
+  /* format label */
+  label = gtk_label_new(_("Format:"));
+  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
+  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_size_group_add_widget(sg, label);
+  
+  /* format combobox */
+  time_combobox = gtk_combo_box_new_text();
+  gtk_box_pack_start(GTK_BOX(hbox), time_combobox, TRUE, TRUE, 0);
+  exampletm = gmtime(&example_time_t);
+  for(i=0; i < TIME_FORMAT_COUNT; i++)
+  {
+    utf8str = datetime_do_utf8strftime(time_format[i], exampletm);
+    gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), utf8str);
+    g_free(utf8str);
+
+    /* set active 
+     * strcmp isn't fast, but it is done only once while opening the dialog 
+     */
+    if(strcmp(datetime->time_format,time_format[i]) == 0)
+      gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i);
+  }
+  /* if no field selected -> select custom field */
+  if(gtk_combo_box_get_active(GTK_COMBO_BOX(time_combobox)) < 0) 
+    gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), TIME_FORMAT_COUNT-1);
+  gtk_combo_box_set_row_separator_func(GTK_COMBO_BOX(time_combobox),
+				       combo_box_row_separator,
+				       NULL, NULL);
+  g_signal_connect(G_OBJECT(time_combobox), "changed",
+      G_CALLBACK(time_format_changed), datetime);
+  datetime->time_format_combobox = time_combobox;
+
+  /* hbox */
+  hbox = gtk_hbox_new(FALSE, 2);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+
+  /* format entry */
+  entry = gtk_entry_new();
+  gtk_entry_set_text(GTK_ENTRY(entry), datetime->time_format);
+  gtk_box_pack_end(GTK_BOX(hbox), entry, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT(entry), "focus-out-event",
+                    G_CALLBACK (datetime_entry_change_cb), datetime);
+  datetime->time_format_entry = entry;
 
   gtk_widget_show_all(frame);
 

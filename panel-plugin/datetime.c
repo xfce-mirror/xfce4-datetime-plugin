@@ -35,14 +35,34 @@
 #include "datetime-dialog.h"
 
 /*
+ * Get date/time string
+ */
+gchar * datetime_do_utf8strftime(const char *format, const struct tm *tm)
+{
+  int len;
+  gchar buf[256];
+  gchar *utf8str = NULL;
+
+  /* get formatted date/time */
+  len = strftime(buf, sizeof(buf)-1, format, tm);
+  if (len == 0)
+    return g_strdup(_("Invalid format"));
+
+  buf[len] = '\0';  /* make sure nul terminated string */
+  utf8str = g_locale_to_utf8(buf, -1, NULL, NULL, NULL);
+  if(utf8str == NULL)
+    return g_strdup(_("Error"));
+
+  return utf8str;
+}
+
+/*
  * set date and time labels
  */
 gboolean datetime_update(gpointer data)
 {
   GTimeVal timeval;
-  gchar buf[256];
   gchar *utf8str;
-  int len;
   struct tm *current;
   t_datetime *datetime;
 
@@ -57,40 +77,16 @@ gboolean datetime_update(gpointer data)
   current = localtime((time_t *)&timeval.tv_sec);
   if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
   {
-    len = strftime(buf, sizeof(buf) - 1, datetime->date_format, current);
-    if (len != 0)
-    {
-      buf[len] = '\0';  /* make sure nul terminated string */
-      utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL)
-      {
-	gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
-	g_free(utf8str);
-      }
-    }
-    else
-    {
-      gtk_label_set_text(GTK_LABEL(datetime->date_label), _("Error"));
-    }
+    utf8str = datetime_do_utf8strftime(datetime->date_format, current);
+    gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
+    g_free(utf8str);
   }
 
   if (datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label))
   {
-    len = strftime(buf, sizeof(buf) - 1, datetime->time_format, current);
-    if (len != 0)
-    {
-      buf[len] = '\0';  /* make sure nul terminated string */
-      utf8str = g_locale_to_utf8(buf, len, NULL, NULL, NULL);
-      if (utf8str != NULL)
-      {
-	gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
-	g_free(utf8str);
-      }
-    }
-    else
-    {
-      gtk_label_set_text(GTK_LABEL(datetime->time_label), _("Error"));
-    }
+    utf8str = datetime_do_utf8strftime(datetime->time_format, current);
+    gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
+    g_free(utf8str);
   }
 
   /* hide labels based on layout-selection */
@@ -103,6 +99,8 @@ gboolean datetime_update(gpointer data)
       break;
     case LAYOUT_TIME:
       gtk_widget_hide(GTK_WIDGET(datetime->date_label));
+      break;
+    default:
       break;
   }
 
@@ -448,8 +446,6 @@ static int datetime_set_size(XfcePanelPlugin *plugin,
     gint size,
     t_datetime *datetime)
 {
-  DBG("set_size called! with new size of %d", size);
-
   if(size > 26)
     gtk_container_set_border_width(GTK_CONTAINER(datetime->frame), 2);
   else
@@ -468,13 +464,14 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   XfceRc *rc;
   t_layout layout;
   const gchar *date_font, *time_font, *date_format, *time_format;
+  const gchar *val;
 
   /* load defaults */
   layout = LAYOUT_DATE_TIME;
-  date_font = "Bitstream Vera Sans 8";
-  time_font = "Bitstream Vera Sans 10";
-  date_format = "%Y/%m/%d";
-  time_format = "%H:%M";
+  date_font = g_strdup("Bitstream Vera Sans 8");
+  time_font = g_strdup("Bitstream Vera Sans 10");
+  date_format = g_strdup("%Y/%m/%d");
+  time_format = g_strdup("%H:%M");
 
   /* open file */
   if((file = xfce_panel_plugin_lookup_rc_file(plugin)) != NULL)
@@ -485,10 +482,14 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
     if(rc != NULL)
     {
       layout	  = xfce_rc_read_int_entry(rc, "layout", layout);
-      date_font	  = xfce_rc_read_entry(rc, "date_font", date_font);
-      time_font	  = xfce_rc_read_entry(rc, "time_font", time_font);
-      date_format = xfce_rc_read_entry(rc, "date_format", date_format);
-      time_format = xfce_rc_read_entry(rc, "time_format", time_format);
+      val = xfce_rc_read_entry(rc, "date_font", date_font);
+      date_font	  = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "time_font", time_font);
+      time_font	  = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "date_format", date_format);
+      date_format = g_strdup(val);
+      val = xfce_rc_read_entry(rc, "time_format", time_format);
+      time_format = g_strdup(val);
 
       xfce_rc_close(rc);
     }

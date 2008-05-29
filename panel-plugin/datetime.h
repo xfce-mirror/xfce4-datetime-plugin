@@ -68,6 +68,11 @@ typedef struct {
 gboolean
 datetime_update(gpointer data);
 
+gchar * 
+datetime_do_utf8strftime(
+    const char *format, 
+    const struct tm *tm);
+
 void
 datetime_apply_font(t_datetime *datetime,
     const gchar *date_font_name,
@@ -77,6 +82,10 @@ void
 datetime_apply_format(t_datetime *datetime,
     const gchar *date_format,
     const gchar *time_format);
+
+void 
+datetime_apply_layout(t_datetime *datetime, 
+    t_layout layout);
 
 void
 datetime_write_rc_file(XfcePanelPlugin *plugin,
