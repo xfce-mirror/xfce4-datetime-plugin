@@ -72,7 +72,12 @@ static gboolean datetime_format_has_seconds(const gchar *format)
     .tm_hour  = 0,
     .tm_mday  = 1,
     .tm_mon   = 0,
-    .tm_year  = 0,
+    .tm_year  = 100, /* "Updates do not occur every second with the '%s'
+			 specifier. Increasing the tm_year field to 100 (70
+			 would probably work) results in updates every second.
+			 I believe the time conversion was failing because the
+			 year 1900 cannot be represented as a number of seconds
+			 since 1970." -Steve Tyler, Bug #4117, Comment #3 */
     .tm_wday  = 0,
     .tm_yday  = 0,
     .tm_isdst = 0
