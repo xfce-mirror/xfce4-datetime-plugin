@@ -46,6 +46,7 @@ typedef struct {
   GtkWidget *date_label;
   GtkWidget *time_label;
   GtkTooltips *tips;
+  guint update_interval;  /* time between updates in milliseconds */
   guint timeout_id;
 
   /* settings */

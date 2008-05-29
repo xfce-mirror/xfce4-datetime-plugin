@@ -1,5 +1,7 @@
 2008-05-29	Diego Ongaro <ongardie@gmail.com>
 
+	* panl-plugin/datetime.{c,h}: Update on the top of every second or
+	minute and no more (Bug #4119, based on patch by Steve Tyler)
 	* panel-plugin/datetime.c: Always update every second when seconds are
 	shown (Bug #4117)
 
