@@ -2,6 +2,7 @@
  *
  *  Copyright (C) 2003 Choe Hwanjin(krisna@kldp.org)
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
+ *  Copyright (c) 2008 Diego Ongaro <ongardie@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU Library General Public License as published
@@ -36,6 +37,7 @@
 #include "datetime-dialog.h"
 
 #define USE_GTK_TOOLTIP_API     GTK_CHECK_VERSION(2,12,0)
+#define DATETIME_MAX_STRLEN 256
 
 /*
  * Get date/time string
@@ -43,7 +45,7 @@
 gchar * datetime_do_utf8strftime(const char *format, const struct tm *tm)
 {
   int len;
-  gchar buf[256];
+  gchar buf[DATETIME_MAX_STRLEN];
   gchar *utf8str = NULL;
 
   /* get formatted date/time */
@@ -57,6 +59,42 @@ gchar * datetime_do_utf8strftime(const char *format, const struct tm *tm)
     return g_strdup(_("Error"));
 
   return utf8str;
+}
+
+/**
+ *  Check whether date/time format shows seconds
+ */
+static gboolean datetime_format_has_seconds(const gchar *format)
+{
+  static struct tm time_struct = {
+    .tm_sec   = 0,
+    .tm_min   = 0,
+    .tm_hour  = 0,
+    .tm_mday  = 1,
+    .tm_mon   = 0,
+    .tm_year  = 0,
+    .tm_wday  = 0,
+    .tm_yday  = 0,
+    .tm_isdst = 0
+  };
+  int len1;
+  int len2;
+  gchar buf1[DATETIME_MAX_STRLEN];
+  gchar buf2[DATETIME_MAX_STRLEN];
+
+  time_struct.tm_sec = 1;
+  len1 = strftime(buf1, sizeof(buf1)-1, format, &time_struct);
+  if (len1 == 0)
+    return FALSE;
+  buf1[len1] = '\0';
+
+  time_struct.tm_sec = 2;
+  len2 = strftime(buf2, sizeof(buf2)-1, format, &time_struct);
+  if (len2 == 0)
+    return FALSE;
+  buf2[len2] = '\0';
+
+  return len1 != len2 || strcmp(buf1, buf2) != 0;
 }
 
 /*
@@ -417,14 +455,8 @@ void datetime_apply_format(t_datetime *datetime,
     g_source_remove(datetime->timeout_id);
   }
 
-  if (strstr(datetime->date_format, "%S") != NULL ||
-      strstr(datetime->date_format, "%s") != NULL ||
-      strstr(datetime->date_format, "%r") != NULL ||
-      strstr(datetime->date_format, "%T") != NULL ||
-      strstr(datetime->time_format, "%S") != NULL ||
-      strstr(datetime->time_format, "%s") != NULL ||
-      strstr(datetime->time_format, "%r") != NULL ||
-      strstr(datetime->time_format, "%T") != NULL)
+  if (datetime_format_has_seconds(datetime->date_format) ||
+      datetime_format_has_seconds(datetime->time_format))
   {
     datetime->timeout_id = g_timeout_add(1000, datetime_update, datetime);
   }
