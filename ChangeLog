@@ -1,3 +1,7 @@
+2008-05-31	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime.c: Steve Tyler's updated comments, etc (Bug #4117)
+
 2008-05-29	Diego Ongaro <ongardie@gmail.com>
 
 	* panl-plugin/datetime.{c,h}: Update on the top of every second or

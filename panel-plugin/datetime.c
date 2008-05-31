@@ -41,8 +41,11 @@
 #define DATETIME_MAX_STRLEN 256
 
 /**
- * Calculate the number of milliseconds from a GTimeVal.
- * Anything smaller than one millisecond will be truncated.
+ *  Convert a GTimeVal to milliseconds.
+ *  Fractions of a millisecond are truncated.
+ *  With a 32 bit word size and some values of t.tv_sec,
+ *  multiplication by 1000 could overflow a glong,
+ *  so the value is cast to a gint64.
  */
 static inline gint64 datetime_gtimeval_to_ms(const GTimeVal t)
 {
@@ -82,12 +85,7 @@ static gboolean datetime_format_has_seconds(const gchar *format)
     .tm_hour  = 0,
     .tm_mday  = 1,
     .tm_mon   = 0,
-    .tm_year  = 100, /* "Updates do not occur every second with the '%s'
-			 specifier. Increasing the tm_year field to 100 (70
-			 would probably work) results in updates every second.
-			 I believe the time conversion was failing because the
-			 year 1900 cannot be represented as a number of seconds
-			 since 1970." -Steve Tyler, Bug #4117, Comment #3 */
+    .tm_year  = 70, /* use 1970 so strftime() can convert '%s' */
     .tm_wday  = 0,
     .tm_yday  = 0,
     .tm_isdst = 0
@@ -204,8 +202,10 @@ gboolean datetime_update(gpointer data)
 
   /*
    * Compute the time to the next update and start the timer.
-   * The calculation finds the next larger integral multiple of the given update interval.
-   * This results in the next update occurring on the second or minute
+   * The wake interval is the time remaining
+   * to the next larger integral multiple of the update interval.
+   * Setting the timer to this value schedules the next update
+   * to occur on the next second or minute
    * when the update interval is 1 or 60 seconds, respectively.
    */
   wake_interval = datetime->update_interval - datetime_gtimeval_to_ms(timeval) % datetime->update_interval;
