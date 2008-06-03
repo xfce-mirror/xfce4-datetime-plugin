@@ -1,3 +1,9 @@
+2008-06-03	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime-dialog.c: Add help button that opens web site
+	(Bug #4099). Thanks to Nick Schermer's r2263 of the
+	xfce4-battery-plugin.
+
 2008-05-31	Diego Ongaro <ongardie@gmail.com>
 
 	* panel-plugin/datetime.c: Steve Tyler's updated comments, etc (Bug #4117)

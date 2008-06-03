@@ -34,6 +34,8 @@
 #include "datetime.h"
 #include "datetime-dialog.h"
 
+#define PLUGIN_WEBSITE  "http://goodies.xfce.org/projects/panel-plugins/xfce4-datetime-plugin"
+
 /* Layouts */
 static const char *layout_strs[] = {
   N_("Date only"),
@@ -265,16 +267,29 @@ datetime_entry_change_cb(GtkWidget *widget, GdkEventFocus *ev, t_datetime *dt)
  * user closed the properties dialog
  */
 static void
-datetime_dialog_response(GtkWidget *dlg, int foo, t_datetime *dt)
+datetime_dialog_response(GtkWidget *dlg, int response, t_datetime *dt)
 {
+  gboolean result;
+
   if(dt == NULL)
     return;
 
-  g_object_set_data(G_OBJECT(dt->plugin), "dialog", NULL);
+  if (response == GTK_RESPONSE_HELP)
+  {
+      /* show help */
+      result = g_spawn_command_line_async("exo-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
 
-  gtk_widget_destroy(dlg);
-  xfce_panel_plugin_unblock_menu(dt->plugin);
-  datetime_write_rc_file(dt->plugin, dt);
+      if (G_UNLIKELY(result == FALSE))
+          g_warning(_("Unable to open the following url: %s"), PLUGIN_WEBSITE);
+  }
+  else
+  {
+    g_object_set_data(G_OBJECT(dt->plugin), "dialog", NULL);
+
+    gtk_widget_destroy(dlg);
+    xfce_panel_plugin_unblock_menu(dt->plugin);
+    datetime_write_rc_file(dt->plugin, dt);
+  }
 }
 
 /*
@@ -307,7 +322,9 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   dlg = xfce_titled_dialog_new_with_buttons(_("Datetime properties"),
       NULL, /* or: GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(plugin))), */
       GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_NO_SEPARATOR,
-      GTK_STOCK_CLOSE, GTK_RESPONSE_OK, NULL);
+      GTK_STOCK_HELP, GTK_RESPONSE_HELP,
+      GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+      NULL);
 
   g_object_set_data(G_OBJECT(plugin), "dialog", dlg);
 
