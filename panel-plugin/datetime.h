@@ -2,6 +2,7 @@
  *
  *  Copyright (C) 2003 Choe Hwanjin(krisna@kldp.org)
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
+ *  Copyright (c) 2008 Diego Ongaro <ongardie@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU Library General Public License as published
@@ -60,9 +61,19 @@ typedef struct {
   t_layout layout;
 
   /* option widgets */
+  GtkWidget *date_frame;
+#if USE_GTK_TOOLTIP_API
+  GtkWidget *date_tooltip_label;
+#endif
+  GtkWidget *date_font_hbox;
   GtkWidget *date_font_selector;
   GtkWidget *date_format_combobox;
   GtkWidget *date_format_entry;
+  GtkWidget *time_frame;
+#if USE_GTK_TOOLTIP_API
+  GtkWidget *time_tooltip_label;
+#endif
+  GtkWidget *time_font_hbox;
   GtkWidget *time_font_selector;
   GtkWidget *time_format_combobox;
   GtkWidget *time_format_entry;

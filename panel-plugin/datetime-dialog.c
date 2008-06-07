@@ -2,6 +2,7 @@
  *
  *  Copyright (C) 2003 Choe Hwanjin(krisna@kldp.org)
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
+ *  Copyright (c) 2008 Diego Ongaro <ongardie@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU Library General Public License as published
@@ -133,34 +134,50 @@ datetime_layout_changed(GtkComboBox *cbox, t_datetime *dt)
   /* read layout */
   layout = gtk_combo_box_get_active(cbox);
 
+#if USE_GTK_TOOLTIP_API
   switch(layout)
   {
     case LAYOUT_DATE:
-      gtk_widget_set_sensitive(dt->date_font_selector,    TRUE);
-      gtk_widget_set_sensitive(dt->date_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->date_format_entry,     TRUE);
-      gtk_widget_set_sensitive(dt->time_font_selector,    FALSE);
-      gtk_widget_set_sensitive(dt->time_format_combobox,  FALSE);
-      gtk_widget_set_sensitive(dt->time_format_entry,     FALSE);
+      gtk_widget_show(dt->date_font_hbox);
+      gtk_widget_hide(dt->date_tooltip_label);
+
+      gtk_widget_hide(dt->time_font_hbox);
+      gtk_widget_show(dt->time_tooltip_label);
       break;
 
     case LAYOUT_TIME:
-      gtk_widget_set_sensitive(dt->date_font_selector,    FALSE);
-      gtk_widget_set_sensitive(dt->date_format_combobox,  FALSE);
-      gtk_widget_set_sensitive(dt->date_format_entry,     FALSE);
-      gtk_widget_set_sensitive(dt->time_font_selector,    TRUE);
-      gtk_widget_set_sensitive(dt->time_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->time_format_entry,     TRUE);
+      gtk_widget_hide(dt->date_font_hbox);
+      gtk_widget_show(dt->date_tooltip_label);
+
+      gtk_widget_show(dt->time_font_hbox);
+      gtk_widget_hide(dt->time_tooltip_label);
       break;
 
     default:
-      gtk_widget_set_sensitive(dt->date_font_selector,    TRUE);
-      gtk_widget_set_sensitive(dt->date_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->date_format_entry,     TRUE);
-      gtk_widget_set_sensitive(dt->time_font_selector,    TRUE);
-      gtk_widget_set_sensitive(dt->time_format_combobox,  TRUE);
-      gtk_widget_set_sensitive(dt->time_format_entry,     TRUE);
+      gtk_widget_show(dt->date_font_hbox);
+      gtk_widget_hide(dt->date_tooltip_label);
+
+      gtk_widget_show(dt->time_font_hbox);
+      gtk_widget_hide(dt->time_tooltip_label);
   }
+#else
+  switch(layout)
+  {
+    case LAYOUT_DATE:
+      gtk_widget_set_sensitive(dt->date_frame, TRUE);
+      gtk_widget_set_sensitive(dt->time_frame, FALSE);
+      break;
+
+    case LAYOUT_TIME:
+      gtk_widget_set_sensitive(dt->date_frame, FALSE);
+      gtk_widget_set_sensitive(dt->time_frame, TRUE);
+      break;
+
+    default:
+      gtk_widget_set_sensitive(dt->date_frame, TRUE);
+      gtk_widget_set_sensitive(dt->time_frame, TRUE);
+  }
+#endif
 
   datetime_apply_layout(dt, layout);
   datetime_update(dt);
@@ -297,7 +314,7 @@ void
 datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 {
   gint i;
-  gchar *utf8str;
+  gchar *str;
   struct tm *exampletm;
   GtkWidget *dlg,
             *frame,
@@ -371,28 +388,39 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /*
    * Date frame
    */
-  frame = xfce_create_framebox(_("Date"), &bin);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
+  datetime->date_frame = xfce_create_framebox(_("Date"), &bin);
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), datetime->date_frame,
       FALSE, FALSE, 0);
-  gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
+  gtk_container_set_border_width(GTK_CONTAINER(datetime->date_frame), 6);
 
   /* vbox */
   vbox = gtk_vbox_new(FALSE, 8);
   gtk_container_add(GTK_CONTAINER(bin),vbox);
 
+#if USE_GTK_TOOLTIP_API
+  /* tooltip label */
+  str = g_markup_printf_escaped("<span style=\"italic\">%s</span>",
+                                _("The date will appear in a tooltip."));
+  datetime->date_tooltip_label = gtk_label_new(str);
+  g_free(str);
+  gtk_label_set_use_markup(GTK_LABEL(datetime->date_tooltip_label), TRUE);
+  gtk_misc_set_alignment(GTK_MISC(datetime->date_tooltip_label), 0.0f, 0.0f);
+  gtk_box_pack_start(GTK_BOX(vbox), datetime->date_tooltip_label, FALSE, FALSE, 0);
+#endif
+
   /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+  datetime->date_font_hbox = gtk_hbox_new(FALSE, 2);
+  gtk_box_pack_start(GTK_BOX(vbox), datetime->date_font_hbox, FALSE, FALSE, 0);
 
   /* font label */
   label = gtk_label_new(_("Font:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(datetime->date_font_hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
 
   /* font button */
   button = gtk_button_new_with_label(datetime->date_font);
-  gtk_box_pack_start(GTK_BOX(hbox), button, TRUE, TRUE, 0);
+  gtk_box_pack_start(GTK_BOX(datetime->date_font_hbox), button, TRUE, TRUE, 0);
   g_signal_connect(G_OBJECT(button), "clicked",
       G_CALLBACK(datetime_font_selection_cb), datetime);
   datetime->date_font_selector = button;
@@ -415,9 +443,9 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   {
     if(i < DATE_FORMAT_COUNT - 1)
     {
-      utf8str = datetime_do_utf8strftime(date_format[i], exampletm);
-      gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), utf8str);
-      g_free(utf8str);
+      str = datetime_do_utf8strftime(date_format[i], exampletm);
+      gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), str);
+      g_free(str);
     }
     else
     {
@@ -452,33 +480,44 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
                     G_CALLBACK (datetime_entry_change_cb), datetime);
   datetime->date_format_entry = entry;
 
-  gtk_widget_show_all(frame);
+  gtk_widget_show_all(datetime->date_frame);
 
   /*
    * time frame
    */
-  frame = xfce_create_framebox(_("Time"), &bin);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
+  datetime->time_frame = xfce_create_framebox(_("Time"), &bin);
+  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), datetime->time_frame,
       FALSE, FALSE, 0);
-  gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
+  gtk_container_set_border_width(GTK_CONTAINER(datetime->time_frame), 6);
 
   /* vbox */
   vbox = gtk_vbox_new(FALSE, 8);
   gtk_container_add(GTK_CONTAINER(bin),vbox);
 
+#if USE_GTK_TOOLTIP_API
+  /* tooltip label */
+  str = g_markup_printf_escaped("<span style=\"italic\">%s</span>",
+                                _("The time will appear in a tooltip."));
+  datetime->time_tooltip_label = gtk_label_new(str);
+  g_free(str);
+  gtk_label_set_use_markup(GTK_LABEL(datetime->time_tooltip_label), TRUE);
+  gtk_misc_set_alignment(GTK_MISC(datetime->time_tooltip_label), 0.0f, 0.0f);
+  gtk_box_pack_start(GTK_BOX(vbox), datetime->time_tooltip_label, FALSE, FALSE, 0);
+#endif
+
   /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+  datetime->time_font_hbox = gtk_hbox_new(FALSE, 2);
+  gtk_box_pack_start(GTK_BOX(vbox), datetime->time_font_hbox, FALSE, FALSE, 0);
 
   /* font label */
   label = gtk_label_new(_("Font:"));
   gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(datetime->time_font_hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
 
   /* font button */
   button = gtk_button_new_with_label(datetime->time_font);
-  gtk_box_pack_start(GTK_BOX(hbox), button, TRUE, TRUE, 0);
+  gtk_box_pack_start(GTK_BOX(datetime->time_font_hbox), button, TRUE, TRUE, 0);
   g_signal_connect(G_OBJECT(button), "clicked",
       G_CALLBACK(datetime_font_selection_cb), datetime);
   datetime->time_font_selector = button;
@@ -501,9 +540,9 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   {
     if(i < TIME_FORMAT_COUNT - 1)
     {
-      utf8str = datetime_do_utf8strftime(time_format[i], exampletm);
-      gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), utf8str);
-      g_free(utf8str);
+      str = datetime_do_utf8strftime(time_format[i], exampletm);
+      gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), str);
+      g_free(str);
     }
     else
     {
@@ -538,7 +577,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
                     G_CALLBACK (datetime_entry_change_cb), datetime);
   datetime->time_format_entry = entry;
 
-  gtk_widget_show_all(frame);
+  gtk_widget_show_all(datetime->time_frame);
 
   /*
    * Calendar options frame
