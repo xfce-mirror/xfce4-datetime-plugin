@@ -156,11 +156,9 @@ gboolean datetime_update(gpointer data)
   switch(datetime->layout)
   {
     case LAYOUT_DATE:
-    case LAYOUT_DATE_TIMETT:
       gtk_widget_hide(GTK_WIDGET(datetime->time_label));
       break;
     case LAYOUT_TIME:
-    case LAYOUT_TIME_DATETT:
       gtk_widget_hide(GTK_WIDGET(datetime->date_label));
       break;
     default:
@@ -178,26 +176,6 @@ gboolean datetime_update(gpointer data)
     default:
       gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
       gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
-  }
-
-  /* update tooltip */
-  switch(datetime->layout)
-  {
-    case LAYOUT_DATE_TIMETT:
-      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
-          gtk_label_get_text(GTK_LABEL(datetime->time_label)), NULL);
-      break;
-    case LAYOUT_TIME_DATETT:
-      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
-          gtk_label_get_text(GTK_LABEL(datetime->date_label)), NULL);
-      break;
-    default:
-      gtk_tooltips_set_tip(GTK_TOOLTIPS(datetime->tips), datetime->button,
-          NULL, NULL);
-#if USE_GTK_TOOLTIP_API
-      gtk_widget_set_has_tooltip(datetime->button, FALSE);
-#endif
-      break;
   }
 
   /*
@@ -601,9 +579,6 @@ static void datetime_create_widget(t_datetime * datetime)
       datetime->date_label, FALSE, FALSE, 0);
   gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
   gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
-
-  /* create tooltips */
-  datetime->tips = gtk_tooltips_new ();
 
   /* connect widget signals to functions */
   g_signal_connect(datetime->button, "button-press-event",
