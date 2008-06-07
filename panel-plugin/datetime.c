@@ -36,8 +36,6 @@
 #include "datetime.h"
 #include "datetime-dialog.h"
 
-#define USE_GTK_TOOLTIP_API     GTK_CHECK_VERSION(2,12,0)
-
 #define DATETIME_MAX_STRLEN 256
 
 /**
@@ -129,14 +127,16 @@ gboolean datetime_update(t_datetime *datetime)
   g_get_current_time(&timeval);
   current = localtime((time_t *)&timeval.tv_sec);
 
-  if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
+  if (datetime->layout != LAYOUT_TIME &&
+      datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
   {
     utf8str = datetime_do_utf8strftime(datetime->date_format, current);
     gtk_label_set_text(GTK_LABEL(datetime->date_label), utf8str);
     g_free(utf8str);
   }
 
-  if (datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label))
+  if (datetime->layout != LAYOUT_DATE &&
+      datetime->time_format != NULL && GTK_IS_LABEL(datetime->time_label))
   {
     utf8str = datetime_do_utf8strftime(datetime->time_format, current);
     gtk_label_set_text(GTK_LABEL(datetime->time_label), utf8str);
@@ -157,6 +157,43 @@ gboolean datetime_update(t_datetime *datetime)
   return TRUE;
 }
 
+#if USE_GTK_TOOLTIP_API
+static gboolean datetime_query_tooltip(GtkWidget *widget,
+                                       gint x, gint y,
+                                       gboolean keyboard_mode,
+                                       GtkTooltip *tooltip,
+                                       t_datetime *datetime)
+{
+  GTimeVal timeval;
+  struct tm *current;
+  gchar *utf8str;
+  gchar *format = NULL;
+
+  switch(datetime->layout)
+  {
+    case LAYOUT_TIME:
+      format = datetime->date_format;
+      break;
+    case LAYOUT_DATE:
+      format = datetime->time_format;
+      break;
+    default:
+      break;
+  }
+
+  if (format == NULL)
+    return FALSE;
+
+  g_get_current_time(&timeval);
+  current = localtime((time_t *)&timeval.tv_sec);
+
+  utf8str = datetime_do_utf8strftime(format, current);
+  gtk_tooltip_set_text(tooltip, utf8str);
+  g_free(utf8str);
+
+  return TRUE;
+}
+#endif
 
 static void on_calendar_realized(GtkWidget *widget, gpointer data)
 {
@@ -385,6 +422,28 @@ void datetime_apply_layout(t_datetime *datetime, t_layout layout)
     default:
       break;
   }
+
+#if USE_GTK_TOOLTIP_API
+  /* update tooltip handler */
+  if (datetime->tooltip_id)
+  {
+    g_signal_handler_disconnect(datetime->button,
+                                datetime->tooltip_id);
+    datetime->tooltip_id = 0;
+  }
+  switch(datetime->layout)
+  {
+    case LAYOUT_DATE:
+    case LAYOUT_TIME:
+      gtk_widget_set_has_tooltip(GTK_WIDGET(datetime->button), TRUE);
+      datetime->tooltip_id = g_signal_connect(datetime->button, "query-tooltip",
+                                 G_CALLBACK(datetime_query_tooltip), datetime);
+      break;
+
+    default:
+      gtk_widget_set_has_tooltip(GTK_WIDGET(datetime->button), FALSE);
+  }
+#endif
 
   /* set order based on layout-selection */
   switch(datetime->layout)

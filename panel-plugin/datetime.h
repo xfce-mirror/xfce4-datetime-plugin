@@ -21,6 +21,8 @@
 #ifndef DATETIME_H
 #define DATETIME_H
 
+#define USE_GTK_TOOLTIP_API     GTK_CHECK_VERSION(2,12,0)
+
 /* enums */
 enum {
   DATE = 0,
@@ -46,6 +48,9 @@ typedef struct {
   GtkTooltips *tips;
   guint update_interval;  /* time between updates in milliseconds */
   guint timeout_id;
+#if USE_GTK_TOOLTIP_API
+  gulong tooltip_id;
+#endif
 
   /* settings */
   gchar *date_font;
