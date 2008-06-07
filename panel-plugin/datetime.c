@@ -113,20 +113,12 @@ static gboolean datetime_format_has_seconds(const gchar *format)
 /*
  * set date and time labels
  */
-gboolean datetime_update(gpointer data)
+gboolean datetime_update(t_datetime *datetime)
 {
   GTimeVal timeval;
   gchar *utf8str;
   struct tm *current;
-  t_datetime *datetime;
   guint wake_interval;  /* milliseconds to next update */
-
-  if (data == NULL)
-  {
-    return FALSE;
-  }
-
-  datetime = (t_datetime*)data;
 
   /* stop timer */
   if (datetime->timeout_id)
@@ -136,6 +128,7 @@ gboolean datetime_update(gpointer data)
 
   g_get_current_time(&timeval);
   current = localtime((time_t *)&timeval.tv_sec);
+
   if (datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
   {
     utf8str = datetime_do_utf8strftime(datetime->date_format, current);
@@ -187,7 +180,7 @@ gboolean datetime_update(gpointer data)
    * when the update interval is 1 or 60 seconds, respectively.
    */
   wake_interval = datetime->update_interval - datetime_gtimeval_to_ms(timeval) % datetime->update_interval;
-  datetime->timeout_id = g_timeout_add(wake_interval, datetime_update, datetime);
+  datetime->timeout_id = g_timeout_add(wake_interval, (GSourceFunc) datetime_update, datetime);
 
   return TRUE;
 }

@@ -67,7 +67,7 @@ typedef struct {
 } t_datetime;
 
 gboolean
-datetime_update(gpointer data);
+datetime_update(t_datetime *datetime);
 
 gchar *
 datetime_do_utf8strftime(
