@@ -143,34 +143,6 @@ gboolean datetime_update(t_datetime *datetime)
     g_free(utf8str);
   }
 
-  /* hide labels based on layout-selection */
-  gtk_widget_show(GTK_WIDGET(datetime->time_label));
-  gtk_widget_show(GTK_WIDGET(datetime->date_label));
-  switch(datetime->layout)
-  {
-    case LAYOUT_DATE:
-      gtk_widget_hide(GTK_WIDGET(datetime->time_label));
-      break;
-    case LAYOUT_TIME:
-      gtk_widget_hide(GTK_WIDGET(datetime->date_label));
-      break;
-    default:
-      break;
-  }
-
-  /* set order based on layout-selection */
-  switch(datetime->layout)
-  {
-    case LAYOUT_DATE_TIME:
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 1);
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 0);
-      break;
-
-    default:
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
-  }
-
   /*
    * Compute the time to the next update and start the timer.
    * The wake interval is the time remaining
@@ -398,6 +370,34 @@ void datetime_apply_layout(t_datetime *datetime, t_layout layout)
   {
     datetime->layout = layout;
   }
+
+  /* hide labels based on layout-selection */
+  gtk_widget_show(GTK_WIDGET(datetime->time_label));
+  gtk_widget_show(GTK_WIDGET(datetime->date_label));
+  switch(datetime->layout)
+  {
+    case LAYOUT_DATE:
+      gtk_widget_hide(GTK_WIDGET(datetime->time_label));
+      break;
+    case LAYOUT_TIME:
+      gtk_widget_hide(GTK_WIDGET(datetime->date_label));
+      break;
+    default:
+      break;
+  }
+
+  /* set order based on layout-selection */
+  switch(datetime->layout)
+  {
+    case LAYOUT_TIME_DATE:
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
+      break;
+
+    default:
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 1);
+      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 0);
+  }
 }
 
 /*
@@ -436,20 +436,12 @@ void datetime_apply_format(t_datetime *datetime,
   {
     g_free(datetime->date_format);
     datetime->date_format = g_strdup(date_format);
-    if (strlen(date_format) == 0)
-      gtk_widget_hide(GTK_WIDGET(datetime->date_label));
-    else
-      gtk_widget_show(GTK_WIDGET(datetime->date_label));
   }
 
   if (time_format != NULL)
   {
     g_free(datetime->time_format);
     datetime->time_format = g_strdup(time_format);
-    if (strlen(time_format) == 0)
-      gtk_widget_hide(GTK_WIDGET(datetime->time_label));
-    else
-      gtk_widget_show(GTK_WIDGET(datetime->time_label));
   }
 
   if (datetime_format_has_seconds(datetime->date_format) ||
@@ -554,9 +546,11 @@ static void datetime_create_widget(t_datetime * datetime)
 {
   /* create button */
   datetime->button = xfce_create_panel_toggle_button();
+  gtk_widget_show(datetime->button);
 
   /* create vertical box */
   datetime->vbox = gtk_vbox_new(TRUE, 0);
+  gtk_widget_show(datetime->vbox);
   gtk_container_add(GTK_CONTAINER(datetime->button), datetime->vbox);
 
   /* create time and date lines */
@@ -605,9 +599,6 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 
   /* load settings (default values if non-av) */
   datetime_read_rc_file(plugin, datetime);
-
-  /* display plugin */
-  gtk_widget_show_all(datetime->button);
 
   /* set date and time labels */
   datetime->timeout_id = 0;
