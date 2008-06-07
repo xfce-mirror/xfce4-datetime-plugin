@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-17 21:32+0100\n"
+"POT-Creation-Date: 2008-06-08 00:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,95 +16,96 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/datetime.c:49
+#: ../panel-plugin/datetime.c:65
 msgid "Invalid format"
 msgstr ""
 
-#: ../panel-plugin/datetime.c:54
+#: ../panel-plugin/datetime.c:70
 msgid "Error"
 msgstr ""
 
-#: ../panel-plugin/datetime.c:310
-msgid "Date:"
-msgstr ""
-
-#: ../panel-plugin/datetime-dialog.c:39
+#: ../panel-plugin/datetime-dialog.c:42
 msgid "Date only"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:40
-msgid "Date only, time in tooltip"
-msgstr ""
-
-#: ../panel-plugin/datetime-dialog.c:41
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time only"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:42
-msgid "Time only, date in tooltip"
-msgstr ""
-
-#: ../panel-plugin/datetime-dialog.c:43
+#: ../panel-plugin/datetime-dialog.c:44
 msgid "Date, then time"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:44
+#: ../panel-plugin/datetime-dialog.c:45
 msgid "Time, then date"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:53 ../panel-plugin/datetime-dialog.c:64
+#: ../panel-plugin/datetime-dialog.c:54 ../panel-plugin/datetime-dialog.c:65
 msgid "Custom..."
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:94
+#: ../panel-plugin/datetime-dialog.c:95
 msgid "Select font"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:307
+#: ../panel-plugin/datetime-dialog.c:298
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:337
 msgid "Datetime properties"
 msgstr ""
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:325
+#: ../panel-plugin/datetime-dialog.c:357
 msgid "Layout"
 msgstr ""
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:339 ../panel-plugin/datetime-dialog.c:390
-#: ../panel-plugin/datetime-dialog.c:476
+#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:433
+#: ../panel-plugin/datetime-dialog.c:530
 msgid "Format:"
 msgstr ""
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:359
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Date"
 msgstr ""
 
+#: ../panel-plugin/datetime-dialog.c:403
+msgid "The date will appear in a tooltip."
+msgstr ""
+
 #. font label
-#: ../panel-plugin/datetime-dialog.c:373 ../panel-plugin/datetime-dialog.c:459
+#: ../panel-plugin/datetime-dialog.c:416 ../panel-plugin/datetime-dialog.c:513
 msgid "Font:"
 msgstr ""
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:445
+#: ../panel-plugin/datetime-dialog.c:488
 msgid "Time"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:500
+msgid "The time will appear in a tooltip."
 msgstr ""
 
 #.
 #. * Calendar options frame
 #.
-#: ../panel-plugin/datetime-dialog.c:531
+#: ../panel-plugin/datetime-dialog.c:585
 msgid "Calendar"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:549
+#: ../panel-plugin/datetime-dialog.c:603
 msgid ""
 "The information on which day the calendar week starts is derived from the "
 "locale."
