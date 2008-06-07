@@ -1,3 +1,8 @@
+2008-06-08	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime.{c,h}, panel-plugin/datetime-dialog.c: New
+	tooltips implementation (only enabled on GTK >= 2.12).
+
 2008-06-03	Diego Ongaro <ongardie@gmail.com>
 
 	* panel-plugin/datetime-dialog.c: Add help button that opens web site
