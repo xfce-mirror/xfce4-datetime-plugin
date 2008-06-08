@@ -1,5 +1,10 @@
 2008-06-08	Diego Ongaro <ongardie@gmail.com>
 
+	* panel-plugin/datetime-dialog.c, panel-plugin/datetime.c: Changed
+	default format to ISO 8601, added a new format, and added separators
+	to the dropdowns.
+	* panel-plugin/datetime-dialog.c: Attachment #1659 by Steve Tyler from
+	Bug #4115, changing the way the date/time format dropdowns work.
 	* panel-plugin/datetime-dialog.c: Moved message about the calendar's
 	week starting on a day defined by the locale to the wiki (Bug #4123)
 	* panel-plugin/datetime.{c,h}: Fix Bug #4110: time is not updated in
