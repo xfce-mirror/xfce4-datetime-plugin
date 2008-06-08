@@ -38,34 +38,66 @@
 #define PLUGIN_WEBSITE  "http://goodies.xfce.org/projects/panel-plugins/xfce4-datetime-plugin"
 
 /* Layouts */
-static const char *layout_strs[] = {
+static const gchar *layout_strs[] = {
   N_("Date only"),
   N_("Time only"),
   N_("Date, then time"),
   N_("Time, then date")
 };
 
-/* builtin formats - derived from xfce4-panel-clock.patch by Nick Schermer */
-#define TIME_FORMAT_COUNT 6
-static const char *time_format[] = {
-  "%H:%M",              "%H:%M:%S",
-  "%l:%M %P",           "%l:%M:%S %P",
-  "---",
-  N_("Custom...")
-};
+typedef enum {
 
-#define DATE_FORMAT_COUNT 13
-static const char *date_format[] = {
-  "%Y/%m/%d",           "%m/%d/%Y",
-  "%B %d, %Y",          "%b %d, %Y",
-  "%A, %B %d, %Y",      "%a, %b %d, %Y",
-  "%d/%m/%Y",           "%d %B %Y",
-  "%d %b %Y",           "%A, %d %B %Y",
-  "%a, %d %b %Y",       "---",
-  N_("Custom...")
-};
+  /* standard format item; string is replaced with an example date or time */
+  DT_COMBOBOX_ITEM_TYPE_STANDARD,
 
-/* example timestamp to show in the dialog */
+  /* custom format item; text is translated */
+  DT_COMBOBOX_ITEM_TYPE_CUSTOM,
+
+  /* inactive separator */
+  DT_COMBOBOX_ITEM_TYPE_SEPARATOR,
+
+} dt_combobox_item_type;
+
+typedef struct {
+  gchar *item;
+  dt_combobox_item_type type;
+} dt_combobox_item;
+
+/*
+ * Builtin formats are derived from xfce4-panel-clock.patch by Nick Schermer.
+ */
+static const dt_combobox_item dt_combobox_date[] = {
+  { "%Y/%m/%d",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%m/%d/%Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%B %d, %Y",      DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%b %d, %Y",      DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%A, %B %d, %Y",  DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%a, %b %d, %Y",  DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%d/%m/%Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%d %B %Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%d %b %Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%A, %d %B %Y",   DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%a, %d %b %Y",   DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "---",            DT_COMBOBOX_ITEM_TYPE_SEPARATOR },  /* placeholder */
+  { N_("Custom..."),  DT_COMBOBOX_ITEM_TYPE_CUSTOM    }
+};
+#define DT_COMBOBOX_DATE_COUNT (sizeof(dt_combobox_date)/sizeof(dt_combobox_item))
+
+static const dt_combobox_item dt_combobox_time[] = {
+  { "%H:%M",          DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%H:%M:%S",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%l:%M %P",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%l:%M:%S %P",    DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "---",            DT_COMBOBOX_ITEM_TYPE_SEPARATOR },  /* placeholder */
+  { N_("Custom..."),  DT_COMBOBOX_ITEM_TYPE_CUSTOM    }
+};
+#define DT_COMBOBOX_TIME_COUNT (sizeof(dt_combobox_time)/sizeof(dt_combobox_item))
+
+/*
+ * Example timestamp to show in the dialog.
+ * Compute with:
+ * date +%s -u -d 'dec 31 1999 23:59:59'
+ */
 static const time_t example_time_t = 946684799;
 
 /*
@@ -184,29 +216,23 @@ datetime_layout_changed(GtkComboBox *cbox, t_datetime *dt)
 }
 
 /*
- * Row seperator for format-comboboxes of date and time
+ * Row separator for format-comboboxes of date and time
  * derived from xfce4-panel-clock.patch by Nick Schermer
  */
 static gboolean
-combo_box_row_separator (GtkTreeModel *model,
-                         GtkTreeIter  *iter,
-                         gpointer data)
+combo_box_row_separator(GtkTreeModel *model,
+                        GtkTreeIter  *iter,
+                        gpointer data)
 {
-  /* Hack: the 2nd item from the end will be a separator */
+  const dt_combobox_item  *items = (dt_combobox_item *)data;
+  gint                    current;
+  GtkTreePath             *path;
 
-  gint total, current;
-  GtkTreePath *path;
+  path = gtk_tree_model_get_path(model, iter);
+  current = gtk_tree_path_get_indices(path)[0];
+  gtk_tree_path_free(path);
 
-  path = gtk_tree_model_get_path (model, iter);
-  current = gtk_tree_path_get_indices (path)[0];
-  gtk_tree_path_free (path);
-
-  total = gtk_tree_model_iter_n_children (model, NULL);
-
-  if (total == (current + 2))
-    return TRUE;
-  else
-    return FALSE;
+  return items[current].type == DT_COMBOBOX_ITEM_TYPE_SEPARATOR;
 }
 
 /*
@@ -217,18 +243,20 @@ date_format_changed(GtkComboBox *cbox, t_datetime *dt)
 {
   const gint active = gtk_combo_box_get_active(cbox);
 
-  /* check if user choose the last option (custom entry) */
-  if(active > (DATE_FORMAT_COUNT - 2))
+  switch(dt_combobox_date[active].type)
   {
-    /* set last text and enable field */
-    gtk_entry_set_text(GTK_ENTRY(dt->date_format_entry), dt->date_format);
-    gtk_widget_show(dt->date_format_entry);
-  }
-  else
-  {
-    /* disable custom-text-field and tell datetime which format we choose */
-    gtk_widget_hide(dt->date_format_entry);
-    datetime_apply_format(dt, date_format[active], NULL);
+    case DT_COMBOBOX_ITEM_TYPE_STANDARD:
+      /* hide custom text entry box and tell datetime which format is selected */
+      gtk_widget_hide(dt->date_format_entry);
+      datetime_apply_format(dt, dt_combobox_date[active].item, NULL);
+      break;
+    case DT_COMBOBOX_ITEM_TYPE_CUSTOM:
+      /* initialize custom text entry box with current format and show the box */
+      gtk_entry_set_text(GTK_ENTRY(dt->date_format_entry), dt->date_format);
+      gtk_widget_show(dt->date_format_entry);
+      break;
+    default:
+      break; /* separators should never be active */
   }
 
   datetime_update(dt);
@@ -242,18 +270,20 @@ time_format_changed(GtkComboBox *cbox, t_datetime *dt)
 {
   const gint active = gtk_combo_box_get_active(cbox);
 
-  /* check if user choose the last option (custom entry) */
-  if(active > (TIME_FORMAT_COUNT - 2))
+  switch(dt_combobox_time[active].type)
   {
-    /* set last text and enable field */
-    gtk_entry_set_text(GTK_ENTRY(dt->time_format_entry), dt->time_format);
-    gtk_widget_show(dt->time_format_entry);
-  }
-  else
-  {
-    /* disable custom-text-field and tell datetime which format we choose */
-    gtk_widget_hide(dt->time_format_entry);
-    datetime_apply_format(dt, NULL, time_format[active]);
+    case DT_COMBOBOX_ITEM_TYPE_STANDARD:
+      /* hide custom text entry box and tell datetime which format is selected */
+      gtk_widget_hide(dt->time_format_entry);
+      datetime_apply_format(dt, NULL, dt_combobox_time[active].item);
+      break;
+    case DT_COMBOBOX_ITEM_TYPE_CUSTOM:
+      /* initialize custom text entry box with current format and show the box */
+      gtk_entry_set_text(GTK_ENTRY(dt->time_format_entry), dt->time_format);
+      gtk_widget_show(dt->time_format_entry);
+      break;
+    default:
+      break; /* separators should never be active */
   }
 
   datetime_update(dt);
@@ -315,7 +345,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 {
   gint i;
   gchar *str;
-  struct tm *exampletm;
+  struct tm *exampletm = gmtime(&example_time_t);
   GtkWidget *dlg,
             *frame,
             *vbox,
@@ -327,7 +357,8 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
             *button,
             *entry,
             *bin;
-  GtkSizeGroup *sg;
+  GtkSizeGroup  *sg;
+  gint i_custom; /* index of custom menu item */
 
   xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
 
@@ -437,32 +468,38 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /* format combobox */
   date_combobox = gtk_combo_box_new_text();
   gtk_box_pack_start(GTK_BOX(hbox), date_combobox, TRUE, TRUE, 0);
-  exampletm = gmtime(&example_time_t);
-  for(i=0; i < DATE_FORMAT_COUNT; i++)
+  i_custom = 0;
+  for(i=0; i < DT_COMBOBOX_DATE_COUNT; i++)
   {
-    if(i < DATE_FORMAT_COUNT - 1)
+    switch(dt_combobox_date[i].type)
     {
-      str = datetime_do_utf8strftime(date_format[i], exampletm);
-      gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), str);
-      g_free(str);
+      case DT_COMBOBOX_ITEM_TYPE_STANDARD:
+        str = datetime_do_utf8strftime(dt_combobox_date[i].item, exampletm);
+        gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), str);
+        g_free(str);
+        /* set active
+         * strcmp isn't fast, but it is done only once while opening the dialog
+         */
+        if(strcmp(datetime->date_format, dt_combobox_date[i].item) == 0)
+          gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), i);
+        break;
+      case DT_COMBOBOX_ITEM_TYPE_CUSTOM:
+        gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), _(dt_combobox_date[i].item));
+        i_custom = i;
+        break;
+      case DT_COMBOBOX_ITEM_TYPE_SEPARATOR: /* placeholder item does not need to be translated */
+        gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), dt_combobox_date[i].item);
+        break;
+      default:
+        break;
     }
-    else
-    {
-      gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), _(date_format[i]));
-    }
-
-    /* set active
-     * strcmp isn't fast, but it is done only once while opening the dialog
-     */
-    if(strcmp(datetime->date_format,date_format[i]) == 0)
-      gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), i);
   }
-  /* if no field selected -> select custom field */
+  /* if no item activated -> activate custom item */
   if(gtk_combo_box_get_active(GTK_COMBO_BOX(date_combobox)) < 0)
-    gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), DATE_FORMAT_COUNT-1);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), i_custom);
   gtk_combo_box_set_row_separator_func(GTK_COMBO_BOX(date_combobox),
                                        combo_box_row_separator,
-                                       NULL, NULL);
+                                       (gpointer)dt_combobox_date, NULL);
   g_signal_connect(G_OBJECT(date_combobox), "changed",
       G_CALLBACK(date_format_changed), datetime);
   datetime->date_format_combobox = date_combobox;
@@ -534,32 +571,38 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /* format combobox */
   time_combobox = gtk_combo_box_new_text();
   gtk_box_pack_start(GTK_BOX(hbox), time_combobox, TRUE, TRUE, 0);
-  exampletm = gmtime(&example_time_t);
-  for(i=0; i < TIME_FORMAT_COUNT; i++)
+  i_custom = 0;
+  for(i=0; i < DT_COMBOBOX_TIME_COUNT; i++)
   {
-    if(i < TIME_FORMAT_COUNT - 1)
+    switch(dt_combobox_time[i].type)
     {
-      str = datetime_do_utf8strftime(time_format[i], exampletm);
-      gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), str);
-      g_free(str);
+      case DT_COMBOBOX_ITEM_TYPE_STANDARD:
+        str = datetime_do_utf8strftime(dt_combobox_time[i].item, exampletm);
+        gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), str);
+        g_free(str);
+        /* set active
+         * strcmp isn't fast, but it is done only once while opening the dialog
+         */
+        if(strcmp(datetime->time_format, dt_combobox_time[i].item) == 0)
+          gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i);
+        break;
+      case DT_COMBOBOX_ITEM_TYPE_CUSTOM:
+        gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), _(dt_combobox_time[i].item));
+        i_custom = i;
+        break;
+      case DT_COMBOBOX_ITEM_TYPE_SEPARATOR: /* placeholder item does not need to be translated */
+        gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), dt_combobox_time[i].item);
+        break;
+      default:
+        break;
     }
-    else
-    {
-      gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), _(time_format[i]));
-    }
-
-    /* set active
-     * strcmp isn't fast, but it is done only once while opening the dialog
-     */
-    if(strcmp(datetime->time_format,time_format[i]) == 0)
-      gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i);
   }
-  /* if no field selected -> select custom field */
+  /* if no item activated -> activate custom item */
   if(gtk_combo_box_get_active(GTK_COMBO_BOX(time_combobox)) < 0)
-    gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), TIME_FORMAT_COUNT-1);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i_custom);
   gtk_combo_box_set_row_separator_func(GTK_COMBO_BOX(time_combobox),
                                        combo_box_row_separator,
-                                       NULL, NULL);
+                                       (gpointer)dt_combobox_time, NULL);
   g_signal_connect(G_OBJECT(time_combobox), "changed",
       G_CALLBACK(time_format_changed), datetime);
   datetime->time_format_combobox = time_combobox;
