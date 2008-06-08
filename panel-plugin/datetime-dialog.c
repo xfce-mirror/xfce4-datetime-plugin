@@ -67,12 +67,15 @@ typedef struct {
  * Builtin formats are derived from xfce4-panel-clock.patch by Nick Schermer.
  */
 static const dt_combobox_item dt_combobox_date[] = {
-  { "%Y/%m/%d",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%Y-%m-%d",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "%Y %B %d",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "---",            DT_COMBOBOX_ITEM_TYPE_SEPARATOR },  /* placeholder */
   { "%m/%d/%Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%B %d, %Y",      DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%b %d, %Y",      DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%A, %B %d, %Y",  DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%a, %b %d, %Y",  DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "---",            DT_COMBOBOX_ITEM_TYPE_SEPARATOR },  /* placeholder */
   { "%d/%m/%Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%d %B %Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%d %b %Y",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
@@ -86,6 +89,7 @@ static const dt_combobox_item dt_combobox_date[] = {
 static const dt_combobox_item dt_combobox_time[] = {
   { "%H:%M",          DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%H:%M:%S",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
+  { "---",            DT_COMBOBOX_ITEM_TYPE_SEPARATOR },  /* placeholder */
   { "%l:%M %P",       DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "%l:%M:%S %P",    DT_COMBOBOX_ITEM_TYPE_STANDARD  },
   { "---",            DT_COMBOBOX_ITEM_TYPE_SEPARATOR },  /* placeholder */

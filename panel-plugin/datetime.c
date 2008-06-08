@@ -568,7 +568,7 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   layout = LAYOUT_DATE_TIME;
   date_font = "Bitstream Vera Sans 8";
   time_font = "Bitstream Vera Sans 10";
-  date_format = "%Y/%m/%d";
+  date_format = "%Y-%m-%d";
   time_format = "%H:%M";
 
   /* open file */
