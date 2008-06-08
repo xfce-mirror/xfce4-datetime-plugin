@@ -158,6 +158,23 @@ gboolean datetime_update(t_datetime *datetime)
 }
 
 #if USE_GTK_TOOLTIP_API
+static gboolean datetime_tooltip_timer(t_datetime *datetime)
+{
+
+  /* flag to datetime_query_tooltip that there is no longer an active timeout */
+  datetime->tooltip_timeout_id = 0;
+
+  /*
+   * Run datetime_query_tooltip if the mouse is still there.
+   * If it is run, it'll register *this* function to be called after another
+   * timeout. If not, *this* function won't run again.
+   */
+  gtk_widget_trigger_tooltip_query(GTK_WIDGET(datetime->button));
+
+  /* we don't want to automatically run again */
+  return FALSE;
+}
+
 static gboolean datetime_query_tooltip(GtkWidget *widget,
                                        gint x, gint y,
                                        gboolean keyboard_mode,
@@ -190,6 +207,17 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
   utf8str = datetime_do_utf8strftime(format, current);
   gtk_tooltip_set_text(tooltip, utf8str);
   g_free(utf8str);
+
+  /* if there is no active timeout to update the tooltip, register one */
+  if (!datetime->tooltip_timeout_id)
+  {
+    /*
+     * I think we can afford to inefficiently poll every
+     * second while the user keeps the mouse here.
+     */
+    datetime->tooltip_timeout_id = g_timeout_add(1000,
+      (GSourceFunc) datetime_tooltip_timer, datetime);
+  }
 
   return TRUE;
 }
@@ -425,19 +453,20 @@ void datetime_apply_layout(t_datetime *datetime, t_layout layout)
 
 #if USE_GTK_TOOLTIP_API
   /* update tooltip handler */
-  if (datetime->tooltip_id)
+  if (datetime->tooltip_handler_id)
   {
     g_signal_handler_disconnect(datetime->button,
-                                datetime->tooltip_id);
-    datetime->tooltip_id = 0;
+                                datetime->tooltip_handler_id);
+    datetime->tooltip_handler_id = 0;
   }
   switch(datetime->layout)
   {
     case LAYOUT_DATE:
     case LAYOUT_TIME:
       gtk_widget_set_has_tooltip(GTK_WIDGET(datetime->button), TRUE);
-      datetime->tooltip_id = g_signal_connect(datetime->button, "query-tooltip",
-                                 G_CALLBACK(datetime_query_tooltip), datetime);
+      datetime->tooltip_handler_id = g_signal_connect(datetime->button,
+                             "query-tooltip",
+                             G_CALLBACK(datetime_query_tooltip), datetime);
       break;
 
     default:
@@ -640,27 +669,19 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 
   DBG("Starting datetime panel plugin");
 
-  /* alloc mem */
+  /* alloc and clear mem */
   datetime = panel_slice_new0 (t_datetime);
 
-  /* set variables */
+  /* store plugin reference */
   datetime->plugin = plugin;
-  datetime->date_font = NULL;
-  datetime->date_format = NULL;
-  datetime->time_font = NULL;
-  datetime->time_format = NULL;
 
   /* call widget-create function */
   datetime_create_widget(datetime);
-
-  /* set calendar variables */
-  datetime->cal = NULL;
 
   /* load settings (default values if non-av) */
   datetime_read_rc_file(plugin, datetime);
 
   /* set date and time labels */
-  datetime->timeout_id = 0;
   datetime_update(datetime);
 
   return datetime;
@@ -671,8 +692,9 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
  */
 static void datetime_free(XfcePanelPlugin *plugin, t_datetime *datetime)
 {
-  /* stop timeout */
+  /* stop timeouts */
   g_source_remove(datetime->timeout_id);
+  g_source_remove(datetime->tooltip_timeout_id);
 
   /* destroy widget */
   gtk_widget_destroy(datetime->button);

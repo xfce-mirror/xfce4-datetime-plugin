@@ -46,11 +46,11 @@ typedef struct {
   GtkWidget *vbox;
   GtkWidget *date_label;
   GtkWidget *time_label;
-  GtkTooltips *tips;
   guint update_interval;  /* time between updates in milliseconds */
   guint timeout_id;
 #if USE_GTK_TOOLTIP_API
-  gulong tooltip_id;
+  guint tooltip_timeout_id;
+  gulong tooltip_handler_id;
 #endif
 
   /* settings */

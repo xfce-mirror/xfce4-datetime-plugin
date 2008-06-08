@@ -1,5 +1,7 @@
 2008-06-08	Diego Ongaro <ongardie@gmail.com>
 
+	* panel-plugin/datetime.{c,h}: Fix Bug #4110: time is not updated in
+	tooltip while it is displayed.
 	* panel-plugin/datetime.{c,h}, panel-plugin/datetime-dialog.c: New
 	tooltips implementation (only enabled on GTK >= 2.12).
 
