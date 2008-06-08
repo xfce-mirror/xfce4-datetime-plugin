@@ -324,7 +324,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
             *time_combobox,
             *date_combobox,
             *label,
-            *image,
             *button,
             *entry,
             *bin;
@@ -578,34 +577,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   datetime->time_format_entry = entry;
 
   gtk_widget_show_all(datetime->time_frame);
-
-  /*
-   * Calendar options frame
-   */
-  frame = xfce_create_framebox(_("Calendar"), &bin);
-  gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
-      FALSE, FALSE, 0);
-
-  /* hbox */
-  hbox = gtk_hbox_new(FALSE, 6);
-  gtk_container_add(GTK_CONTAINER(bin),hbox);
-
-  /* dialog info image */
-  image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_INFO,
-                                      GTK_ICON_SIZE_DND);
-  gtk_misc_set_alignment (GTK_MISC (image), 0, 0);
-  gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
-
-  /* week-start-on-monday setting is ignored by gtk since version 2.4 */
-  label = gtk_label_new(NULL);
-  gtk_label_set_markup(GTK_LABEL(label),
-      _("The information on which day the calendar week "
-        "starts is derived from the locale."));
-  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
-  gtk_label_set_line_wrap(GTK_LABEL(label), TRUE);
-
-  gtk_widget_show_all(frame);
 
   /* We're done! */
   g_signal_connect(dlg, "response",

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 00:05+0100\n"
+"POT-Creation-Date: 2008-06-08 01:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,62 +53,49 @@ msgstr ""
 msgid "Unable to open the following url: %s"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:337
+#: ../panel-plugin/datetime-dialog.c:336
 msgid "Datetime properties"
 msgstr ""
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:357
+#: ../panel-plugin/datetime-dialog.c:356
 msgid "Layout"
 msgstr ""
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:433
-#: ../panel-plugin/datetime-dialog.c:530
+#: ../panel-plugin/datetime-dialog.c:370 ../panel-plugin/datetime-dialog.c:432
+#: ../panel-plugin/datetime-dialog.c:529
 msgid "Format:"
 msgstr ""
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:391
+#: ../panel-plugin/datetime-dialog.c:390
 msgid "Date"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:403
+#: ../panel-plugin/datetime-dialog.c:402
 msgid "The date will appear in a tooltip."
 msgstr ""
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:416 ../panel-plugin/datetime-dialog.c:513
+#: ../panel-plugin/datetime-dialog.c:415 ../panel-plugin/datetime-dialog.c:512
 msgid "Font:"
 msgstr ""
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:488
+#: ../panel-plugin/datetime-dialog.c:487
 msgid "Time"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:500
+#: ../panel-plugin/datetime-dialog.c:499
 msgid "The time will appear in a tooltip."
-msgstr ""
-
-#.
-#. * Calendar options frame
-#.
-#: ../panel-plugin/datetime-dialog.c:585
-msgid "Calendar"
-msgstr ""
-
-#: ../panel-plugin/datetime-dialog.c:603
-msgid ""
-"The information on which day the calendar week starts is derived from the "
-"locale."
 msgstr ""
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
