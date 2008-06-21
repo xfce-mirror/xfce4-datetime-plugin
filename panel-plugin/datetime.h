@@ -33,10 +33,10 @@ enum {
 /* typedefs */
 typedef enum
 {
-  LAYOUT_DATE = 0,
-  LAYOUT_TIME,
-  LAYOUT_DATE_TIME,
+  LAYOUT_DATE_TIME = 0,
   LAYOUT_TIME_DATE,
+  LAYOUT_DATE,
+  LAYOUT_TIME,
   LAYOUT_COUNT
 } t_layout;
 

@@ -1,3 +1,8 @@
+2008-06-21	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime-dialog.c, panel-plugin/datetime.h: Change
+	order of layout dropdown (Bug #4158)
+
 2008-06-08	Diego Ongaro <ongardie@gmail.com>
 
 	* panel-plugin/datetime-dialog.c, panel-plugin/datetime.c: Changed

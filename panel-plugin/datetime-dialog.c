@@ -39,10 +39,10 @@
 
 /* Layouts */
 static const gchar *layout_strs[] = {
-  N_("Date only"),
-  N_("Time only"),
   N_("Date, then time"),
-  N_("Time, then date")
+  N_("Time, then date"),
+  N_("Date only"),
+  N_("Time only")
 };
 
 typedef enum {
