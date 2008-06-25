@@ -118,6 +118,8 @@ gboolean datetime_update(t_datetime *datetime)
   struct tm *current;
   guint wake_interval;  /* milliseconds to next update */
 
+  DBG("wake");
+
   /* stop timer */
   if (datetime->timeout_id)
   {
@@ -160,6 +162,7 @@ gboolean datetime_update(t_datetime *datetime)
 #if USE_GTK_TOOLTIP_API
 static gboolean datetime_tooltip_timer(t_datetime *datetime)
 {
+  DBG("wake");
 
   /* flag to datetime_query_tooltip that there is no longer an active timeout */
   datetime->tooltip_timeout_id = 0;
@@ -510,6 +513,31 @@ void datetime_apply_font(t_datetime *datetime,
   }
 }
 
+static void datetime_set_update_interval(t_datetime *datetime)
+{
+  /* a custom date format could specify seconds */
+  gboolean date_has_seconds = datetime_format_has_seconds(datetime->date_format);
+  gboolean time_has_seconds = datetime_format_has_seconds(datetime->time_format);
+  gboolean has_seconds;
+
+  /* set update interval for the date/time displayed in the panel */
+  switch(datetime->layout)
+  {
+    case LAYOUT_DATE:
+      has_seconds = date_has_seconds;
+      break;
+    case LAYOUT_TIME:
+      has_seconds = time_has_seconds;
+      break;
+    default:
+      has_seconds = date_has_seconds || time_has_seconds;
+      break;
+  }
+
+  /* 1000 ms in 1 second */
+  datetime->update_interval = 1000 * (has_seconds ? 1 : 60);
+}
+
 /*
  * set the date and time format
  */
@@ -532,15 +560,7 @@ void datetime_apply_format(t_datetime *datetime,
     datetime->time_format = g_strdup(time_format);
   }
 
-  if (datetime_format_has_seconds(datetime->date_format) ||
-      datetime_format_has_seconds(datetime->time_format))
-  {
-    datetime->update_interval = 1000; /* 1 second */
-  }
-  else
-  {
-    datetime->update_interval = 60000; /* 1 minute */
-  }
+  datetime_set_update_interval(datetime);
 }
 
 /*
