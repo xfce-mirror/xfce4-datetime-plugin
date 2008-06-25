@@ -2,6 +2,7 @@
 
 	* panel-plugin/datetime.c: Pulling code from Steve Tyler's
 	Attachment #1697 in Bug #4145.
+	  - Update tooltip at the top of the second (fixes Bug #4145).
 	  - Only gsource_remove valid timeouts, add pre-processor if to the
 	    tooltips timeout.
 	  - Fix Bug #4157 - updates occur once a second when datetime plugin

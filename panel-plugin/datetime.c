@@ -51,6 +51,21 @@ static inline gint64 datetime_gtimeval_to_ms(const GTimeVal t)
 }
 
 /*
+ * Compute the wake interval,
+ * which is the time remaining from the current time
+ * to the next larger integral multiple of the update interval.
+ * Setting a timer to this value schedules the next update
+ * to occur on the next second or minute
+ * when the given update interval is 1000 or 60000 milliseconds, respectively.
+ */
+static inline guint datetime_wake_interval(const GTimeVal current_time,
+                                           const guint update_interval_ms)
+{
+  return update_interval_ms - (datetime_gtimeval_to_ms(current_time) %
+                               update_interval_ms);
+}
+
+/*
  * Get date/time string
  */
 gchar * datetime_do_utf8strftime(const char *format, const struct tm *tm)
@@ -145,15 +160,8 @@ gboolean datetime_update(t_datetime *datetime)
     g_free(utf8str);
   }
 
-  /*
-   * Compute the time to the next update and start the timer.
-   * The wake interval is the time remaining
-   * to the next larger integral multiple of the update interval.
-   * Setting the timer to this value schedules the next update
-   * to occur on the next second or minute
-   * when the update interval is 1 or 60 seconds, respectively.
-   */
-  wake_interval = datetime->update_interval - datetime_gtimeval_to_ms(timeval) % datetime->update_interval;
+  /* Compute the time to the next update and start the timer. */
+  wake_interval = datetime_wake_interval(timeval, datetime->update_interval);
   datetime->timeout_id = g_timeout_add(wake_interval, (GSourceFunc) datetime_update, datetime);
 
   return TRUE;
@@ -188,6 +196,7 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
   struct tm *current;
   gchar *utf8str;
   gchar *format = NULL;
+  guint wake_interval;  /* milliseconds to next update */
 
   switch(datetime->layout)
   {
@@ -218,7 +227,8 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
      * I think we can afford to inefficiently poll every
      * second while the user keeps the mouse here.
      */
-    datetime->tooltip_timeout_id = g_timeout_add(1000,
+    wake_interval = datetime_wake_interval(timeval, 1000);
+    datetime->tooltip_timeout_id = g_timeout_add(wake_interval,
       (GSourceFunc) datetime_tooltip_timer, datetime);
   }
 
