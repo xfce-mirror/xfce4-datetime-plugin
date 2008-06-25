@@ -1,8 +1,11 @@
 2008-06-21	Diego Ongaro <ongardie@gmail.com>
 
-	* panel-plugin/datetime.c: Fix Bug #4157 - updates occur once a second
-	when datetime plugin shows date only. Used code from Steve Tyler's
+	* panel-plugin/datetime.c: Pulling code from Steve Tyler's
 	Attachment #1697 in Bug #4145.
+	  - Only gsource_remove valid timeouts, add pre-processor if to the
+	    tooltips timeout.
+	  - Fix Bug #4157 - updates occur once a second when datetime plugin
+	    shows date only.
 	* panel-plugin/datetime-dialog.c, panel-plugin/datetime.h: Change
 	order of layout dropdown (Bug #4158)
 

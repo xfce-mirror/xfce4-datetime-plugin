@@ -713,8 +713,12 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
 static void datetime_free(XfcePanelPlugin *plugin, t_datetime *datetime)
 {
   /* stop timeouts */
-  g_source_remove(datetime->timeout_id);
-  g_source_remove(datetime->tooltip_timeout_id);
+  if (datetime->timeout_id != 0)
+    g_source_remove(datetime->timeout_id);
+#if USE_GTK_TOOLTIP_API
+  if (datetime->tooltip_timeout_id != 0)
+    g_source_remove(datetime->tooltip_timeout_id);
+#endif
 
   /* destroy widget */
   gtk_widget_destroy(datetime->button);
