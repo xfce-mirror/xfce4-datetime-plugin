@@ -108,6 +108,9 @@ static gboolean datetime_format_has_seconds(const gchar *format)
   gchar buf1[DATETIME_MAX_STRLEN];
   gchar buf2[DATETIME_MAX_STRLEN];
 
+  if (format == NULL)
+    return FALSE;
+
   time_struct.tm_sec = 1;
   len1 = strftime(buf1, sizeof(buf1)-1, format, &time_struct);
   if (len1 == 0)
@@ -439,6 +442,31 @@ static void datetime_update_time_font(t_datetime *datetime)
   }
 }
 
+static void datetime_set_update_interval(t_datetime *datetime)
+{
+  /* a custom date format could specify seconds */
+  gboolean date_has_seconds = datetime_format_has_seconds(datetime->date_format);
+  gboolean time_has_seconds = datetime_format_has_seconds(datetime->time_format);
+  gboolean has_seconds;
+
+  /* set update interval for the date/time displayed in the panel */
+  switch(datetime->layout)
+  {
+    case LAYOUT_DATE:
+      has_seconds = date_has_seconds;
+      break;
+    case LAYOUT_TIME:
+      has_seconds = time_has_seconds;
+      break;
+    default:
+      has_seconds = date_has_seconds || time_has_seconds;
+      break;
+  }
+
+  /* 1000 ms in 1 second */
+  datetime->update_interval = 1000 * (has_seconds ? 1 : 60);
+}
+
 /*
  * set layout after doing some checks
  */
@@ -499,6 +527,8 @@ void datetime_apply_layout(t_datetime *datetime, t_layout layout)
       gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 1);
       gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 0);
   }
+
+  datetime_set_update_interval(datetime);
 }
 
 /*
@@ -521,31 +551,6 @@ void datetime_apply_font(t_datetime *datetime,
     datetime->time_font = g_strdup(time_font_name);
     datetime_update_time_font(datetime);
   }
-}
-
-static void datetime_set_update_interval(t_datetime *datetime)
-{
-  /* a custom date format could specify seconds */
-  gboolean date_has_seconds = datetime_format_has_seconds(datetime->date_format);
-  gboolean time_has_seconds = datetime_format_has_seconds(datetime->time_format);
-  gboolean has_seconds;
-
-  /* set update interval for the date/time displayed in the panel */
-  switch(datetime->layout)
-  {
-    case LAYOUT_DATE:
-      has_seconds = date_has_seconds;
-      break;
-    case LAYOUT_TIME:
-      has_seconds = time_has_seconds;
-      break;
-    default:
-      has_seconds = date_has_seconds || time_has_seconds;
-      break;
-  }
-
-  /* 1000 ms in 1 second */
-  datetime->update_interval = 1000 * (has_seconds ? 1 : 60);
 }
 
 /*

@@ -1,10 +1,15 @@
+2008-06-26	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime.c: Really fix Bug #4157 - update interval
+	depends on both layout and formats.
+
 2008-06-21	Diego Ongaro <ongardie@gmail.com>
 
 	* panel-plugin/datetime.c: Pulling code from Steve Tyler's
 	Attachment #1697 in Bug #4145.
 	  - Update tooltip at the top of the second (fixes Bug #4145).
-	  - Only gsource_remove valid timeouts, add pre-processor if to the
-	    tooltips timeout.
+	  - Only gsource_remove valid timeouts (Bug #4151), add pre-processor
+	    if to the tooltips timeout.
 	  - Fix Bug #4157 - updates occur once a second when datetime plugin
 	    shows date only.
 	* panel-plugin/datetime-dialog.c, panel-plugin/datetime.h: Change
