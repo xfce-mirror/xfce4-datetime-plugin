@@ -7,7 +7,7 @@ m4_define([datetime_version], [datetime_version_major().datetime_version_minor()
 dnl Initialize autoconf
 AC_COPYRIGHT([Copyright (c) 2006
         Remco den Breeje <remco@sx.mine.nu>])
-AC_INIT([xfce4-datetime-plugin], [datetime_version], [remco@sx.mine.nu])
+AC_INIT([xfce4-datetime-plugin], [datetime_version], [ongardie@gmail.com])
 
 dnl Initialize automake
 AM_INIT_AUTOMAKE([AC_PACKAGE_TARNAME()], [AC_PACKAGE_VERSION()])
@@ -34,9 +34,6 @@ XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.6.0])
 XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL],[libxfce4panel-1.0],[4.3.99.2])
-
-dnl Check for optional packages
-XDT_CHECK_OPTIONAL_PACKAGE([DBUS], [dbus-1], [0.22], [dbus], [D-BUS support])
 
 #CFLAGS="$CFLAGS -Wall -Werror"
 
