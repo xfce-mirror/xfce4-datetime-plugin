@@ -1,3 +1,7 @@
+2008-07-02	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime.h: Disable tooltips for now (Bug #4141)
+
 2008-06-27	Diego Ongaro <ongardie@gmail.com>
 
 	* configure.in.in: Drop unused dependency on dbus, update maintainer
