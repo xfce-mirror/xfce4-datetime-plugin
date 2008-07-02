@@ -1,0 +1,28 @@
+2008-07-02
+================================================================================
+xfce4-datetime-plugin v0.6.0 released
+
+This is almost entirely a bug fix release. Thanks to Steve Tyler, especially,
+for reporting over 15 bugs and submitting many patches.
+
+One notable user interface change is that the panel button is now a
+GtkToggleButton, so it will light up when you hover the mouse over it and
+appear pushed in when you click on it.
+
+There's a tooltips implementation in the works that unfortunately isn't ready
+yet for this release - see Bug #4141 for details. I think this will be the
+primary goal for next time.
+
+-Diego Ongaro
+
+Historical Releases
+================================================================================
+2007-02-??  xfce4-datetime-plugin v0.5.0 released
+2007-??-??  xfce4-datetime-plugin v0.4.3 released
+2007-??-??  xfce4-datetime-plugin v0.4.2 released
+2006-12-19  xfce4-datetime-plugin v0.4.1 released
+2006-10-06  xfce4-datetime-plugin v0.4.0 released
+2004-09-11  xfce4-datetime-plugin v0.3.1 released
+2004-01-18  xfce4-datetime-plugin v0.3.0 released
+2003-10-12  xfce4-datetime-plugin v0.2.0 released
+2003-09-30  xfce4-datetime-plugin v0.1.0 released

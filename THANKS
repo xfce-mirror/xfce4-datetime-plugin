@@ -1,40 +1,17 @@
-What's this file about?
------------------------
-This file lists all external people that have contributed to this project and
-thereby helped the development of this project.
+Special thanks goes to:
+=======================
 
+Nick Schermer <nickschermer@gmail.com> for
+ - Some cleanups after the initial version for the 4.2 panel
 
-Testers (sorted by name):
---------------------------
-These people have contributed to xfce4-datetime-plugin by testing the software,
-reporting problems and making useful suggestions.
+Scott H <stonecrest@gmail.com>
+ - Bug# 2867
 
-  Nick Schermer <nickschermer@gmail.com>
-  * Some cleanups after the initial version for the 4.2 panel
+Laurent Meunier <meunier.laurent@laposte.net>
+ - Bug# 3062, 3073
 
-  Scott H <stonecrest@gmail.com>
-  * Bug# 2867
+Mike Massonnet <mmassonnet@gmail.com>
+ - Providing a bug fix patch that became svn r4812-4814
 
-  Laurent Meunier <meunier.laurent@laposte.net>
-  * Bug# 3062, 3073
-
-Translators (sorted by language):
-----------------------------------
-These people have translated xfce4-datetime-plugin to foreign languages.
-
-  Remco den Breeje <remco@vioco.nl>
-  * nl (Dutch) translations
-
-  LuckAs <luckas_fb@yahoo.com>
-  * uk (Ukrainian) translations
-
-  SZERVÁC Attila <sas@321.hu>
-  * hu (Hungarian) translations
-
-  Piarres Beobide <pi@beobide.net>
-  * eu (Basque) translations
-
-Other contributors (sorted by name):
-------------------------------------
-
-
+Steve Tyler <stephent98@hotmail.com>
+ - Reporting over 15 bugs for the 0.6 release alone, including many patches
