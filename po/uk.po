@@ -1,114 +1,110 @@
-# Ukrainian translation of the xfce4-datetime-plugin package.
+# Ukrainian translation of xfce4-datetime-plugin.
 # Copyright (C) 2006-2007 Remco den Breeje
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
-# LuckAs <luckas_fb@yahoo.com>, 2007.
 #
+# LuckAs <luckas_fb@yahoo.com>, 2007.
+# Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
+"Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 10:12+0200\n"
-"PO-Revision-Date: 2007-02-26 11:20+0200\n"
-"Last-Translator: LuckAs <luckas_fb@yahoo.com>\n"
-"Language-Team: Ukrainian <xfce-i18n@xfce.org>\n"
+"POT-Creation-Date: 2008-07-09 13:42+0000\n"
+"PO-Revision-Date: 2008-07-08 16:15+0300\n"
+"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/datetime.c:49
+#: ../panel-plugin/datetime.c:80
 msgid "Invalid format"
 msgstr "Неправильний формат"
 
-#: ../panel-plugin/datetime.c:54
+#: ../panel-plugin/datetime.c:85
 msgid "Error"
 msgstr "Помилка"
 
-#: ../panel-plugin/datetime.c:282
-msgid "Date:"
-msgstr "Дата"
-
-#: ../panel-plugin/datetime-dialog.c:39
-msgid "Date only"
-msgstr "Тільки дата"
-
-#: ../panel-plugin/datetime-dialog.c:40
-msgid "Time only"
-msgstr "Тільки час"
-
-#: ../panel-plugin/datetime-dialog.c:41
+#: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
 msgstr "Дата, потім час"
 
-#: ../panel-plugin/datetime-dialog.c:42
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr "Час, потім дата"
 
-#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Тільки дата"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Тільки час"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Довільний..."
 
-#: ../panel-plugin/datetime-dialog.c:92
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr "Вибрати шрифт"
 
-#: ../panel-plugin/datetime-dialog.c:305
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Не вдається відкрити наступний url: %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
-msgstr "Властивості дати/часу"
+msgstr "Властивості дати-часу"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:323
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Вигляд"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Формат:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:357
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Дата"
 
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "Дата буде відображатися у контекстній підказці."
+
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Шрифт:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:436
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Час"
 
-#.
-#. * Calendar options frame
-#.
-#: ../panel-plugin/datetime-dialog.c:515
-msgid "Calendar"
-msgstr "Календар"
-
-#: ../panel-plugin/datetime-dialog.c:533
-msgid ""
-"The information on which day the calendar week starts is derived from the "
-"locale."
-msgstr ""
-"Інформація про день початку календарного тижня береться з даних поточної "
-"локалі."
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "Час буде відображатися у контекстній підказці."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Плагін Дати і Часу з простим календарем"
+msgstr "Модуль Дата і Час з простим календарем"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
