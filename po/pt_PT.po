@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 10:12+0200\n"
-"PO-Revision-Date: 2008-03-14 11:37+0100\n"
+"POT-Creation-Date: 2008-06-08 01:30+0100\n"
+"PO-Revision-Date: 2008-07-13 15:51+0100\n"
 "Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,92 +16,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/datetime.c:49
+#: ../panel-plugin/datetime.c:65
 msgid "Invalid format"
 msgstr "Formato inválido"
 
-#: ../panel-plugin/datetime.c:54
+#: ../panel-plugin/datetime.c:70
 msgid "Error"
 msgstr "Erro"
 
-#: ../panel-plugin/datetime.c:282
-msgid "Date:"
-msgstr "Data:"
-
-#: ../panel-plugin/datetime-dialog.c:39
+#: ../panel-plugin/datetime-dialog.c:42
 msgid "Date only"
 msgstr "Apenas data"
 
-#: ../panel-plugin/datetime-dialog.c:40
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time only"
 msgstr "Hora apenas"
 
-#: ../panel-plugin/datetime-dialog.c:41
+#: ../panel-plugin/datetime-dialog.c:44
 msgid "Date, then time"
 msgstr "Data, então hora"
 
-#: ../panel-plugin/datetime-dialog.c:42
+#: ../panel-plugin/datetime-dialog.c:45
 msgid "Time, then date"
 msgstr "Hora, então data"
 
-#: ../panel-plugin/datetime-dialog.c:51
-#: ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:54
+#: ../panel-plugin/datetime-dialog.c:65
 msgid "Custom..."
 msgstr "Personalizar..."
 
-#: ../panel-plugin/datetime-dialog.c:92
+#: ../panel-plugin/datetime-dialog.c:95
 msgid "Select font"
 msgstr "Seleccionar fonte"
 
-#: ../panel-plugin/datetime-dialog.c:305
+#: ../panel-plugin/datetime-dialog.c:298
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Impossível de abrir o seguinte url: %s"
+
+#: ../panel-plugin/datetime-dialog.c:336
 msgid "Datetime properties"
 msgstr "Propriedades Datetime"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:323
+#: ../panel-plugin/datetime-dialog.c:356
 msgid "Layout"
-msgstr "Formato inválido"
+msgstr "Disposição"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337
-#: ../panel-plugin/datetime-dialog.c:388
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:370
+#: ../panel-plugin/datetime-dialog.c:432
+#: ../panel-plugin/datetime-dialog.c:529
 msgid "Format:"
 msgstr "Formato:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:357
+#: ../panel-plugin/datetime-dialog.c:390
 msgid "Date"
 msgstr "Data"
 
+#: ../panel-plugin/datetime-dialog.c:402
+msgid "The date will appear in a tooltip."
+msgstr "A data irá aparecer na dica de ferramenta."
+
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371
-#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:415
+#: ../panel-plugin/datetime-dialog.c:512
 msgid "Font:"
 msgstr "Fonte:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:436
+#: ../panel-plugin/datetime-dialog.c:487
 msgid "Time"
 msgstr "Horário"
 
-#.
-#. * Calendar options frame
-#.
-#: ../panel-plugin/datetime-dialog.c:515
-msgid "Calendar"
-msgstr "Calendário"
-
-#: ../panel-plugin/datetime-dialog.c:533
-msgid "The information on which day the calendar week starts is derived from the locale."
-msgstr "A informação do dia em que a semana começa é derivado da localização."
+#: ../panel-plugin/datetime-dialog.c:499
+msgid "The time will appear in a tooltip."
+msgstr "O horário irá aparecer na dica de ferramenta."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -110,4 +108,14 @@ msgstr "Plugin Data e Hora com um simples calendário"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DateTime"
+
+#~ msgid "Date:"
+#~ msgstr "Data:"
+#~ msgid "Calendar"
+#~ msgstr "Calendário"
+#~ msgid ""
+#~ "The information on which day the calendar week starts is derived from the "
+#~ "locale."
+#~ msgstr ""
+#~ "A informação do dia em que a semana começa é derivado da localização."
 
