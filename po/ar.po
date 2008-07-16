@@ -35,8 +35,7 @@ msgstr ""
 msgid "Time, then date"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:54
-#: ../panel-plugin/datetime-dialog.c:65
+#: ../panel-plugin/datetime-dialog.c:54 ../panel-plugin/datetime-dialog.c:65
 msgid "Custom..."
 msgstr ""
 
@@ -62,8 +61,7 @@ msgstr ""
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:370
-#: ../panel-plugin/datetime-dialog.c:432
+#: ../panel-plugin/datetime-dialog.c:370 ../panel-plugin/datetime-dialog.c:432
 #: ../panel-plugin/datetime-dialog.c:529
 msgid "Format:"
 msgstr ""
@@ -80,8 +78,7 @@ msgid "The date will appear in a tooltip."
 msgstr ""
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:415
-#: ../panel-plugin/datetime-dialog.c:512
+#: ../panel-plugin/datetime-dialog.c:415 ../panel-plugin/datetime-dialog.c:512
 msgid "Font:"
 msgstr ""
 
@@ -103,4 +100,3 @@ msgstr ""
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr ""
-
