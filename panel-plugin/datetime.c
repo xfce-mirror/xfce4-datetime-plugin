@@ -595,7 +595,7 @@ static int datetime_set_size(XfcePanelPlugin *plugin,
 static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 {
   gchar *file;
-  XfceRc *rc;
+  XfceRc *rc = NULL;
   t_layout layout;
   const gchar *date_font, *time_font, *date_format, *time_format;
 
@@ -619,8 +619,6 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
       time_font   = xfce_rc_read_entry(rc, "time_font", time_font);
       date_format = xfce_rc_read_entry(rc, "date_format", date_format);
       time_format = xfce_rc_read_entry(rc, "time_format", time_format);
-
-      xfce_rc_close(rc);
     }
   }
 
@@ -628,6 +626,9 @@ static void datetime_read_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
   time_font   = g_strdup(time_font);
   date_format = g_strdup(date_format);
   time_format = g_strdup(time_format);
+
+  if(rc != NULL)
+    xfce_rc_close(rc);
 
   /* set values in dt struct */
   datetime_apply_layout(dt, layout);

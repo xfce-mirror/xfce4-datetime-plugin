@@ -1,3 +1,7 @@
+2008-09-27	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime.c: Fix memory access after free
+
 2008-07-02	Diego Ongaro <ongardie@gmail.com>
 
 	* *: 0.6.0 release
