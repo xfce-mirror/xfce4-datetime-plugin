@@ -1,5 +1,7 @@
 2008-09-27	Diego Ongaro <ongardie@gmail.com>
 
+	* panel-plugin/datetime.c: Made default font sizes equal for date and
+	time
 	* panel-plugin/datetime.c: Fix memory access after free
 
 2008-07-02	Diego Ongaro <ongardie@gmail.com>
