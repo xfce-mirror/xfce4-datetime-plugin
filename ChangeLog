@@ -1,5 +1,6 @@
-2008-09-27	Diego Ongaro <ongardie@gmail.com>
+2008-11-19	Diego Ongaro <ongardie@gmail.com>
 
+	* *: 0.6.1 release
 	* panel-plugin/datetime.c: Made default font sizes equal for date and
 	time
 	* panel-plugin/datetime.c: Fix memory access after free

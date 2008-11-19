@@ -1,3 +1,13 @@
+2008-11-19
+================================================================================
+xfce4-datetime-plugin v0.6.1 released
+
+* Fixed an illegal memory access after free.
+* Made default font sizes equal for date and time.
+* Updated translations.
+
+-Diego Ongaro
+
 2008-07-02
 ================================================================================
 xfce4-datetime-plugin v0.6.0 released

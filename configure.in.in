@@ -1,7 +1,7 @@
 dnl Version information
 m4_define([datetime_version_major], [0])
 m4_define([datetime_version_minor], [6])
-m4_define([datetime_version_micro], [0])
+m4_define([datetime_version_micro], [1])
 m4_define([datetime_version], [datetime_version_major().datetime_version_minor().datetime_version_micro()])
 
 dnl Initialize autoconf
