@@ -33,6 +33,8 @@
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-panel-convenience.h>
 
+#include "xfce46-compat.h"
+
 #include "datetime.h"
 #include "datetime-dialog.h"
 
@@ -239,92 +241,13 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
 }
 #endif
 
-static void on_calendar_realized(GtkWidget *widget, gpointer data)
+static void on_calendar_realized(GtkWidget *widget, t_datetime *datetime)
 {
-  gint parent_x, parent_y, parent_w, parent_h;
-  gint root_w, root_h;
-  gint width, height, x, y;
-  gint orientation;
-  GdkScreen *screen;
+  gint x, y;
   GtkWidget *parent;
-  GtkRequisition requisition;
 
-  orientation = GPOINTER_TO_INT(data);
   parent = g_object_get_data(G_OBJECT(widget), "calendar-parent");
-
-  gdk_window_get_origin(GDK_WINDOW(parent->window), &parent_x, &parent_y);
-  gdk_drawable_get_size(GDK_DRAWABLE(parent->window), &parent_w, &parent_h);
-
-  screen = gdk_drawable_get_screen(GDK_DRAWABLE(widget->window));
-  root_w = gdk_screen_get_width(GDK_SCREEN(screen));
-  root_h = gdk_screen_get_height(GDK_SCREEN(screen));
-
-  gtk_widget_size_request(GTK_WIDGET(widget), &requisition);
-  width = requisition.width;
-  height = requisition.height;
-
-  DBG("orientation: %s", (orientation ? "vertical" : "horizontal"));
-  DBG("parent: %dx%d +%d+%d", parent_w, parent_h, parent_x, parent_y);
-  DBG("root: %dx%d", root_w, root_h);
-  DBG("calendar: %dx%d", width, height);
-
-  if (orientation == GTK_ORIENTATION_VERTICAL)
-  {
-    if (parent_x < root_w / 2) {
-      if (parent_y < root_h / 2) {
-        /* upper left */
-        x = parent_x + parent_w;
-        y = parent_y;
-      } else {
-        /* lower left */
-        x = parent_x + parent_w;
-        y = parent_y + parent_h - height;
-      }
-    } else {
-      if (parent_y < root_h / 2) {
-        /* upper right */
-        x = parent_x - width;
-        y = parent_y;
-      } else {
-        /* lower right */
-        x = parent_x - width;
-        y = parent_y + parent_h - height;
-      }
-    }
-  }
-  else
-  {
-    if (parent_x < root_w / 2)
-    {
-      if (parent_y < root_h / 2)
-      {
-        /* upper left */
-        x = parent_x;
-        y = parent_y + parent_h;
-      }
-      else
-      {
-        /* lower left */
-        x = parent_x;
-        y = parent_y - height;
-      }
-    }
-    else
-    {
-      if (parent_y < root_h / 2)
-      {
-        /* upper right */
-        x = parent_x + parent_w - width;
-        y = parent_y + parent_h;
-      }
-      else
-      {
-        /* lower right */
-        x = parent_x + parent_w - width;
-        y = parent_y - height;
-      }
-    }
-  }
+  xfce_panel_plugin_position_widget(datetime->plugin, widget, parent, &x, &y);
   gtk_window_move(GTK_WINDOW(widget), x, y);
 }
 
@@ -376,7 +299,7 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
 
   g_signal_connect_after(G_OBJECT(window), "realize",
       G_CALLBACK(on_calendar_realized),
-      GINT_TO_POINTER(orientation));
+      datetime);
   g_signal_connect_swapped(G_OBJECT(window), "delete-event",
       G_CALLBACK(close_calendar_window),
       datetime);

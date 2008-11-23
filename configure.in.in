@@ -35,6 +35,9 @@ XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL],[libxfce4panel-1.0],[4.3.99.2])
 
+dnl check for optional packages/versions
+XDT_CHECK_OPTIONAL_PACKAGE([LIBXFCE4PANEL_46], [libxfce4panel-1.0], [4.5.92], [libxfce4panel46], [Take advantage of Xfce 4.6 panel changes])
+
 #CFLAGS="$CFLAGS -Wall -Werror"
 
 dnl Check for debugging support

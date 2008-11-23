@@ -1,3 +1,8 @@
+2008-11-23	Diego Ongaro <ongardie@gmail.com>
+
+	* panel-plugin/datetime.c, panel-plugin/xfce46-compat.{c,h}: Adds
+	  xfce46-compat files for calendar positioning 
+
 2008-11-19	Diego Ongaro <ongardie@gmail.com>
 
 	* *: 0.6.1 release
