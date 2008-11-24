@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 01:30+0100\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
 "PO-Revision-Date: 2008-06-08 14:52-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -18,88 +18,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/datetime.c:65
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr "Formato inválido"
 
-#: ../panel-plugin/datetime.c:70
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr "Erro"
 
 #: ../panel-plugin/datetime-dialog.c:42
-msgid "Date only"
-msgstr "Somente data"
-
-#: ../panel-plugin/datetime-dialog.c:43
-msgid "Time only"
-msgstr "Somente horário"
-
-#: ../panel-plugin/datetime-dialog.c:44
 msgid "Date, then time"
 msgstr "Data e então horário"
 
-#: ../panel-plugin/datetime-dialog.c:45
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr "Horário e então data"
 
-#: ../panel-plugin/datetime-dialog.c:54
-#: ../panel-plugin/datetime-dialog.c:65
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Somente data"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Somente horário"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personalizado..."
 
-#: ../panel-plugin/datetime-dialog.c:95
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr "Selecione a fonte"
 
-#: ../panel-plugin/datetime-dialog.c:298
+#: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Não foi possível abrir o seguinte url: %s"
 
-#: ../panel-plugin/datetime-dialog.c:336
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr "Propriedades de data e horário"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:356
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Disposição"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:370
-#: ../panel-plugin/datetime-dialog.c:432
-#: ../panel-plugin/datetime-dialog.c:529
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formato:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:390
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Dia"
 
-#: ../panel-plugin/datetime-dialog.c:402
+#: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
 msgstr "A data aparecerá na dica de ferramenta."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:415
-#: ../panel-plugin/datetime-dialog.c:512
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Fonte:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:487
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Horário"
 
-#: ../panel-plugin/datetime-dialog.c:499
+#: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
 msgstr "O horário aparecerá na dica de ferramenta."
 
@@ -113,12 +111,13 @@ msgstr "DateTime"
 
 #~ msgid "Date:"
 #~ msgstr "Data:"
+
 #~ msgid "Calendar"
 #~ msgstr "Calendário"
+
 #~ msgid ""
 #~ "The information on which day the calendar week starts is derived from the "
 #~ "locale."
 #~ msgstr ""
 #~ "A informação sobre que dia começa a semana é derivada das configurações "
 #~ "de localização."
-

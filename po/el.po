@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 10:12+0200\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
 "PO-Revision-Date: 2008-04-27 23:50+0300\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -16,91 +16,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../panel-plugin/datetime.c:49
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr "Άκυρος τύπος"
 
-#: ../panel-plugin/datetime.c:54
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: ../panel-plugin/datetime.c:282
-msgid "Date:"
-msgstr "Ημερομηνία:"
-
-#: ../panel-plugin/datetime-dialog.c:39
-msgid "Date only"
-msgstr "Ημερομηνία μόνο"
-
-#: ../panel-plugin/datetime-dialog.c:40
-msgid "Time only"
-msgstr "Ώρα μόνο"
-
-#: ../panel-plugin/datetime-dialog.c:41
+#: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
 msgstr "Ημερομηνία, μετά ώρα"
 
-#: ../panel-plugin/datetime-dialog.c:42
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr "Ώρα, μετά ημερομηνία"
 
-#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Ημερομηνία μόνο"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Ώρα μόνο"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Προσαρμογή..."
 
-#: ../panel-plugin/datetime-dialog.c:92
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr "Επιλογή γραμματοσειράς"
 
-#: ../panel-plugin/datetime-dialog.c:305
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr "Ιδιότητες ημερομηνίας ώρας"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:323
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Εμφάνιση"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Τύπος:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:357
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Ημερομηνία"
 
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr ""
+
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Γραμματοσειρά:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:436
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Ώρα"
 
-#.
-#. * Calendar options frame
-#.
-#: ../panel-plugin/datetime-dialog.c:515
-msgid "Calendar"
-msgstr "Ημερολόγιο"
-
-#: ../panel-plugin/datetime-dialog.c:533
-msgid ""
-"The information on which day the calendar week starts is derived from the "
-"locale."
-msgstr "Η πληροφορία ποια είναι η αρχική ημέρα της εβδομάδας ορίζεται από το σύστημα."
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr ""
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -110,3 +107,15 @@ msgstr "Άρθρωμα ημερομηνίας και ώρας μαζί με έν
 msgid "DateTime"
 msgstr "Ημερομηνία ώρα"
 
+#~ msgid "Date:"
+#~ msgstr "Ημερομηνία:"
+
+#~ msgid "Calendar"
+#~ msgstr "Ημερολόγιο"
+
+#~ msgid ""
+#~ "The information on which day the calendar week starts is derived from the "
+#~ "locale."
+#~ msgstr ""
+#~ "Η πληροφορία ποια είναι η αρχική ημέρα της εβδομάδας ορίζεται από το "
+#~ "σύστημα."

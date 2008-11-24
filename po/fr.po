@@ -1,14 +1,14 @@
 # French translation of the xfce4-datetime-plugin package.
 # Copyright (C) 2006-2007 Remco den Breeje
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
-# Maximilian Schleiss <maximilian@xfce.org>, 2007.
+# Maximilian Schleiss <maximilian@xfce.org>, 2007-2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
+"Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 10:12+0200\n"
-"PO-Revision-Date: 2007-03-02 17:06+0100\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"PO-Revision-Date: 2008-11-24 21:34+0100\n"
 "Last-Translator: Maximilian Schleiss <maximilian@xfce.org>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,92 +16,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/datetime.c:49
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr "Format incorrect"
 
-#: ../panel-plugin/datetime.c:54
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr "Erreur"
 
-#: ../panel-plugin/datetime.c:282
-msgid "Date:"
-msgstr "Date :"
-
-#: ../panel-plugin/datetime-dialog.c:39
-msgid "Date only"
-msgstr "Date seulement"
-
-#: ../panel-plugin/datetime-dialog.c:40
-msgid "Time only"
-msgstr "Temps seulement"
-
-#: ../panel-plugin/datetime-dialog.c:41
+#: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
 msgstr "Date et temps après"
 
-#: ../panel-plugin/datetime-dialog.c:42
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr "Temps et date après"
 
-#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Date seulement"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Temps seulement"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personnalisé..."
 
-#: ../panel-plugin/datetime-dialog.c:92
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr "Choisir une police"
 
-#: ../panel-plugin/datetime-dialog.c:305
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Échec à l'ouverture du lien : %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr "Propriétés de Datetime"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:323
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Disposition"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
+#: ../panel-plugin/datetime-dialog.c:405
 #: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Format :"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:357
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Date"
 
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "La date apparaît dans une infobulle."
+
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Police :"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:436
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Temps"
 
-#.
-#. * Calendar options frame
-#.
-#: ../panel-plugin/datetime-dialog.c:515
-msgid "Calendar"
-msgstr "Calendrier"
-
-#: ../panel-plugin/datetime-dialog.c:533
-msgid ""
-"The information on which day the calendar week starts is derived from the "
-"locale."
-msgstr ""
-"Le choix de jour de début de semaine est défini par la locale du système."
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "L'heure apparaît dans une infobulle."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -110,3 +109,14 @@ msgstr "Greffon heure et date avec calendrier simple"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DateTime"
+
+#~ msgid "Date:"
+#~ msgstr "Date :"
+#~ msgid "Calendar"
+#~ msgstr "Calendrier"
+#~ msgid ""
+#~ "The information on which day the calendar week starts is derived from the "
+#~ "locale."
+#~ msgstr ""
+#~ "Le choix de jour de début de semaine est défini par la locale du système."
+

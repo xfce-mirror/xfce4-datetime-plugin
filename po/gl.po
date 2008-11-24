@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 01:30+0100\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
 "PO-Revision-Date: 2008-06-24 19:24+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -20,88 +20,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../panel-plugin/datetime.c:65
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr "Formato incorrecto"
 
-#: ../panel-plugin/datetime.c:70
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr "Erro"
 
 #: ../panel-plugin/datetime-dialog.c:42
-msgid "Date only"
-msgstr "Só a data"
-
-#: ../panel-plugin/datetime-dialog.c:43
-msgid "Time only"
-msgstr "Só a hora"
-
-#: ../panel-plugin/datetime-dialog.c:44
 msgid "Date, then time"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:45
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:54
-#: ../panel-plugin/datetime-dialog.c:65
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Só a data"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Só a hora"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personalizado..."
 
-#: ../panel-plugin/datetime-dialog.c:95
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:298
+#: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Non foi posible abrir o seguinte url: %s"
 
-#: ../panel-plugin/datetime-dialog.c:336
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr "Propiedades de DateTime"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:356
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr ""
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:370
-#: ../panel-plugin/datetime-dialog.c:432
-#: ../panel-plugin/datetime-dialog.c:529
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formato:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:390
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Data"
 
-#: ../panel-plugin/datetime-dialog.c:402
+#: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
 msgstr ""
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:415
-#: ../panel-plugin/datetime-dialog.c:512
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr ""
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:487
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Hora"
 
-#: ../panel-plugin/datetime-dialog.c:499
+#: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
 msgstr ""
 
@@ -112,4 +110,3 @@ msgstr ""
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DateTime"
-

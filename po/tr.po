@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 01:30+0100\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
 "PO-Revision-Date: 2008-11-09 20:05+0200\n"
 "Last-Translator: Utku Aydın <utkuaydin54@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,88 +15,86 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/datetime.c:65
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr "Geçersiz biçim"
 
-#: ../panel-plugin/datetime.c:70
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr "Hata"
 
 #: ../panel-plugin/datetime-dialog.c:42
-msgid "Date only"
-msgstr "Sadece tarih"
-
-#: ../panel-plugin/datetime-dialog.c:43
-msgid "Time only"
-msgstr "Sadece saat"
-
-#: ../panel-plugin/datetime-dialog.c:44
 msgid "Date, then time"
 msgstr "Önce tarih, sonra saat"
 
-#: ../panel-plugin/datetime-dialog.c:45
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr "Önce saat, sonra tarih"
 
-#: ../panel-plugin/datetime-dialog.c:54
-#: ../panel-plugin/datetime-dialog.c:65
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Sadece tarih"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Sadece saat"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Özel..."
 
-#: ../panel-plugin/datetime-dialog.c:95
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr "Yazı tipi seçin"
 
-#: ../panel-plugin/datetime-dialog.c:298
+#: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Belirtilen bağlantı açılamadı: %s"
 
-#: ../panel-plugin/datetime-dialog.c:336
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr "Tarih & Saat Özellikleri"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:356
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Yerleşim"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:370
-#: ../panel-plugin/datetime-dialog.c:432
-#: ../panel-plugin/datetime-dialog.c:529
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Biçim:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:390
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Tarih"
 
-#: ../panel-plugin/datetime-dialog.c:402
+#: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
 msgstr "Tarih, ipucu şeklinde gösterilecek."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:415
-#: ../panel-plugin/datetime-dialog.c:512
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Yazı tipi:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:487
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Saat"
 
-#: ../panel-plugin/datetime-dialog.c:499
+#: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
 msgstr "Saat, ipucu şeklinde gösterilecek."
 
@@ -107,4 +105,3 @@ msgstr "Basit bir takvimi olan, tarih ve saat programcığı."
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "Tarih & Saat"
-

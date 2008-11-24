@@ -6,114 +6,104 @@
 #
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: xfce4-datetime-plugin 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-17 21:32+0100\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
 "PO-Revision-Date: 2008-10-05 21:31+0100\n"
 "Last-Translator: Claus Futtrup <cfuttrup@stofanet.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Danish\n"
 "X-Poedit-Country: DENMARK\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/datetime.c:49
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr "Ugyldigt format"
 
-#: ../panel-plugin/datetime.c:54
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr "Fejl"
 
-#: ../panel-plugin/datetime.c:310
-msgid "Date:"
-msgstr "Dato:"
-
-#: ../panel-plugin/datetime-dialog.c:39
-msgid "Date only"
-msgstr "Kun dato"
-
-#: ../panel-plugin/datetime-dialog.c:40
-msgid "Date only, time in tooltip"
-msgstr "Kun dato, tid i værktøjstip"
-
-#: ../panel-plugin/datetime-dialog.c:41
-msgid "Time only"
-msgstr "Kun tid"
-
 #: ../panel-plugin/datetime-dialog.c:42
-msgid "Time only, date in tooltip"
-msgstr "Kun tid, dato i værktøjstip"
-
-#: ../panel-plugin/datetime-dialog.c:43
 msgid "Date, then time"
 msgstr "Dato, derefter tid"
 
-#: ../panel-plugin/datetime-dialog.c:44
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr "Tid, derefter dato"
 
-#: ../panel-plugin/datetime-dialog.c:53
-#: ../panel-plugin/datetime-dialog.c:64
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Kun dato"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Kun tid"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Tilpasset..."
 
-#: ../panel-plugin/datetime-dialog.c:94
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr "Vælg skrifttype"
 
-#: ../panel-plugin/datetime-dialog.c:307
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr "Dato-tid egenskaber"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:325
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Layout"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:339
-#: ../panel-plugin/datetime-dialog.c:390
-#: ../panel-plugin/datetime-dialog.c:476
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Format:"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:359
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Dato"
 
+#: ../panel-plugin/datetime-dialog.c:437
+#, fuzzy
+msgid "The date will appear in a tooltip."
+msgstr "Kun dato, tid i værktøjstip"
+
 #. font label
-#: ../panel-plugin/datetime-dialog.c:373
-#: ../panel-plugin/datetime-dialog.c:459
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Skrifttype:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:445
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Tid"
 
-#.
-#. * Calendar options frame
-#.
-#: ../panel-plugin/datetime-dialog.c:531
-msgid "Calendar"
-msgstr "Kalender"
-
-#: ../panel-plugin/datetime-dialog.c:549
-msgid "The information on which day the calendar week starts is derived from the locale."
-msgstr "Oplysninger om hvilken dag, en kalenderuge starter med, hentes fra lokalitetsopsætningen."
+#: ../panel-plugin/datetime-dialog.c:540
+#, fuzzy
+msgid "The time will appear in a tooltip."
+msgstr "Kun tid, dato i værktøjstip"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -122,3 +112,16 @@ msgstr "Dato- og tid-udvidelsesmodul med simpel kalender"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "Dato-tid"
+
+#~ msgid "Date:"
+#~ msgstr "Dato:"
+
+#~ msgid "Calendar"
+#~ msgstr "Kalender"
+
+#~ msgid ""
+#~ "The information on which day the calendar week starts is derived from the "
+#~ "locale."
+#~ msgstr ""
+#~ "Oplysninger om hvilken dag, en kalenderuge starter med, hentes fra "
+#~ "lokalitetsopsætningen."

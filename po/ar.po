@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 01:30+0100\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
 "PO-Revision-Date: 2008-07-15 23:39+0200\n"
 "Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -11,85 +11,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Arabic\n"
 
-#: ../panel-plugin/datetime.c:65
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr ""
 
-#: ../panel-plugin/datetime.c:70
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:42
-msgid "Date only"
-msgstr ""
-
-#: ../panel-plugin/datetime-dialog.c:43
-msgid "Time only"
-msgstr ""
-
-#: ../panel-plugin/datetime-dialog.c:44
 msgid "Date, then time"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:45
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:54 ../panel-plugin/datetime-dialog.c:65
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr ""
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:95
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:298
+#: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:336
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr ""
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:356
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr ""
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:370 ../panel-plugin/datetime-dialog.c:432
-#: ../panel-plugin/datetime-dialog.c:529
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr ""
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:390
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:402
+#: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
 msgstr ""
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:415 ../panel-plugin/datetime-dialog.c:512
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr ""
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:487
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr ""
 
-#: ../panel-plugin/datetime-dialog.c:499
+#: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
 msgstr ""
 

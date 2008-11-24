@@ -7,104 +7,99 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 10:12+0200\n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
 "PO-Revision-Date: 2008-11-05 14:21+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Basque <xfce-i18n@xfce.org>\n"
-"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 1.2.0\n"
 
-#: ../panel-plugin/datetime.c:49
+#: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
 msgstr "Formatu baliogabea"
 
-#: ../panel-plugin/datetime.c:54
+#: ../panel-plugin/datetime.c:87
 msgid "Error"
 msgstr "Errorea"
 
-#: ../panel-plugin/datetime.c:282
-msgid "Date:"
-msgstr "Data:"
-
-#: ../panel-plugin/datetime-dialog.c:39
-msgid "Date only"
-msgstr "Data soilik"
-
-#: ../panel-plugin/datetime-dialog.c:40
-msgid "Time only"
-msgstr "Ordua soilik"
-
-#: ../panel-plugin/datetime-dialog.c:41
+#: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
 msgstr "Data, gero ordua"
 
-#: ../panel-plugin/datetime-dialog.c:42
+#: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
 msgstr "Ordua, gero data"
 
-#: ../panel-plugin/datetime-dialog.c:51 ../panel-plugin/datetime-dialog.c:62
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Data soilik"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Ordua soilik"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Pertsonalizatu..."
 
-#: ../panel-plugin/datetime-dialog.c:92
+#: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
 msgstr "Letra tipoa hautatu"
 
-#: ../panel-plugin/datetime-dialog.c:305
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
 msgstr "Data-ordu propietateak"
 
 #.
 #. * layout frame
 #.
-#: ../panel-plugin/datetime-dialog.c:323
+#: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Ingurunea"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:337 ../panel-plugin/datetime-dialog.c:388
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formatua"
 
 #.
 #. * Date frame
 #.
-#: ../panel-plugin/datetime-dialog.c:357
+#: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Data"
 
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr ""
+
 #. font label
-#: ../panel-plugin/datetime-dialog.c:371 ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Letra-tipoa:"
 
 #.
 #. * time frame
 #.
-#: ../panel-plugin/datetime-dialog.c:436
+#: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Dara"
 
-#.
-#. * Calendar options frame
-#.
-#: ../panel-plugin/datetime-dialog.c:515
-msgid "Calendar"
-msgstr "Egutegia"
-
-#: ../panel-plugin/datetime-dialog.c:533
-msgid ""
-"The information on which day the calendar week starts is derived from the "
-"locale."
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
 msgstr ""
-"Egutegia zein aste egunekin hasten den informaizoa locale-etatik ateratzen "
-"da."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -113,3 +108,16 @@ msgstr "Egutegi sinple bateko Data eta Ordu plugin-a"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DataOrdua"
+
+#~ msgid "Date:"
+#~ msgstr "Data:"
+
+#~ msgid "Calendar"
+#~ msgstr "Egutegia"
+
+#~ msgid ""
+#~ "The information on which day the calendar week starts is derived from the "
+#~ "locale."
+#~ msgstr ""
+#~ "Egutegia zein aste egunekin hasten den informaizoa locale-etatik "
+#~ "ateratzen da."
