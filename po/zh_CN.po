@@ -1,0 +1,111 @@
+# Chinese translations for xfce package.
+# Copyright (C) 2008 THE xfce'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+# Hunt Xu <huntxu@live.cn>", 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce 4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"PO-Revision-Date: 2008-12-06 04:40+0800\n"
+"Last-Translator: Hunt Xu <huntxu@live.cn>\n"
+"Language-Team: Chinese (simplified)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "无效格式"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "错误"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "日期，后接时间"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "时间，后接日期"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "只有日期"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "只有时间"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "自定义..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "选择字体"
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "无法打开网址：%s"
+
+#: ../panel-plugin/datetime-dialog.c:371
+msgid "Datetime properties"
+msgstr "日期与时间属性"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "布局"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "格式："
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "日期"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "在工具提示中显示的日期"
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "字体："
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "时间"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "在工具提示中显示的时间"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "带简单日历的日期与时间插件"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "日期与时间"
+
