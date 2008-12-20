@@ -1,0 +1,111 @@
+# Swedish translation for xfce4-datetime-plugin.
+# Copyright (C) 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the xfce4-datetime-plugin package.
+# Daniel Nylander <po@danielnylander.se>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-12-14 15:59+0100\n"
+"PO-Revision-Date: 2008-12-14 21:28+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "Ogiltigt format"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "Fel"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Datum, sedan tid"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Tid, sedan datum"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Endast datum"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Endast tid"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Anpassat..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Välj typsnitt"
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Kunde inte öppna följande url: %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
+msgid "Datetime properties"
+msgstr "Egenskaper för Datetime"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "Layout"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "Format:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "Datum"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "Datumet kommer att visas i ett verktygstips."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "Typsnitt:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "Tid"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "Tiden kommer att visas i ett verktygstips."
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Insticksmodul för datum och tid med en enkel kalender"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "DateTime"
+
