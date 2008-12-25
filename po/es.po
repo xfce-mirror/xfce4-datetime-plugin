@@ -10,10 +10,9 @@ msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-24 21:30+0100\n"
-"PO-Revision-Date: 2008-11-02 21:10+0100\n"
+"PO-Revision-Date: 2008-12-16 21:38+0100\n"
 "Last-Translator: Abel Martín <abel.martin.ruiz@gmail.com>\n"
-"Language-Team: Debian l10n Spanish Team <debian-l10n-spanish@lists.debian."
-"org>\n"
+"Language-Team: Debian l10n Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +42,8 @@ msgid "Time only"
 msgstr "Sólo hora"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personalizar..."
 
@@ -54,7 +54,7 @@ msgstr "Seleccione tipo de letra"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Imposible abrir la siguiente URL: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
@@ -69,7 +69,8 @@ msgstr "Distribución"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formato:"
@@ -82,12 +83,12 @@ msgid "Date"
 msgstr "Fecha"
 
 #: ../panel-plugin/datetime-dialog.c:437
-#, fuzzy
 msgid "The date will appear in a tooltip."
-msgstr "Sólo fecha, hora como cuadro emergente"
+msgstr "La fecha aparecerá como un cuadro de texto emergente."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Tipo de letra:"
 
@@ -99,9 +100,8 @@ msgid "Time"
 msgstr "Hora"
 
 #: ../panel-plugin/datetime-dialog.c:540
-#, fuzzy
 msgid "The time will appear in a tooltip."
-msgstr "Sólo hora, fecha como cuadro emergente"
+msgstr "La hora aparecerá en un cuadro de texto emergente."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -113,25 +113,20 @@ msgstr "Fecha y hora"
 
 #~ msgid "Date:"
 #~ msgstr "Fecha:"
-
 #~ msgid "Calendar"
 #~ msgstr "Calendario"
-
 #~ msgid ""
 #~ "The information on which day the calendar week starts is derived from the "
 #~ "locale."
 #~ msgstr ""
 #~ "La información a partir de la cual se determina en qué día empieza la "
 #~ "semana se deriva de la configuración de locale."
-
 #~ msgid "%Y-%m-%d"
 #~ msgstr "%d-%m-%Y"
-
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
-
 #~ msgid "use XFCalendar for popup calendar"
 #~ msgstr "use XFCalendar para desplegar el calendario"
-
 #~ msgid "Week day starts Monday"
 #~ msgstr "La semana se inicia el día lunes"
+
