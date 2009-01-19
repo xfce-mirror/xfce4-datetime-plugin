@@ -1,0 +1,111 @@
+# Italian translation for xfce4-datetime-plugin
+# Copyright (C) 2008 Xfce Desktop Environment Project
+# This file is distributed under the same license as the xfce4-datetime-plugin package.
+# Francesco Scarrone <pjf@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"PO-Revision-Date: 2009-01-14 17:15+0100\n"
+"Last-Translator: Francesco Scarrone <pjf.fra@gmail.com>\n"
+"Language-Team: Darkforge <www.darkforge.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "Formato non valido"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "Errore"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Prima la data, poi l'ora"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Prima l'ora, poi la data"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Solo la data"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Solo l'ora"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Personalizza..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Seleziona il carattere"
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Impossibile aprire il seguente url: %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
+msgid "Datetime properties"
+msgstr "Proprietà  dell'orario"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "Stile"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "Formato:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "Data"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "La data apparirà  in un messaggio a scomparsa"
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "Carattere:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "Ora"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "L'ora apparirà  in un messaggio a scomparsa"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Plugin di data e ora con un calendario base"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "Orario"
+
