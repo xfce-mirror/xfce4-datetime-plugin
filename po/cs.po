@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce 4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-03 10:12+0200\n"
-"PO-Revision-Date: 2007-12-15 22:56+0100\n"
+"PO-Revision-Date: 2008-12-02 21:07+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
@@ -105,9 +105,9 @@ msgstr "Informace o dni, jímž začíná týden, se odvozuje z proměnných loc
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Zásuvný modul Datum a Čas s jednoduchým kalendářem"
+msgstr "Zásuvný modul Datum a čas s jednoduchým kalendářem"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
-msgstr "DatumČas"
+msgstr "Datum a čas"
 
