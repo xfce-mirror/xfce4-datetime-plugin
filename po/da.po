@@ -87,7 +87,7 @@ msgstr "Dato"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr "Datoen vil fremkomme i værktøjstip."
+msgstr "Datoen vil fremkomme i et værktøjstip."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:450
@@ -104,7 +104,7 @@ msgstr "Tid"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr "Tiden vil fremkomme i værktøjstip."
+msgstr "Tiden vil fremkomme i et værktøjstip."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
