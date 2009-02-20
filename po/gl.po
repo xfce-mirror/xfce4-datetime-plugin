@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-24 21:30+0100\n"
-"PO-Revision-Date: 2008-06-24 19:24+0100\n"
+"PO-Revision-Date: 2009-02-11 15:02+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -30,11 +30,11 @@ msgstr "Erro"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
-msgstr ""
+msgstr "Data, e despois a hora"
 
 #: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
-msgstr ""
+msgstr "Hora, e despois a data"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
@@ -45,13 +45,14 @@ msgid "Time only"
 msgstr "Só a hora"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personalizado..."
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
-msgstr ""
+msgstr "Seleccionar tipo de letra"
 
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
@@ -67,11 +68,12 @@ msgstr "Propiedades de DateTime"
 #.
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
-msgstr ""
+msgstr "Disposición"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formato:"
@@ -85,12 +87,13 @@ msgstr "Data"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "A data aparecerá nunha notificación."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
-msgstr ""
+msgstr "Tipo de letra:"
 
 #.
 #. * time frame
@@ -101,12 +104,13 @@ msgstr "Hora"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "A hora aparecerá nunha notificación."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr ""
+msgstr "Engadido de data e hora cun sinxelo calendario"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DateTime"
+
