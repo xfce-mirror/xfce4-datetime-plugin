@@ -10,10 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-24 21:30+0100\n"
-"PO-Revision-Date: 2009-03-07 12:38+0100\n"
-"Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
+"PO-Revision-Date: 2009-04-14 21:50+0100\n"
+"Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,7 +61,7 @@ msgstr "Non foi posible abrir o seguinte url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
-msgstr "Propiedades de DateTime"
+msgstr "Propiedades de Datetime"
 
 #.
 #. * layout frame
