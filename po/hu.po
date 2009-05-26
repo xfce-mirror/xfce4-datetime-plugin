@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-24 21:30+0100\n"
-"PO-Revision-Date: 2008-07-11 16:08+0100\n"
+"PO-Revision-Date: 2009-05-25 17:59+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,8 @@ msgid "Time only"
 msgstr "Csak idő"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Egyéni..."
 
@@ -54,7 +55,7 @@ msgstr "Válassz betűt"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nem tudom megnyitni ezt az url-t: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
@@ -69,7 +70,8 @@ msgstr "Elrendezés"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formátum:"
@@ -83,10 +85,11 @@ msgstr "Dátum"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "A dátum megjelenik egy eszköztippben."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Betű"
 
@@ -99,7 +102,7 @@ msgstr "Idő"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "Az idő megjelenik egy eszköztippben."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -111,10 +114,8 @@ msgstr "Dátum és idő"
 
 #~ msgid "Date:"
 #~ msgstr "Dátum:"
-
 #~ msgid "Calendar"
 #~ msgstr "Naptár"
-
 #~ msgid ""
 #~ "The information on which day the calendar week starts is derived from the "
 #~ "locale."
@@ -123,6 +124,6 @@ msgstr "Dátum és idő"
 #, fuzzy
 #~ msgid "%Y/%m/%d"
 #~ msgstr "%Y-%m-%d"
-
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
+
