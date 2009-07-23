@@ -1,22 +1,22 @@
-# Hungarian translation of the xfce4-datetime-plugin package.
-# Copyright (C) 2006-2007 Remco den Breeje
+# Hungarian translation of xfce4-datetime-plugin
+# Copyright 2009. Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
-# SZERVÁC Attila <sas@321.hu>, 2007.
 #
+# SZERVÁC Attila <sas@321.hu>, 2007.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
+"Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
-"PO-Revision-Date: 2009-05-25 17:59+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
-"Language-Team: Hungarian <xfce-i18n@xfce.org>\n"
+"POT-Creation-Date: 2009-07-23 12:18+0200\n"
+"PO-Revision-Date: 2009-07-23 21:18+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <gnome at gnome dot hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Poedit-Country: HUNGARY\n"
-"X-Poedit-Language: Hungarian\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
@@ -28,11 +28,11 @@ msgstr "Hiba"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
-msgstr "Dátum majd idő"
+msgstr "Dátum, majd idő"
 
 #: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
-msgstr "Idő majd dátum"
+msgstr "Idő, majd dátum"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
@@ -43,23 +43,22 @@ msgid "Time only"
 msgstr "Csak idő"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
-msgstr "Egyéni..."
+msgstr "(Egyéni…)"
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
-msgstr "Válassz betűt"
+msgstr "Válasszon betűtípust"
 
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nem tudom megnyitni ezt az url-t: %s"
+msgstr "A következő URL megnyitása meghiúsult: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime properties"
-msgstr "A Dátum és idő tulajdonságai"
+msgstr "Dátum/idő tulajdonságai"
 
 #.
 #. * layout frame
@@ -70,8 +69,7 @@ msgstr "Elrendezés"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formátum:"
@@ -85,13 +83,12 @@ msgstr "Dátum"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr "A dátum megjelenik egy eszköztippben."
+msgstr "A dátum megjelenik a buboréksúgóban."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
-msgstr "Betű"
+msgstr "Betűkészlet:"
 
 #.
 #. * time frame
@@ -102,28 +99,13 @@ msgstr "Idő"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr "Az idő megjelenik egy eszköztippben."
+msgstr "Az idő megjelenik a buboréksúgóban."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Dátum és Idő beillesztés egyszerű naptárral"
+msgstr "Dátum és idő bővítmény egyszerű naptárral"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
-msgstr "Dátum és idő"
-
-#~ msgid "Date:"
-#~ msgstr "Dátum:"
-#~ msgid "Calendar"
-#~ msgstr "Naptár"
-#~ msgid ""
-#~ "The information on which day the calendar week starts is derived from the "
-#~ "locale."
-#~ msgstr "A hét első napja a helyi beállítástól függ."
-
-#, fuzzy
-#~ msgid "%Y/%m/%d"
-#~ msgstr "%Y-%m-%d"
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
+msgstr "Dátum/idő"
 
