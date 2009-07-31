@@ -1,3 +1,7 @@
+2009-07-31	Diego Ongaro <ongardie@gmail.com>
+
+	* xfce46-compat.c: Remove inconsistent static declaration
+
 2008-11-23	Diego Ongaro <ongardie@gmail.com>
 
 	* panel-plugin/datetime.c, panel-plugin/xfce46-compat.{c,h}: Adds

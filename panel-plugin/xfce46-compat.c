@@ -52,7 +52,7 @@
  *
  * Returns: The #GtkArrowType to use.
  **/
-static GtkArrowType
+GtkArrowType
 xfce_panel_plugin_arrow_type (XfcePanelPlugin *plugin)
 {
     XfceScreenPosition  position;
