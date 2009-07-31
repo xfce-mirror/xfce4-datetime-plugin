@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2009-02-06 15:29+0100\n"
 "Last-Translator: Francesco Scarrone <pjf.fra@gmail.com>\n"
 "Language-Team: Darkforge <www.darkforge.it>\n"
@@ -40,8 +40,7 @@ msgid "Time only"
 msgstr "Solo l'ora"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personalizza..."
 
@@ -55,8 +54,9 @@ msgid "Unable to open the following url: %s"
 msgstr "Impossibile aprire il seguente url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Proprietà  dell'orario"
+#, fuzzy
+msgid "Datetime"
+msgstr "Orario"
 
 #.
 #. * layout frame
@@ -67,8 +67,7 @@ msgstr "Stile"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formato:"
@@ -85,8 +84,7 @@ msgid "The date will appear in a tooltip."
 msgstr "La data apparirà in un messaggio a scomparsa."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Carattere:"
 
@@ -109,3 +107,5 @@ msgstr "Plugin di data e ora con un calendario base"
 msgid "DateTime"
 msgstr "Orario"
 
+#~ msgid "Datetime properties"
+#~ msgstr "Proprietà  dell'orario"

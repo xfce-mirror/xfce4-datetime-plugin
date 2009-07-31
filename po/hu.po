@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-23 12:18+0200\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2009-07-23 21:18+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
@@ -57,8 +57,9 @@ msgid "Unable to open the following url: %s"
 msgstr "A következő URL megnyitása meghiúsult: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Dátum/idő tulajdonságai"
+#, fuzzy
+msgid "Datetime"
+msgstr "Dátum/idő"
 
 #.
 #. * layout frame
@@ -109,3 +110,5 @@ msgstr "Dátum és idő bővítmény egyszerű naptárral"
 msgid "DateTime"
 msgstr "Dátum/idő"
 
+#~ msgid "Datetime properties"
+#~ msgstr "Dátum/idő tulajdonságai"

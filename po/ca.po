@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2009-02-26 16:15+0100\n"
 "Last-Translator: Harald Servat <redcrash@gmail.com>\n"
 "Language-Team: Harald Servat\n"
@@ -43,8 +43,7 @@ msgid "Time only"
 msgstr "Només hora"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personalitzar..."
 
@@ -58,8 +57,9 @@ msgid "Unable to open the following url: %s"
 msgstr "No es pot obrir la següent URL: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Propietats de data i hora"
+#, fuzzy
+msgid "Datetime"
+msgstr "Data i hora"
 
 #.
 #. * layout frame
@@ -70,8 +70,7 @@ msgstr "Distribució"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Format:"
@@ -88,8 +87,7 @@ msgid "The date will appear in a tooltip."
 msgstr "La data apareixerà en un quadre de text emergent."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Tipus de lletra:"
 
@@ -112,3 +110,5 @@ msgstr "Complement de data i hora amb un calendari senzill"
 msgid "DateTime"
 msgstr "Data i hora"
 
+#~ msgid "Datetime properties"
+#~ msgstr "Propietats de data i hora"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2008-12-06 04:40+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified)\n"
@@ -40,8 +40,7 @@ msgid "Time only"
 msgstr "只有时间"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "自定义..."
 
@@ -55,8 +54,9 @@ msgid "Unable to open the following url: %s"
 msgstr "无法打开网址：%s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "日期与时间属性"
+#, fuzzy
+msgid "Datetime"
+msgstr "日期与时间"
 
 #.
 #. * layout frame
@@ -67,8 +67,7 @@ msgstr "布局"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "格式："
@@ -85,8 +84,7 @@ msgid "The date will appear in a tooltip."
 msgstr "在工具提示中显示的日期"
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "字体："
 
@@ -109,3 +107,5 @@ msgstr "带简单日历的日期与时间插件"
 msgid "DateTime"
 msgstr "日期与时间"
 
+#~ msgid "Datetime properties"
+#~ msgstr "日期与时间属性"

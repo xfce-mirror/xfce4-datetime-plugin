@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2006-10-06 11:16+0200\n"
 "Last-Translator: Remco den Breeje <remco@sx.mine.nu>\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
@@ -54,8 +54,9 @@ msgid "Unable to open the following url: %s"
 msgstr ""
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Datetime eigenschappen"
+#, fuzzy
+msgid "Datetime"
+msgstr "DateTime"
 
 #.
 #. * layout frame
@@ -105,6 +106,9 @@ msgstr "Datum en Tijd plugin met een simpele kalender"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "DateTime"
+
+#~ msgid "Datetime properties"
+#~ msgstr "Datetime eigenschappen"
 
 #~ msgid "Date:"
 #~ msgstr "Datum"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2008-11-24 21:34+0100\n"
 "Last-Translator: Maximilian Schleiss <maximilian@xfce.org>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -41,8 +41,7 @@ msgid "Time only"
 msgstr "Temps seulement"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Personnalisé..."
 
@@ -56,8 +55,9 @@ msgid "Unable to open the following url: %s"
 msgstr "Échec à l'ouverture du lien : %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Propriétés de Datetime"
+#, fuzzy
+msgid "Datetime"
+msgstr "DateTime"
 
 #.
 #. * layout frame
@@ -68,8 +68,7 @@ msgstr "Disposition"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Format :"
@@ -86,8 +85,7 @@ msgid "The date will appear in a tooltip."
 msgstr "La date apparaît dans une infobulle."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Police :"
 
@@ -110,13 +108,17 @@ msgstr "Greffon heure et date avec calendrier simple"
 msgid "DateTime"
 msgstr "DateTime"
 
+#~ msgid "Datetime properties"
+#~ msgstr "Propriétés de Datetime"
+
 #~ msgid "Date:"
 #~ msgstr "Date :"
+
 #~ msgid "Calendar"
 #~ msgstr "Calendrier"
+
 #~ msgid ""
 #~ "The information on which day the calendar week starts is derived from the "
 #~ "locale."
 #~ msgstr ""
 #~ "Le choix de jour de début de semaine est défini par la locale du système."
-

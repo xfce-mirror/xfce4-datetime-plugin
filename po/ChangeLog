@@ -1,3 +1,8 @@
+2009-07-31  Diego Ongaro <ongardie@gmail.com>
+
+	* xfce4-datetime-plugin.pot, *.po: make update-po
+	* ChangeLog: fix whitespace
+
 2009-07-23  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation reworked.
@@ -70,7 +75,7 @@
 
 2008-12-07  Piarres Beobide <pi@beobide.net>
 
-        * eu.po: Basque translation update
+	* eu.po: Basque translation update
 
 2008-11-24  Maximilian Schleiss <maximilian@xfce.org>
 
@@ -79,7 +84,7 @@
 
 2008-11-17  Eren Türkay <erenturkay@xfce.org>
 
-        * tr.po: Turkish translation update (Turkish translation team)
+	* tr.po: Turkish translation update (Turkish translation team)
 
 2008-11-09  Maximilian Schleiss <maximilian@xfce.org>
 
@@ -95,7 +100,7 @@
 
 2008-07-15 Mohamed Magdy <alnokta@xfce.org>
 
-        * ar.po: Add Arabic translation
+	* ar.po: Add Arabic translation
 
 2008-07-14  Maximilian Schleiss <maximilian@xfce.org>
 

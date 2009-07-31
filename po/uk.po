@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2008-07-08 16:15+0300\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -58,8 +58,9 @@ msgid "Unable to open the following url: %s"
 msgstr "Не вдається відкрити наступний url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Властивості дати-часу"
+#, fuzzy
+msgid "Datetime"
+msgstr "Дата-Час"
 
 #.
 #. * layout frame
@@ -109,3 +110,6 @@ msgstr "Модуль Дата і Час з простим календарем"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "Дата-Час"
+
+#~ msgid "Datetime properties"
+#~ msgstr "Властивості дати-часу"

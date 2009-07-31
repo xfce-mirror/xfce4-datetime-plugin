@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2009-02-19 21:28+0700\n"
 "Last-Translator: Pavel Labushev <p.labushev@gmail.com>\n"
 "Language-Team: Russian <xfce-i18n-ru@xfce.org>\n"
@@ -42,8 +42,7 @@ msgid "Time only"
 msgstr "Только время"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "На выбор..."
 
@@ -57,8 +56,9 @@ msgid "Unable to open the following url: %s"
 msgstr "Невозможно открыть следующий URL: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Параметры"
+#, fuzzy
+msgid "Datetime"
+msgstr "Дата и время"
 
 #.
 #. * layout frame
@@ -69,8 +69,7 @@ msgstr "Расположение"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Формат:"
@@ -87,8 +86,7 @@ msgid "The date will appear in a tooltip."
 msgstr "В тексте всплывающей подсказки будет показана дата."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Шрифт:"
 
@@ -111,3 +109,5 @@ msgstr "Отображает дату и время на панели, соде�
 msgid "DateTime"
 msgstr "Дата и время"
 
+#~ msgid "Datetime properties"
+#~ msgstr "Параметры"

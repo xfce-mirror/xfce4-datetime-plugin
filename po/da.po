@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-24 21:30+0100\n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2009-01-23 10:59+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -45,8 +45,7 @@ msgid "Time only"
 msgstr "Kun tid"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Tilpasset..."
 
@@ -60,8 +59,9 @@ msgid "Unable to open the following url: %s"
 msgstr "Kan ikke åbne den følgende url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-msgid "Datetime properties"
-msgstr "Dato-tid egenskaber"
+#, fuzzy
+msgid "Datetime"
+msgstr "Dato-tid"
 
 #.
 #. * layout frame
@@ -72,8 +72,7 @@ msgstr "Layout"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Format:"
@@ -90,8 +89,7 @@ msgid "The date will appear in a tooltip."
 msgstr "Datoen vil fremkomme i et værktøjstip."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Skrifttype:"
 
@@ -114,3 +112,5 @@ msgstr "Dato- og tid-udvidelsesmodul med simpel kalender"
 msgid "DateTime"
 msgstr "Dato-tid"
 
+#~ msgid "Datetime properties"
+#~ msgstr "Dato-tid egenskaber"
