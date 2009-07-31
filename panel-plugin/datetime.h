@@ -22,9 +22,7 @@
 #ifndef DATETIME_H
 #define DATETIME_H
 
-#define I_CAN_HAS_BUGGY_TULTIPZ  0
-#define USE_GTK_TOOLTIP_API       (I_CAN_HAS_BUGGY_TULTIPZ && \
-                                   GTK_CHECK_VERSION(2,12,0))
+#define USE_GTK_TOOLTIP_API GTK_CHECK_VERSION(2,15,4)
 
 /* enums */
 enum {

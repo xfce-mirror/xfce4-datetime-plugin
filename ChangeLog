@@ -1,6 +1,7 @@
 2009-07-31	Diego Ongaro <ongardie@gmail.com>
 
 	* xfce46-compat.c: Remove inconsistent static declaration
+	* datetime.h: Enable tooltips for GTK >= 2.15.4 (Bug #4141)
 
 2008-11-23	Diego Ongaro <ongardie@gmail.com>
 
