@@ -1,0 +1,133 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-datetime-complementu 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
+"PO-Revision-Date: 2009-07-13 19:55+0100\n"
+"Last-Translator: Marcos Antonio Alvarez Costales <marcoscostales@gmail.com>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "Formatu non válidu"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "Fallu"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Data, hora dempués"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Hora, data dempués"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Namái data"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Namái hora"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Personalizar..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Escueyi triba de lletra"
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Imposible abrir la siguiente URL: %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
+#, fuzzy
+msgid "Datetime"
+msgstr "Data y hora"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "Distribución"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "Formatu:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "Data"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "La data aparecerá nún ventanu."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "Triba de lletra:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "Hora"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "La hora aparecerá nún ventanu."
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+#, fuzzy
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Complementu de data y hora con un calendariu cenciellu"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "Data y hora"
+
+#~ msgid "Datetime properties"
+#~ msgstr "Propiedaes de data y hora"
+
+#~ msgid "Date:"
+#~ msgstr "Fecha:"
+
+#~ msgid "Calendar"
+#~ msgstr "Calendariu"
+
+#~ msgid ""
+#~ "The information on which day the calendar week starts is derived from the "
+#~ "locale."
+#~ msgstr ""
+#~ "La información a partir de la cual se determina en qué día empieza la "
+#~ "selmana se deriva de la configuración de locale."
+
+#~ msgid "%Y-%m-%d"
+#~ msgstr "%d-%m-%Y"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
+
+#~ msgid "use XFCalendar for popup calendar"
+#~ msgstr "use XFCalendar pa estenderexar el calendariu"
+
+#~ msgid "Week day starts Monday"
+#~ msgstr "La selmana se entama el día llunes"
