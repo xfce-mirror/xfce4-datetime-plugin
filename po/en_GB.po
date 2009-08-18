@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jeff Bailes <thepizzaking@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2008-05-10 13:18+1000\n"
+"PO-Revision-Date: 2009-08-18 19:45+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
 "MIME-Version: 1.0\n"
@@ -53,12 +53,11 @@ msgstr "Select font"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Unable to open the following url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
-msgstr "DateTime"
+msgstr "Datetime"
 
 #.
 #. * layout frame
@@ -83,7 +82,7 @@ msgstr "Date"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "The date will appear in a tooltip."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
@@ -99,7 +98,7 @@ msgstr "Time"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "The time will appear in a tooltip."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
