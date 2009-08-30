@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2008-04-27 23:50+0300\n"
+"PO-Revision-Date: 2009-08-30 17:51+0200\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
@@ -41,7 +44,8 @@ msgid "Time only"
 msgstr "Ώρα μόνο"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Προσαρμογή..."
 
@@ -52,10 +56,9 @@ msgstr "Επιλογή γραμματοσειράς"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Αδυναμία κατά το άνοιγμα του ακόλουθου url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
 msgstr "Ημερομηνία ώρα"
 
@@ -68,7 +71,8 @@ msgstr "Εμφάνιση"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Τύπος:"
@@ -82,10 +86,11 @@ msgstr "Ημερομηνία"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "Η ημερομηνία θα εμφανιστεί ως σημείωση."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Γραμματοσειρά:"
 
@@ -98,7 +103,7 @@ msgstr "Ώρα"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "Η ώρα θα εμφανιστεί ως σημείωση."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -108,18 +113,3 @@ msgstr "Άρθρωμα ημερομηνίας και ώρας μαζί με έν
 msgid "DateTime"
 msgstr "Ημερομηνία ώρα"
 
-#~ msgid "Datetime properties"
-#~ msgstr "Ιδιότητες ημερομηνίας ώρας"
-
-#~ msgid "Date:"
-#~ msgstr "Ημερομηνία:"
-
-#~ msgid "Calendar"
-#~ msgstr "Ημερολόγιο"
-
-#~ msgid ""
-#~ "The information on which day the calendar week starts is derived from the "
-#~ "locale."
-#~ msgstr ""
-#~ "Η πληροφορία ποια είναι η αρχική ημέρα της εβδομάδας ορίζεται από το "
-#~ "σύστημα."
