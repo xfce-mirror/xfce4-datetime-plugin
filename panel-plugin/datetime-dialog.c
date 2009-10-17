@@ -347,7 +347,7 @@ datetime_dialog_response(GtkWidget *dlg, int response, t_datetime *dt)
 void
 datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 {
-  gint i;
+  guint i;
   gchar *str;
   struct tm *exampletm = gmtime(&example_time_t);
   GtkWidget *dlg,

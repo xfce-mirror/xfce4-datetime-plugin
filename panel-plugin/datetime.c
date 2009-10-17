@@ -395,7 +395,7 @@ static void datetime_set_update_interval(t_datetime *datetime)
  */
 void datetime_apply_layout(t_datetime *datetime, t_layout layout)
 {
-  if(0 <= layout && layout < LAYOUT_COUNT)
+  if(layout < LAYOUT_COUNT)
   {
     datetime->layout = layout;
   }
