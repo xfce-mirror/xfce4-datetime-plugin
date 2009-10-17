@@ -1,3 +1,9 @@
+2009-10-17	Diego Ongaro <ongardie@gmail.com>
+
+	I won't be maintaining this file anymore because it's annoying.
+	You can always get this information from git's history instead.
+	If this makes your job harder, let me know.
+
 2009-07-31	Diego Ongaro <ongardie@gmail.com>
 
 	* xfce46-compat.c: Remove inconsistent static declaration
