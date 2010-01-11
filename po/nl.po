@@ -2,7 +2,7 @@
 # Copyright (C) 2006-2007 Remco den Breeje
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Remco den Breeje <remco@sx.mine.nu>, 2006.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
@@ -51,16 +51,14 @@ msgstr "Kies lettertype"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Kan de volgende URL niet openen:%s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
-msgstr "DateTime"
+msgstr "Datumtijd"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Layout"
@@ -72,32 +70,30 @@ msgstr "Layout"
 msgid "Format:"
 msgstr "Opmaak:"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Datum"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "De datum zal weergegeven worden in een tooltip."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Lettertype:"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Tijd"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "De tijd zal weergegeven worden in een tooltip."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -116,9 +112,5 @@ msgstr "DateTime"
 #~ msgid "Calendar"
 #~ msgstr "Kalender"
 
-#~ msgid ""
-#~ "The information on which day the calendar week starts is derived from the "
-#~ "locale."
-#~ msgstr ""
-#~ "De instelling op welke dag de week begint is afgeleid van de locale "
-#~ "instelling."
+#~ msgid "The information on which day the calendar week starts is derived from the locale."
+#~ msgstr "De instelling op welke dag de week begint is afgeleid van de locale instelling."
