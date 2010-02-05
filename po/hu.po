@@ -1,7 +1,7 @@
 # Hungarian translation of xfce4-datetime-plugin
 # Copyright 2009. Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
-#
+# 
 # SZERVÁC Attila <sas@321.hu>, 2007.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
@@ -57,13 +57,11 @@ msgid "Unable to open the following url: %s"
 msgstr "A következő URL megnyitása meghiúsult: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
 msgstr "Dátum/idő"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Elrendezés"
@@ -75,9 +73,8 @@ msgstr "Elrendezés"
 msgid "Format:"
 msgstr "Formátum:"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Dátum"
@@ -91,9 +88,8 @@ msgstr "A dátum megjelenik a buboréksúgóban."
 msgid "Font:"
 msgstr "Betűkészlet:"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Idő"
