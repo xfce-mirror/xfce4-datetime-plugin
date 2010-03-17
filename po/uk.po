@@ -1,7 +1,7 @@
 # Ukrainian translation of xfce4-datetime-plugin.
 # Copyright (C) 2006-2007 Remco den Breeje
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
-#
+# 
 # LuckAs <luckas_fb@yahoo.com>, 2007.
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
 msgid ""
@@ -15,9 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
@@ -58,13 +57,11 @@ msgid "Unable to open the following url: %s"
 msgstr "Не вдається відкрити наступний url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
-msgstr "Дата-Час"
+msgstr "Дата-час"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Вигляд"
@@ -76,9 +73,8 @@ msgstr "Вигляд"
 msgid "Format:"
 msgstr "Формат:"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Дата"
@@ -92,9 +88,8 @@ msgstr "Дата буде відображатися у контекстній �
 msgid "Font:"
 msgstr "Шрифт:"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Час"
