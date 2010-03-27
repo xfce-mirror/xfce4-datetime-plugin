@@ -3,7 +3,7 @@
 # Copyright (C) 2009 THE xfce4-datetime-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Simon Schneider <simon@schneiderimtal.de>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin 4-datetime-plugin\n"
@@ -53,16 +53,14 @@ msgstr "Schriftart auswählen"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Konnte die URL %s nicht öffnen"
+msgstr "Konnte die URL »%s« nicht öffnen"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
-msgstr "DateTime"
+msgstr "Datum und Zeit"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Anordnung"
@@ -74,9 +72,8 @@ msgstr "Anordnung"
 msgid "Format:"
 msgstr "Format:"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Datum"
@@ -90,26 +87,23 @@ msgstr "Das Datum erscheint in einer Kurzhilfe"
 msgid "Font:"
 msgstr "Schriftart:"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Uhrzeit"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr "Die Uhrzeit wird in einer Kurzhilfe erscheinen"
+msgstr "Die Uhrzeit erscheint in einer Kurzhilfe"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr ""
-"Eine Erweiterung für die Leiste, die Datum und Uhrzeit anzeigt und einen "
-"einfachen Kalender anbietet"
+msgstr "Eine Erweiterung für die Leiste, die Datum und Uhrzeit anzeigt und einen einfachen Kalender anbietet"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
-msgstr "DateTime"
+msgstr "Datum und Zeit"
 
 #~ msgid "Datetime properties"
 #~ msgstr "Eigenschaften"
