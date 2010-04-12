@@ -2,7 +2,7 @@
 # Copyright (C) 2008 Xfce Desktop Environment Project
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Francesco Scarrone <pjf@gmail.com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
@@ -54,13 +54,11 @@ msgid "Unable to open the following url: %s"
 msgstr "Impossibile aprire il seguente url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
 msgstr "Orario"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Stile"
@@ -72,9 +70,8 @@ msgstr "Stile"
 msgid "Format:"
 msgstr "Formato:"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Data"
@@ -88,9 +85,8 @@ msgstr "La data apparirà in un messaggio a scomparsa."
 msgid "Font:"
 msgstr "Carattere:"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Ora"
