@@ -1,0 +1,109 @@
+# Croatian translations for   xfce4-datetime-pluginpackage.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the  xfce4-datetime-plugin package.
+#  Ivica Kolić<ikoli@yahoo.com>, 2010.
+#  Ivica Kolić<ikoli@yahoo.com> <>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version:  xfce4-datetime-plugin 4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
+"PO-Revision-Date: 2010-06-12 18:12+0200\n"
+"Last-Translator:  Ivica Kolić<ikoli@yahoo.com> <>\n"
+"Language-Team: Croatian <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "Neispravan format"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "Greška"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Datum,pa vrijeme"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Vrijeme,pa datum"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Samo datum"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Samo vrijeme"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Prilagođeno..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Odaberi font"
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Neuspjeh u otvaranju slijedećeg url: %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
+msgid "Datetime"
+msgstr "Datumvrijeme"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "Raspored"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "Format:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "Datum"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr ""
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "Font:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "Vrijeme"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr ""
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Datum i vrijeme priključak  sa jednostavnim kalendarom"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "DatumVrijeme"
