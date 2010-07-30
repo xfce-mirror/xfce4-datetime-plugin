@@ -1,0 +1,111 @@
+# Uyghur translations for xfce4-datetime-plugin package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Gheyret T.Kenji <gheyret@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-10 00:25+0900\n"
+"PO-Revision-Date: 2009-08-09 23:23+0900\n"
+"Last-Translator: Gheyret T.Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "ئىناۋەتسىز فورمات"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "خاتالىق"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr ""
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "ئىختىيارى…"
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr ""
+
+#: ../panel-plugin/datetime-dialog.c:371
+msgid "Datetime"
+msgstr ""
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "ئورۇنلاشتۇرۇلۇشى"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "فورمات:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "چېسلا"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr ""
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "خەت نۇسخا:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "ۋاقىت"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr ""
+
+# Add panel-items dialog: Coordinate with other plugins
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr ""
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "چېسلا ۋە ۋاقىت"
+
+#~ msgid "Datetime properties"
+#~ msgstr "Datetime 設定"
