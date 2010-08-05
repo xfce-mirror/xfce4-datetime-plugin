@@ -25,37 +25,37 @@ msgstr "خاتالىق"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
-msgstr ""
+msgstr "چېسلا ئاندىن ۋاقىت"
 
 #: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
-msgstr ""
+msgstr "ۋاقىت ئاندىن چېسلا"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
-msgstr ""
+msgstr "چېسلا"
 
 #: ../panel-plugin/datetime-dialog.c:45
 msgid "Time only"
-msgstr ""
+msgstr "ۋاقىت"
 
 #. placeholder
 #: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
-msgstr "ئىختىيارى…"
+msgstr "ئادەت..."
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
-msgstr ""
+msgstr "خەت نۇسخا تاللاش"
 
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "تۆۋەندىكى  URL نى ئاچقىلى بولمىدى: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime"
-msgstr ""
+msgstr "Datetime"
 
 #.
 #. * layout frame
@@ -80,7 +80,7 @@ msgstr "چېسلا"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "چېسلا tooltip تا كۆرۈنىدۇ."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
@@ -96,12 +96,12 @@ msgstr "ۋاقىت"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "ۋاقىت tooltip تا كۆرۈنىدۇ."
 
 # Add panel-items dialog: Coordinate with other plugins
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr ""
+msgstr "ئاددىي يىلنامە بىلەن ۋاقىت ۋە چېسلا نى كۆرسىتىدۇ"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
