@@ -2,7 +2,7 @@
 # Copyright (C) 2006-2007 Remco den Breeje
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Maximilian Schleiss <maximilian@xfce.org>, 2007-2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
@@ -55,13 +55,11 @@ msgid "Unable to open the following url: %s"
 msgstr "Échec à l'ouverture du lien : %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
-msgstr "DateTime"
+msgstr "Datetime"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Disposition"
@@ -73,9 +71,8 @@ msgstr "Disposition"
 msgid "Format:"
 msgstr "Format :"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Date"
@@ -89,9 +86,8 @@ msgstr "La date apparaît dans une infobulle."
 msgid "Font:"
 msgstr "Police :"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Temps"
@@ -117,8 +113,5 @@ msgstr "DateTime"
 #~ msgid "Calendar"
 #~ msgstr "Calendrier"
 
-#~ msgid ""
-#~ "The information on which day the calendar week starts is derived from the "
-#~ "locale."
-#~ msgstr ""
-#~ "Le choix de jour de début de semaine est défini par la locale du système."
+#~ msgid "The information on which day the calendar week starts is derived from the locale."
+#~ msgstr "Le choix de jour de début de semaine est défini par la locale du système."
