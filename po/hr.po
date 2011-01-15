@@ -5,17 +5,16 @@
 #  Ivica Kolić<ikoli@yahoo.com> <>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version:  xfce4-datetime-plugin 4-datetime-plugin\n"
+"Project-Id-Version: xfce4-datetime-plugin 4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2010-06-12 18:12+0200\n"
-"Last-Translator:  Ivica Kolić<ikoli@yahoo.com> <>\n"
+"Last-Translator: Ivica Kolić<ikoli@yahoo.com> <>\n"
 "Language-Team: Croatian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/datetime.c:82
 msgid "Invalid format"
@@ -59,9 +58,8 @@ msgstr "Neuspjeh u otvaranju slijedećeg url: %s"
 msgid "Datetime"
 msgstr "Datumvrijeme"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Raspored"
@@ -73,32 +71,30 @@ msgstr "Raspored"
 msgid "Format:"
 msgstr "Format:"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Datum"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "Datum će se pojaviti u tooltip-u."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Font:"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Vrijeme"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "Vrijeme će se pojaviti u tooltip-u."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
