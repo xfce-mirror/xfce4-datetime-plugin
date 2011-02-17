@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Igor Știrbu <igor.stirbu@gmail.com>, 2009.
 # Mișu Moldovan <dumol@gnome.ro>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
@@ -47,7 +47,7 @@ msgstr "Personalizat..."
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
-msgstr "Alegere font"
+msgstr "Alegeți un font"
 
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
@@ -55,13 +55,11 @@ msgid "Unable to open the following url: %s"
 msgstr "Nu s-a putut deschide următoarea adresă: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
 msgid "Datetime"
 msgstr "Ceas cu calendar"
 
-#.
 #. * layout frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
 msgstr "Aspect"
@@ -73,9 +71,8 @@ msgstr "Aspect"
 msgid "Format:"
 msgstr "Format:"
 
-#.
 #. * Date frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:425
 msgid "Date"
 msgstr "Data"
@@ -89,9 +86,8 @@ msgstr "Data va apărea într-un indiciu."
 msgid "Font:"
 msgstr "Font:"
 
-#.
 #. * time frame
-#.
+#. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
 msgstr "Ora"
