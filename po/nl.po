@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2006-10-06 11:16+0200\n"
-"Last-Translator: Remco den Breeje <remco@sx.mine.nu>\n"
+"Last-Translator: Pjotr\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -42,7 +42,7 @@ msgstr "Alleen tijd"
 #. placeholder
 #: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
-msgstr "Handmatig..."
+msgstr "Aangepast..."
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
@@ -61,7 +61,7 @@ msgstr "Datumtijd"
 #. 
 #: ../panel-plugin/datetime-dialog.c:391
 msgid "Layout"
-msgstr "Layout"
+msgstr "Vormgeving"
 
 #. Format label
 #. format label
@@ -78,7 +78,7 @@ msgstr "Datum"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr "De datum zal weergegeven worden in een tooltip."
+msgstr "De datum zal verschijnen in een gereedschaptip."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
@@ -93,18 +93,18 @@ msgstr "Tijd"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr "De tijd zal weergegeven worden in een tooltip."
+msgstr "De tijd zal verschijnen in een gereedschaptip."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Datum en Tijd plugin met een simpele kalender"
+msgstr "Datum en Tijd-plugin met een simpele kalender"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
-msgstr "DateTime"
+msgstr "DatumTijd"
 
 #~ msgid "Datetime properties"
-#~ msgstr "Datetime eigenschappen"
+#~ msgstr "DatumTijd-eigenschappen"
 
 #~ msgid "Date:"
 #~ msgstr "Datum"
@@ -113,4 +113,4 @@ msgstr "DateTime"
 #~ msgstr "Kalender"
 
 #~ msgid "The information on which day the calendar week starts is derived from the locale."
-#~ msgstr "De instelling op welke dag de week begint is afgeleid van de locale instelling."
+#~ msgstr "De informatie op welke dag de week begint wordt afgeleid van de taalinstelling."
