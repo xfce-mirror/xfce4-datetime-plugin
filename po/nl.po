@@ -1,11 +1,12 @@
 # Dutch translation of the xfce4-datetime-plugin package.
-# Copyright (C) 2006-2007 Remco den Breeje
+# Copyright (C) The Xfce development team.
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Remco den Breeje <remco@sx.mine.nu>, 2006.
+# Pjotr, 2011.
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-datetime-plugin 0.5.0\n"
+"Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-31 13:39-0500\n"
 "PO-Revision-Date: 2006-10-06 11:16+0200\n"
