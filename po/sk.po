@@ -2,14 +2,15 @@
 # Copyright (C) YEAR THE xfce4-datetime-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-datetime-plugin package.
 # Robert Hartl <hartl.robert@gmail.com>, 2011.
+# Tomáš Vadina <kyberdev@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-datetime-plugin\n"
 "Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
 "POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2011-01-02 16:32+0100\n"
-"Last-Translator: Robert Hartl <hartl.robert@gmail.com>\n"
+"PO-Revision-Date: 2011-06-03 13:26+0100\n"
+"Last-Translator: Tomáš Vadina <kyberdev@gmail.com>\n"
 "Language-Team: Slovak <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -26,11 +27,11 @@ msgstr "Chyba"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
-msgstr ""
+msgstr "Dátum, potom čas"
 
 #: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
-msgstr ""
+msgstr "Čas, potom dátum"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
@@ -41,7 +42,8 @@ msgid "Time only"
 msgstr "Iba čas"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Vlastné..."
 
@@ -52,11 +54,11 @@ msgstr "Vyberte písmo"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nemožno otvoriť následujúcu adresu url: %s"
+msgstr "Nie je možné otvoriť následujúcu adresu url: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime"
-msgstr ""
+msgstr "Dátum a čas"
 
 #.
 #. * layout frame
@@ -67,7 +69,8 @@ msgstr "Vzhľad"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
 #: ../panel-plugin/datetime-dialog.c:570
 msgid "Format:"
 msgstr "Formát:"
@@ -81,10 +84,11 @@ msgstr "Dátum"
 
 #: ../panel-plugin/datetime-dialog.c:437
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "Dátum sa zobrazí v plávajúcom popise."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
 msgid "Font:"
 msgstr "Písmo:"
 
@@ -97,7 +101,7 @@ msgstr "Čas"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "Čas sa zobrazí v plávajúcom popise."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
@@ -105,4 +109,5 @@ msgstr "Zásuvný modul Dátum a čas s jednoduchým kalendárom"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
-msgstr ""
+msgstr "Dátum a čas"
+
