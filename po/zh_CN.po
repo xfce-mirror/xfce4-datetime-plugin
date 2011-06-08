@@ -25,11 +25,11 @@ msgstr "错误"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
-msgstr "日期，后接时间"
+msgstr "日期后接时间"
 
 #: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
-msgstr "时间，后接日期"
+msgstr "时间后接日期"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
@@ -51,7 +51,7 @@ msgstr "选择字体"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "无法打开网址：%s"
+msgstr "无法以下打开网址：%s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime"
@@ -105,6 +105,3 @@ msgstr "带简单日历的日期与时间插件"
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
 msgstr "日期与时间"
-
-#~ msgid "Datetime properties"
-#~ msgstr "日期与时间属性"
