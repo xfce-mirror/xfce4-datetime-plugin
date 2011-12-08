@@ -1,0 +1,110 @@
+# translation of xfce4-datetime-plugin.master.xfce4-datetime-plugin.po to Icelandic
+# Copyright (C) 2011 FSF
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sveinn í Felli <sveinki@nett.is>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-datetime-plugin.master.xfce4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
+"PO-Revision-Date: 2011-12-08 22:17+0000\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "Ógilt snið"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "Villa"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Dagsetning, svo tími"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Tími, svo dagsetning"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Aðeins dagsetning"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Aðeins tími"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Sérsniðið..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Veldu letur"
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Get ekki opnað eftirfarandi slóð: %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
+msgid "Datetime"
+msgstr "Dagsetning og tími"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "Uppsetning"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "Snið:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "Dagsetning"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "Dagsetningin birtist sem vísbending."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "Letur:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "Tími"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "Tíminn birtist sem vísbending."
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Dagsetninga- og tímaviðbót með einföldu dagatali"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "Dagsetning og tími"
+
