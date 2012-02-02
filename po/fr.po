@@ -14,6 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/datetime.c:82
@@ -26,11 +27,11 @@ msgstr "Erreur"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
-msgstr "Date et temps après"
+msgstr "Date et heure après"
 
 #: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
-msgstr "Temps et date après"
+msgstr "Heure et date après"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
@@ -38,7 +39,7 @@ msgstr "Date seulement"
 
 #: ../panel-plugin/datetime-dialog.c:45
 msgid "Time only"
-msgstr "Temps seulement"
+msgstr "Heure seulement"
 
 #. placeholder
 #: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
@@ -56,7 +57,7 @@ msgstr "Échec à l'ouverture du lien : %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime"
-msgstr "Datetime"
+msgstr "Dateheure"
 
 #. * layout frame
 #. 
@@ -90,7 +91,7 @@ msgstr "Police :"
 #. 
 #: ../panel-plugin/datetime-dialog.c:528
 msgid "Time"
-msgstr "Temps"
+msgstr "Heure"
 
 #: ../panel-plugin/datetime-dialog.c:540
 msgid "The time will appear in a tooltip."
@@ -98,11 +99,11 @@ msgstr "L'heure apparaît dans une infobulle."
 
 #: ../panel-plugin/datetime.desktop.in.in.h:1
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Greffon heure et date avec calendrier simple"
+msgstr "Greffon date et heure avec un calendrier simple"
 
 #: ../panel-plugin/datetime.desktop.in.in.h:2
 msgid "DateTime"
-msgstr "DateTime"
+msgstr "DateHeure"
 
 #~ msgid "Datetime properties"
 #~ msgstr "Propriétés de Datetime"
@@ -113,5 +114,8 @@ msgstr "DateTime"
 #~ msgid "Calendar"
 #~ msgstr "Calendrier"
 
-#~ msgid "The information on which day the calendar week starts is derived from the locale."
-#~ msgstr "Le choix de jour de début de semaine est défini par la locale du système."
+#~ msgid ""
+#~ "The information on which day the calendar week starts is derived from the "
+#~ "locale."
+#~ msgstr ""
+#~ "Le choix de jour de début de semaine est défini par la locale du système."
