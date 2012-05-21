@@ -43,7 +43,7 @@ typedef enum
 typedef struct {
   XfcePanelPlugin * plugin;
   GtkWidget *button;
-  GtkWidget *vbox;
+  GtkWidget *box;
   GtkWidget *date_label;
   GtkWidget *time_label;
   guint update_interval;  /* time between updates in milliseconds */

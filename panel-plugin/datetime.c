@@ -38,6 +38,13 @@
 
 #define DATETIME_MAX_STRLEN 256
 
+/* check for new Xfce 4.10 panel features */
+#ifdef LIBXFCE4PANEL_CHECK_VERSION
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#define HAS_PANEL_49
+#endif
+#endif
+
 /**
  *  Convert a GTimeVal to milliseconds.
  *  Fractions of a millisecond are truncated.
@@ -440,13 +447,13 @@ void datetime_apply_layout(t_datetime *datetime, t_layout layout)
   switch(datetime->layout)
   {
     case LAYOUT_TIME_DATE:
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
+      gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 0);
+      gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 1);
       break;
 
     default:
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 1);
-      gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 0);
+      gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 1);
+      gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 0);
   }
 
   datetime_set_update_interval(datetime);
@@ -585,18 +592,53 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 }
 
 /*
+ * change widgets orientation when the panel orientation changes
+ */
+#ifdef HAS_PANEL_49
+static void datetime_set_mode(XfcePanelPlugin *plugin, XfcePanelPluginMode mode, t_datetime *datetime)
+{
+  GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation (plugin);
+  GtkOrientation orientation = (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
+    GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL;
+#else
+static void datetime_set_orientation(XfcePanelPlugin *plugin, GtkOrientation orientation, t_datetime *datetime)
+{
+#endif
+  if (orientation == GTK_ORIENTATION_VERTICAL)
+  {
+    xfce_hvbox_set_orientation(XFCE_HVBOX(datetime->box), GTK_ORIENTATION_HORIZONTAL);
+    gtk_label_set_angle(GTK_LABEL(datetime->time_label), -90);
+    gtk_label_set_angle(GTK_LABEL(datetime->date_label), -90);
+    gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 0);
+    gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 1);
+  }
+  else
+  {
+    xfce_hvbox_set_orientation(XFCE_HVBOX(datetime->box), GTK_ORIENTATION_VERTICAL);
+    gtk_label_set_angle(GTK_LABEL(datetime->time_label), 0);
+    gtk_label_set_angle(GTK_LABEL(datetime->date_label), 0);
+    gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 0);
+    gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 1);
+  }
+}
+
+/*
  * create the gtk-part of the datetime plugin
  */
 static void datetime_create_widget(t_datetime * datetime)
 {
+  GtkOrientation orientation;
+  orientation = xfce_panel_plugin_get_orientation(datetime->plugin);
+
   /* create button */
   datetime->button = xfce_create_panel_toggle_button();
   gtk_widget_show(datetime->button);
 
-  /* create vertical box */
-  datetime->vbox = gtk_vbox_new(TRUE, 0);
-  gtk_widget_show(datetime->vbox);
-  gtk_container_add(GTK_CONTAINER(datetime->button), datetime->vbox);
+  /* create a box which can be easily adapted to the panel orientation */
+  datetime->box = xfce_hvbox_new(GTK_ORIENTATION_VERTICAL, TRUE, 0);
+
+  gtk_widget_show(datetime->box);
+  gtk_container_add(GTK_CONTAINER(datetime->button), datetime->box);
 
   /* create time and date lines */
   datetime->time_label = gtk_label_new("");
@@ -604,17 +646,22 @@ static void datetime_create_widget(t_datetime * datetime)
   gtk_label_set_justify(GTK_LABEL(datetime->time_label), GTK_JUSTIFY_CENTER);
   gtk_label_set_justify(GTK_LABEL(datetime->date_label), GTK_JUSTIFY_CENTER);
 
-  /* add time and date lines to the vbox */
-  gtk_box_pack_start(GTK_BOX(datetime->vbox),
+  /* add time and date lines to the box */
+  gtk_box_pack_start(GTK_BOX(datetime->box),
       datetime->time_label, FALSE, FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(datetime->vbox),
+  gtk_box_pack_start(GTK_BOX(datetime->box),
       datetime->date_label, FALSE, FALSE, 0);
-  gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->time_label, 0);
-  gtk_box_reorder_child(GTK_BOX(datetime->vbox), datetime->date_label, 1);
 
   /* connect widget signals to functions */
   g_signal_connect(datetime->button, "button-press-event",
       G_CALLBACK(datetime_clicked), datetime);
+
+  /* set orientation according to the panel orientation */
+#ifdef HAS_PANEL_49
+  datetime_set_mode(datetime->plugin, orientation, datetime);
+#else
+  datetime_set_orientation(datetime->plugin, orientation, datetime);
+#endif
 }
 
 /*
@@ -687,9 +734,14 @@ static void datetime_construct(XfcePanelPlugin *plugin)
   g_signal_connect(plugin, "free-data",
       G_CALLBACK(datetime_free), datetime);
   g_signal_connect(plugin, "size-changed",
-      G_CALLBACK (datetime_set_size), datetime);
+      G_CALLBACK(datetime_set_size), datetime);
   g_signal_connect(plugin, "configure-plugin",
-      G_CALLBACK (datetime_properties_dialog), datetime);
+      G_CALLBACK(datetime_properties_dialog), datetime);
+#ifdef HAS_PANEL_49
+  g_signal_connect(plugin, "mode-changed", G_CALLBACK(datetime_set_mode), datetime);
+#else
+  g_signal_connect(plugin, "orientation-changed", G_CALLBACK(datetime_set_orientation), datetime);
+#endif
   xfce_panel_plugin_menu_show_configure(plugin);
 }
 
