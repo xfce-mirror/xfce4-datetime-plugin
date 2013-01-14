@@ -1,0 +1,116 @@
+# Bulgarian translations for xfce4-datetime-plugin package.
+# Copyright (C) 2007 THE xfce4-datetime-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-datetime-plugin package.
+# Kiril Kirilov (Cybercop) <cybercop_montana@abv.bg.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-datetime-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-31 13:39-0500\n"
+"PO-Revision-Date: 2013-01-14 19:06+0200\n"
+"Last-Translator: Kiril Kirilov (Cybercop) <cybercop_montana@abv.bg>\n"
+"Language-Team: Bulgarian <xfce-i18n-bg@xfce.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+
+#: ../panel-plugin/datetime.c:82
+msgid "Invalid format"
+msgstr "Невалиден формат"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Error"
+msgstr "Грешка"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Дата, след това час"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Час, след това дата"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Само дата"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Само час"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85
+#: ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Потребителски..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Избор на шрифт"
+
+#: ../panel-plugin/datetime-dialog.c:332
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Не може да бъде отворен следният адрес: %s"
+
+#: ../panel-plugin/datetime-dialog.c:371
+msgid "Datetime"
+msgstr "Дата и час"
+
+#.
+#. * layout frame
+#.
+#: ../panel-plugin/datetime-dialog.c:391
+msgid "Layout"
+msgstr "Разположение"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:405
+#: ../panel-plugin/datetime-dialog.c:467
+#: ../panel-plugin/datetime-dialog.c:570
+msgid "Format:"
+msgstr "Формат:"
+
+#.
+#. * Date frame
+#.
+#: ../panel-plugin/datetime-dialog.c:425
+msgid "Date"
+msgstr "Дата"
+
+#: ../panel-plugin/datetime-dialog.c:437
+msgid "The date will appear in a tooltip."
+msgstr "Датата ще се показва в подсказките."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:450
+#: ../panel-plugin/datetime-dialog.c:553
+msgid "Font:"
+msgstr "Шрифт:"
+
+#.
+#. * time frame
+#.
+#: ../panel-plugin/datetime-dialog.c:528
+msgid "Time"
+msgstr "Час"
+
+#: ../panel-plugin/datetime-dialog.c:540
+msgid "The time will appear in a tooltip."
+msgstr "Часът ще се показва в подсказките."
+
+#: ../panel-plugin/datetime.desktop.in.in.h:1
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Добавка за датата и часа с опростен календар"
+
+#: ../panel-plugin/datetime.desktop.in.in.h:2
+msgid "DateTime"
+msgstr "Дата и час"
+
+#~ msgid "Datetime properties"
+#~ msgstr "Параметри"
