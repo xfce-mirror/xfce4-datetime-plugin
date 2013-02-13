@@ -33,8 +33,6 @@
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-panel-convenience.h>
 
-#include "xfce46-compat.h"
-
 #include "datetime.h"
 #include "datetime-dialog.h"
 

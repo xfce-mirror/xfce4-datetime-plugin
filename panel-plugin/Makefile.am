@@ -7,9 +7,7 @@ libdatetime_la_SOURCES = 			\
 	datetime.h				\
 	datetime.c				\
 	datetime-dialog.h			\
-	datetime-dialog.c			\
-	xfce46-compat.h				\
-	xfce46-compat.c
+	datetime-dialog.c
 
 libdatetime_la_CFLAGS = 			\
 	-I$(top_srcdir)				\
