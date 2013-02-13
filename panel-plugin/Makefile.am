@@ -1,4 +1,4 @@
-plugindir = $(libdir)/xfce4/panel-plugins/
+plugindir = $(libdir)/xfce4/panel/plugins/
 
 plugin_LTLIBRARIES = 				\
 	libdatetime.la
@@ -19,12 +19,10 @@ libdatetime_la_CFLAGS = 			\
 
 libdatetime_la_LDFLAGS = 			\
 	-avoid-version				\
-	-module
-
-if HAVE_CYGWIN
-libdatetime_la_LDFLAGS += 			\
-	-no-undefined
-endif
+	-module \
+	-no-undefined \
+	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)' \
+	$(PLATFORM_LDFLAGS)
 
 libdatetime_la_LIBADD = 			\
 	$(GTK_LIBS)				\
@@ -32,19 +30,12 @@ libdatetime_la_LIBADD = 			\
 	$(LIBXFCE4UI_LIBS)			\
 	$(LIBXFCE4UTIL_LIBS)
 
-desktopdir = $(datadir)/xfce4/panel-plugins
-desktop_in_in_files = datetime.desktop.in.in
-desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
-%.desktop.in: %.desktop.in.in
-	sed -e "s,\@libdir\@,$(libdir),g" < $< > $@
+desktopdir = $(datadir)/xfce4/panel/plugins
+desktop_in_files = datetime.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 
-EXTRA_DIST =					\
-	$(desktop_in_in_files)
+EXTRA_DIST = $(desktop_in_files)
 
-DISTCLEANFILES =				\
-	$(desktop_DATA)				\
-	$(desktop_in_files)
-
+CLEANFILES = $(desktop_DATA)

@@ -17,7 +17,6 @@ AM_MAINTAINER_MODE()
 dnl Check for UNIX variants
 AC_AIX
 AC_ISC_POSIX
-AM_CONDITIONAL([HAVE_CYGWIN], [test "`uname | grep \"CYGWIN\"`" != ""])
 
 dnl check for basic programs
 AC_PROG_CC

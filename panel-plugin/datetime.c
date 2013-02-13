@@ -694,5 +694,5 @@ static void datetime_construct(XfcePanelPlugin *plugin)
 }
 
 
-XFCE_PANEL_PLUGIN_REGISTER_INTERNAL(datetime_construct);
+XFCE_PANEL_PLUGIN_REGISTER(datetime_construct);
 

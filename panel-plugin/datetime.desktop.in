@@ -4,4 +4,4 @@ _Name=DateTime
 _Comment=Date and Time plugin with a simple calendar
 Icon=xfce-schedule
 X-XFCE-Module=datetime
-X-XFCE-Module-Path=@libdir@/xfce4/panel-plugins
+X-XFCE-Internal=FALSE
