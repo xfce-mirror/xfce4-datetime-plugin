@@ -28,7 +28,7 @@
 #include <string.h>
 
 /* xfce includes */
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 
@@ -388,7 +388,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /*
    * layout frame
    */
-  frame = xfce_create_framebox(_("Layout"), &bin);
+  frame = xfce_gtk_frame_box_new(_("Layout"), &bin);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
       FALSE, FALSE, 0);
   gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
@@ -422,7 +422,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /*
    * Date frame
    */
-  datetime->date_frame = xfce_create_framebox(_("Date"), &bin);
+  datetime->date_frame = xfce_gtk_frame_box_new(_("Date"), &bin);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), datetime->date_frame,
       FALSE, FALSE, 0);
   gtk_container_set_border_width(GTK_CONTAINER(datetime->date_frame), 6);
@@ -525,7 +525,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /*
    * time frame
    */
-  datetime->time_frame = xfce_create_framebox(_("Time"), &bin);
+  datetime->time_frame = xfce_gtk_frame_box_new(_("Time"), &bin);
   gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), datetime->time_frame,
       FALSE, FALSE, 0);
   gtk_container_set_border_width(GTK_CONTAINER(datetime->time_frame), 6);

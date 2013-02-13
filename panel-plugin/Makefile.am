@@ -16,7 +16,7 @@ libdatetime_la_CFLAGS = 			\
 	-DLOCALEDIR=\"$(localedir)\"		\
 	$(GTK_CFLAGS)				\
 	$(LIBXFCE4PANEL_CFLAGS)			\
-	$(LIBXFCEGUI4_CFLAGS)			\
+	$(LIBXFCE4UI_CFLAGS)			\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 libdatetime_la_LDFLAGS = 			\
@@ -31,7 +31,7 @@ endif
 libdatetime_la_LIBADD = 			\
 	$(GTK_LIBS)				\
 	$(LIBXFCE4PANEL_LIBS)			\
-	$(LIBXFCEGUI4_LIBS)			\
+	$(LIBXFCE4UI_LIBS)			\
 	$(LIBXFCE4UTIL_LIBS)
 
 desktopdir = $(datadir)/xfce4/panel-plugins
