@@ -1,3 +1,11 @@
+2013-02-14
+================================================================================
+xfce4-datetime-plugin v0.6.2 released
+
+* port to libxfce4ui (bug #8064)
+* set text orientation according to panel mode/orientation (bug #8926)
+* update toolchain/makefiles
+
 2008-11-19
 ================================================================================
 xfce4-datetime-plugin v0.6.1 released
