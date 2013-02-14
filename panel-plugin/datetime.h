@@ -22,8 +22,6 @@
 #ifndef DATETIME_H
 #define DATETIME_H
 
-#define USE_GTK_TOOLTIP_API GTK_CHECK_VERSION(2,15,4)
-
 /* enums */
 enum {
   DATE = 0,
@@ -48,10 +46,8 @@ typedef struct {
   GtkWidget *time_label;
   guint update_interval;  /* time between updates in milliseconds */
   guint timeout_id;
-#if USE_GTK_TOOLTIP_API
   guint tooltip_timeout_id;
   gulong tooltip_handler_id;
-#endif
 
   /* settings */
   gchar *date_font;
@@ -62,17 +58,13 @@ typedef struct {
 
   /* option widgets */
   GtkWidget *date_frame;
-#if USE_GTK_TOOLTIP_API
   GtkWidget *date_tooltip_label;
-#endif
   GtkWidget *date_font_hbox;
   GtkWidget *date_font_selector;
   GtkWidget *date_format_combobox;
   GtkWidget *date_format_entry;
   GtkWidget *time_frame;
-#if USE_GTK_TOOLTIP_API
   GtkWidget *time_tooltip_label;
-#endif
   GtkWidget *time_font_hbox;
   GtkWidget *time_font_selector;
   GtkWidget *time_format_combobox;

@@ -177,7 +177,6 @@ gboolean datetime_update(t_datetime *datetime)
   return TRUE;
 }
 
-#if USE_GTK_TOOLTIP_API
 static gboolean datetime_tooltip_timer(t_datetime *datetime)
 {
   DBG("wake");
@@ -244,7 +243,6 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
 
   return TRUE;
 }
-#endif
 
 static void on_calendar_realized(GtkWidget *widget, t_datetime *datetime)
 {
@@ -420,7 +418,6 @@ void datetime_apply_layout(t_datetime *datetime, t_layout layout)
       break;
   }
 
-#if USE_GTK_TOOLTIP_API
   /* update tooltip handler */
   if (datetime->tooltip_handler_id)
   {
@@ -441,7 +438,6 @@ void datetime_apply_layout(t_datetime *datetime, t_layout layout)
     default:
       gtk_widget_set_has_tooltip(GTK_WIDGET(datetime->button), FALSE);
   }
-#endif
 
   /* set order based on layout-selection */
   switch(datetime->layout)

@@ -170,7 +170,6 @@ datetime_layout_changed(GtkComboBox *cbox, t_datetime *dt)
   /* read layout */
   layout = gtk_combo_box_get_active(cbox);
 
-#if USE_GTK_TOOLTIP_API
   switch(layout)
   {
     case LAYOUT_DATE:
@@ -196,24 +195,6 @@ datetime_layout_changed(GtkComboBox *cbox, t_datetime *dt)
       gtk_widget_show(dt->time_font_hbox);
       gtk_widget_hide(dt->time_tooltip_label);
   }
-#else
-  switch(layout)
-  {
-    case LAYOUT_DATE:
-      gtk_widget_set_sensitive(dt->date_frame, TRUE);
-      gtk_widget_set_sensitive(dt->time_frame, FALSE);
-      break;
-
-    case LAYOUT_TIME:
-      gtk_widget_set_sensitive(dt->date_frame, FALSE);
-      gtk_widget_set_sensitive(dt->time_frame, TRUE);
-      break;
-
-    default:
-      gtk_widget_set_sensitive(dt->date_frame, TRUE);
-      gtk_widget_set_sensitive(dt->time_frame, TRUE);
-  }
-#endif
 
   datetime_apply_layout(dt, layout);
   datetime_update(dt);
@@ -431,7 +412,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   vbox = gtk_vbox_new(FALSE, 8);
   gtk_container_add(GTK_CONTAINER(bin),vbox);
 
-#if USE_GTK_TOOLTIP_API
   /* tooltip label */
   str = g_markup_printf_escaped("<span style=\"italic\">%s</span>",
                                 _("The date will appear in a tooltip."));
@@ -440,7 +420,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_label_set_use_markup(GTK_LABEL(datetime->date_tooltip_label), TRUE);
   gtk_misc_set_alignment(GTK_MISC(datetime->date_tooltip_label), 0.0f, 0.0f);
   gtk_box_pack_start(GTK_BOX(vbox), datetime->date_tooltip_label, FALSE, FALSE, 0);
-#endif
 
   /* hbox */
   datetime->date_font_hbox = gtk_hbox_new(FALSE, 2);
@@ -534,7 +513,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   vbox = gtk_vbox_new(FALSE, 8);
   gtk_container_add(GTK_CONTAINER(bin),vbox);
 
-#if USE_GTK_TOOLTIP_API
   /* tooltip label */
   str = g_markup_printf_escaped("<span style=\"italic\">%s</span>",
                                 _("The time will appear in a tooltip."));
@@ -543,7 +521,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_label_set_use_markup(GTK_LABEL(datetime->time_tooltip_label), TRUE);
   gtk_misc_set_alignment(GTK_MISC(datetime->time_tooltip_label), 0.0f, 0.0f);
   gtk_box_pack_start(GTK_BOX(vbox), datetime->time_tooltip_label, FALSE, FALSE, 0);
-#endif
 
   /* hbox */
   datetime->time_font_hbox = gtk_hbox_new(FALSE, 2);
