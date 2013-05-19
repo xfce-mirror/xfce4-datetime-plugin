@@ -54,7 +54,7 @@ msgstr "Kies lettertype"
 #: ../panel-plugin/datetime-dialog.c:332
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Kan de volgende URL niet openen:%s"
+msgstr "Kan het volgende webadres niet openen: %s"
 
 #: ../panel-plugin/datetime-dialog.c:371
 msgid "Datetime"
