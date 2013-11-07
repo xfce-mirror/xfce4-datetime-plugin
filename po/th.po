@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2013-11-07 08:57+0000\n"
+"Last-Translator: theppitak <theppitak@gmail.com>\n"
+"Language-Team: Thai (http://www.transifex.com/projects/p/xfce/language/th/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Invalid format"
+msgstr "รูปแบบไม่ถูกต้อง"
+
+#: ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "ผิดพลาด"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "วันที่ ตามด้วยเวลา"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "เวลา ตามด้วยวันที่"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "วันที่เท่านั้น"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "เวลาเท่านั้น"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "กำหนดเอง..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "เลือกแบบอักษร"
+
+#: ../panel-plugin/datetime-dialog.c:313
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "ไม่สามารถเปิด URL: %s"
+
+#: ../panel-plugin/datetime-dialog.c:352
+msgid "Datetime"
+msgstr "วันเวลา"
+
+#. * layout frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:372
+msgid "Layout"
+msgstr "การจัดวาง"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
+msgid "Format:"
+msgstr "รูปแบบ:"
+
+#. * Date frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:406
+msgid "Date"
+msgstr "วันที่"
+
+#: ../panel-plugin/datetime-dialog.c:417
+msgid "The date will appear in a tooltip."
+msgstr "วันที่จะปรากฏเป็นคำแนะนำเครื่องมือ"
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
+msgid "Font:"
+msgstr "แบบอักษร:"
+
+#. * time frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:507
+msgid "Time"
+msgstr "เวลา"
+
+#: ../panel-plugin/datetime-dialog.c:518
+msgid "The time will appear in a tooltip."
+msgstr "เวลาจะปรากฏเป็นคำแนะนำเครื่องมือ"
+
+#: ../panel-plugin/datetime.desktop.in.h:1
+msgid "DateTime"
+msgstr "วันเวลา"
+
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "ปลั๊กอินแสดงวันที่และเวลา พร้อมปฏิทินอย่างง่าย"
