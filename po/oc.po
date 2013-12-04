@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Cedric31 <cvalmary@yahoo.fr>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2013-12-04 18:18+0000\n"
+"Last-Translator: Cedric31 <cvalmary@yahoo.fr>\n"
+"Language-Team: Occitan (post 1500) (http://www.transifex.com/projects/p/xfce/language/oc/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: oc\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Invalid format"
+msgstr "Format incorrècte"
+
+#: ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "Error"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Data, puèi l'ora"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Ora, puèi la data"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Data solament"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Ora solament"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Personalizat..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Causir una poliça"
+
+#: ../panel-plugin/datetime-dialog.c:313
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Impossible de dobrir l'URL seguenta : %s"
+
+#: ../panel-plugin/datetime-dialog.c:352
+msgid "Datetime"
+msgstr "Dataora"
+
+#. * layout frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:372
+msgid "Layout"
+msgstr "Disposicion"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
+msgid "Format:"
+msgstr "Format :"
+
+#. * Date frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:406
+msgid "Date"
+msgstr "Data"
+
+#: ../panel-plugin/datetime-dialog.c:417
+msgid "The date will appear in a tooltip."
+msgstr "La data apareis dins una infobulla."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
+msgid "Font:"
+msgstr "Poliça :"
+
+#. * time frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:507
+msgid "Time"
+msgstr "Ora"
+
+#: ../panel-plugin/datetime-dialog.c:518
+msgid "The time will appear in a tooltip."
+msgstr "L'ora apareis dins una infobulla."
+
+#: ../panel-plugin/datetime.desktop.in.h:1
+msgid "DateTime"
+msgstr "DataOra"
+
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Empeuton data e ora amb un calendièr simple"
