@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Umidjon Almasov <u.almasov@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2013-12-21 05:00+0000\n"
+"Last-Translator: Umidjon Almasov <u.almasov@gmail.com>\n"
+"Language-Team: Uzbek (http://www.transifex.com/projects/p/xfce/language/uz/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Invalid format"
+msgstr "Noto‘g‘ri format"
+
+#: ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "Xato"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Sana, keyin vaqt"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Vaqt, keyin sana"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Faqat sana"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Vaqat vaqt"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Boshqa..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Shriftni tanlash"
+
+#: ../panel-plugin/datetime-dialog.c:313
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Quyidagi URL manzilini ochib bo'lmadi: %s"
+
+#: ../panel-plugin/datetime-dialog.c:352
+msgid "Datetime"
+msgstr ""
+
+#. * layout frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:372
+msgid "Layout"
+msgstr "Joylashuv"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
+msgid "Format:"
+msgstr "Format:"
+
+#. * Date frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:406
+msgid "Date"
+msgstr "Sana"
+
+#: ../panel-plugin/datetime-dialog.c:417
+msgid "The date will appear in a tooltip."
+msgstr ""
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
+msgid "Font:"
+msgstr "Shrift:"
+
+#. * time frame
+#. 
+#: ../panel-plugin/datetime-dialog.c:507
+msgid "Time"
+msgstr "Vaqt"
+
+#: ../panel-plugin/datetime-dialog.c:518
+msgid "The time will appear in a tooltip."
+msgstr ""
+
+#: ../panel-plugin/datetime.desktop.in.h:1
+msgid "DateTime"
+msgstr ""
+
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr ""
