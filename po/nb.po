@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2014-04-27 16:18+0000\n"
+"PO-Revision-Date: 2014-05-12 20:42+0000\n"
 "Last-Translator: haarek <haarektrans@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce-panel-plugins/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/datetime.c:87
 msgid "Invalid format"
-msgstr ""
+msgstr "Ugyldig format"
 
 #: ../panel-plugin/datetime.c:92
 msgid "Error"
@@ -58,7 +58,7 @@ msgstr "Klarte ikke å åpne følgende URL: %s"
 
 #: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
-msgstr ""
+msgstr "Datotid"
 
 #. * layout frame
 #: ../panel-plugin/datetime-dialog.c:372
@@ -79,7 +79,7 @@ msgstr "Dato"
 
 #: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "Datoen vil vises i et verktøytips."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
@@ -93,12 +93,12 @@ msgstr "Tid"
 
 #: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "Tiden vil vises i et verktøytips."
 
 #: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
-msgstr ""
+msgstr "DatoTid"
 
 #: ../panel-plugin/datetime.desktop.in.h:2
 msgid "Date and Time plugin with a simple calendar"
-msgstr ""
+msgstr "Programtillegg for dato og tid med en enkel kalender."
