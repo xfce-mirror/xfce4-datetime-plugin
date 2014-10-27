@@ -306,6 +306,9 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
   g_signal_connect_swapped(G_OBJECT(window), "delete-event",
       G_CALLBACK(close_calendar_window),
       datetime);
+  g_signal_connect_swapped(G_OBJECT(window), "focus-out-event",
+      G_CALLBACK(close_calendar_window),
+      datetime);
   gtk_widget_show_all(window);
 
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(datetime->button), TRUE);
