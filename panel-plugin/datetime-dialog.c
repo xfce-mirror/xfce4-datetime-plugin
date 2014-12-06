@@ -317,7 +317,6 @@ datetime_dialog_response(GtkWidget *dlg, int response, t_datetime *dt)
     g_object_set_data(G_OBJECT(dt->plugin), "dialog", NULL);
 
     gtk_widget_destroy(dlg);
-    xfce_panel_plugin_unblock_menu(dt->plugin);
     datetime_write_rc_file(dt->plugin, dt);
   }
 }
@@ -346,8 +345,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gint i_custom; /* index of custom menu item */
 
   xfce_textdomain (GETTEXT_PACKAGE, LOCALEDIR, "UTF-8");
-
-  xfce_panel_plugin_block_menu(plugin);
 
   dlg = xfce_titled_dialog_new_with_buttons(_("Datetime"),
       NULL, /* or: GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(plugin))), */

@@ -259,6 +259,7 @@ static gboolean close_calendar_window(t_datetime *datetime)
   gtk_widget_destroy(datetime->cal);
   datetime->cal = NULL;
 
+  xfce_panel_plugin_block_autohide (XFCE_PANEL_PLUGIN (datetime->plugin), FALSE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(datetime->button), FALSE);
 
   return TRUE;
@@ -311,6 +312,7 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
       datetime);
   gtk_widget_show_all(window);
 
+  xfce_panel_plugin_block_autohide (XFCE_PANEL_PLUGIN (datetime->plugin), TRUE);
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(datetime->button), TRUE);
 
   return window;
