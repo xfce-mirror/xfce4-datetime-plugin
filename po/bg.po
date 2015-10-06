@@ -1,28 +1,28 @@
-# Bulgarian translations for xfce4-datetime-plugin package.
-# Copyright (C) 2007 THE xfce4-datetime-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-datetime-plugin package.
-# Kiril Kirilov (Cybercop) <cybercop_montana@abv.bg.com>, 2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Kiril Kirilov (Cybercop) <cybercop_montana@abv.bg.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-datetime-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2013-01-14 19:06+0200\n"
-"Last-Translator: Kiril Kirilov (Cybercop) <cybercop_montana@abv.bg>\n"
-"Language-Team: Bulgarian <xfce-i18n-bg@xfce.org>\n"
-"Language: bg\n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2015-10-06 16:41+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/xfce/xfce-panel-plugins/language/bg/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Bulgarian\n"
-"X-Poedit-Country: BULGARIA\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/datetime.c:82
+#: ../panel-plugin/datetime.c:87
 msgid "Invalid format"
 msgstr "Невалиден формат"
 
-#: ../panel-plugin/datetime.c:87
+#: ../panel-plugin/datetime.c:92
 msgid "Error"
 msgstr "Грешка"
 
@@ -43,8 +43,7 @@ msgid "Time only"
 msgstr "Само час"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Потребителски..."
 
@@ -52,65 +51,54 @@ msgstr "Потребителски..."
 msgid "Select font"
 msgstr "Избор на шрифт"
 
-#: ../panel-plugin/datetime-dialog.c:332
+#: ../panel-plugin/datetime-dialog.c:313
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Не може да бъде отворен следният адрес: %s"
 
-#: ../panel-plugin/datetime-dialog.c:371
+#: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
 msgstr "Дата и час"
 
-#.
 #. * layout frame
-#.
-#: ../panel-plugin/datetime-dialog.c:391
+#: ../panel-plugin/datetime-dialog.c:372
 msgid "Layout"
 msgstr "Разположение"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
-#: ../panel-plugin/datetime-dialog.c:570
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
 msgid "Format:"
 msgstr "Формат:"
 
-#.
 #. * Date frame
-#.
-#: ../panel-plugin/datetime-dialog.c:425
+#: ../panel-plugin/datetime-dialog.c:406
 msgid "Date"
 msgstr "Дата"
 
-#: ../panel-plugin/datetime-dialog.c:437
+#: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
 msgstr "Датата ще се показва в подсказките."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
 msgstr "Шрифт:"
 
-#.
 #. * time frame
-#.
-#: ../panel-plugin/datetime-dialog.c:528
+#: ../panel-plugin/datetime-dialog.c:507
 msgid "Time"
 msgstr "Час"
 
-#: ../panel-plugin/datetime-dialog.c:540
+#: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
 msgstr "Часът ще се показва в подсказките."
 
-#: ../panel-plugin/datetime.desktop.in.in.h:1
-msgid "Date and Time plugin with a simple calendar"
-msgstr "Добавка за датата и часа с опростен календар"
-
-#: ../panel-plugin/datetime.desktop.in.in.h:2
+#: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
 msgstr "Дата и час"
 
-#~ msgid "Datetime properties"
-#~ msgstr "Параметри"
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Добавка за датата и часа с опростен календар"
