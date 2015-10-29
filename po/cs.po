@@ -1,26 +1,27 @@
-# Czech translations for xfce package.
-# Copyright (C) 2007 THE xfce'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce package.
-# Michal Várady <miko.vaji@gmail.com>, 2007-2010.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce 4-datetime-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2010-01-04 18:54+0100\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
-"Language-Team: Czech\n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2015-10-29 08:49+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Czech (http://www.transifex.com/xfce/xfce-panel-plugins/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../panel-plugin/datetime.c:82
+#: ../panel-plugin/datetime.c:87
 msgid "Invalid format"
 msgstr "Neplatný formát"
 
-#: ../panel-plugin/datetime.c:87
+#: ../panel-plugin/datetime.c:92
 msgid "Error"
 msgstr "Chyba"
 
@@ -41,8 +42,7 @@ msgid "Time only"
 msgstr "Pouze čas"
 
 #. placeholder
-#: ../panel-plugin/datetime-dialog.c:85
-#: ../panel-plugin/datetime-dialog.c:96
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
 msgstr "Vlastní..."
 
@@ -50,75 +50,54 @@ msgstr "Vlastní..."
 msgid "Select font"
 msgstr "Vybrat písmo"
 
-#: ../panel-plugin/datetime-dialog.c:332
+#: ../panel-plugin/datetime-dialog.c:313
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nelze otevřít následující adresu URL: %s"
 
-#: ../panel-plugin/datetime-dialog.c:371
+#: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
 msgstr "Datum a čas"
 
-#.
 #. * layout frame
-#.
-#: ../panel-plugin/datetime-dialog.c:391
+#: ../panel-plugin/datetime-dialog.c:372
 msgid "Layout"
 msgstr "Rozvržení"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405
-#: ../panel-plugin/datetime-dialog.c:467
-#: ../panel-plugin/datetime-dialog.c:570
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
 msgid "Format:"
 msgstr "Formát:"
 
-#.
 #. * Date frame
-#.
-#: ../panel-plugin/datetime-dialog.c:425
+#: ../panel-plugin/datetime-dialog.c:406
 msgid "Date"
 msgstr "Datum"
 
-#: ../panel-plugin/datetime-dialog.c:437
+#: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
 msgstr "Datum se zobrazí jako tip."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450
-#: ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
 msgstr "Písmo:"
 
-#.
 #. * time frame
-#.
-#: ../panel-plugin/datetime-dialog.c:528
+#: ../panel-plugin/datetime-dialog.c:507
 msgid "Time"
 msgstr "Čas"
 
-#: ../panel-plugin/datetime-dialog.c:540
+#: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
 msgstr "Čas se zobrazí jako tip."
 
-#: ../panel-plugin/datetime.desktop.in.in.h:1
-msgid "Date and Time plugin with a simple calendar"
-msgstr "Zásuvný modul Datum a čas s jednoduchým kalendářem"
-
-#: ../panel-plugin/datetime.desktop.in.in.h:2
+#: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
 msgstr "Datum a čas"
 
-#~ msgid "Date:"
-#~ msgstr "Datum:"
-#~ msgid "Datetime properties"
-#~ msgstr "Vlastnosti data a času"
-#~ msgid "Calendar"
-#~ msgstr "Kalendář"
-#~ msgid ""
-#~ "The information on which day the calendar week starts is derived from the "
-#~ "locale."
-#~ msgstr ""
-#~ "Informace o dni, jímž začíná týden, se odvozuje z proměnných locale."
-
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Zásuvný modul Datum a čas s jednoduchým kalendářem"
