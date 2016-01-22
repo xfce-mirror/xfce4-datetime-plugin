@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Elishai Eliyahu <e1907@mm.st>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2016-01-20 20:20+0000\n"
+"Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
+"Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-panel-plugins/language/he/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Invalid format"
+msgstr "פורמט לא תקין"
+
+#: ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "שגיאה"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "תאריך, אח\"כ זמן"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "זמן, אח\"כ תאריך"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "תאריך בלבד"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "זמן בלבד"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "מותאם אישית..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "בחר גופן"
+
+#: ../panel-plugin/datetime-dialog.c:313
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "לא יכול לפתוח את הכתובת הבאה: %s "
+
+#: ../panel-plugin/datetime-dialog.c:352
+msgid "Datetime"
+msgstr "Datetime"
+
+#. * layout frame
+#: ../panel-plugin/datetime-dialog.c:372
+msgid "Layout"
+msgstr "סידור"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
+msgid "Format:"
+msgstr "פורמט:"
+
+#. * Date frame
+#: ../panel-plugin/datetime-dialog.c:406
+msgid "Date"
+msgstr "תאריך"
+
+#: ../panel-plugin/datetime-dialog.c:417
+msgid "The date will appear in a tooltip."
+msgstr "התאריך יופיע בטיפ עזר."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
+msgid "Font:"
+msgstr "גופן:"
+
+#. * time frame
+#: ../panel-plugin/datetime-dialog.c:507
+msgid "Time"
+msgstr "זמן"
+
+#: ../panel-plugin/datetime-dialog.c:518
+msgid "The time will appear in a tooltip."
+msgstr "הזמן יופיע בטיפ עזר."
+
+#: ../panel-plugin/datetime.desktop.in.h:1
+msgid "DateTime"
+msgstr "DateTime"
+
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "תוסף תאריך וזמן עם יומן פשוט"
