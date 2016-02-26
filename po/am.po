@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2016-02-22 15:59+0000\n"
+"PO-Revision-Date: 2016-02-26 17:24+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic (http://www.transifex.com/xfce/xfce-panel-plugins/language/am/)\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "ሰአት ብቻ "
 #. placeholder
 #: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
-msgstr ""
+msgstr "ማስተካከያ..."
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
@@ -54,7 +54,7 @@ msgstr "ፊደል ይምረጡ"
 #: ../panel-plugin/datetime-dialog.c:313
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "የሚቀጥለውን url መክፈት አልተቻለም: %s"
 
 #: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
@@ -63,7 +63,7 @@ msgstr "ቀን ሰአት"
 #. * layout frame
 #: ../panel-plugin/datetime-dialog.c:372
 msgid "Layout"
-msgstr ""
+msgstr "እቅድ"
 
 #. Format label
 #. format label
@@ -79,7 +79,7 @@ msgstr "ቀን"
 
 #: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "ቀን በ መጠቆሚያው ጫፍ ላይ ይታያል "
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
@@ -93,7 +93,7 @@ msgstr "ሰአት"
 
 #: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "ሰአት በ መጠቆሚያው ጫፍ ላይ ይታያል "
 
 #: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
@@ -101,4 +101,4 @@ msgstr "ሰአት ቀን"
 
 #: ../panel-plugin/datetime.desktop.in.h:2
 msgid "Date and Time plugin with a simple calendar"
-msgstr ""
+msgstr "የ ቀን እና ሰአት ተሰኪ በ ቀላል ቀን መቁጠሪያ"
