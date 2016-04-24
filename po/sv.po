@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2016-01-06 11:59+0000\n"
+"PO-Revision-Date: 2016-04-24 20:22+0000\n"
 "Last-Translator: Påvel Nicklasson <pavelnicklasson@bahnhof.se>\n"
 "Language-Team: Swedish (http://www.transifex.com/xfce/xfce-panel-plugins/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "Anpassat..."
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
-msgstr "Välj teckensitt"
+msgstr "Välj typsnitt"
 
 #: ../panel-plugin/datetime-dialog.c:313
 #, c-format
@@ -85,7 +85,7 @@ msgstr "Datumet kommer att visas i ett verktygstips."
 #. font label
 #: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
-msgstr "Teckensnitt:"
+msgstr "Typsnitt:"
 
 #. * time frame
 #: ../panel-plugin/datetime-dialog.c:507
