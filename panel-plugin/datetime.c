@@ -344,26 +344,66 @@ static gboolean datetime_clicked(GtkWidget *widget,
 
 static void datetime_update_date_font(t_datetime *datetime)
 {
+#if GTK_CHECK_VERSION (3, 16, 0)
+    GtkCssProvider *css_provider;
+    gchar * css;
+#if GTK_CHECK_VERSION (3, 20, 0)
+    css = g_strdup_printf("label { font: %s; }",
+#else
+    css = g_strdup_printf(".label { font: %s; }",
+#endif
+                          datetime->date_font);
+    /* Setup Gtk style */
+    DBG("css: %s",css);
+    css_provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
+    gtk_style_context_add_provider (
+        GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (datetime->date_label))),
+        GTK_STYLE_PROVIDER (css_provider),
+        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_free(css);
+#else
   PangoFontDescription *font;
   font = pango_font_description_from_string(datetime->date_font);
 
   if (G_LIKELY (font))
   {
-    gtk_widget_modify_font(datetime->date_label, font);
+    gtk_widget_override_font(datetime->date_label, font);
     pango_font_description_free (font);
   }
+#endif
 }
 
 static void datetime_update_time_font(t_datetime *datetime)
 {
+#if GTK_CHECK_VERSION (3, 16, 0)
+    GtkCssProvider *css_provider;
+    gchar * css;
+#if GTK_CHECK_VERSION (3, 20, 0)
+    css = g_strdup_printf("label { font: %s; }",
+#else
+    css = g_strdup_printf(".label { font: %s; }",
+#endif
+                          datetime->time_font);
+    /* Setup Gtk style */
+    DBG("css: %s",css);
+    css_provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
+    gtk_style_context_add_provider (
+        GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (datetime->time_label))),
+        GTK_STYLE_PROVIDER (css_provider),
+        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_free(css);
+#else
   PangoFontDescription *font;
   font = pango_font_description_from_string(datetime->time_font);
 
   if (G_LIKELY (font))
   {
-    gtk_widget_modify_font(datetime->time_label, font);
+    gtk_widget_override_font(datetime->time_label, font);
     pango_font_description_free (font);
   }
+#endif
 }
 
 static void datetime_set_update_interval(t_datetime *datetime)
