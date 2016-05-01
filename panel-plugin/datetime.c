@@ -623,7 +623,7 @@ static void datetime_create_widget(t_datetime * datetime)
   gtk_widget_show(datetime->button);
 
   /* create a box which can be easily adapted to the panel orientation */
-  datetime->box = xfce_hvbox_new(GTK_ORIENTATION_VERTICAL, TRUE, 0);
+  datetime->box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
 
   gtk_widget_show(datetime->box);
   gtk_container_add(GTK_CONTAINER(datetime->button), datetime->box);

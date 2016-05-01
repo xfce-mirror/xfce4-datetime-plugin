@@ -372,11 +372,11 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
 
   /* vbox */
-  vbox = gtk_vbox_new(FALSE, 8);
+  vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 8);
   gtk_container_add(GTK_CONTAINER(bin),vbox);
 
   /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
   /* Format label */
@@ -406,7 +406,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_container_set_border_width(GTK_CONTAINER(datetime->date_frame), 6);
 
   /* vbox */
-  vbox = gtk_vbox_new(FALSE, 8);
+  vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 8);
   gtk_container_add(GTK_CONTAINER(bin),vbox);
 
   /* tooltip label */
@@ -419,7 +419,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_box_pack_start(GTK_BOX(vbox), datetime->date_tooltip_label, FALSE, FALSE, 0);
 
   /* hbox */
-  datetime->date_font_hbox = gtk_hbox_new(FALSE, 2);
+  datetime->date_font_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_box_pack_start(GTK_BOX(vbox), datetime->date_font_hbox, FALSE, FALSE, 0);
 
   /* font label */
@@ -436,7 +436,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   datetime->date_font_selector = button;
 
   /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
   /* format label */
@@ -485,7 +485,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   datetime->date_format_combobox = date_combobox;
 
   /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
   /* format entry */
@@ -507,7 +507,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_container_set_border_width(GTK_CONTAINER(datetime->time_frame), 6);
 
   /* vbox */
-  vbox = gtk_vbox_new(FALSE, 8);
+  vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 8);
   gtk_container_add(GTK_CONTAINER(bin),vbox);
 
   /* tooltip label */
@@ -520,7 +520,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_box_pack_start(GTK_BOX(vbox), datetime->time_tooltip_label, FALSE, FALSE, 0);
 
   /* hbox */
-  datetime->time_font_hbox = gtk_hbox_new(FALSE, 2);
+  datetime->time_font_hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_box_pack_start(GTK_BOX(vbox), datetime->time_font_hbox, FALSE, FALSE, 0);
 
   /* font label */
@@ -537,7 +537,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   datetime->time_font_selector = button;
 
   /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
   /* format label */
@@ -586,7 +586,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   datetime->time_format_combobox = time_combobox;
 
   /* hbox */
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
   /* format entry */
