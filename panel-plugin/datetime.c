@@ -38,13 +38,6 @@
 
 #define DATETIME_MAX_STRLEN 256
 
-/* check for new Xfce 4.10 panel features */
-#ifdef LIBXFCE4PANEL_CHECK_VERSION
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-#define HAS_PANEL_49
-#endif
-#endif
-
 /**
  *  Convert a GTimeVal to milliseconds.
  *  Fractions of a millisecond are truncated.
@@ -595,16 +588,11 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
 /*
  * change widgets orientation when the panel orientation changes
  */
-#ifdef HAS_PANEL_49
 static void datetime_set_mode(XfcePanelPlugin *plugin, XfcePanelPluginMode mode, t_datetime *datetime)
 {
   GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation (plugin);
   GtkOrientation orientation = (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
     GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL;
-#else
-static void datetime_set_orientation(XfcePanelPlugin *plugin, GtkOrientation orientation, t_datetime *datetime)
-{
-#endif
   if (orientation == GTK_ORIENTATION_VERTICAL)
   {
     xfce_hvbox_set_orientation(XFCE_HVBOX(datetime->box), GTK_ORIENTATION_HORIZONTAL);
@@ -658,11 +646,7 @@ static void datetime_create_widget(t_datetime * datetime)
       G_CALLBACK(datetime_clicked), datetime);
 
   /* set orientation according to the panel orientation */
-#ifdef HAS_PANEL_49
   datetime_set_mode(datetime->plugin, orientation, datetime);
-#else
-  datetime_set_orientation(datetime->plugin, orientation, datetime);
-#endif
 }
 
 /*
@@ -700,10 +684,8 @@ static void datetime_free(XfcePanelPlugin *plugin, t_datetime *datetime)
   /* stop timeouts */
   if (datetime->timeout_id != 0)
     g_source_remove(datetime->timeout_id);
-#if USE_GTK_TOOLTIP_API
   if (datetime->tooltip_timeout_id != 0)
     g_source_remove(datetime->tooltip_timeout_id);
-#endif
 
   /* destroy widget */
   gtk_widget_destroy(datetime->button);
@@ -738,11 +720,7 @@ static void datetime_construct(XfcePanelPlugin *plugin)
       G_CALLBACK(datetime_set_size), datetime);
   g_signal_connect(plugin, "configure-plugin",
       G_CALLBACK(datetime_properties_dialog), datetime);
-#ifdef HAS_PANEL_49
   g_signal_connect(plugin, "mode-changed", G_CALLBACK(datetime_set_mode), datetime);
-#else
-  g_signal_connect(plugin, "orientation-changed", G_CALLBACK(datetime_set_orientation), datetime);
-#endif
   xfce_panel_plugin_menu_show_configure(plugin);
 }
 
