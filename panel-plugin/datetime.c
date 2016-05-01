@@ -590,12 +590,11 @@ void datetime_write_rc_file(XfcePanelPlugin *plugin, t_datetime *dt)
  */
 static void datetime_set_mode(XfcePanelPlugin *plugin, XfcePanelPluginMode mode, t_datetime *datetime)
 {
-  GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation (plugin);
   GtkOrientation orientation = (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
     GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL;
   if (orientation == GTK_ORIENTATION_VERTICAL)
   {
-    xfce_hvbox_set_orientation(XFCE_HVBOX(datetime->box), GTK_ORIENTATION_HORIZONTAL);
+    gtk_orientable_set_orientation(GTK_ORIENTABLE(datetime->box), GTK_ORIENTATION_HORIZONTAL);
     gtk_label_set_angle(GTK_LABEL(datetime->time_label), -90);
     gtk_label_set_angle(GTK_LABEL(datetime->date_label), -90);
     gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 0);
@@ -603,7 +602,7 @@ static void datetime_set_mode(XfcePanelPlugin *plugin, XfcePanelPluginMode mode,
   }
   else
   {
-    xfce_hvbox_set_orientation(XFCE_HVBOX(datetime->box), GTK_ORIENTATION_VERTICAL);
+    gtk_orientable_set_orientation(GTK_ORIENTABLE(datetime->box), GTK_ORIENTATION_VERTICAL);
     gtk_label_set_angle(GTK_LABEL(datetime->time_label), 0);
     gtk_label_set_angle(GTK_LABEL(datetime->date_label), 0);
     gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 0);
