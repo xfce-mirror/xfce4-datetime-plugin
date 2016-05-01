@@ -291,7 +291,7 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
   display_options = GTK_CALENDAR_SHOW_HEADING |
     GTK_CALENDAR_SHOW_WEEK_NUMBERS |
     GTK_CALENDAR_SHOW_DAY_NAMES;
-  gtk_calendar_display_options(GTK_CALENDAR (cal), display_options);
+  gtk_calendar_set_display_options(GTK_CALENDAR (cal), display_options);
   gtk_container_add (GTK_CONTAINER(frame), cal);
 
   g_signal_connect_after(G_OBJECT(window), "realize",
