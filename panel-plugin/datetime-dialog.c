@@ -368,7 +368,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
    * layout frame
    */
   frame = xfce_gtk_frame_box_new(_("Layout"), &bin);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), frame,
+  gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), frame,
       FALSE, FALSE, 0);
   gtk_container_set_border_width(GTK_CONTAINER(frame), 6);
 
@@ -401,7 +401,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
    * Date frame
    */
   datetime->date_frame = xfce_gtk_frame_box_new(_("Date"), &bin);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), datetime->date_frame,
+  gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), datetime->date_frame,
       FALSE, FALSE, 0);
   gtk_container_set_border_width(GTK_CONTAINER(datetime->date_frame), 6);
 
@@ -499,7 +499,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
    * time frame
    */
   datetime->time_frame = xfce_gtk_frame_box_new(_("Time"), &bin);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dlg)->vbox), datetime->time_frame,
+  gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), datetime->time_frame,
       FALSE, FALSE, 0);
   gtk_container_set_border_width(GTK_CONTAINER(datetime->time_frame), 6);
 
