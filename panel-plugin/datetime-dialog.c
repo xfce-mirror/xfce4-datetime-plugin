@@ -386,10 +386,10 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_size_group_add_widget(sg, label);
 
   /* Layout combobox */
-  layout_combobox = gtk_combo_box_new_text();
+  layout_combobox = gtk_combo_box_text_new();
   gtk_box_pack_start(GTK_BOX(hbox), layout_combobox, TRUE, TRUE, 0);
   for(i=0; i < LAYOUT_COUNT; i++)
-    gtk_combo_box_append_text(GTK_COMBO_BOX(layout_combobox), _(layout_strs[i]));
+    gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(layout_combobox), _(layout_strs[i]));
   gtk_combo_box_set_active(GTK_COMBO_BOX(layout_combobox), datetime->layout);
   g_signal_connect(G_OBJECT(layout_combobox), "changed",
       G_CALLBACK(datetime_layout_changed), datetime);
@@ -443,7 +443,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_size_group_add_widget(sg, label);
 
   /* format combobox */
-  date_combobox = gtk_combo_box_new_text();
+  date_combobox = gtk_combo_box_text_new();
   gtk_box_pack_start(GTK_BOX(hbox), date_combobox, TRUE, TRUE, 0);
   i_custom = 0;
   for(i=0; i < DT_COMBOBOX_DATE_COUNT; i++)
@@ -452,7 +452,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
     {
       case DT_COMBOBOX_ITEM_TYPE_STANDARD:
         str = datetime_do_utf8strftime(dt_combobox_date[i].item, exampletm);
-        gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), str);
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(date_combobox), str);
         g_free(str);
         /* set active
          * strcmp isn't fast, but it is done only once while opening the dialog
@@ -461,11 +461,11 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
           gtk_combo_box_set_active(GTK_COMBO_BOX(date_combobox), i);
         break;
       case DT_COMBOBOX_ITEM_TYPE_CUSTOM:
-        gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), _(dt_combobox_date[i].item));
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(date_combobox), _(dt_combobox_date[i].item));
         i_custom = i;
         break;
       case DT_COMBOBOX_ITEM_TYPE_SEPARATOR: /* placeholder item does not need to be translated */
-        gtk_combo_box_append_text(GTK_COMBO_BOX(date_combobox), dt_combobox_date[i].item);
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(date_combobox), dt_combobox_date[i].item);
         break;
       default:
         break;
@@ -541,7 +541,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_size_group_add_widget(sg, label);
 
   /* format combobox */
-  time_combobox = gtk_combo_box_new_text();
+  time_combobox = gtk_combo_box_text_new();
   gtk_box_pack_start(GTK_BOX(hbox), time_combobox, TRUE, TRUE, 0);
   i_custom = 0;
   for(i=0; i < DT_COMBOBOX_TIME_COUNT; i++)
@@ -550,7 +550,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
     {
       case DT_COMBOBOX_ITEM_TYPE_STANDARD:
         str = datetime_do_utf8strftime(dt_combobox_time[i].item, exampletm);
-        gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), str);
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(time_combobox), str);
         g_free(str);
         /* set active
          * strcmp isn't fast, but it is done only once while opening the dialog
@@ -559,11 +559,11 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
           gtk_combo_box_set_active(GTK_COMBO_BOX(time_combobox), i);
         break;
       case DT_COMBOBOX_ITEM_TYPE_CUSTOM:
-        gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), _(dt_combobox_time[i].item));
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(time_combobox), _(dt_combobox_time[i].item));
         i_custom = i;
         break;
       case DT_COMBOBOX_ITEM_TYPE_SEPARATOR: /* placeholder item does not need to be translated */
-        gtk_combo_box_append_text(GTK_COMBO_BOX(time_combobox), dt_combobox_time[i].item);
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(time_combobox), dt_combobox_time[i].item);
         break;
       default:
         break;
