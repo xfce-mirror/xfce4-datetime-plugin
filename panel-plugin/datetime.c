@@ -676,9 +676,9 @@ static void datetime_create_widget(t_datetime * datetime)
 
   /* add time and date lines to the box */
   gtk_box_pack_start(GTK_BOX(datetime->box),
-      datetime->time_label, FALSE, FALSE, 0);
+      datetime->time_label, TRUE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(datetime->box),
-      datetime->date_label, FALSE, FALSE, 0);
+      datetime->date_label, TRUE, FALSE, 0);
 
   /* connect widget signals to functions */
   g_signal_connect(datetime->button, "button-press-event",
