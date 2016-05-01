@@ -280,7 +280,7 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
 
   /* set screen number */
   screen = gtk_widget_get_screen(parent);
-  num = gdk_screen_get_monitor_at_window(screen, parent->window);
+  num = gdk_screen_get_monitor_at_window(screen, gtk_widget_get_window(parent));
   gtk_window_set_screen(GTK_WINDOW(window), screen);
 
   frame = gtk_frame_new(NULL);
