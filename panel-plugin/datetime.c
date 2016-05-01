@@ -3,6 +3,7 @@
  *  Copyright (C) 2003 Choe Hwanjin(krisna@kldp.org)
  *  Copyright (c) 2006 Remco den Breeje <remco@sx.mine.nu>
  *  Copyright (c) 2008 Diego Ongaro <ongardie@gmail.com>
+ *  Copyright (c) 2016 Landry Breuil <landry@xfce.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU Library General Public License as published

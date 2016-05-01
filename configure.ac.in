@@ -5,9 +5,10 @@ m4_define([datetime_version_micro], [2])
 m4_define([datetime_version], [datetime_version_major().datetime_version_minor().datetime_version_micro()])
 
 dnl Initialize autoconf
-AC_COPYRIGHT([Copyright (c) 2006-2009
+AC_COPYRIGHT([Copyright (c) 2006-2016
         Remco den Breeje <remco@sx.mine.nu>
-        Diego Ongaro <ongardie@gmail.com>])
+        Diego Ongaro <ongardie@gmail.com>
+        Landry Breuil <landry@xfce.org>])
 AC_INIT([xfce4-datetime-plugin], [datetime_version], [goodies-dev@xfce.org])
 
 dnl Initialize automake
