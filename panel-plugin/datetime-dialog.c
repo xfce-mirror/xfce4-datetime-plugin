@@ -128,13 +128,14 @@ static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt)
     previewtext = gtk_label_get_text(GTK_LABEL(dt->time_label));
   }
 
-  dialog = gtk_font_selection_dialog_new(_("Select font"));
-  gtk_font_selection_dialog_set_font_name(GTK_FONT_SELECTION_DIALOG(dialog),
+  dialog = gtk_font_chooser_dialog_new(_("Select font"),
+                                       GTK_WINDOW(gtk_widget_get_toplevel(widget)));
+  gtk_font_chooser_set_font(GTK_FONT_CHOOSER(dialog),
                                           fontname);
 
   if (G_LIKELY (previewtext != NULL))
   {
-    gtk_font_selection_dialog_set_preview_text(GTK_FONT_SELECTION_DIALOG(dialog),
+    gtk_font_chooser_set_preview_text(GTK_FONT_CHOOSER(dialog),
                                                previewtext);
   }
 
@@ -142,7 +143,7 @@ static void datetime_font_selection_cb(GtkWidget *widget, t_datetime *dt)
   if (result == GTK_RESPONSE_OK || result == GTK_RESPONSE_ACCEPT)
   {
     font_name =
-      gtk_font_selection_dialog_get_font_name(GTK_FONT_SELECTION_DIALOG(dialog));
+      gtk_font_chooser_get_font(GTK_FONT_CHOOSER(dialog));
 
     if (font_name != NULL)
     {
