@@ -381,7 +381,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 
   /* Format label */
   label = gtk_label_new(_("Format:"));
-  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
 
@@ -415,7 +414,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   datetime->date_tooltip_label = gtk_label_new(str);
   g_free(str);
   gtk_label_set_use_markup(GTK_LABEL(datetime->date_tooltip_label), TRUE);
-  gtk_misc_set_alignment(GTK_MISC(datetime->date_tooltip_label), 0.0f, 0.0f);
   gtk_box_pack_start(GTK_BOX(vbox), datetime->date_tooltip_label, FALSE, FALSE, 0);
 
   /* hbox */
@@ -424,7 +422,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 
   /* font label */
   label = gtk_label_new(_("Font:"));
-  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(datetime->date_font_hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
 
@@ -441,7 +438,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 
   /* format label */
   label = gtk_label_new(_("Format:"));
-  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
 
@@ -516,7 +512,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   datetime->time_tooltip_label = gtk_label_new(str);
   g_free(str);
   gtk_label_set_use_markup(GTK_LABEL(datetime->time_tooltip_label), TRUE);
-  gtk_misc_set_alignment(GTK_MISC(datetime->time_tooltip_label), 0.0f, 0.0f);
   gtk_box_pack_start(GTK_BOX(vbox), datetime->time_tooltip_label, FALSE, FALSE, 0);
 
   /* hbox */
@@ -525,7 +520,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 
   /* font label */
   label = gtk_label_new(_("Font:"));
-  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(datetime->time_font_hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
 
@@ -542,7 +536,6 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
 
   /* format label */
   label = gtk_label_new(_("Format:"));
-  gtk_misc_set_alignment(GTK_MISC (label), 0, 0.5);
   gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
   gtk_size_group_add_widget(sg, label);
 
