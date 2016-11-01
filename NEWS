@@ -1,3 +1,8 @@
+2016-11-01
+================================================================================
+xfce4-datetime-plugin v0.7.0 released
+fix font styling with Gtk >= 3.22 to use a non-deprecated stanza
+
 2016-06-05
 ================================================================================
 xfce4-datetime-plugin v0.6.99 released
