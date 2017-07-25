@@ -1,26 +1,29 @@
-# Romanian translation fom xfce4-datetime-plugin
-# Copyright (C) 2009
-# This file is distributed under the same license as the xfce4-datetime-plugin package.
-# Igor Știrbu <igor.stirbu@gmail.com>, 2009.
-# Mișu Moldovan <dumol@gnome.ro>, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Igor Știrbu <igor.stirbu@gmail.com>, 2009
+# Mișu Moldovan <dumol@gnome.ro>, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-datetime-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2009-03-01 18:19+0200\n"
-"Last-Translator: Igor Știrbu <igor.stirbu@gmail.com>\n"
-"Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Romanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: ../panel-plugin/datetime.c:82
+#: ../panel-plugin/datetime.c:87
 msgid "Invalid format"
 msgstr "Formatul nu este valid"
 
-#: ../panel-plugin/datetime.c:87
+#: ../panel-plugin/datetime.c:92
 msgid "Error"
 msgstr "Eroare"
 
@@ -49,60 +52,54 @@ msgstr "Personalizat..."
 msgid "Select font"
 msgstr "Alegeți un font"
 
-#: ../panel-plugin/datetime-dialog.c:332
+#: ../panel-plugin/datetime-dialog.c:313
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nu s-a putut deschide următoarea adresă: %s"
 
-#: ../panel-plugin/datetime-dialog.c:371
+#: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
 msgstr "Ceas cu calendar"
 
 #. * layout frame
-#. 
-#: ../panel-plugin/datetime-dialog.c:391
+#: ../panel-plugin/datetime-dialog.c:372
 msgid "Layout"
 msgstr "Aspect"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
-#: ../panel-plugin/datetime-dialog.c:570
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
 msgid "Format:"
 msgstr "Format:"
 
 #. * Date frame
-#. 
-#: ../panel-plugin/datetime-dialog.c:425
+#: ../panel-plugin/datetime-dialog.c:406
 msgid "Date"
 msgstr "Data"
 
-#: ../panel-plugin/datetime-dialog.c:437
+#: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
 msgstr "Data va apărea într-un indiciu."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
 msgstr "Font:"
 
 #. * time frame
-#. 
-#: ../panel-plugin/datetime-dialog.c:528
+#: ../panel-plugin/datetime-dialog.c:507
 msgid "Time"
 msgstr "Ora"
 
-#: ../panel-plugin/datetime-dialog.c:540
+#: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
 msgstr "Ora va apărea într-un indiciu."
 
-#: ../panel-plugin/datetime.desktop.in.in.h:1
-msgid "Date and Time plugin with a simple calendar"
-msgstr "Modul pentru ceas cu un calendar simplu"
-
-#: ../panel-plugin/datetime.desktop.in.in.h:2
+#: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
 msgstr "Ceas cu calendar"
 
-#~ msgid "Datetime properties"
-#~ msgstr "Preferințe Ceas cu calendar"
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Modul pentru ceas cu un calendar simplu"
