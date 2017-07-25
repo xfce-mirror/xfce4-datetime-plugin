@@ -1,26 +1,28 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
-# A S Alam <aalam@users.sf.net>, 2010.
+# 
+# Translators:
+# A S Alam <aalam@users.sf.net>, 2010
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2010-04-04 09:41+0530\n"
-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/xfce/xfce-panel-plugins/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: pa\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/datetime.c:82
+#: ../panel-plugin/datetime.c:87
 msgid "Invalid format"
 msgstr "ਗਲਤ ਫਾਰਮੈਟ"
 
-#: ../panel-plugin/datetime.c:87
+#: ../panel-plugin/datetime.c:92
 msgid "Error"
 msgstr "ਗਲਤੀ"
 
@@ -49,61 +51,54 @@ msgstr "ਪਸੰਦੀਦਾ..."
 msgid "Select font"
 msgstr "ਫੋਂਟ ਚੁਣੋ"
 
-#: ../panel-plugin/datetime-dialog.c:332
+#: ../panel-plugin/datetime-dialog.c:313
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "ਅੱਗੇ ਦਿੱਤਾ url ਖੋਲ੍ਹਣ ਲਈ ਅਸਮਰੱਥ: %s"
 
-#: ../panel-plugin/datetime-dialog.c:371
+#: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
 msgstr "ਮਿਤੀਸਮਾਂ"
 
-#.
 #. * layout frame
-#.
-#: ../panel-plugin/datetime-dialog.c:391
+#: ../panel-plugin/datetime-dialog.c:372
 msgid "Layout"
 msgstr "ਲੇਆਉਟ"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
-#: ../panel-plugin/datetime-dialog.c:570
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
 msgid "Format:"
 msgstr "ਫਾਰਮੈਟ:"
 
-#.
 #. * Date frame
-#.
-#: ../panel-plugin/datetime-dialog.c:425
+#: ../panel-plugin/datetime-dialog.c:406
 msgid "Date"
 msgstr "ਮਿਤੀ"
 
-#: ../panel-plugin/datetime-dialog.c:437
+#: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
 msgstr "ਮਿਤੀ ਟੂਲ-ਟਿੱਪ ਵਿੱਚ ਵੇਖਾਈ ਜਾਵੇਗੀ।"
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
 msgstr "ਫੋਂਟ:"
 
-#.
 #. * time frame
-#.
-#: ../panel-plugin/datetime-dialog.c:528
+#: ../panel-plugin/datetime-dialog.c:507
 msgid "Time"
 msgstr "ਸਮਾਂ"
 
-#: ../panel-plugin/datetime-dialog.c:540
+#: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
 msgstr "ਸਮਾਂ ਟੂਲਟਿੱਪ ਵਿੱਚ ਵੇਖਾਇਆ ਜਾਵੇਗਾ।"
 
-#: ../panel-plugin/datetime.desktop.in.in.h:1
-msgid "Date and Time plugin with a simple calendar"
-msgstr "ਸਧਾਰਨ ਕੈਲੰਡਰ ਨਾਲ ਮਿਤੀ ਅਤੇ ਸਮਾਂ ਪਲੱਗਇਨ"
-
-#: ../panel-plugin/datetime.desktop.in.in.h:2
+#: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
 msgstr "ਮਿਤੀਸਮਾਂ"
 
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "ਸਧਾਰਨ ਕੈਲੰਡਰ ਨਾਲ ਮਿਤੀ ਅਤੇ ਸਮਾਂ ਪਲੱਗਇਨ"
