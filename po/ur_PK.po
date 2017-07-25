@@ -1,29 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-datetime-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-31 13:39-0500\n"
-"PO-Revision-Date: 2009-05-14 02:47+0500\n"
-"Last-Translator: Muhammad Ali Makki <makki.ma@gmail.com>\n"
-"Language-Team: Urdu <makki.ma@gmail.com>\n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Urdu (Pakistan) (http://www.transifex.com/xfce/xfce-panel-plugins/language/ur_PK/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Urdu\n"
-"X-Poedit-Country: PAKISTAN\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: ur_PK\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/datetime.c:82
+#: ../panel-plugin/datetime.c:87
 msgid "Invalid format"
 msgstr "ناموزوں فارمیٹ"
 
-#: ../panel-plugin/datetime.c:87
+#: ../panel-plugin/datetime.c:92
 msgid "Error"
 msgstr "غلطی"
 
@@ -52,76 +50,54 @@ msgstr "صوابدیدی..."
 msgid "Select font"
 msgstr "فونٹ منتخب کریں"
 
-#: ../panel-plugin/datetime-dialog.c:332
+#: ../panel-plugin/datetime-dialog.c:313
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "مندرجہ ربط نہیں کھولا جاسکتا: %s"
 
-#: ../panel-plugin/datetime-dialog.c:371
-#, fuzzy
+#: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
-msgstr "تاریخ وقت"
+msgstr ""
 
-#.
 #. * layout frame
-#.
-#: ../panel-plugin/datetime-dialog.c:391
+#: ../panel-plugin/datetime-dialog.c:372
 msgid "Layout"
 msgstr "خاکہ"
 
 #. Format label
 #. format label
-#: ../panel-plugin/datetime-dialog.c:405 ../panel-plugin/datetime-dialog.c:467
-#: ../panel-plugin/datetime-dialog.c:570
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
 msgid "Format:"
 msgstr "فارمیٹ:"
 
-#.
 #. * Date frame
-#.
-#: ../panel-plugin/datetime-dialog.c:425
+#: ../panel-plugin/datetime-dialog.c:406
 msgid "Date"
 msgstr "تاریخ"
 
-#: ../panel-plugin/datetime-dialog.c:437
+#: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
 msgstr "تاریخ ٹول ٹِپ میں دکھائی جائے گی."
 
 #. font label
-#: ../panel-plugin/datetime-dialog.c:450 ../panel-plugin/datetime-dialog.c:553
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
 msgstr "فونٹ:"
 
-#.
 #. * time frame
-#.
-#: ../panel-plugin/datetime-dialog.c:528
+#: ../panel-plugin/datetime-dialog.c:507
 msgid "Time"
 msgstr "وقت"
 
-#: ../panel-plugin/datetime-dialog.c:540
+#: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
 msgstr "وقت ٹول ٹپ میں دکھایا جائے گا."
 
-#: ../panel-plugin/datetime.desktop.in.in.h:1
-msgid "Date and Time plugin with a simple calendar"
-msgstr "تاریخ اور وقت پلگ ان بمع سادہ کیلینڈر"
-
-#: ../panel-plugin/datetime.desktop.in.in.h:2
+#: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
 msgstr "تاریخ وقت"
 
-#~ msgid "Datetime properties"
-#~ msgstr "تاریخ، وقت خصوصیات"
-
-#~ msgid "Date:"
-#~ msgstr "تاریخ:"
-
-#~ msgid "Calendar"
-#~ msgstr "کیلینڈر"
-
-#~ msgid ""
-#~ "The information on which day the calendar week starts is derived from the "
-#~ "locale."
-#~ msgstr ""
-#~ "کیلینڈر کا ہفتہ کس دن سے شروع ہو یہ معلومات لوکیل (locale) سے لی گئی ہیں."
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "تاریخ اور وقت پلگ ان بمع سادہ کیلینڈر"
