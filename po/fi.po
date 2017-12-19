@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Ammuu5, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2017-12-19 06:59+0000\n"
+"Last-Translator: Ammuu5\n"
+"Language-Team: Finnish (http://www.transifex.com/xfce/xfce-panel-plugins/language/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Invalid format"
+msgstr "Virheellinen muoto"
+
+#: ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "Virhe"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Päivämäärä, sitten aika"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Aika, sitten päivämäärä"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Vain päivämäärä"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Vain aika"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Mukautettu..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Valitse kirjasinlaji"
+
+#: ../panel-plugin/datetime-dialog.c:313
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "URL:ia: %s ei voi avata"
+
+#: ../panel-plugin/datetime-dialog.c:352
+msgid "Datetime"
+msgstr "Päivämäärä ja aika"
+
+#. * layout frame
+#: ../panel-plugin/datetime-dialog.c:372
+msgid "Layout"
+msgstr ""
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
+msgid "Format:"
+msgstr ""
+
+#. * Date frame
+#: ../panel-plugin/datetime-dialog.c:406
+msgid "Date"
+msgstr "Päivämäärä"
+
+#: ../panel-plugin/datetime-dialog.c:417
+msgid "The date will appear in a tooltip."
+msgstr "Päivämäärä näkyy työkaluvihjeessä."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
+msgid "Font:"
+msgstr "Kirjasin:"
+
+#. * time frame
+#: ../panel-plugin/datetime-dialog.c:507
+msgid "Time"
+msgstr "Aika"
+
+#: ../panel-plugin/datetime-dialog.c:518
+msgid "The time will appear in a tooltip."
+msgstr "Aika näkyy työkaluvihjeessä."
+
+#: ../panel-plugin/datetime.desktop.in.h:1
+msgid "DateTime"
+msgstr "Päivämäärä ja Aika"
+
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Päivänmäärä ja aika liitänäinen yksinkertaisella kalenterilla"
