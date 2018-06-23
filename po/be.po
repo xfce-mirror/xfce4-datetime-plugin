@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Zmicer Turok <zmicerturok@gmail.com >, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2018-06-23 18:29+0000\n"
+"Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
+"Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: be\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Invalid format"
+msgstr "Хібны фармат"
+
+#: ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "Памылка"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Дата, пасля час"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Час, пасля дата"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Толькі дата"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Толькі час"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Адвольна..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Абраць шрыфт"
+
+#: ../panel-plugin/datetime-dialog.c:313
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Немагчыма адкрыць наступны URL: %s"
+
+#: ../panel-plugin/datetime-dialog.c:352
+msgid "Datetime"
+msgstr "Дата і час"
+
+#. * layout frame
+#: ../panel-plugin/datetime-dialog.c:372
+msgid "Layout"
+msgstr "Размяшчэнне"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
+msgid "Format:"
+msgstr "Фармат:"
+
+#. * Date frame
+#: ../panel-plugin/datetime-dialog.c:406
+msgid "Date"
+msgstr "Дата"
+
+#: ../panel-plugin/datetime-dialog.c:417
+msgid "The date will appear in a tooltip."
+msgstr "У выплыўной падказцы будзе паказвацца дата."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
+msgid "Font:"
+msgstr "Шрыфт:"
+
+#. * time frame
+#: ../panel-plugin/datetime-dialog.c:507
+msgid "Time"
+msgstr "Час"
+
+#: ../panel-plugin/datetime-dialog.c:518
+msgid "The time will appear in a tooltip."
+msgstr "У выплыўной падказцы будзе паказвацца час."
+
+#: ../panel-plugin/datetime.desktop.in.h:1
+msgid "DateTime"
+msgstr "Дата і час"
+
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Убудова даты і часу з простым каляндаром"
