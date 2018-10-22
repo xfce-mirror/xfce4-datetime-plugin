@@ -5,14 +5,14 @@
 # Translators:
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2009
 # Harald Servat <redcrash@gmail.com>, 2009
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2018
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2017-12-31 14:01+0000\n"
+"PO-Revision-Date: 2018-10-22 10:28+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgstr "Data"
 
 #: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
-msgstr "La data apareixerà en un quadre de text emergent."
+msgstr "La data apareixerà en un indicador de funció."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
@@ -96,7 +96,7 @@ msgstr "Hora"
 
 #: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
-msgstr "L'hora apareixerà en un quadre de text emergent."
+msgstr "L'hora apareixerà en un indicador de funció."
 
 #: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
