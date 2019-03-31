@@ -661,8 +661,8 @@ static void datetime_set_mode(XfcePanelPlugin *plugin, XfcePanelPluginMode mode,
   {
     // in vertical mode, the date and time are horizontal 
     gtk_orientable_set_orientation(GTK_ORIENTABLE(datetime->box), GTK_ORIENTATION_HORIZONTAL);
-    gtk_label_set_angle(GTK_LABEL(datetime->time_label), -90);
-    gtk_label_set_angle(GTK_LABEL(datetime->date_label), -90);
+    gtk_label_set_angle(GTK_LABEL(datetime->time_label), 0);
+    gtk_label_set_angle(GTK_LABEL(datetime->date_label), 0);
     gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 0);
     gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 1);
   } 
