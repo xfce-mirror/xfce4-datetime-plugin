@@ -659,22 +659,14 @@ static void datetime_set_mode(XfcePanelPlugin *plugin, XfcePanelPluginMode mode,
 {
   if (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL)
   {
+    // in vertical mode, the date and time are horizontal 
     gtk_orientable_set_orientation(GTK_ORIENTABLE(datetime->box), GTK_ORIENTATION_HORIZONTAL);
     gtk_label_set_angle(GTK_LABEL(datetime->time_label), -90);
     gtk_label_set_angle(GTK_LABEL(datetime->date_label), -90);
     gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 0);
     gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 1);
   } 
-  // add support for new DESKBAR mode in XFCE 4.10, see https://www.xfce.org/about/tour410 
-  else if (mode == XFCE_PANEL_PLUGIN_MODE_DESKBAR)
-  {
-    gtk_orientable_set_orientation(GTK_ORIENTABLE(datetime->box), GTK_ORIENTATION_HORIZONTAL);
-    gtk_label_set_angle(GTK_LABEL(datetime->time_label), 0);
-    gtk_label_set_angle(GTK_LABEL(datetime->date_label), 0);
-    gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->date_label, 0);
-    gtk_box_reorder_child(GTK_BOX(datetime->box), datetime->time_label, 1);
-  }
-  else
+  else // else means XFCE_PANEL_PLUGIN_MODE_HORIZONTAL or XFCE_PANEL_PLUGIN_MODE_DESKBAR (new mode in XFCE 4.10)
   {
     gtk_orientable_set_orientation(GTK_ORIENTABLE(datetime->box), GTK_ORIENTATION_VERTICAL);
     gtk_label_set_angle(GTK_LABEL(datetime->time_label), 0);
