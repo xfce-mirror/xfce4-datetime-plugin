@@ -360,8 +360,8 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "xfce4-settings");
 
-  gtk_container_set_border_width(gtk_dialog_get_content_area(GTK_DIALOG(dlg)), 12);
-  gtk_box_set_spacing(gtk_dialog_get_content_area(GTK_DIALOG(dlg)), 18);
+  gtk_container_set_border_width(GTK_CONTAINER(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), 12);
+  gtk_box_set_spacing(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), 18);
 
   /* size group */
   sg = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
@@ -370,7 +370,8 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
    * layout frame
    */
   frame = xfce_gtk_frame_box_new(_("Layout"), &bin);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (bin), 6, 0, 12, 0);
+  gtk_widget_set_margin_top(GTK_WIDGET (bin), 6);
+  gtk_widget_set_margin_start(GTK_WIDGET (bin), 12);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), frame,
       FALSE, FALSE, 0);
 
@@ -404,7 +405,8 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
    * Date frame
    */
   datetime->date_frame = xfce_gtk_frame_box_new(_("Date"), &bin);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (bin), 6, 0, 12, 0);
+  gtk_widget_set_margin_top(GTK_WIDGET (bin), 6);
+  gtk_widget_set_margin_start(GTK_WIDGET (bin), 12);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), datetime->date_frame,
       FALSE, FALSE, 0);
 
@@ -502,7 +504,8 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
    * time frame
    */
   datetime->time_frame = xfce_gtk_frame_box_new(_("Time"), &bin);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (bin), 6, 0, 12, 0);
+  gtk_widget_set_margin_top(GTK_WIDGET (bin), 6);
+  gtk_widget_set_margin_start(GTK_WIDGET (bin), 12);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), datetime->time_frame,
       FALSE, FALSE, 0);
 
