@@ -265,7 +265,6 @@ static gboolean close_calendar_window(t_datetime *datetime)
 static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
 {
   GtkWidget  *window;
-  GtkWidget  *frame;
   GtkWidget  *cal;
   GtkWidget  *parent = datetime->button;
   GdkScreen  *screen;
@@ -282,16 +281,12 @@ static GtkWidget * pop_calendar_window(t_datetime *datetime, int orientation)
   screen = gtk_widget_get_screen(parent);
   gtk_window_set_screen(GTK_WINDOW(window), screen);
 
-  frame = gtk_frame_new(NULL);
-  gtk_frame_set_shadow_type (GTK_FRAME(frame), GTK_SHADOW_OUT);
-  gtk_container_add (GTK_CONTAINER(window), frame);
-
   cal = gtk_calendar_new();
   display_options = GTK_CALENDAR_SHOW_HEADING |
     GTK_CALENDAR_SHOW_WEEK_NUMBERS |
     GTK_CALENDAR_SHOW_DAY_NAMES;
   gtk_calendar_set_display_options(GTK_CALENDAR (cal), display_options);
-  gtk_container_add (GTK_CONTAINER(frame), cal);
+  gtk_container_add (GTK_CONTAINER(window), cal);
 
   g_signal_connect_after(G_OBJECT(window), "realize",
       G_CALLBACK(on_calendar_realized),
