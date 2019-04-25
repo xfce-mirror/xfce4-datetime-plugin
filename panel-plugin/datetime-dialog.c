@@ -323,6 +323,26 @@ datetime_dialog_response(GtkWidget *dlg, int response, t_datetime *dt)
   }
 }
 
+static GtkWidget *
+get_frame_box (const gchar  *label,
+               GtkWidget   **container_return)
+{
+  GtkWidget *bin;
+  GtkWidget *frame;
+
+  frame = xfce_gtk_frame_box_new(label, &bin);
+  gtk_widget_set_margin_top(GTK_WIDGET(bin), 6);
+  gtk_widget_set_margin_start(GTK_WIDGET(bin), 0);
+
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+  gtk_alignment_set_padding(GTK_ALIGNMENT(bin), 0, 0, 12, 0);
+  G_GNUC_END_IGNORE_DEPRECATIONS
+
+  *container_return = bin;
+
+  return frame;
+}
+
 /*
  * show datetime properties dialog
  */
@@ -369,9 +389,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /*
    * layout frame
    */
-  frame = xfce_gtk_frame_box_new(_("Layout"), &bin);
-  gtk_widget_set_margin_top(GTK_WIDGET (bin), 6);
-  gtk_widget_set_margin_start(GTK_WIDGET (bin), 12);
+  frame = get_frame_box(_("Layout"), &bin);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), frame,
       FALSE, FALSE, 0);
 
@@ -404,9 +422,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /*
    * Date frame
    */
-  datetime->date_frame = xfce_gtk_frame_box_new(_("Date"), &bin);
-  gtk_widget_set_margin_top(GTK_WIDGET (bin), 6);
-  gtk_widget_set_margin_start(GTK_WIDGET (bin), 12);
+  datetime->date_frame = get_frame_box(_("Date"), &bin);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), datetime->date_frame,
       FALSE, FALSE, 0);
 
@@ -503,9 +519,7 @@ datetime_properties_dialog(XfcePanelPlugin *plugin, t_datetime * datetime)
   /*
    * time frame
    */
-  datetime->time_frame = xfce_gtk_frame_box_new(_("Time"), &bin);
-  gtk_widget_set_margin_top(GTK_WIDGET (bin), 6);
-  gtk_widget_set_margin_start(GTK_WIDGET (bin), 12);
+  datetime->time_frame = get_frame_box(_("Time"), &bin);
   gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg))), datetime->time_frame,
       FALSE, FALSE, 0);
 
