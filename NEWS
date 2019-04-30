@@ -1,3 +1,12 @@
+2019-04-30
+================================================================================
+xfce4-datetime-plugin v0.7.1 released
+
+* Removed the frame around the calendar popup to simplify appearance
+* Spacing improvements in the preferences dialog (bug #14662)
+* Fixed build warnings
+* Updated translations
+
 2016-11-01
 ================================================================================
 xfce4-datetime-plugin v0.7.0 released
