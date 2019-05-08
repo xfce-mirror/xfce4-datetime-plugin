@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Aljoša Žagar <anthon.manix@gmail.com>, 2013
-# ツ Kernc, 2014
+# Kernc, 2014
 # Klemen Košir <klemen.kosir@kream.io>, 2013
 msgid ""
 msgstr ""
@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
 "PO-Revision-Date: 2017-09-23 19:02+0000\n"
-"Last-Translator: ツ Kernc\n"
+"Last-Translator: Kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
