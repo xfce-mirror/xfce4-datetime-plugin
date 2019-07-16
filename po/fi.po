@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Ammuu5, 2017
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2018-02-19 12:36+0000\n"
+"PO-Revision-Date: 2019-07-16 21:59+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-panel-plugins/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "Mukautettu..."
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
-msgstr "Valitse kirjasinlaji"
+msgstr "Valitse fontti"
 
 #: ../panel-plugin/datetime-dialog.c:313
 #, c-format
@@ -85,7 +85,7 @@ msgstr "Päivämäärä näkyy työkaluvihjeessä."
 #. font label
 #: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
-msgstr "Kirjasin:"
+msgstr "Fontti:"
 
 #. * time frame
 #: ../panel-plugin/datetime-dialog.c:507
@@ -98,8 +98,8 @@ msgstr "Aika näkyy työkaluvihjeessä."
 
 #: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
-msgstr "Päivämäärä ja Aika"
+msgstr "Päivämäärä ja aika"
 
 #: ../panel-plugin/datetime.desktop.in.h:2
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Päivänmäärä ja aika liitänäinen yksinkertaisella kalenterilla"
+msgstr "Päivämäärä- ja aikaliitänäinen yksinkertaisella kalenterilla"
