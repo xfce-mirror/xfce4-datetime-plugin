@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Harald H. <haarektrans@gmail.com>, 2014
+# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Harald H. <haarektrans@gmail.com>\n"
+"PO-Revision-Date: 2019-07-24 09:50+0000\n"
+"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-panel-plugins/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +46,7 @@ msgstr "Kun tid"
 #. placeholder
 #: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
 msgid "Custom..."
-msgstr "Egendefinert ..."
+msgstr "Egendefinert …"
 
 #: ../panel-plugin/datetime-dialog.c:131
 msgid "Select font"
