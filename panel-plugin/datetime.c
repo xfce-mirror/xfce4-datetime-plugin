@@ -31,8 +31,7 @@
 /* xfce includes */
 #include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4util/libxfce4util.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-panel-convenience.h>
+#include <libxfce4panel/libxfce4panel.h>
 
 #include "datetime.h"
 #include "datetime-dialog.h"
@@ -679,7 +678,7 @@ static void datetime_create_widget(t_datetime * datetime)
   orientation = xfce_panel_plugin_get_orientation(datetime->plugin);
 
   /* create button */
-  datetime->button = xfce_create_panel_toggle_button();
+  datetime->button = xfce_panel_create_toggle_button();
   gtk_widget_show(datetime->button);
 
   /* create a box which can be easily adapted to the panel orientation */
@@ -718,7 +717,7 @@ static t_datetime * datetime_new(XfcePanelPlugin *plugin)
   DBG("Starting datetime panel plugin");
 
   /* alloc and clear mem */
-  datetime = panel_slice_new0 (t_datetime);
+  datetime = g_slice_new0 (t_datetime);
 
   /* store plugin reference */
   datetime->plugin = plugin;
@@ -755,7 +754,7 @@ static void datetime_free(XfcePanelPlugin *plugin, t_datetime *datetime)
   g_free(datetime->date_format);
   g_free(datetime->time_format);
 
-  panel_slice_free(t_datetime, datetime);
+  g_slice_free(t_datetime, datetime);
 }
 
 /*
