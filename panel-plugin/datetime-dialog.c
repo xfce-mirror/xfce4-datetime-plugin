@@ -36,7 +36,7 @@
 #include "datetime.h"
 #include "datetime-dialog.h"
 
-#define PLUGIN_WEBSITE  "https://goodies.xfce.org/projects/panel-plugins/xfce4-datetime-plugin"
+#define PLUGIN_WEBSITE  "https://docs.xfce.org/panel-plugins/xfce4-datetime-plugin"
 
 /* Layouts */
 static const gchar *layout_strs[] = {

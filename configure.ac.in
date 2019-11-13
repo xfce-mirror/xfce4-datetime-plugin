@@ -9,7 +9,7 @@ AC_COPYRIGHT([Copyright (c) 2006-2016
         Remco den Breeje <remco@sx.mine.nu>
         Diego Ongaro <ongardie@gmail.com>
         Landry Breuil <landry@xfce.org>])
-AC_INIT([xfce4-datetime-plugin], [datetime_version], [goodies-dev@xfce.org])
+AC_INIT([xfce4-datetime-plugin], [datetime_version], [xfce-dev@xfce.org])
 
 dnl Initialize automake
 AM_INIT_AUTOMAKE([AC_PACKAGE_TARNAME()], [AC_PACKAGE_VERSION()])
