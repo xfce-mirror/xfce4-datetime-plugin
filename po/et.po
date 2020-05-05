@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2020-05-05 10:44+0000\n"
+"PO-Revision-Date: 2020-05-05 10:51+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-panel-plugins/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr "Kuupäev"
 
 #: ../panel-plugin/datetime-dialog.c:417
 msgid "The date will appear in a tooltip."
-msgstr ""
+msgstr "Kuupäeva kuvatakse kohtspikkris."
 
 #. font label
 #: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
@@ -93,7 +93,7 @@ msgstr "Kellaaeg"
 
 #: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
-msgstr ""
+msgstr "Kellaaega kuvatakse kohtspikkris."
 
 #: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
