@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Steve Harris <steve@cultureofweb.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 20:55+0200\n"
+"PO-Revision-Date: 2020-06-26 01:42+0000\n"
+"Last-Translator: Steve Harris <steve@cultureofweb.com>\n"
+"Language-Team: English (Canada) (http://www.transifex.com/xfce/xfce-panel-plugins/language/en_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_CA\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/datetime.c:87
+msgid "Invalid format"
+msgstr "Invalid format"
+
+#: ../panel-plugin/datetime.c:92
+msgid "Error"
+msgstr "Error"
+
+#: ../panel-plugin/datetime-dialog.c:42
+msgid "Date, then time"
+msgstr "Date, then time"
+
+#: ../panel-plugin/datetime-dialog.c:43
+msgid "Time, then date"
+msgstr "Time, then date"
+
+#: ../panel-plugin/datetime-dialog.c:44
+msgid "Date only"
+msgstr "Date only"
+
+#: ../panel-plugin/datetime-dialog.c:45
+msgid "Time only"
+msgstr "Time only"
+
+#. placeholder
+#: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
+msgid "Custom..."
+msgstr "Custom..."
+
+#: ../panel-plugin/datetime-dialog.c:131
+msgid "Select font"
+msgstr "Select font"
+
+#: ../panel-plugin/datetime-dialog.c:313
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Unable to open the following url: %s"
+
+#: ../panel-plugin/datetime-dialog.c:352
+msgid "Datetime"
+msgstr "Datetime"
+
+#. * layout frame
+#: ../panel-plugin/datetime-dialog.c:372
+msgid "Layout"
+msgstr "Layout"
+
+#. Format label
+#. format label
+#: ../panel-plugin/datetime-dialog.c:386 ../panel-plugin/datetime-dialog.c:446
+#: ../panel-plugin/datetime-dialog.c:547
+msgid "Format:"
+msgstr "Format:"
+
+#. * Date frame
+#: ../panel-plugin/datetime-dialog.c:406
+msgid "Date"
+msgstr "Date"
+
+#: ../panel-plugin/datetime-dialog.c:417
+msgid "The date will appear in a tooltip."
+msgstr "The date will appear in a tooltip."
+
+#. font label
+#: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
+msgid "Font:"
+msgstr "Font:"
+
+#. * time frame
+#: ../panel-plugin/datetime-dialog.c:507
+msgid "Time"
+msgstr "Time"
+
+#: ../panel-plugin/datetime-dialog.c:518
+msgid "The time will appear in a tooltip."
+msgstr "The time will appear in a tooltip."
+
+#: ../panel-plugin/datetime.desktop.in.h:1
+msgid "DateTime"
+msgstr "DateTime"
+
+#: ../panel-plugin/datetime.desktop.in.h:2
+msgid "Date and Time plugin with a simple calendar"
+msgstr "Date and Time plugin with a simple calendar"
