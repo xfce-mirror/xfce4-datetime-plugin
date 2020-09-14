@@ -1,14 +1,14 @@
-[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/xfce/xfce4-datetime-plugin/COPYING)
+[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/panel-plugins/xfce4-datetime-plugin/-/blob/master/COPYING)
 
 # xfce4-datetime-plugin
 
-xfce4-datetime-plugin shows the date and time in the panel; when left-clicked, a popup calendar appears.
+Xfce4-datetime-plugin shows the date and time in the panel; when left-clicked, a popup calendar appears.
 
 ----
 
 ### Homepage
 
-[xfce4-datetime-plugin documentation](https://docs.xfce.org/panel-plugins/xfce4-datetime-plugin)
+[Xfce4-datetime-plugin documentation](https://docs.xfce.org/panel-plugins/xfce4-datetime-plugin)
 
 ### Changelog
 
@@ -16,13 +16,13 @@ See [NEWS](https://gitlab.xfce.org/panel-plugins/xfce4-datetime-plugin/-/blob/ma
 
 ### Source Code Repository
 
-[xfce4-datetime-plugin source code](https://gitlab.xfce.org/panel-plugins/xfce4-datetime-plugin)
+[Xfce4-datetime-plugin source code](https://gitlab.xfce.org/panel-plugins/xfce4-datetime-plugin)
 
-### Download A Release Tarball
+### Download a Release Tarball
 
-[xfce4-datetime-plugin archive](https://archive.xfce.org/src/panel-plugins/xfce4-datetime-plugin)
+[Xfce4-datetime-plugin archive](https://archive.xfce.org/src/panel-plugins/xfce4-datetime-plugin)
     or
-[xfce4-datetime-plugin tags](https://gitlab.xfce.org/panel-plugins/xfce4-datetime-plugin/-/tags)
+[Xfce4-datetime-plugin tags](https://gitlab.xfce.org/panel-plugins/xfce4-datetime-plugin/-/tags)
 
 ### Installation
 
