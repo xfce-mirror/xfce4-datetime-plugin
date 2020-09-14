@@ -6,6 +6,7 @@ AUTOMAKE_OPTIONS =							\
 	dist-bzip2
 
 EXTRA_DIST = 								\
+	README.md								\
 	intltool-extract.in						\
 	intltool-merge.in						\
 	intltool-update.in
