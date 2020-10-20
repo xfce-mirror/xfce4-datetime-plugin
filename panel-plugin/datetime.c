@@ -345,7 +345,7 @@ static void datetime_update_date_font(t_datetime *datetime)
   font = pango_font_description_from_string(datetime->date_font);
   if (G_LIKELY (font))
   {
-    css = g_strdup_printf("label { font-family: %s; font-size: %dpx; font-style: %s; font-weight: %s }",
+    css = g_strdup_printf("label { font-family: %s; font-size: %dpt; font-style: %s; font-weight: %s }",
                           pango_font_description_get_family (font),
                           pango_font_description_get_size (font) / PANGO_SCALE,
                           (pango_font_description_get_style(font) == PANGO_STYLE_ITALIC ||
@@ -390,7 +390,7 @@ static void datetime_update_time_font(t_datetime *datetime)
   font = pango_font_description_from_string(datetime->time_font);
   if (G_LIKELY (font))
   {
-    css = g_strdup_printf("label { font-family: %s; font-size: %dpx; font-style: %s; font-weight: %s }",
+    css = g_strdup_printf("label { font-family: %s; font-size: %dpt; font-style: %s; font-weight: %s }",
                           pango_font_description_get_family (font),
                           pango_font_description_get_size (font) / PANGO_SCALE,
                           (pango_font_description_get_style(font) == PANGO_STYLE_ITALIC ||
