@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Emin Tufan <etcetin@gmail.com>, 2020
 # Serdar Sağlam <teknomobil@msn.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2019-08-02 06:59+0000\n"
-"Last-Translator: Serdar Sağlam <teknomobil@msn.com>\n"
+"PO-Revision-Date: 2020-11-16 02:17+0000\n"
+"Last-Translator: Emin Tufan <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-panel-plugins/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,11 +37,11 @@ msgstr "Önce saat, sonra tarih"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
-msgstr "Sadece tarih"
+msgstr "Yalnızca tarih"
 
 #: ../panel-plugin/datetime-dialog.c:45
 msgid "Time only"
-msgstr "Sadece saat"
+msgstr "Yalnızca saat"
 
 #. placeholder
 #: ../panel-plugin/datetime-dialog.c:85 ../panel-plugin/datetime-dialog.c:96
@@ -58,7 +59,7 @@ msgstr "Belirtilen bağlantı açılamadı: %s"
 
 #: ../panel-plugin/datetime-dialog.c:352
 msgid "Datetime"
-msgstr "Tarih & Saat"
+msgstr "Tarih ve Saat"
 
 #. * layout frame
 #: ../panel-plugin/datetime-dialog.c:372
@@ -84,7 +85,7 @@ msgstr "Tarih, ipucu şeklinde gösterilecek."
 #. font label
 #: ../panel-plugin/datetime-dialog.c:429 ../panel-plugin/datetime-dialog.c:530
 msgid "Font:"
-msgstr "Yazı tipi:"
+msgstr "Yazı Tipi:"
 
 #. * time frame
 #: ../panel-plugin/datetime-dialog.c:507
@@ -93,12 +94,12 @@ msgstr "Saat"
 
 #: ../panel-plugin/datetime-dialog.c:518
 msgid "The time will appear in a tooltip."
-msgstr "Saat, ipucu şeklinde gösterilecek."
+msgstr "Saat, ipucunda gösterilecek."
 
 #: ../panel-plugin/datetime.desktop.in.h:1
 msgid "DateTime"
-msgstr "Tarih & Saat"
+msgstr "Tarih ve Saat"
 
 #: ../panel-plugin/datetime.desktop.in.h:2
 msgid "Date and Time plugin with a simple calendar"
-msgstr "Basit bir takvimi olan, tarih ve saat programcığı."
+msgstr "Basit takvimi olan tarih ve saat programcığı."
