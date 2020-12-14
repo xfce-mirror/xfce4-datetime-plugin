@@ -129,7 +129,15 @@ static gboolean datetime_format_has_seconds(const gchar *format)
 /*
  * set date and time labels
  */
-gboolean datetime_update(t_datetime *datetime)
+static gboolean datetime_update_cb(gpointer user_data)
+{
+  t_datetime *datetime = user_data;
+
+  datetime_update(datetime);
+  return TRUE;
+}
+
+void datetime_update(t_datetime *datetime)
 {
   GTimeVal timeval;
   gchar *utf8str;
@@ -165,13 +173,12 @@ gboolean datetime_update(t_datetime *datetime)
 
   /* Compute the time to the next update and start the timer. */
   wake_interval = datetime_wake_interval(timeval, datetime->update_interval);
-  datetime->timeout_id = g_timeout_add(wake_interval, (GSourceFunc) datetime_update, datetime);
+  datetime->timeout_id = g_timeout_add(wake_interval, datetime_update_cb, datetime);
 
-  return TRUE;
-}
 
-static gboolean datetime_tooltip_timer(t_datetime *datetime)
+static gboolean datetime_tooltip_timer(gpointer user_data)
 {
+  t_datetime *datetime = user_data;
   DBG("wake");
 
   /* flag to datetime_query_tooltip that there is no longer an active timeout */
@@ -231,7 +238,7 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
      */
     wake_interval = datetime_wake_interval(timeval, 1000);
     datetime->tooltip_timeout_id = g_timeout_add(wake_interval,
-      (GSourceFunc) datetime_tooltip_timer, datetime);
+      datetime_tooltip_timer, datetime);
   }
 
   return TRUE;
