@@ -74,7 +74,7 @@ typedef struct {
   GtkWidget *cal;
 } t_datetime;
 
-gboolean
+void
 datetime_update(t_datetime *datetime);
 
 gchar *
