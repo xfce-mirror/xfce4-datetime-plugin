@@ -1,3 +1,20 @@
+datetime-0.8.1
+======
+- Update configure.ac.in syntax and enable debug when building from git
+- Remove GSourceFunc casts
+- Fix font size (#30)
+- Add new README.md and update AM_INIT_AUTOMAKE
+- Add basic GitLab pipeline
+- Update URLs from goodies.x.o to docs.x.o (Bug #16159)
+- s/http/https
+- Update .gitignore
+- Fix build with panel 4.15
+- Make build less verbose
+- Translation Updates:
+  Albanian, Armenian (Armenia), Belarusian, Eastern Armenian, English
+  (Canada), Estonian, Galician, Hebrew, Interlingue, Persian (Iran),
+  Slovak, Spanish, Turkish, Uyghur, Uzbek
+
 2019-08-11
 ================================================================================
 xfce4-datetime-plugin v0.8.0 released
