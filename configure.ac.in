@@ -25,7 +25,7 @@ dnl Check for UNIX variants
 AC_USE_SYSTEM_EXTENSIONS
 
 dnl check for basic programs
-AC_PROG_CC
+AC_PROG_CC_C99
 AC_PROG_INSTALL
 IT_PROG_INTLTOOL([0.35.0])
 
