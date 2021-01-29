@@ -711,7 +711,7 @@ static void datetime_create_widget(t_datetime * datetime)
       G_CALLBACK(datetime_clicked), datetime);
 
   /* set orientation according to the panel orientation */
-  datetime_set_mode(datetime->plugin, orientation, datetime);
+  datetime_set_mode(datetime->plugin, (XfcePanelPluginMode)orientation, datetime);
 }
 
 /*
