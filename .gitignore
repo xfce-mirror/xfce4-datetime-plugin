@@ -29,6 +29,7 @@
 /xfce4-datetime-plugin-*.tar.*
 
 /autom4te.cache/
+/m4/
 
 /panel-plugin/.deps/
 /panel-plugin/.libs/
@@ -43,5 +44,5 @@
 /po/Makefile.in
 /po/Makefile.in.in
 /po/POTFILES
-/po/.intltool-merge-cache
+/po/.intltool-merge-cache*
 /po/stamp-it
