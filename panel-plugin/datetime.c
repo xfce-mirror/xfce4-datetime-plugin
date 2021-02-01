@@ -38,18 +38,6 @@
 
 #define DATETIME_MAX_STRLEN 256
 
-/**
- *  Convert a GTimeVal to milliseconds.
- *  Fractions of a millisecond are truncated.
- *  With a 32 bit word size and some values of t.tv_sec,
- *  multiplication by 1000 could overflow a glong,
- *  so the value is cast to a gint64.
- */
-static inline gint64 datetime_gtimeval_to_ms(const GTimeVal t)
-{
-  return ((gint64) t.tv_sec * 1000) + ((gint64) t.tv_usec / 1000);
-}
-
 /*
  * Compute the wake interval,
  * which is the time remaining from the current time
@@ -58,11 +46,10 @@ static inline gint64 datetime_gtimeval_to_ms(const GTimeVal t)
  * to occur on the next second or minute
  * when the given update interval is 1000 or 60000 milliseconds, respectively.
  */
-static inline guint datetime_wake_interval(const GTimeVal current_time,
+static inline guint datetime_wake_interval(const gint64 current_time,
                                            const guint update_interval_ms)
 {
-  return update_interval_ms - (datetime_gtimeval_to_ms(current_time) %
-                               update_interval_ms);
+  return update_interval_ms - (current_time % update_interval_ms);
 }
 
 /*
@@ -139,7 +126,7 @@ static gboolean datetime_update_cb(gpointer user_data)
 
 void datetime_update(t_datetime *datetime)
 {
-  GTimeVal timeval;
+  gint64 timeval;
   gchar *utf8str;
   struct tm *current;
   guint wake_interval;  /* milliseconds to next update */
@@ -152,8 +139,8 @@ void datetime_update(t_datetime *datetime)
     g_source_remove(datetime->timeout_id);
   }
 
-  g_get_current_time(&timeval);
-  current = localtime((time_t *)&timeval.tv_sec);
+  timeval = g_get_real_time();
+  current = localtime((time_t *)&timeval);
 
   if (datetime->layout != LAYOUT_TIME &&
       datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
@@ -201,7 +188,7 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
                                        GtkTooltip *tooltip,
                                        t_datetime *datetime)
 {
-  GTimeVal timeval;
+  gint64 timeval;
   struct tm *current;
   gchar *utf8str;
   gchar *format = NULL;
@@ -222,8 +209,8 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
   if (format == NULL)
     return FALSE;
 
-  g_get_current_time(&timeval);
-  current = localtime((time_t *)&timeval.tv_sec);
+  timeval = g_get_real_time();
+  current = localtime((time_t *)&timeval);
 
   utf8str = datetime_do_utf8strftime(format, current);
   gtk_tooltip_set_text(tooltip, utf8str);
