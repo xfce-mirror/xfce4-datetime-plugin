@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 20:55+0200\n"
-"PO-Revision-Date: 2021-05-15 07:35+0000\n"
+"PO-Revision-Date: 2021-05-21 18:15+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -30,11 +30,11 @@ msgstr "Error"
 
 #: ../panel-plugin/datetime-dialog.c:42
 msgid "Date, then time"
-msgstr "Fecha y hora"
+msgstr "Fecha y después hora"
 
 #: ../panel-plugin/datetime-dialog.c:43
 msgid "Time, then date"
-msgstr "Hora y fecha"
+msgstr "Hora y después fecha"
 
 #: ../panel-plugin/datetime-dialog.c:44
 msgid "Date only"
