@@ -44,7 +44,7 @@ typedef struct {
   GtkWidget *box;
   GtkWidget *date_label;
   GtkWidget *time_label;
-  guint update_interval;  /* time between updates in milliseconds */
+  guint update_interval_ms;  /* time between updates in milliseconds */
   guint timeout_id;
   guint tooltip_timeout_id;
   gulong tooltip_handler_id;
