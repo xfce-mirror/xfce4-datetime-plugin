@@ -46,10 +46,10 @@
  * to occur on the next second or minute
  * when the given update interval is 1000 or 60000 milliseconds, respectively.
  */
-static inline guint datetime_wake_interval(const gint64 current_time,
+static inline guint datetime_wake_interval(const gint64 current_time_ms,
                                            const guint update_interval_ms)
 {
-  return update_interval_ms - (current_time % update_interval_ms);
+  return update_interval_ms - (current_time_ms % update_interval_ms);
 }
 
 /*
@@ -126,10 +126,11 @@ static gboolean datetime_update_cb(gpointer user_data)
 
 void datetime_update(t_datetime *datetime)
 {
-  gint64 timeval;
+  gint64 timeval_ms; /* wall-clock time in milliseconds */
+  time_t timeval_s; /* wall-clock time in seconds */
   gchar *utf8str;
   struct tm *current;
-  guint wake_interval;  /* milliseconds to next update */
+  guint wake_interval_ms;  /* milliseconds to next update */
 
   DBG("wake");
 
@@ -139,8 +140,9 @@ void datetime_update(t_datetime *datetime)
     g_source_remove(datetime->timeout_id);
   }
 
-  timeval = g_get_real_time();
-  current = localtime((time_t *)&timeval);
+  timeval_ms = g_get_real_time() / 1000;
+  timeval_s = timeval_ms / 1000;
+  current = localtime(&timeval_s);
 
   if (datetime->layout != LAYOUT_TIME &&
       datetime->date_format != NULL && GTK_IS_LABEL(datetime->date_label))
@@ -159,8 +161,8 @@ void datetime_update(t_datetime *datetime)
   }
 
   /* Compute the time to the next update and start the timer. */
-  wake_interval = datetime_wake_interval(timeval, datetime->update_interval);
-  datetime->timeout_id = g_timeout_add(wake_interval, datetime_update_cb, datetime);
+  wake_interval_ms = datetime_wake_interval(timeval_ms, datetime->update_interval_ms);
+  datetime->timeout_id = g_timeout_add(wake_interval_ms, datetime_update_cb, datetime);
 }
 
 static gboolean datetime_tooltip_timer(gpointer user_data)
@@ -188,11 +190,12 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
                                        GtkTooltip *tooltip,
                                        t_datetime *datetime)
 {
-  gint64 timeval;
+  gint64 timeval_ms; /* wall-clock time in milliseconds */
+  time_t timeval_s; /* wall-clock time in seconds */
   struct tm *current;
   gchar *utf8str;
   gchar *format = NULL;
-  guint wake_interval;  /* milliseconds to next update */
+  guint wake_interval_ms;  /* milliseconds to next update */
 
   switch(datetime->layout)
   {
@@ -209,8 +212,9 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
   if (format == NULL)
     return FALSE;
 
-  timeval = g_get_real_time();
-  current = localtime((time_t *)&timeval);
+  timeval_ms = g_get_real_time() / 1000;
+  timeval_s = timeval_ms / 1000;
+  current = localtime(&timeval_s);
 
   utf8str = datetime_do_utf8strftime(format, current);
   gtk_tooltip_set_text(tooltip, utf8str);
@@ -223,8 +227,8 @@ static gboolean datetime_query_tooltip(GtkWidget *widget,
      * I think we can afford to inefficiently poll every
      * second while the user keeps the mouse here.
      */
-    wake_interval = datetime_wake_interval(timeval, 1000);
-    datetime->tooltip_timeout_id = g_timeout_add(wake_interval,
+    wake_interval_ms = datetime_wake_interval(timeval_ms, 1000);
+    datetime->tooltip_timeout_id = g_timeout_add(wake_interval_ms,
       datetime_tooltip_timer, datetime);
   }
 
@@ -441,7 +445,7 @@ static void datetime_set_update_interval(t_datetime *datetime)
   }
 
   /* 1000 ms in 1 second */
-  datetime->update_interval = 1000 * (has_seconds ? 1 : 60);
+  datetime->update_interval_ms = 1000 * (has_seconds ? 1 : 60);
 }
 
 /*
