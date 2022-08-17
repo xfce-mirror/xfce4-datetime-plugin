@@ -1,8 +1,8 @@
-SUBDIRS = panel-plugin							\
+SUBDIRS = panel-plugin						\
 	  po
 
 AUTOMAKE_OPTIONS =							\
-	1.8								\
+	1.8										\
 	dist-bzip2
 
 EXTRA_DIST = 								\
@@ -14,5 +14,5 @@ EXTRA_DIST = 								\
 DISTCLEANFILES = 							\
 	intltool-extract						\
 	intltool-merge							\
-	intltool-update
-
+	intltool-update							\
+	po/.intltool-merge-cache.lock
