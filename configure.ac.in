@@ -2,7 +2,7 @@ dnl Version information
 m4_define([datetime_version_major], [0])
 m4_define([datetime_version_minor], [8])
 m4_define([datetime_version_micro], [2])
-m4_define([datetime_version_tag], [])
+m4_define([datetime_version_tag], [git])
 m4_define([datetime_version], [datetime_version_major().datetime_version_minor().datetime_version_micro()])
 
 m4_define([datetime_debug_default], [ifelse(datetime_version_tag(), [git], [yes], [minimum])])
